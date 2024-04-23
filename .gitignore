@@ -1,0 +1,8 @@
+Results/temp/*
+__pycache__
+*.zip
+my_checkpoints/*
+
+# remove next time
+*_old
+*copy/*
