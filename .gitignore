@@ -3,6 +3,7 @@ __pycache__
 *.zip
 my_checkpoints/*
 
+scripts_hidden
 # remove next time
 *_old
 *copy/*

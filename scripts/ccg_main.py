@@ -111,12 +111,13 @@ def tree_to_phrase(tree_inp: tree, clean: bool = False,
     # ========= LEAVES =========
     for word in tree_inp.get_leaves([]):
         if word.POS in word_list.keys():
+
             #  add LX check if NP
-            if (word_list[word.POS] == "NP") and \
-                    word.parent.syn_type in np_parent_lst and \
-                    not word.parent.length_check(max_size) and \
-                    not word.parent.tree_recursive(child_check):
-                continue
+            # if (word_list[word.POS] == "NP") and \
+            #         word.parent.syn_type in np_parent_lst and \
+            #         not word.parent.length_check(max_size) and \
+            #         not word.parent.tree_recursive(child_check):
+            #     continue
 
             if plural_bool:
                 collected.append((word_list[word.POS], word.POS, "NNS" in word.POS, word.word.strip()))
