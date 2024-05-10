@@ -40,7 +40,7 @@ word_list = {
 
 # acceptable parents for N's
 np_parent_lst = [r"n", r"n/n", "n/pp", r"n\n", "n\n", "n/n"]
-verb_reject_lst = ["is", "was", "be", "have", "been", "were"]
+verb_reject_lst = ["is", "was", "be", "have", "been", "were", "are"]
 
 #  Subtree lists
 tree_tags = {r"IN": "phrasal"}
@@ -90,7 +90,7 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
     # FIXME: config file
     max_size = 6
 
-    extra_subtree: list[tree] = []
+    extra_subtree: dict[tree, str] = {}
     # ========= LEAVES =========
     for word in tree_inp.get_leaves([]):
         if word.POS in word_list.keys():
@@ -101,7 +101,7 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
             parent_tree = word.parent
             while parent_tree.parent_check() and parent_tree.parent.syn_type in np_parent_lst:
                 parent_tree = parent_tree.get_parent_tree()
-            extra_subtree.append(parent_tree)
+            extra_subtree[parent_tree] = tree_tags[word.POS]
 
     # ========= TREES =========
     for x in tree_inp.gen_subtrees():
@@ -110,7 +110,7 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
 
         # TODO: properly implement a parent check with theory. For now keep all.
         # check if no outer
-        if x.parent_check():
+        if x.parent_check() and x not in extra_subtree:
             if x.parent.syn_type in ccg_allowed and x not in extra_subtree:
                 if not x.parent.tree_recursive(child_check):
                     if not x.parent.length_check(max_size):
@@ -122,7 +122,7 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
         if x.syn_type in ccg_allowed.keys():
             collected.append((ccg_allowed[x.syn_type], x.syn_type, x.get_sent().strip()))
         elif x in extra_subtree:
-            collected.append(("phrasal", x.syn_type, x.get_sent().strip()))
+            collected.append((extra_subtree[x], x.syn_type, x.get_sent().strip()))
 
     unique = list(set(collected))
     return unique
@@ -179,7 +179,7 @@ if __name__ == "__main__":
     assert ccgfiles
     ccgfiles.sort()
     os.makedirs(f"Results/{dataset}/all_found", exist_ok=True)
-    os.makedirs(f"Results/{dataset}/all_found_clean", exist_ok=True)
+
     for file in ccgfiles:
         if "fracas" in file:
             continue
