@@ -1,3 +1,6 @@
+#####################################
+#   TESTING FILE, many implementations not in main -> need to be properly tested
+#####################################
 from copy import deepcopy
 import re
 import ccg_parse
@@ -13,6 +16,7 @@ import os
 #  update to compatible list
 word_list = {
     r"JJ": "phrasal",
+    r"RB": "phrasal",  # filter away
 
     # 2.	NN	Noun, singular or mass
     r"NN": "NP",
@@ -41,10 +45,11 @@ word_list = {
 # acceptable parents for N's
 # TODO: allow NP, but not as LAST parent. Do double parent check if NP -> if typeraised back to N or used conj 
 np_parent_lst = [r"n", r"n/n", "n/pp", r"n\n", "n\n", "n/n"]
+vp_parent_lst = ["VB", "VBD", "VBG", "VBN", r"VBP", r"VBZ", "RP"]
 verb_reject_lst = ["is", "was", "be", "have", "been", "were", "are"]
 
 #  Subtree lists
-tree_tags = {r"IN": "phrasal"}
+tree_tags = {r"IN": "phrasal", "TO": "phrasal", "RP": "VP"}
 ccg_allowed = {r"n": "NP"}
 
 # Original snipet from country info.
@@ -60,7 +65,8 @@ def to_tree(ccg_inp: list[str]) -> dict[int, tree]:
 def type_mix(type_1: str, type_2: str, allow_mix: bool = False) -> bool:
     if allow_mix:
         # Rules for extra allowed mixes | Used for PPDB
-        combs = [("VP", "NP"), ("JJ", "NP"), ("JJ", "VP"), ("phrasal", "VP"), ("phrasal", "NP"), ("phrasal", "JJ")]
+        # combs = [("VP", "NP"), ("JJ", "NP"), ("JJ", "VP"), ("phrasal", "VP"), ("phrasal", "NP"), ("phrasal", "JJ")]
+        combs = [("phrasal", "NP")]
         return (type_1, type_2) in combs or (type_2, type_1) in combs
     return False
 
@@ -82,28 +88,43 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
     reject_extra: Callable[[leaf], bool] = lambda x_lamb: x_lamb.word in reject_lst
 
     # TODO: add countries back | add information for country synnonyms???
-    reject_per: Callable[[leaf], bool] = lambda x_lamb: x_lamb.BIO_ner == "I-PER"
-    reject_org: Callable[[leaf], bool] = lambda x_lamb: x_lamb.BIO_ner == "I-ORG"
+    # reject_per: Callable[[leaf], bool] = lambda x_lamb: x_lamb.BIO_ner == "I-PER"
+    # reject_org: Callable[[leaf], bool] = lambda x_lamb: x_lamb.BIO_ner == "I-ORG"
 
     # if ANY not in np list, but allow if CONJ
-    #  TODO: bettter CONJ check -> 
     child_check: Callable[[tree], bool] = lambda x_lamb: x_lamb.syn_type not in np_parent_lst and x_lamb.combinator != "conj"
 
     # FIXME: config file
-    max_size = 5
+    max_size = 6
 
     extra_subtree: dict[tree, str] = {}
     # ========= LEAVES =========
     for word in tree_inp.get_leaves([]):
         if word.POS in word_list.keys():
-            collected.append((word_list[word.POS], word.POS, word.word.strip()))
+            if not (word.POS == "RB" and word.word == "not"):
+                collected.append((word_list[word.POS], word.POS, word.word.strip()))
 
         # weird fix for IN parts
         if word.POS in tree_tags:
+
             parent_tree = word.parent
-            while parent_tree.parent_check() and parent_tree.parent.syn_type in np_parent_lst:
-                parent_tree = parent_tree.get_parent_tree()
-            extra_subtree[parent_tree] = tree_tags[word.POS]
+            # NP check
+            if word.POS in ["IN", "TO"]:
+                while parent_tree.parent_check():
+                    extra_subtree[parent_tree] = "phrasal"
+                    if parent_tree.parent.syn_type in np_parent_lst:
+                        break
+                    parent_tree = parent_tree.get_parent_tree()  # TODO: check if better outside while
+
+            # VP check
+            elif word.POS == "RP":
+                while parent_tree.parent_check():
+                    extra_subtree[parent_tree] = "VP"
+                    if any(i.POS not in vp_parent_lst for i in parent_tree.parent.get_leaves()):
+                        break
+
+                    parent_tree = parent_tree.get_parent_tree()  # TODO: check if better outside while
+
 
     # ========= TREES =========
     for x in tree_inp.gen_subtrees():
@@ -111,7 +132,6 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
             continue
 
         # TODO: properly implement a parent check with theory. For now keep all.
-        # TODO 2: allow ALL, but add HEAD disallow. If det found as head -> remove.
         # check if no outer
         if x.parent_check() and x not in extra_subtree:
             if x.parent.syn_type in ccg_allowed and x not in extra_subtree:
@@ -119,20 +139,8 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
                     if not x.parent.length_check(max_size):
                         continue
 
-        # NER CHECK
-        if x.leaf_recursive(reject_per):
-            continue
-
-        if x.leaf_recursive(reject_org):
-            continue
-
         if x.leaf_recursive(reject_extra):
             x.leaf_clean(reject_lst)
-
-        # children check, TODO: remove ??
-        # if x.syn_type in ccg_allowed and ccg_allowed[x.syn_type] == "NP" and x.tree_recursive(child_check) and x not in extra_subtree:
-        #     print(x.get_sent())
-        #     continue
 
         if x.syn_type in ccg_allowed.keys():
             collected.append((ccg_allowed[x.syn_type], x.syn_type, x.get_sent().strip()))
@@ -153,7 +161,7 @@ def phrase_to_combos(
 
     word_set_l: set[str] = set()
     if not (len(listleft) and len(listright)):
-        # print(num, "empty")
+        print(num, "empty")
         return []
 
     for l_word_type, l_org, l_phrase in listleft:
@@ -185,6 +193,7 @@ if __name__ == "__main__":
 
     dataset = args.dataset
     print_info = args.v
+
     if dataset == "SICK":
         ccgfiles = glob.glob(f"datasets/{dataset}/*_ccg.pl")
     else:
@@ -192,8 +201,8 @@ if __name__ == "__main__":
 
     assert ccgfiles
     ccgfiles.sort()
-    os.makedirs(f"Results/{dataset}/all_found", exist_ok=True)
-
+    # os.makedirs(f"Results/{dataset}/all_found", exist_ok=True)
+    os.makedirs(f"Results/{dataset}/all_found_SICK", exist_ok=True)
     for file in ccgfiles:
         if "fracas" in file:
             continue
@@ -244,11 +253,10 @@ if __name__ == "__main__":
                 if print_info:
                     print(f"CCG Num: {ccg_id}  not found in dict")
 
-        tsvfile = open(f"Results/{dataset}/all_found/{file_name}.tsv", "w+", newline="")
+        tsvfile = open(f"Results/{dataset}/all_found_SICK/{file_name}.tsv", "w+", newline="")
         writer = csv.writer(tsvfile, delimiter="\t", lineterminator="\n")
         writer.writerow(["SenID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2"])
 
-        comb_counter = 0
         for i in problem_tuple_dict.keys():
             try:
                 # Prem and Hypo trees
@@ -258,9 +266,14 @@ if __name__ == "__main__":
                 left_phrases = tree_to_phrase(left)
                 right_phrases = tree_to_phrase(right)
 
+
+                if i == 1190:
+                    for j in [left_phrases, right_phrases]:
+                        print("----")
+                        for i2 in j:
+                            print('\t'.join(i2))
                 # merge phrases
                 combs = phrase_to_combos(i, left_phrases, right_phrases)
-                comb_counter += len(combs)
 
             except TypeError:
                 if print_info:
@@ -270,5 +283,4 @@ if __name__ == "__main__":
             for comb_write in combs:
                 writer.writerow(comb_write)
 
-        print(f"total combinations: {comb_counter}")
         tsvfile.close()
