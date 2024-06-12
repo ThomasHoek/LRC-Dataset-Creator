@@ -1,5 +1,7 @@
 from copy import deepcopy
 import re
+
+from numpy import right_shift
 import ccg_parse
 from ccg_class import tree, leaf
 from typing import Callable
@@ -9,7 +11,7 @@ import os
 # import iso3166
 # FIXME: dont filter country NERS?
 
-
+# FIXME : lowercase check
 #  update to compatible list
 word_list = {
     r"JJ": "phrasal",
@@ -78,24 +80,27 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
     """
     global dataset
     collected: list[tuple[str, str, str]] = []  # | tuple[str, str, bool, str]] = []
-    reject_lst = [",", "'", "'", "\\'", r"'", r"\'", "’"]
-    reject_extra: Callable[[leaf], bool] = lambda x_lamb: x_lamb.word in reject_lst
+    # reject_lst = ["'", "'", "\\'", r"'", r"\'", "’"]
+    # reject_extra: Callable[[leaf], bool] = lambda x_lamb: x_lamb.word in reject_lst
 
     # TODO: add countries back | add information for country synnonyms???
     reject_per: Callable[[leaf], bool] = lambda x_lamb: x_lamb.BIO_ner == "I-PER"
     reject_org: Callable[[leaf], bool] = lambda x_lamb: x_lamb.BIO_ner == "I-ORG"
+    reject_loc: Callable[[leaf], bool] = lambda x_lamb: x_lamb.BIO_ner == "I-LOC"
+    BIO_NER_reject = ["I-PER", "I-ORG", "I-LOC"]
 
     # if ANY not in np list, but allow if CONJ
-    #  TODO: bettter CONJ check -> 
-    child_check: Callable[[tree], bool] = lambda x_lamb: x_lamb.syn_type not in np_parent_lst and x_lamb.combinator != "conj"
+    #  TODO: bettter CONJ check ->
+    # child_check: Callable[[tree], bool] = lambda x_lamb: x_lamb.syn_type not in np_parent_lst and x_lamb.combinator != "conj"
+    child_check: Callable[[tree], bool] = lambda x_lamb: x_lamb.syn_type not in np_parent_lst 
 
     # FIXME: config file
-    max_size = 5
+    max_size = 4
 
     extra_subtree: dict[tree, str] = {}
     # ========= LEAVES =========
     for word in tree_inp.get_leaves([]):
-        if word.POS in word_list.keys():
+        if word.POS in word_list.keys() and word.BIO_ner not in BIO_NER_reject:
             collected.append((word_list[word.POS], word.POS, word.word.strip()))
 
         # weird fix for IN parts
@@ -126,8 +131,12 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
         if x.leaf_recursive(reject_org):
             continue
 
-        if x.leaf_recursive(reject_extra):
-            x.leaf_clean(reject_lst)
+        if x.leaf_recursive(reject_loc):
+            continue
+
+        # if x.leaf_recursive(reject_extra):
+        #     # TODO: test if this clean is even worth it. -> results seem low quality.
+        #     x.leaf_clean(reject_lst)
 
         # children check, TODO: remove ??
         # if x.syn_type in ccg_allowed and ccg_allowed[x.syn_type] == "NP" and x.tree_recursive(child_check) and x not in extra_subtree:
@@ -139,17 +148,18 @@ def tree_to_phrase(tree_inp: tree) -> list[tuple[str, str, str]]:
         elif x in extra_subtree:
             collected.append((extra_subtree[x], x.syn_type, x.get_sent().strip()))
 
-    unique = list(set(collected))
+    unique = sorted(list(set(collected)))
     return unique
 
 
 def phrase_to_combos(
     num: int,
     listleft: list[tuple[str, str, str]],
-    listright: list[tuple[str, str, str]]
-) -> list[tuple[int, str, str, str, str, str]]:
+    listright: list[tuple[str, str, str]],
+    global_comb_counter: int
+) -> tuple[list[tuple[int, int, str, str, str, str, str]], int]:
 
-    combos: list[tuple[int, str, str, str, str, str]] = []
+    combos: list[tuple[int, int, str, str, str, str, str]] = []
 
     word_set_l: set[str] = set()
     if not (len(listleft) and len(listright)):
@@ -162,16 +172,18 @@ def phrase_to_combos(
             if l_word_type == r_word_type or type_mix(l_word_type, r_word_type):
                 if l_phrase == r_phrase:
                     continue
+                # TODO: test for bug with removal subphrases?
                 elif l_phrase in word_set_l or r_phrase in word_set_r:
                     continue
                 elif l_phrase in verb_reject_lst or r_phrase in verb_reject_lst:
                     continue
 
-                combos.append((num, r_word_type, l_org, r_org, l_phrase, r_phrase))
+                combos.append((global_comb_counter, num, r_word_type, l_org, r_org, l_phrase, r_phrase))
+                global_comb_counter += 1
         word_set_l.add(l_phrase)
         word_set_r = set()
 
-    return list(set(combos))
+    return sorted(list(set(combos))), global_comb_counter
 
 
 if __name__ == "__main__":
@@ -186,13 +198,17 @@ if __name__ == "__main__":
     dataset = args.dataset
     print_info = args.v
     if dataset == "SICK":
+        # TODO, update path
         ccgfiles = glob.glob(f"datasets/{dataset}/*_ccg.pl")
     else:
         ccgfiles = glob.glob(f"datasets/{dataset}/*_cc_ccg.pl")
 
+    print(ccgfiles)
     assert ccgfiles
     ccgfiles.sort()
-    os.makedirs(f"Results/{dataset}/all_found", exist_ok=True)
+    
+    # TODO, update path
+    os.makedirs(f"Results/{dataset}", exist_ok=True)
 
     for file in ccgfiles:
         if "fracas" in file:
@@ -244,11 +260,11 @@ if __name__ == "__main__":
                 if print_info:
                     print(f"CCG Num: {ccg_id}  not found in dict")
 
-        tsvfile = open(f"Results/{dataset}/all_found/{file_name}.tsv", "w+", newline="")
+        tsvfile = open(f"Results/{dataset}/{file_name}.tsv", "w+", newline="")
         writer = csv.writer(tsvfile, delimiter="\t", lineterminator="\n")
-        writer.writerow(["SenID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2"])
+        writer.writerow(["CombID", "SenID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2"])
 
-        comb_counter = 0
+        global_comb_counter = 1
         for i in problem_tuple_dict.keys():
             try:
                 # Prem and Hypo trees
@@ -259,8 +275,8 @@ if __name__ == "__main__":
                 right_phrases = tree_to_phrase(right)
 
                 # merge phrases
-                combs = phrase_to_combos(i, left_phrases, right_phrases)
-                comb_counter += len(combs)
+                if len(left_phrases) and len(right_phrases):  # skip if empty
+                    combs, global_comb_counter = phrase_to_combos(i, left_phrases, right_phrases, global_comb_counter)
 
             except TypeError:
                 if print_info:
@@ -270,5 +286,5 @@ if __name__ == "__main__":
             for comb_write in combs:
                 writer.writerow(comb_write)
 
-        print(f"total combinations: {comb_counter}")
+        print(f"total combinations: {global_comb_counter}")
         tsvfile.close()
