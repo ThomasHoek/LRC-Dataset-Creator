@@ -1,0 +1,104 @@
+---
+datadir: ../datasets/
+modeldir: ../models/clues/
+total_repetitions: 1
+batch_size: 32
+warm_up: 0.1
+total_epochs: 10
+overwrite: 0
+
+bless:
+    train_template: "' <W1> ' <SEP> ' <W2> '"
+    test_template: "' <W1> ' <SEP> ' <W2> '"
+    # are not used in training
+    train_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+    test_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+    dataset: merged_LRC_words
+    train_file: merged_LRC_words/train.tsv
+    test_file: merged_LRC_words/test.tsv
+    val_file: merged_LRC_words/validation.tsv
+    models:
+        - roberta:
+              path: roberta-base
+    params: None
+    dict: {}
+
+# a_bless:
+#     train_template: "' <W1> ' <SEP> ' <W2> '"
+#     test_template: "' <W1> ' <SEP> ' <W2> '"
+#     # are not used in training
+#     train_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     test_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     dataset: ABALATION
+#     train_file: ABALATION/bless/train.tsv
+#     test_file: ABALATION/bless/test.tsv
+#     val_file: ABALATION/bless/validation.tsv
+#     models:
+#         - roberta:
+#               path: roberta-base
+#     params: None
+#     dict: {}
+
+# a_cog:
+#     train_template: "' <W1> ' <SEP> ' <W2> '"
+#     test_template: "' <W1> ' <SEP> ' <W2> '"
+#     # are not used in training
+#     train_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     test_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     dataset: ABALATION
+#     train_file: ABALATION/cog/train.tsv
+#     test_file: ABALATION/cog/test.tsv
+#     val_file: ABALATION/cog/validation.tsv
+#     models:
+#         - roberta:
+#               path: roberta-base
+#     params: None
+#     dict: {}
+
+# a_eval:
+#     train_template: "' <W1> ' <SEP> ' <W2> '"
+#     test_template: "' <W1> ' <SEP> ' <W2> '"
+#     # are not used in training
+#     train_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     test_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     dataset: ABALATION
+#     train_file: ABALATION/eval/train.tsv
+#     test_file: ABALATION/eval/test.tsv
+#     val_file: ABALATION/eval/validation.tsv
+#     models:
+#         - roberta:
+#               path: roberta-base
+#     params: None
+#     dict: {}
+
+# a_root:
+#     train_template: "' <W1> ' <SEP> ' <W2> '"
+#     test_template: "' <W1> ' <SEP> ' <W2> '"
+#     # are not used in training
+#     train_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     test_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     dataset: ABALATION
+#     train_file: ABALATION/root/train.tsv
+#     test_file: ABALATION/root/test.tsv
+#     val_file: ABALATION/root/validation.tsv
+#     models:
+#         - roberta:
+#               path: roberta-base
+#     params: None
+#     dict: {}
+
+# a_khn:
+#     train_template: "' <W1> ' <SEP> ' <W2> '"
+#     test_template: "' <W1> ' <SEP> ' <W2> '"
+#     # are not used in training
+#     train_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     test_template_c: "' <W1> ' <SEP> ' <W2> ' <SEP> ' <S1> ' <SEP> ' <S2> ' <SEP> ' <W1> ' <SEP> ' <W2> '"
+#     dataset: ABALATION
+#     train_file: ABALATION/khn/train.tsv
+#     test_file: ABALATION/khn/test.tsv
+#     val_file: ABALATION/khn/validation.tsv
+#     models:
+#         - roberta:
+#               path: roberta-base
+#     params: None
+#     dict: {}

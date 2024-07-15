@@ -1,0 +1,59 @@
+alternation
+(('contradiction', 'contradiction'), 120)
+(('neutral', 'neutral'), 51)
+(('entailment', 'entailment'), 36)
+(('entailment', 'neutral'), 31)
+(('contradiction', 'neutral'), 14)
+(('neutral', 'contradiction'), 7)
+(('contradiction', 'entailment'), 7)
+(('neutral', 'entailment'), 7)
+(('entailment', 'contradiction'), 6)
+-------------------------
+reverseentailment
+(('neutral', 'entailment'), 251)
+(('entailment', 'entailment'), 106)
+(('entailment', 'neutral'), 8)
+(('neutral', 'neutral'), 8)
+(('contradiction', 'entailment'), 7)
+(('contradiction', 'contradiction'), 3)
+(('entailment', 'contradiction'), 2)
+(('contradiction', 'neutral'), 1)
+(('neutral', 'contradiction'), 1)
+-------------------------
+disjoint
+(('neutral', 'neutral'), 308)
+(('contradiction', 'contradiction'), 251)
+(('entailment', 'neutral'), 101)
+(('neutral', 'entailment'), 77)
+(('contradiction', 'neutral'), 63)
+(('neutral', 'contradiction'), 49)
+(('entailment', 'entailment'), 28)
+(('entailment', 'contradiction'), 24)
+(('contradiction', 'entailment'), 17)
+-------------------------
+synonym
+(('entailment', 'entailment'), 100)
+(('neutral', 'entailment'), 8)
+-------------------------
+forwardentailment
+(('entailment', 'neutral'), 232)
+(('entailment', 'entailment'), 62)
+(('neutral', 'neutral'), 32)
+(('contradiction', 'contradiction'), 18)
+(('entailment', 'contradiction'), 17)
+(('neutral', 'entailment'), 16)
+(('contradiction', 'entailment'), 5)
+(('contradiction', 'neutral'), 3)
+(('neutral', 'contradiction'), 2)
+-------------------------
+independent
+(('neutral', 'neutral'), 183)
+(('entailment', 'neutral'), 117)
+(('neutral', 'entailment'), 117)
+(('entailment', 'entailment'), 88)
+(('contradiction', 'contradiction'), 49)
+(('contradiction', 'neutral'), 23)
+(('neutral', 'contradiction'), 13)
+(('contradiction', 'entailment'), 12)
+(('entailment', 'contradiction'), 10)
+-------------------------

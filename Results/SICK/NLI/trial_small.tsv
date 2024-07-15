@@ -1,0 +1,1801 @@
+CombID	SenID	templatenum	prem	hyp
+1	4	0	The man is photographed with a camera	There is a boy present
+1	4	0	The boy is photographed with a camera	There is a man present
+1	4	1	The man is in the water	The boy is wet
+1	4	1	The boy is in the water	The man is wet
+1	4	2	A man is outside near a campfire at night	There is a boy outside
+1	4	2	A boy is outside near a campfire at night	There is a man outside
+1	4	3	A young woman is looking at a man with a binocular	A boy is looked at by a woman
+1	4	3	A young woman is looking at a boy with a binocular	A man is looked at by a woman
+1	4	4	Several people are moving towards the man	There is a group of people near the boy
+1	4	4	Several people are moving towards the boy	There is a group of people near the man
+1	4	5	A bald man standing to the side of a man	The man stands near a boy.
+1	4	5	A bald man standing to the side of a boy	The man stands near a man.
+1	4	6	A kid fetches a man by a tree in the yard.	a kid gets a boy
+1	4	6	A kid fetches a boy by a tree in the yard.	a kid gets a man
+1	4	7	A green frog buys a man from a stand.	There is a green frog buying a boy
+1	4	7	A green frog buys a boy from a stand.	There is a green frog buying a man
+1	4	8	A man	A boy
+1	4	8	A boy	A man
+2	4	0	The man is photographed with a camera	There is a outdoors present
+2	4	0	The outdoors is photographed with a camera	There is a man present
+2	4	1	The man is in the water	The outdoors is wet
+2	4	1	The outdoors is in the water	The man is wet
+2	4	2	A man is outside near a campfire at night	There is a outdoors outside
+2	4	2	A outdoors is outside near a campfire at night	There is a man outside
+2	4	3	A young woman is looking at a man with a binocular	A outdoors is looked at by a woman
+2	4	3	A young woman is looking at a outdoors with a binocular	A man is looked at by a woman
+2	4	4	Several people are moving towards the man	There is a group of people near the outdoors
+2	4	4	Several people are moving towards the outdoors	There is a group of people near the man
+2	4	5	A bald man standing to the side of a man	The man stands near a outdoors.
+2	4	5	A bald man standing to the side of a outdoors	The man stands near a man.
+2	4	6	A kid fetches a man by a tree in the yard.	a kid gets a outdoors
+2	4	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a man
+2	4	7	A green frog buys a man from a stand.	There is a green frog buying a outdoors
+2	4	7	A green frog buys a outdoors from a stand.	There is a green frog buying a man
+2	4	8	A man	A outdoors
+2	4	8	A outdoors	A man
+3	4	0	The man is photographed with a camera	There is a boy playing outdoors present
+3	4	0	The boy playing outdoors is photographed with a camera	There is a man present
+3	4	1	The man is in the water	The boy playing outdoors is wet
+3	4	1	The boy playing outdoors is in the water	The man is wet
+3	4	2	A man is outside near a campfire at night	There is a boy playing outdoors outside
+3	4	2	A boy playing outdoors is outside near a campfire at night	There is a man outside
+3	4	3	A young woman is looking at a man with a binocular	A boy playing outdoors is looked at by a woman
+3	4	3	A young woman is looking at a boy playing outdoors with a binocular	A man is looked at by a woman
+3	4	4	Several people are moving towards the man	There is a group of people near the boy playing outdoors
+3	4	4	Several people are moving towards the boy playing outdoors	There is a group of people near the man
+3	4	5	A bald man standing to the side of a man	The man stands near a boy playing outdoors.
+3	4	5	A bald man standing to the side of a boy playing outdoors	The man stands near a man.
+3	4	6	A kid fetches a man by a tree in the yard.	a kid gets a boy playing outdoors
+3	4	6	A kid fetches a boy playing outdoors by a tree in the yard.	a kid gets a man
+3	4	7	A green frog buys a man from a stand.	There is a green frog buying a boy playing outdoors
+3	4	7	A green frog buys a boy playing outdoors from a stand.	There is a green frog buying a man
+3	4	8	A man	A boy playing outdoors
+3	4	8	A boy playing outdoors	A man
+4	4	0	The man is photographed with a camera	There is a man smiling present
+4	4	0	The man smiling is photographed with a camera	There is a man present
+4	4	1	The man is in the water	The man smiling is wet
+4	4	1	The man smiling is in the water	The man is wet
+4	4	2	A man is outside near a campfire at night	There is a man smiling outside
+4	4	2	A man smiling is outside near a campfire at night	There is a man outside
+4	4	3	A young woman is looking at a man with a binocular	A man smiling is looked at by a woman
+4	4	3	A young woman is looking at a man smiling with a binocular	A man is looked at by a woman
+4	4	4	Several people are moving towards the man	There is a group of people near the man smiling
+4	4	4	Several people are moving towards the man smiling	There is a group of people near the man
+4	4	5	A bald man standing to the side of a man	The man stands near a man smiling.
+4	4	5	A bald man standing to the side of a man smiling	The man stands near a man.
+4	4	6	A kid fetches a man by a tree in the yard.	a kid gets a man smiling
+4	4	6	A kid fetches a man smiling by a tree in the yard.	a kid gets a man
+4	4	7	A green frog buys a man from a stand.	There is a green frog buying a man smiling
+4	4	7	A green frog buys a man smiling from a stand.	There is a green frog buying a man
+4	4	8	A man	A man smiling
+4	4	8	A man smiling	A man
+5	4	0	The boys is photographed with a camera	There is a boy present
+5	4	0	The boy is photographed with a camera	There is a boys present
+5	4	1	The boys is in the water	The boy is wet
+5	4	1	The boy is in the water	The boys is wet
+5	4	2	A boys is outside near a campfire at night	There is a boy outside
+5	4	2	A boy is outside near a campfire at night	There is a boys outside
+5	4	3	A young woman is looking at a boys with a binocular	A boy is looked at by a woman
+5	4	3	A young woman is looking at a boy with a binocular	A boys is looked at by a woman
+5	4	4	Several people are moving towards the boys	There is a group of people near the boy
+5	4	4	Several people are moving towards the boy	There is a group of people near the boys
+5	4	5	A bald man standing to the side of a boys	The man stands near a boy.
+5	4	5	A bald man standing to the side of a boy	The man stands near a boys.
+5	4	6	A kid fetches a boys by a tree in the yard.	a kid gets a boy
+5	4	6	A kid fetches a boy by a tree in the yard.	a kid gets a boys
+5	4	7	A green frog buys a boys from a stand.	There is a green frog buying a boy
+5	4	7	A green frog buys a boy from a stand.	There is a green frog buying a boys
+5	4	8	A boys	A boy
+5	4	8	A boy	A boys
+6	4	0	The boys is photographed with a camera	There is a man present
+6	4	0	The man is photographed with a camera	There is a boys present
+6	4	1	The boys is in the water	The man is wet
+6	4	1	The man is in the water	The boys is wet
+6	4	2	A boys is outside near a campfire at night	There is a man outside
+6	4	2	A man is outside near a campfire at night	There is a boys outside
+6	4	3	A young woman is looking at a boys with a binocular	A man is looked at by a woman
+6	4	3	A young woman is looking at a man with a binocular	A boys is looked at by a woman
+6	4	4	Several people are moving towards the boys	There is a group of people near the man
+6	4	4	Several people are moving towards the man	There is a group of people near the boys
+6	4	5	A bald man standing to the side of a boys	The man stands near a man.
+6	4	5	A bald man standing to the side of a man	The man stands near a boys.
+6	4	6	A kid fetches a boys by a tree in the yard.	a kid gets a man
+6	4	6	A kid fetches a man by a tree in the yard.	a kid gets a boys
+6	4	7	A green frog buys a boys from a stand.	There is a green frog buying a man
+6	4	7	A green frog buys a man from a stand.	There is a green frog buying a boys
+6	4	8	A boys	A man
+6	4	8	A man	A boys
+7	4	0	The boys is photographed with a camera	There is a outdoors present
+7	4	0	The outdoors is photographed with a camera	There is a boys present
+7	4	1	The boys is in the water	The outdoors is wet
+7	4	1	The outdoors is in the water	The boys is wet
+7	4	2	A boys is outside near a campfire at night	There is a outdoors outside
+7	4	2	A outdoors is outside near a campfire at night	There is a boys outside
+7	4	3	A young woman is looking at a boys with a binocular	A outdoors is looked at by a woman
+7	4	3	A young woman is looking at a outdoors with a binocular	A boys is looked at by a woman
+7	4	4	Several people are moving towards the boys	There is a group of people near the outdoors
+7	4	4	Several people are moving towards the outdoors	There is a group of people near the boys
+7	4	5	A bald man standing to the side of a boys	The man stands near a outdoors.
+7	4	5	A bald man standing to the side of a outdoors	The man stands near a boys.
+7	4	6	A kid fetches a boys by a tree in the yard.	a kid gets a outdoors
+7	4	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a boys
+7	4	7	A green frog buys a boys from a stand.	There is a green frog buying a outdoors
+7	4	7	A green frog buys a outdoors from a stand.	There is a green frog buying a boys
+7	4	8	A boys	A outdoors
+7	4	8	A outdoors	A boys
+8	4	0	The boys is photographed with a camera	There is a boy playing outdoors present
+8	4	0	The boy playing outdoors is photographed with a camera	There is a boys present
+8	4	1	The boys is in the water	The boy playing outdoors is wet
+8	4	1	The boy playing outdoors is in the water	The boys is wet
+8	4	2	A boys is outside near a campfire at night	There is a boy playing outdoors outside
+8	4	2	A boy playing outdoors is outside near a campfire at night	There is a boys outside
+8	4	3	A young woman is looking at a boys with a binocular	A boy playing outdoors is looked at by a woman
+8	4	3	A young woman is looking at a boy playing outdoors with a binocular	A boys is looked at by a woman
+8	4	4	Several people are moving towards the boys	There is a group of people near the boy playing outdoors
+8	4	4	Several people are moving towards the boy playing outdoors	There is a group of people near the boys
+8	4	5	A bald man standing to the side of a boys	The man stands near a boy playing outdoors.
+8	4	5	A bald man standing to the side of a boy playing outdoors	The man stands near a boys.
+8	4	6	A kid fetches a boys by a tree in the yard.	a kid gets a boy playing outdoors
+8	4	6	A kid fetches a boy playing outdoors by a tree in the yard.	a kid gets a boys
+8	4	7	A green frog buys a boys from a stand.	There is a green frog buying a boy playing outdoors
+8	4	7	A green frog buys a boy playing outdoors from a stand.	There is a green frog buying a boys
+8	4	8	A boys	A boy playing outdoors
+8	4	8	A boy playing outdoors	A boys
+9	4	0	The boys is photographed with a camera	There is a man smiling present
+9	4	0	The man smiling is photographed with a camera	There is a boys present
+9	4	1	The boys is in the water	The man smiling is wet
+9	4	1	The man smiling is in the water	The boys is wet
+9	4	2	A boys is outside near a campfire at night	There is a man smiling outside
+9	4	2	A man smiling is outside near a campfire at night	There is a boys outside
+9	4	3	A young woman is looking at a boys with a binocular	A man smiling is looked at by a woman
+9	4	3	A young woman is looking at a man smiling with a binocular	A boys is looked at by a woman
+9	4	4	Several people are moving towards the boys	There is a group of people near the man smiling
+9	4	4	Several people are moving towards the man smiling	There is a group of people near the boys
+9	4	5	A bald man standing to the side of a boys	The man stands near a man smiling.
+9	4	5	A bald man standing to the side of a man smiling	The man stands near a boys.
+9	4	6	A kid fetches a boys by a tree in the yard.	a kid gets a man smiling
+9	4	6	A kid fetches a man smiling by a tree in the yard.	a kid gets a boys
+9	4	7	A green frog buys a boys from a stand.	There is a green frog buying a man smiling
+9	4	7	A green frog buys a man smiling from a stand.	There is a green frog buying a boys
+9	4	8	A boys	A man smiling
+9	4	8	A man smiling	A boys
+10	4	0	The outdoors is photographed with a camera	There is a boy present
+10	4	0	The boy is photographed with a camera	There is a outdoors present
+10	4	1	The outdoors is in the water	The boy is wet
+10	4	1	The boy is in the water	The outdoors is wet
+10	4	2	A outdoors is outside near a campfire at night	There is a boy outside
+10	4	2	A boy is outside near a campfire at night	There is a outdoors outside
+10	4	3	A young woman is looking at a outdoors with a binocular	A boy is looked at by a woman
+10	4	3	A young woman is looking at a boy with a binocular	A outdoors is looked at by a woman
+10	4	4	Several people are moving towards the outdoors	There is a group of people near the boy
+10	4	4	Several people are moving towards the boy	There is a group of people near the outdoors
+10	4	5	A bald man standing to the side of a outdoors	The man stands near a boy.
+10	4	5	A bald man standing to the side of a boy	The man stands near a outdoors.
+10	4	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a boy
+10	4	6	A kid fetches a boy by a tree in the yard.	a kid gets a outdoors
+10	4	7	A green frog buys a outdoors from a stand.	There is a green frog buying a boy
+10	4	7	A green frog buys a boy from a stand.	There is a green frog buying a outdoors
+10	4	8	A outdoors	A boy
+10	4	8	A boy	A outdoors
+11	4	0	The outdoors is photographed with a camera	There is a man present
+11	4	0	The man is photographed with a camera	There is a outdoors present
+11	4	1	The outdoors is in the water	The man is wet
+11	4	1	The man is in the water	The outdoors is wet
+11	4	2	A outdoors is outside near a campfire at night	There is a man outside
+11	4	2	A man is outside near a campfire at night	There is a outdoors outside
+11	4	3	A young woman is looking at a outdoors with a binocular	A man is looked at by a woman
+11	4	3	A young woman is looking at a man with a binocular	A outdoors is looked at by a woman
+11	4	4	Several people are moving towards the outdoors	There is a group of people near the man
+11	4	4	Several people are moving towards the man	There is a group of people near the outdoors
+11	4	5	A bald man standing to the side of a outdoors	The man stands near a man.
+11	4	5	A bald man standing to the side of a man	The man stands near a outdoors.
+11	4	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a man
+11	4	6	A kid fetches a man by a tree in the yard.	a kid gets a outdoors
+11	4	7	A green frog buys a outdoors from a stand.	There is a green frog buying a man
+11	4	7	A green frog buys a man from a stand.	There is a green frog buying a outdoors
+11	4	8	A outdoors	A man
+11	4	8	A man	A outdoors
+12	4	0	The outdoors is photographed with a camera	There is a boy playing outdoors present
+12	4	0	The boy playing outdoors is photographed with a camera	There is a outdoors present
+12	4	1	The outdoors is in the water	The boy playing outdoors is wet
+12	4	1	The boy playing outdoors is in the water	The outdoors is wet
+12	4	2	A outdoors is outside near a campfire at night	There is a boy playing outdoors outside
+12	4	2	A boy playing outdoors is outside near a campfire at night	There is a outdoors outside
+12	4	3	A young woman is looking at a outdoors with a binocular	A boy playing outdoors is looked at by a woman
+12	4	3	A young woman is looking at a boy playing outdoors with a binocular	A outdoors is looked at by a woman
+12	4	4	Several people are moving towards the outdoors	There is a group of people near the boy playing outdoors
+12	4	4	Several people are moving towards the boy playing outdoors	There is a group of people near the outdoors
+12	4	5	A bald man standing to the side of a outdoors	The man stands near a boy playing outdoors.
+12	4	5	A bald man standing to the side of a boy playing outdoors	The man stands near a outdoors.
+12	4	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a boy playing outdoors
+12	4	6	A kid fetches a boy playing outdoors by a tree in the yard.	a kid gets a outdoors
+12	4	7	A green frog buys a outdoors from a stand.	There is a green frog buying a boy playing outdoors
+12	4	7	A green frog buys a boy playing outdoors from a stand.	There is a green frog buying a outdoors
+12	4	8	A outdoors	A boy playing outdoors
+12	4	8	A boy playing outdoors	A outdoors
+13	4	0	The outdoors is photographed with a camera	There is a man smiling present
+13	4	0	The man smiling is photographed with a camera	There is a outdoors present
+13	4	1	The outdoors is in the water	The man smiling is wet
+13	4	1	The man smiling is in the water	The outdoors is wet
+13	4	2	A outdoors is outside near a campfire at night	There is a man smiling outside
+13	4	2	A man smiling is outside near a campfire at night	There is a outdoors outside
+13	4	3	A young woman is looking at a outdoors with a binocular	A man smiling is looked at by a woman
+13	4	3	A young woman is looking at a man smiling with a binocular	A outdoors is looked at by a woman
+13	4	4	Several people are moving towards the outdoors	There is a group of people near the man smiling
+13	4	4	Several people are moving towards the man smiling	There is a group of people near the outdoors
+13	4	5	A bald man standing to the side of a outdoors	The man stands near a man smiling.
+13	4	5	A bald man standing to the side of a man smiling	The man stands near a outdoors.
+13	4	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a man smiling
+13	4	6	A kid fetches a man smiling by a tree in the yard.	a kid gets a outdoors
+13	4	7	A green frog buys a outdoors from a stand.	There is a green frog buying a man smiling
+13	4	7	A green frog buys a man smiling from a stand.	There is a green frog buying a outdoors
+13	4	8	A outdoors	A man smiling
+13	4	8	A man smiling	A outdoors
+14	4	0	The young boys is photographed with a camera	There is a boy present
+14	4	0	The boy is photographed with a camera	There is a young boys present
+14	4	1	The young boys is in the water	The boy is wet
+14	4	1	The boy is in the water	The young boys is wet
+14	4	2	A young boys is outside near a campfire at night	There is a boy outside
+14	4	2	A boy is outside near a campfire at night	There is a young boys outside
+14	4	3	A young woman is looking at a young boys with a binocular	A boy is looked at by a woman
+14	4	3	A young woman is looking at a boy with a binocular	A young boys is looked at by a woman
+14	4	4	Several people are moving towards the young boys	There is a group of people near the boy
+14	4	4	Several people are moving towards the boy	There is a group of people near the young boys
+14	4	5	A bald man standing to the side of a young boys	The man stands near a boy.
+14	4	5	A bald man standing to the side of a boy	The man stands near a young boys.
+14	4	6	A kid fetches a young boys by a tree in the yard.	a kid gets a boy
+14	4	6	A kid fetches a boy by a tree in the yard.	a kid gets a young boys
+14	4	7	A green frog buys a young boys from a stand.	There is a green frog buying a boy
+14	4	7	A green frog buys a boy from a stand.	There is a green frog buying a young boys
+14	4	8	A young boys	A boy
+14	4	8	A boy	A young boys
+15	4	0	The young boys is photographed with a camera	There is a man present
+15	4	0	The man is photographed with a camera	There is a young boys present
+15	4	1	The young boys is in the water	The man is wet
+15	4	1	The man is in the water	The young boys is wet
+15	4	2	A young boys is outside near a campfire at night	There is a man outside
+15	4	2	A man is outside near a campfire at night	There is a young boys outside
+15	4	3	A young woman is looking at a young boys with a binocular	A man is looked at by a woman
+15	4	3	A young woman is looking at a man with a binocular	A young boys is looked at by a woman
+15	4	4	Several people are moving towards the young boys	There is a group of people near the man
+15	4	4	Several people are moving towards the man	There is a group of people near the young boys
+15	4	5	A bald man standing to the side of a young boys	The man stands near a man.
+15	4	5	A bald man standing to the side of a man	The man stands near a young boys.
+15	4	6	A kid fetches a young boys by a tree in the yard.	a kid gets a man
+15	4	6	A kid fetches a man by a tree in the yard.	a kid gets a young boys
+15	4	7	A green frog buys a young boys from a stand.	There is a green frog buying a man
+15	4	7	A green frog buys a man from a stand.	There is a green frog buying a young boys
+15	4	8	A young boys	A man
+15	4	8	A man	A young boys
+16	4	0	The young boys is photographed with a camera	There is a outdoors present
+16	4	0	The outdoors is photographed with a camera	There is a young boys present
+16	4	1	The young boys is in the water	The outdoors is wet
+16	4	1	The outdoors is in the water	The young boys is wet
+16	4	2	A young boys is outside near a campfire at night	There is a outdoors outside
+16	4	2	A outdoors is outside near a campfire at night	There is a young boys outside
+16	4	3	A young woman is looking at a young boys with a binocular	A outdoors is looked at by a woman
+16	4	3	A young woman is looking at a outdoors with a binocular	A young boys is looked at by a woman
+16	4	4	Several people are moving towards the young boys	There is a group of people near the outdoors
+16	4	4	Several people are moving towards the outdoors	There is a group of people near the young boys
+16	4	5	A bald man standing to the side of a young boys	The man stands near a outdoors.
+16	4	5	A bald man standing to the side of a outdoors	The man stands near a young boys.
+16	4	6	A kid fetches a young boys by a tree in the yard.	a kid gets a outdoors
+16	4	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a young boys
+16	4	7	A green frog buys a young boys from a stand.	There is a green frog buying a outdoors
+16	4	7	A green frog buys a outdoors from a stand.	There is a green frog buying a young boys
+16	4	8	A young boys	A outdoors
+16	4	8	A outdoors	A young boys
+17	4	0	The young boys is photographed with a camera	There is a boy playing outdoors present
+17	4	0	The boy playing outdoors is photographed with a camera	There is a young boys present
+17	4	1	The young boys is in the water	The boy playing outdoors is wet
+17	4	1	The boy playing outdoors is in the water	The young boys is wet
+17	4	2	A young boys is outside near a campfire at night	There is a boy playing outdoors outside
+17	4	2	A boy playing outdoors is outside near a campfire at night	There is a young boys outside
+17	4	3	A young woman is looking at a young boys with a binocular	A boy playing outdoors is looked at by a woman
+17	4	3	A young woman is looking at a boy playing outdoors with a binocular	A young boys is looked at by a woman
+17	4	4	Several people are moving towards the young boys	There is a group of people near the boy playing outdoors
+17	4	4	Several people are moving towards the boy playing outdoors	There is a group of people near the young boys
+17	4	5	A bald man standing to the side of a young boys	The man stands near a boy playing outdoors.
+17	4	5	A bald man standing to the side of a boy playing outdoors	The man stands near a young boys.
+17	4	6	A kid fetches a young boys by a tree in the yard.	a kid gets a boy playing outdoors
+17	4	6	A kid fetches a boy playing outdoors by a tree in the yard.	a kid gets a young boys
+17	4	7	A green frog buys a young boys from a stand.	There is a green frog buying a boy playing outdoors
+17	4	7	A green frog buys a boy playing outdoors from a stand.	There is a green frog buying a young boys
+17	4	8	A young boys	A boy playing outdoors
+17	4	8	A boy playing outdoors	A young boys
+18	4	0	The young boys is photographed with a camera	There is a man smiling present
+18	4	0	The man smiling is photographed with a camera	There is a young boys present
+18	4	1	The young boys is in the water	The man smiling is wet
+18	4	1	The man smiling is in the water	The young boys is wet
+18	4	2	A young boys is outside near a campfire at night	There is a man smiling outside
+18	4	2	A man smiling is outside near a campfire at night	There is a young boys outside
+18	4	3	A young woman is looking at a young boys with a binocular	A man smiling is looked at by a woman
+18	4	3	A young woman is looking at a man smiling with a binocular	A young boys is looked at by a woman
+18	4	4	Several people are moving towards the young boys	There is a group of people near the man smiling
+18	4	4	Several people are moving towards the man smiling	There is a group of people near the young boys
+18	4	5	A bald man standing to the side of a young boys	The man stands near a man smiling.
+18	4	5	A bald man standing to the side of a man smiling	The man stands near a young boys.
+18	4	6	A kid fetches a young boys by a tree in the yard.	a kid gets a man smiling
+18	4	6	A kid fetches a man smiling by a tree in the yard.	a kid gets a young boys
+18	4	7	A green frog buys a young boys from a stand.	There is a green frog buying a man smiling
+18	4	7	A green frog buys a man smiling from a stand.	There is a green frog buying a young boys
+18	4	8	A young boys	A man smiling
+18	4	8	A man smiling	A young boys
+19	4	0	The playing is photographed with a camera	There is a smiling present
+19	4	0	The smiling is photographed with a camera	There is a playing present
+19	4	1	The playing is in the water	The smiling is wet
+19	4	1	The smiling is in the water	The playing is wet
+19	4	2	A playing is outside near a campfire at night	There is a smiling outside
+19	4	2	A smiling is outside near a campfire at night	There is a playing outside
+19	4	3	A young woman is looking at a playing with a binocular	A smiling is looked at by a woman
+19	4	3	A young woman is looking at a smiling with a binocular	A playing is looked at by a woman
+19	4	4	Several people are moving towards the playing	There is a group of people near the smiling
+19	4	4	Several people are moving towards the smiling	There is a group of people near the playing
+19	4	5	A bald man standing to the side of a playing	The man stands near a smiling.
+19	4	5	A bald man standing to the side of a smiling	The man stands near a playing.
+19	4	6	A kid fetches a playing by a tree in the yard.	a kid gets a smiling
+19	4	6	A kid fetches a smiling by a tree in the yard.	a kid gets a playing
+19	4	7	A green frog buys a playing from a stand.	There is a green frog buying a smiling
+19	4	7	A green frog buys a smiling from a stand.	There is a green frog buying a playing
+19	4	8	A playing	A smiling
+19	4	8	A smiling	A playing
+20	4	0	The smiling is photographed with a camera	There is a playing present
+20	4	0	The playing is photographed with a camera	There is a smiling present
+20	4	1	The smiling is in the water	The playing is wet
+20	4	1	The playing is in the water	The smiling is wet
+20	4	2	A smiling is outside near a campfire at night	There is a playing outside
+20	4	2	A playing is outside near a campfire at night	There is a smiling outside
+20	4	3	A young woman is looking at a smiling with a binocular	A playing is looked at by a woman
+20	4	3	A young woman is looking at a playing with a binocular	A smiling is looked at by a woman
+20	4	4	Several people are moving towards the smiling	There is a group of people near the playing
+20	4	4	Several people are moving towards the playing	There is a group of people near the smiling
+20	4	5	A bald man standing to the side of a smiling	The man stands near a playing.
+20	4	5	A bald man standing to the side of a playing	The man stands near a smiling.
+20	4	6	A kid fetches a smiling by a tree in the yard.	a kid gets a playing
+20	4	6	A kid fetches a playing by a tree in the yard.	a kid gets a smiling
+20	4	7	A green frog buys a smiling from a stand.	There is a green frog buying a playing
+20	4	7	A green frog buys a playing from a stand.	There is a green frog buying a smiling
+20	4	8	A smiling	A playing
+20	4	8	A playing	A smiling
+21	24	0	The jacket is photographed with a camera	There is a bicycle present
+21	24	0	The bicycle is photographed with a camera	There is a jacket present
+21	24	1	The jacket is in the water	The bicycle is wet
+21	24	1	The bicycle is in the water	The jacket is wet
+21	24	2	A jacket is outside near a campfire at night	There is a bicycle outside
+21	24	2	A bicycle is outside near a campfire at night	There is a jacket outside
+21	24	3	A young woman is looking at a jacket with a binocular	A bicycle is looked at by a woman
+21	24	3	A young woman is looking at a bicycle with a binocular	A jacket is looked at by a woman
+21	24	4	Several people are moving towards the jacket	There is a group of people near the bicycle
+21	24	4	Several people are moving towards the bicycle	There is a group of people near the jacket
+21	24	5	A bald man standing to the side of a jacket	The man stands near a bicycle.
+21	24	5	A bald man standing to the side of a bicycle	The man stands near a jacket.
+21	24	6	A kid fetches a jacket by a tree in the yard.	a kid gets a bicycle
+21	24	6	A kid fetches a bicycle by a tree in the yard.	a kid gets a jacket
+21	24	7	A green frog buys a jacket from a stand.	There is a green frog buying a bicycle
+21	24	7	A green frog buys a bicycle from a stand.	There is a green frog buying a jacket
+21	24	8	A jacket	A bicycle
+21	24	8	A bicycle	A jacket
+22	24	0	The jacket is photographed with a camera	There is a person present
+22	24	0	The person is photographed with a camera	There is a jacket present
+22	24	1	The jacket is in the water	The person is wet
+22	24	1	The person is in the water	The jacket is wet
+22	24	2	A jacket is outside near a campfire at night	There is a person outside
+22	24	2	A person is outside near a campfire at night	There is a jacket outside
+22	24	3	A young woman is looking at a jacket with a binocular	A person is looked at by a woman
+22	24	3	A young woman is looking at a person with a binocular	A jacket is looked at by a woman
+22	24	4	Several people are moving towards the jacket	There is a group of people near the person
+22	24	4	Several people are moving towards the person	There is a group of people near the jacket
+22	24	5	A bald man standing to the side of a jacket	The man stands near a person.
+22	24	5	A bald man standing to the side of a person	The man stands near a jacket.
+22	24	6	A kid fetches a jacket by a tree in the yard.	a kid gets a person
+22	24	6	A kid fetches a person by a tree in the yard.	a kid gets a jacket
+22	24	7	A green frog buys a jacket from a stand.	There is a green frog buying a person
+22	24	7	A green frog buys a person from a stand.	There is a green frog buying a jacket
+22	24	8	A jacket	A person
+22	24	8	A person	A jacket
+23	24	0	The jacket is photographed with a camera	There is a wheel present
+23	24	0	The wheel is photographed with a camera	There is a jacket present
+23	24	1	The jacket is in the water	The wheel is wet
+23	24	1	The wheel is in the water	The jacket is wet
+23	24	2	A jacket is outside near a campfire at night	There is a wheel outside
+23	24	2	A wheel is outside near a campfire at night	There is a jacket outside
+23	24	3	A young woman is looking at a jacket with a binocular	A wheel is looked at by a woman
+23	24	3	A young woman is looking at a wheel with a binocular	A jacket is looked at by a woman
+23	24	4	Several people are moving towards the jacket	There is a group of people near the wheel
+23	24	4	Several people are moving towards the wheel	There is a group of people near the jacket
+23	24	5	A bald man standing to the side of a jacket	The man stands near a wheel.
+23	24	5	A bald man standing to the side of a wheel	The man stands near a jacket.
+23	24	6	A kid fetches a jacket by a tree in the yard.	a kid gets a wheel
+23	24	6	A kid fetches a wheel by a tree in the yard.	a kid gets a jacket
+23	24	7	A green frog buys a jacket from a stand.	There is a green frog buying a wheel
+23	24	7	A green frog buys a wheel from a stand.	There is a green frog buying a jacket
+23	24	8	A jacket	A wheel
+23	24	8	A wheel	A jacket
+24	24	0	The jacket is photographed with a camera	There is a one wheel present
+24	24	0	The one wheel is photographed with a camera	There is a jacket present
+24	24	1	The jacket is in the water	The one wheel is wet
+24	24	1	The one wheel is in the water	The jacket is wet
+24	24	2	A jacket is outside near a campfire at night	There is a one wheel outside
+24	24	2	A one wheel is outside near a campfire at night	There is a jacket outside
+24	24	3	A young woman is looking at a jacket with a binocular	A one wheel is looked at by a woman
+24	24	3	A young woman is looking at a one wheel with a binocular	A jacket is looked at by a woman
+24	24	4	Several people are moving towards the jacket	There is a group of people near the one wheel
+24	24	4	Several people are moving towards the one wheel	There is a group of people near the jacket
+24	24	5	A bald man standing to the side of a jacket	The man stands near a one wheel.
+24	24	5	A bald man standing to the side of a one wheel	The man stands near a jacket.
+24	24	6	A kid fetches a jacket by a tree in the yard.	a kid gets a one wheel
+24	24	6	A kid fetches a one wheel by a tree in the yard.	a kid gets a jacket
+24	24	7	A green frog buys a jacket from a stand.	There is a green frog buying a one wheel
+24	24	7	A green frog buys a one wheel from a stand.	There is a green frog buying a jacket
+24	24	8	A jacket	A one wheel
+24	24	8	A one wheel	A jacket
+25	24	0	The jacket is photographed with a camera	There is a skilled person present
+25	24	0	The skilled person is photographed with a camera	There is a jacket present
+25	24	1	The jacket is in the water	The skilled person is wet
+25	24	1	The skilled person is in the water	The jacket is wet
+25	24	2	A jacket is outside near a campfire at night	There is a skilled person outside
+25	24	2	A skilled person is outside near a campfire at night	There is a jacket outside
+25	24	3	A young woman is looking at a jacket with a binocular	A skilled person is looked at by a woman
+25	24	3	A young woman is looking at a skilled person with a binocular	A jacket is looked at by a woman
+25	24	4	Several people are moving towards the jacket	There is a group of people near the skilled person
+25	24	4	Several people are moving towards the skilled person	There is a group of people near the jacket
+25	24	5	A bald man standing to the side of a jacket	The man stands near a skilled person.
+25	24	5	A bald man standing to the side of a skilled person	The man stands near a jacket.
+25	24	6	A kid fetches a jacket by a tree in the yard.	a kid gets a skilled person
+25	24	6	A kid fetches a skilled person by a tree in the yard.	a kid gets a jacket
+25	24	7	A green frog buys a jacket from a stand.	There is a green frog buying a skilled person
+25	24	7	A green frog buys a skilled person from a stand.	There is a green frog buying a jacket
+25	24	8	A jacket	A skilled person
+25	24	8	A skilled person	A jacket
+26	24	0	The motorbike is photographed with a camera	There is a bicycle present
+26	24	0	The bicycle is photographed with a camera	There is a motorbike present
+26	24	1	The motorbike is in the water	The bicycle is wet
+26	24	1	The bicycle is in the water	The motorbike is wet
+26	24	2	A motorbike is outside near a campfire at night	There is a bicycle outside
+26	24	2	A bicycle is outside near a campfire at night	There is a motorbike outside
+26	24	3	A young woman is looking at a motorbike with a binocular	A bicycle is looked at by a woman
+26	24	3	A young woman is looking at a bicycle with a binocular	A motorbike is looked at by a woman
+26	24	4	Several people are moving towards the motorbike	There is a group of people near the bicycle
+26	24	4	Several people are moving towards the bicycle	There is a group of people near the motorbike
+26	24	5	A bald man standing to the side of a motorbike	The man stands near a bicycle.
+26	24	5	A bald man standing to the side of a bicycle	The man stands near a motorbike.
+26	24	6	A kid fetches a motorbike by a tree in the yard.	a kid gets a bicycle
+26	24	6	A kid fetches a bicycle by a tree in the yard.	a kid gets a motorbike
+26	24	7	A green frog buys a motorbike from a stand.	There is a green frog buying a bicycle
+26	24	7	A green frog buys a bicycle from a stand.	There is a green frog buying a motorbike
+26	24	8	A motorbike	A bicycle
+26	24	8	A bicycle	A motorbike
+27	24	0	The motorbike is photographed with a camera	There is a person present
+27	24	0	The person is photographed with a camera	There is a motorbike present
+27	24	1	The motorbike is in the water	The person is wet
+27	24	1	The person is in the water	The motorbike is wet
+27	24	2	A motorbike is outside near a campfire at night	There is a person outside
+27	24	2	A person is outside near a campfire at night	There is a motorbike outside
+27	24	3	A young woman is looking at a motorbike with a binocular	A person is looked at by a woman
+27	24	3	A young woman is looking at a person with a binocular	A motorbike is looked at by a woman
+27	24	4	Several people are moving towards the motorbike	There is a group of people near the person
+27	24	4	Several people are moving towards the person	There is a group of people near the motorbike
+27	24	5	A bald man standing to the side of a motorbike	The man stands near a person.
+27	24	5	A bald man standing to the side of a person	The man stands near a motorbike.
+27	24	6	A kid fetches a motorbike by a tree in the yard.	a kid gets a person
+27	24	6	A kid fetches a person by a tree in the yard.	a kid gets a motorbike
+27	24	7	A green frog buys a motorbike from a stand.	There is a green frog buying a person
+27	24	7	A green frog buys a person from a stand.	There is a green frog buying a motorbike
+27	24	8	A motorbike	A person
+27	24	8	A person	A motorbike
+28	24	0	The motorbike is photographed with a camera	There is a wheel present
+28	24	0	The wheel is photographed with a camera	There is a motorbike present
+28	24	1	The motorbike is in the water	The wheel is wet
+28	24	1	The wheel is in the water	The motorbike is wet
+28	24	2	A motorbike is outside near a campfire at night	There is a wheel outside
+28	24	2	A wheel is outside near a campfire at night	There is a motorbike outside
+28	24	3	A young woman is looking at a motorbike with a binocular	A wheel is looked at by a woman
+28	24	3	A young woman is looking at a wheel with a binocular	A motorbike is looked at by a woman
+28	24	4	Several people are moving towards the motorbike	There is a group of people near the wheel
+28	24	4	Several people are moving towards the wheel	There is a group of people near the motorbike
+28	24	5	A bald man standing to the side of a motorbike	The man stands near a wheel.
+28	24	5	A bald man standing to the side of a wheel	The man stands near a motorbike.
+28	24	6	A kid fetches a motorbike by a tree in the yard.	a kid gets a wheel
+28	24	6	A kid fetches a wheel by a tree in the yard.	a kid gets a motorbike
+28	24	7	A green frog buys a motorbike from a stand.	There is a green frog buying a wheel
+28	24	7	A green frog buys a wheel from a stand.	There is a green frog buying a motorbike
+28	24	8	A motorbike	A wheel
+28	24	8	A wheel	A motorbike
+29	24	0	The motorbike is photographed with a camera	There is a one wheel present
+29	24	0	The one wheel is photographed with a camera	There is a motorbike present
+29	24	1	The motorbike is in the water	The one wheel is wet
+29	24	1	The one wheel is in the water	The motorbike is wet
+29	24	2	A motorbike is outside near a campfire at night	There is a one wheel outside
+29	24	2	A one wheel is outside near a campfire at night	There is a motorbike outside
+29	24	3	A young woman is looking at a motorbike with a binocular	A one wheel is looked at by a woman
+29	24	3	A young woman is looking at a one wheel with a binocular	A motorbike is looked at by a woman
+29	24	4	Several people are moving towards the motorbike	There is a group of people near the one wheel
+29	24	4	Several people are moving towards the one wheel	There is a group of people near the motorbike
+29	24	5	A bald man standing to the side of a motorbike	The man stands near a one wheel.
+29	24	5	A bald man standing to the side of a one wheel	The man stands near a motorbike.
+29	24	6	A kid fetches a motorbike by a tree in the yard.	a kid gets a one wheel
+29	24	6	A kid fetches a one wheel by a tree in the yard.	a kid gets a motorbike
+29	24	7	A green frog buys a motorbike from a stand.	There is a green frog buying a one wheel
+29	24	7	A green frog buys a one wheel from a stand.	There is a green frog buying a motorbike
+29	24	8	A motorbike	A one wheel
+29	24	8	A one wheel	A motorbike
+30	24	0	The motorbike is photographed with a camera	There is a skilled person present
+30	24	0	The skilled person is photographed with a camera	There is a motorbike present
+30	24	1	The motorbike is in the water	The skilled person is wet
+30	24	1	The skilled person is in the water	The motorbike is wet
+30	24	2	A motorbike is outside near a campfire at night	There is a skilled person outside
+30	24	2	A skilled person is outside near a campfire at night	There is a motorbike outside
+30	24	3	A young woman is looking at a motorbike with a binocular	A skilled person is looked at by a woman
+30	24	3	A young woman is looking at a skilled person with a binocular	A motorbike is looked at by a woman
+30	24	4	Several people are moving towards the motorbike	There is a group of people near the skilled person
+30	24	4	Several people are moving towards the skilled person	There is a group of people near the motorbike
+30	24	5	A bald man standing to the side of a motorbike	The man stands near a skilled person.
+30	24	5	A bald man standing to the side of a skilled person	The man stands near a motorbike.
+30	24	6	A kid fetches a motorbike by a tree in the yard.	a kid gets a skilled person
+30	24	6	A kid fetches a skilled person by a tree in the yard.	a kid gets a motorbike
+30	24	7	A green frog buys a motorbike from a stand.	There is a green frog buying a skilled person
+30	24	7	A green frog buys a skilled person from a stand.	There is a green frog buying a motorbike
+30	24	8	A motorbike	A skilled person
+30	24	8	A skilled person	A motorbike
+31	24	0	The person is photographed with a camera	There is a bicycle present
+31	24	0	The bicycle is photographed with a camera	There is a person present
+31	24	1	The person is in the water	The bicycle is wet
+31	24	1	The bicycle is in the water	The person is wet
+31	24	2	A person is outside near a campfire at night	There is a bicycle outside
+31	24	2	A bicycle is outside near a campfire at night	There is a person outside
+31	24	3	A young woman is looking at a person with a binocular	A bicycle is looked at by a woman
+31	24	3	A young woman is looking at a bicycle with a binocular	A person is looked at by a woman
+31	24	4	Several people are moving towards the person	There is a group of people near the bicycle
+31	24	4	Several people are moving towards the bicycle	There is a group of people near the person
+31	24	5	A bald man standing to the side of a person	The man stands near a bicycle.
+31	24	5	A bald man standing to the side of a bicycle	The man stands near a person.
+31	24	6	A kid fetches a person by a tree in the yard.	a kid gets a bicycle
+31	24	6	A kid fetches a bicycle by a tree in the yard.	a kid gets a person
+31	24	7	A green frog buys a person from a stand.	There is a green frog buying a bicycle
+31	24	7	A green frog buys a bicycle from a stand.	There is a green frog buying a person
+31	24	8	A person	A bicycle
+31	24	8	A bicycle	A person
+32	24	0	The person is photographed with a camera	There is a wheel present
+32	24	0	The wheel is photographed with a camera	There is a person present
+32	24	1	The person is in the water	The wheel is wet
+32	24	1	The wheel is in the water	The person is wet
+32	24	2	A person is outside near a campfire at night	There is a wheel outside
+32	24	2	A wheel is outside near a campfire at night	There is a person outside
+32	24	3	A young woman is looking at a person with a binocular	A wheel is looked at by a woman
+32	24	3	A young woman is looking at a wheel with a binocular	A person is looked at by a woman
+32	24	4	Several people are moving towards the person	There is a group of people near the wheel
+32	24	4	Several people are moving towards the wheel	There is a group of people near the person
+32	24	5	A bald man standing to the side of a person	The man stands near a wheel.
+32	24	5	A bald man standing to the side of a wheel	The man stands near a person.
+32	24	6	A kid fetches a person by a tree in the yard.	a kid gets a wheel
+32	24	6	A kid fetches a wheel by a tree in the yard.	a kid gets a person
+32	24	7	A green frog buys a person from a stand.	There is a green frog buying a wheel
+32	24	7	A green frog buys a wheel from a stand.	There is a green frog buying a person
+32	24	8	A person	A wheel
+32	24	8	A wheel	A person
+33	24	0	The person is photographed with a camera	There is a one wheel present
+33	24	0	The one wheel is photographed with a camera	There is a person present
+33	24	1	The person is in the water	The one wheel is wet
+33	24	1	The one wheel is in the water	The person is wet
+33	24	2	A person is outside near a campfire at night	There is a one wheel outside
+33	24	2	A one wheel is outside near a campfire at night	There is a person outside
+33	24	3	A young woman is looking at a person with a binocular	A one wheel is looked at by a woman
+33	24	3	A young woman is looking at a one wheel with a binocular	A person is looked at by a woman
+33	24	4	Several people are moving towards the person	There is a group of people near the one wheel
+33	24	4	Several people are moving towards the one wheel	There is a group of people near the person
+33	24	5	A bald man standing to the side of a person	The man stands near a one wheel.
+33	24	5	A bald man standing to the side of a one wheel	The man stands near a person.
+33	24	6	A kid fetches a person by a tree in the yard.	a kid gets a one wheel
+33	24	6	A kid fetches a one wheel by a tree in the yard.	a kid gets a person
+33	24	7	A green frog buys a person from a stand.	There is a green frog buying a one wheel
+33	24	7	A green frog buys a one wheel from a stand.	There is a green frog buying a person
+33	24	8	A person	A one wheel
+33	24	8	A one wheel	A person
+34	24	0	The person is photographed with a camera	There is a skilled person present
+34	24	0	The skilled person is photographed with a camera	There is a person present
+34	24	1	The person is in the water	The skilled person is wet
+34	24	1	The skilled person is in the water	The person is wet
+34	24	2	A person is outside near a campfire at night	There is a skilled person outside
+34	24	2	A skilled person is outside near a campfire at night	There is a person outside
+34	24	3	A young woman is looking at a person with a binocular	A skilled person is looked at by a woman
+34	24	3	A young woman is looking at a skilled person with a binocular	A person is looked at by a woman
+34	24	4	Several people are moving towards the person	There is a group of people near the skilled person
+34	24	4	Several people are moving towards the skilled person	There is a group of people near the person
+34	24	5	A bald man standing to the side of a person	The man stands near a skilled person.
+34	24	5	A bald man standing to the side of a skilled person	The man stands near a person.
+34	24	6	A kid fetches a person by a tree in the yard.	a kid gets a skilled person
+34	24	6	A kid fetches a skilled person by a tree in the yard.	a kid gets a person
+34	24	7	A green frog buys a person from a stand.	There is a green frog buying a skilled person
+34	24	7	A green frog buys a skilled person from a stand.	There is a green frog buying a person
+34	24	8	A person	A skilled person
+34	24	8	A skilled person	A person
+35	24	0	The tricks is photographed with a camera	There is a bicycle present
+35	24	0	The bicycle is photographed with a camera	There is a tricks present
+35	24	1	The tricks is in the water	The bicycle is wet
+35	24	1	The bicycle is in the water	The tricks is wet
+35	24	2	A tricks is outside near a campfire at night	There is a bicycle outside
+35	24	2	A bicycle is outside near a campfire at night	There is a tricks outside
+35	24	3	A young woman is looking at a tricks with a binocular	A bicycle is looked at by a woman
+35	24	3	A young woman is looking at a bicycle with a binocular	A tricks is looked at by a woman
+35	24	4	Several people are moving towards the tricks	There is a group of people near the bicycle
+35	24	4	Several people are moving towards the bicycle	There is a group of people near the tricks
+35	24	5	A bald man standing to the side of a tricks	The man stands near a bicycle.
+35	24	5	A bald man standing to the side of a bicycle	The man stands near a tricks.
+35	24	6	A kid fetches a tricks by a tree in the yard.	a kid gets a bicycle
+35	24	6	A kid fetches a bicycle by a tree in the yard.	a kid gets a tricks
+35	24	7	A green frog buys a tricks from a stand.	There is a green frog buying a bicycle
+35	24	7	A green frog buys a bicycle from a stand.	There is a green frog buying a tricks
+35	24	8	A tricks	A bicycle
+35	24	8	A bicycle	A tricks
+36	24	0	The tricks is photographed with a camera	There is a person present
+36	24	0	The person is photographed with a camera	There is a tricks present
+36	24	1	The tricks is in the water	The person is wet
+36	24	1	The person is in the water	The tricks is wet
+36	24	2	A tricks is outside near a campfire at night	There is a person outside
+36	24	2	A person is outside near a campfire at night	There is a tricks outside
+36	24	3	A young woman is looking at a tricks with a binocular	A person is looked at by a woman
+36	24	3	A young woman is looking at a person with a binocular	A tricks is looked at by a woman
+36	24	4	Several people are moving towards the tricks	There is a group of people near the person
+36	24	4	Several people are moving towards the person	There is a group of people near the tricks
+36	24	5	A bald man standing to the side of a tricks	The man stands near a person.
+36	24	5	A bald man standing to the side of a person	The man stands near a tricks.
+36	24	6	A kid fetches a tricks by a tree in the yard.	a kid gets a person
+36	24	6	A kid fetches a person by a tree in the yard.	a kid gets a tricks
+36	24	7	A green frog buys a tricks from a stand.	There is a green frog buying a person
+36	24	7	A green frog buys a person from a stand.	There is a green frog buying a tricks
+36	24	8	A tricks	A person
+36	24	8	A person	A tricks
+37	24	0	The tricks is photographed with a camera	There is a wheel present
+37	24	0	The wheel is photographed with a camera	There is a tricks present
+37	24	1	The tricks is in the water	The wheel is wet
+37	24	1	The wheel is in the water	The tricks is wet
+37	24	2	A tricks is outside near a campfire at night	There is a wheel outside
+37	24	2	A wheel is outside near a campfire at night	There is a tricks outside
+37	24	3	A young woman is looking at a tricks with a binocular	A wheel is looked at by a woman
+37	24	3	A young woman is looking at a wheel with a binocular	A tricks is looked at by a woman
+37	24	4	Several people are moving towards the tricks	There is a group of people near the wheel
+37	24	4	Several people are moving towards the wheel	There is a group of people near the tricks
+37	24	5	A bald man standing to the side of a tricks	The man stands near a wheel.
+37	24	5	A bald man standing to the side of a wheel	The man stands near a tricks.
+37	24	6	A kid fetches a tricks by a tree in the yard.	a kid gets a wheel
+37	24	6	A kid fetches a wheel by a tree in the yard.	a kid gets a tricks
+37	24	7	A green frog buys a tricks from a stand.	There is a green frog buying a wheel
+37	24	7	A green frog buys a wheel from a stand.	There is a green frog buying a tricks
+37	24	8	A tricks	A wheel
+37	24	8	A wheel	A tricks
+38	24	0	The tricks is photographed with a camera	There is a one wheel present
+38	24	0	The one wheel is photographed with a camera	There is a tricks present
+38	24	1	The tricks is in the water	The one wheel is wet
+38	24	1	The one wheel is in the water	The tricks is wet
+38	24	2	A tricks is outside near a campfire at night	There is a one wheel outside
+38	24	2	A one wheel is outside near a campfire at night	There is a tricks outside
+38	24	3	A young woman is looking at a tricks with a binocular	A one wheel is looked at by a woman
+38	24	3	A young woman is looking at a one wheel with a binocular	A tricks is looked at by a woman
+38	24	4	Several people are moving towards the tricks	There is a group of people near the one wheel
+38	24	4	Several people are moving towards the one wheel	There is a group of people near the tricks
+38	24	5	A bald man standing to the side of a tricks	The man stands near a one wheel.
+38	24	5	A bald man standing to the side of a one wheel	The man stands near a tricks.
+38	24	6	A kid fetches a tricks by a tree in the yard.	a kid gets a one wheel
+38	24	6	A kid fetches a one wheel by a tree in the yard.	a kid gets a tricks
+38	24	7	A green frog buys a tricks from a stand.	There is a green frog buying a one wheel
+38	24	7	A green frog buys a one wheel from a stand.	There is a green frog buying a tricks
+38	24	8	A tricks	A one wheel
+38	24	8	A one wheel	A tricks
+39	24	0	The tricks is photographed with a camera	There is a skilled person present
+39	24	0	The skilled person is photographed with a camera	There is a tricks present
+39	24	1	The tricks is in the water	The skilled person is wet
+39	24	1	The skilled person is in the water	The tricks is wet
+39	24	2	A tricks is outside near a campfire at night	There is a skilled person outside
+39	24	2	A skilled person is outside near a campfire at night	There is a tricks outside
+39	24	3	A young woman is looking at a tricks with a binocular	A skilled person is looked at by a woman
+39	24	3	A young woman is looking at a skilled person with a binocular	A tricks is looked at by a woman
+39	24	4	Several people are moving towards the tricks	There is a group of people near the skilled person
+39	24	4	Several people are moving towards the skilled person	There is a group of people near the tricks
+39	24	5	A bald man standing to the side of a tricks	The man stands near a skilled person.
+39	24	5	A bald man standing to the side of a skilled person	The man stands near a tricks.
+39	24	6	A kid fetches a tricks by a tree in the yard.	a kid gets a skilled person
+39	24	6	A kid fetches a skilled person by a tree in the yard.	a kid gets a tricks
+39	24	7	A green frog buys a tricks from a stand.	There is a green frog buying a skilled person
+39	24	7	A green frog buys a skilled person from a stand.	There is a green frog buying a tricks
+39	24	8	A tricks	A skilled person
+39	24	8	A skilled person	A tricks
+40	24	0	The black jacket is photographed with a camera	There is a bicycle present
+40	24	0	The bicycle is photographed with a camera	There is a black jacket present
+40	24	1	The black jacket is in the water	The bicycle is wet
+40	24	1	The bicycle is in the water	The black jacket is wet
+40	24	2	A black jacket is outside near a campfire at night	There is a bicycle outside
+40	24	2	A bicycle is outside near a campfire at night	There is a black jacket outside
+40	24	3	A young woman is looking at a black jacket with a binocular	A bicycle is looked at by a woman
+40	24	3	A young woman is looking at a bicycle with a binocular	A black jacket is looked at by a woman
+40	24	4	Several people are moving towards the black jacket	There is a group of people near the bicycle
+40	24	4	Several people are moving towards the bicycle	There is a group of people near the black jacket
+40	24	5	A bald man standing to the side of a black jacket	The man stands near a bicycle.
+40	24	5	A bald man standing to the side of a bicycle	The man stands near a black jacket.
+40	24	6	A kid fetches a black jacket by a tree in the yard.	a kid gets a bicycle
+40	24	6	A kid fetches a bicycle by a tree in the yard.	a kid gets a black jacket
+40	24	7	A green frog buys a black jacket from a stand.	There is a green frog buying a bicycle
+40	24	7	A green frog buys a bicycle from a stand.	There is a green frog buying a black jacket
+40	24	8	A black jacket	A bicycle
+40	24	8	A bicycle	A black jacket
+41	24	0	The black jacket is photographed with a camera	There is a person present
+41	24	0	The person is photographed with a camera	There is a black jacket present
+41	24	1	The black jacket is in the water	The person is wet
+41	24	1	The person is in the water	The black jacket is wet
+41	24	2	A black jacket is outside near a campfire at night	There is a person outside
+41	24	2	A person is outside near a campfire at night	There is a black jacket outside
+41	24	3	A young woman is looking at a black jacket with a binocular	A person is looked at by a woman
+41	24	3	A young woman is looking at a person with a binocular	A black jacket is looked at by a woman
+41	24	4	Several people are moving towards the black jacket	There is a group of people near the person
+41	24	4	Several people are moving towards the person	There is a group of people near the black jacket
+41	24	5	A bald man standing to the side of a black jacket	The man stands near a person.
+41	24	5	A bald man standing to the side of a person	The man stands near a black jacket.
+41	24	6	A kid fetches a black jacket by a tree in the yard.	a kid gets a person
+41	24	6	A kid fetches a person by a tree in the yard.	a kid gets a black jacket
+41	24	7	A green frog buys a black jacket from a stand.	There is a green frog buying a person
+41	24	7	A green frog buys a person from a stand.	There is a green frog buying a black jacket
+41	24	8	A black jacket	A person
+41	24	8	A person	A black jacket
+42	24	0	The black jacket is photographed with a camera	There is a wheel present
+42	24	0	The wheel is photographed with a camera	There is a black jacket present
+42	24	1	The black jacket is in the water	The wheel is wet
+42	24	1	The wheel is in the water	The black jacket is wet
+42	24	2	A black jacket is outside near a campfire at night	There is a wheel outside
+42	24	2	A wheel is outside near a campfire at night	There is a black jacket outside
+42	24	3	A young woman is looking at a black jacket with a binocular	A wheel is looked at by a woman
+42	24	3	A young woman is looking at a wheel with a binocular	A black jacket is looked at by a woman
+42	24	4	Several people are moving towards the black jacket	There is a group of people near the wheel
+42	24	4	Several people are moving towards the wheel	There is a group of people near the black jacket
+42	24	5	A bald man standing to the side of a black jacket	The man stands near a wheel.
+42	24	5	A bald man standing to the side of a wheel	The man stands near a black jacket.
+42	24	6	A kid fetches a black jacket by a tree in the yard.	a kid gets a wheel
+42	24	6	A kid fetches a wheel by a tree in the yard.	a kid gets a black jacket
+42	24	7	A green frog buys a black jacket from a stand.	There is a green frog buying a wheel
+42	24	7	A green frog buys a wheel from a stand.	There is a green frog buying a black jacket
+42	24	8	A black jacket	A wheel
+42	24	8	A wheel	A black jacket
+43	24	0	The black jacket is photographed with a camera	There is a one wheel present
+43	24	0	The one wheel is photographed with a camera	There is a black jacket present
+43	24	1	The black jacket is in the water	The one wheel is wet
+43	24	1	The one wheel is in the water	The black jacket is wet
+43	24	2	A black jacket is outside near a campfire at night	There is a one wheel outside
+43	24	2	A one wheel is outside near a campfire at night	There is a black jacket outside
+43	24	3	A young woman is looking at a black jacket with a binocular	A one wheel is looked at by a woman
+43	24	3	A young woman is looking at a one wheel with a binocular	A black jacket is looked at by a woman
+43	24	4	Several people are moving towards the black jacket	There is a group of people near the one wheel
+43	24	4	Several people are moving towards the one wheel	There is a group of people near the black jacket
+43	24	5	A bald man standing to the side of a black jacket	The man stands near a one wheel.
+43	24	5	A bald man standing to the side of a one wheel	The man stands near a black jacket.
+43	24	6	A kid fetches a black jacket by a tree in the yard.	a kid gets a one wheel
+43	24	6	A kid fetches a one wheel by a tree in the yard.	a kid gets a black jacket
+43	24	7	A green frog buys a black jacket from a stand.	There is a green frog buying a one wheel
+43	24	7	A green frog buys a one wheel from a stand.	There is a green frog buying a black jacket
+43	24	8	A black jacket	A one wheel
+43	24	8	A one wheel	A black jacket
+44	24	0	The black jacket is photographed with a camera	There is a skilled person present
+44	24	0	The skilled person is photographed with a camera	There is a black jacket present
+44	24	1	The black jacket is in the water	The skilled person is wet
+44	24	1	The skilled person is in the water	The black jacket is wet
+44	24	2	A black jacket is outside near a campfire at night	There is a skilled person outside
+44	24	2	A skilled person is outside near a campfire at night	There is a black jacket outside
+44	24	3	A young woman is looking at a black jacket with a binocular	A skilled person is looked at by a woman
+44	24	3	A young woman is looking at a skilled person with a binocular	A black jacket is looked at by a woman
+44	24	4	Several people are moving towards the black jacket	There is a group of people near the skilled person
+44	24	4	Several people are moving towards the skilled person	There is a group of people near the black jacket
+44	24	5	A bald man standing to the side of a black jacket	The man stands near a skilled person.
+44	24	5	A bald man standing to the side of a skilled person	The man stands near a black jacket.
+44	24	6	A kid fetches a black jacket by a tree in the yard.	a kid gets a skilled person
+44	24	6	A kid fetches a skilled person by a tree in the yard.	a kid gets a black jacket
+44	24	7	A green frog buys a black jacket from a stand.	There is a green frog buying a skilled person
+44	24	7	A green frog buys a skilled person from a stand.	There is a green frog buying a black jacket
+44	24	8	A black jacket	A skilled person
+44	24	8	A skilled person	A black jacket
+45	24	0	The doing is photographed with a camera	There is a riding present
+45	24	0	The riding is photographed with a camera	There is a doing present
+45	24	1	The doing is in the water	The riding is wet
+45	24	1	The riding is in the water	The doing is wet
+45	24	2	A doing is outside near a campfire at night	There is a riding outside
+45	24	2	A riding is outside near a campfire at night	There is a doing outside
+45	24	3	A young woman is looking at a doing with a binocular	A riding is looked at by a woman
+45	24	3	A young woman is looking at a riding with a binocular	A doing is looked at by a woman
+45	24	4	Several people are moving towards the doing	There is a group of people near the riding
+45	24	4	Several people are moving towards the riding	There is a group of people near the doing
+45	24	5	A bald man standing to the side of a doing	The man stands near a riding.
+45	24	5	A bald man standing to the side of a riding	The man stands near a doing.
+45	24	6	A kid fetches a doing by a tree in the yard.	a kid gets a riding
+45	24	6	A kid fetches a riding by a tree in the yard.	a kid gets a doing
+45	24	7	A green frog buys a doing from a stand.	There is a green frog buying a riding
+45	24	7	A green frog buys a riding from a stand.	There is a green frog buying a doing
+45	24	8	A doing	A riding
+45	24	8	A riding	A doing
+46	24	0	The black is photographed with a camera	There is a on one wheel present
+46	24	0	The on one wheel is photographed with a camera	There is a black present
+46	24	1	The black is in the water	The on one wheel is wet
+46	24	1	The on one wheel is in the water	The black is wet
+46	24	2	A black is outside near a campfire at night	There is a on one wheel outside
+46	24	2	A on one wheel is outside near a campfire at night	There is a black outside
+46	24	3	A young woman is looking at a black with a binocular	A on one wheel is looked at by a woman
+46	24	3	A young woman is looking at a on one wheel with a binocular	A black is looked at by a woman
+46	24	4	Several people are moving towards the black	There is a group of people near the on one wheel
+46	24	4	Several people are moving towards the on one wheel	There is a group of people near the black
+46	24	5	A bald man standing to the side of a black	The man stands near a on one wheel.
+46	24	5	A bald man standing to the side of a on one wheel	The man stands near a black.
+46	24	6	A kid fetches a black by a tree in the yard.	a kid gets a on one wheel
+46	24	6	A kid fetches a on one wheel by a tree in the yard.	a kid gets a black
+46	24	7	A green frog buys a black from a stand.	There is a green frog buying a on one wheel
+46	24	7	A green frog buys a on one wheel from a stand.	There is a green frog buying a black
+46	24	8	A black	A on one wheel
+46	24	8	A on one wheel	A black
+47	24	0	The black is photographed with a camera	There is a skilled present
+47	24	0	The skilled is photographed with a camera	There is a black present
+47	24	1	The black is in the water	The skilled is wet
+47	24	1	The skilled is in the water	The black is wet
+47	24	2	A black is outside near a campfire at night	There is a skilled outside
+47	24	2	A skilled is outside near a campfire at night	There is a black outside
+47	24	3	A young woman is looking at a black with a binocular	A skilled is looked at by a woman
+47	24	3	A young woman is looking at a skilled with a binocular	A black is looked at by a woman
+47	24	4	Several people are moving towards the black	There is a group of people near the skilled
+47	24	4	Several people are moving towards the skilled	There is a group of people near the black
+47	24	5	A bald man standing to the side of a black	The man stands near a skilled.
+47	24	5	A bald man standing to the side of a skilled	The man stands near a black.
+47	24	6	A kid fetches a black by a tree in the yard.	a kid gets a skilled
+47	24	6	A kid fetches a skilled by a tree in the yard.	a kid gets a black
+47	24	7	A green frog buys a black from a stand.	There is a green frog buying a skilled
+47	24	7	A green frog buys a skilled from a stand.	There is a green frog buying a black
+47	24	8	A black	A skilled
+47	24	8	A skilled	A black
+48	24	0	The on a motorbike is photographed with a camera	There is a on one wheel present
+48	24	0	The on one wheel is photographed with a camera	There is a on a motorbike present
+48	24	1	The on a motorbike is in the water	The on one wheel is wet
+48	24	1	The on one wheel is in the water	The on a motorbike is wet
+48	24	2	A on a motorbike is outside near a campfire at night	There is a on one wheel outside
+48	24	2	A on one wheel is outside near a campfire at night	There is a on a motorbike outside
+48	24	3	A young woman is looking at a on a motorbike with a binocular	A on one wheel is looked at by a woman
+48	24	3	A young woman is looking at a on one wheel with a binocular	A on a motorbike is looked at by a woman
+48	24	4	Several people are moving towards the on a motorbike	There is a group of people near the on one wheel
+48	24	4	Several people are moving towards the on one wheel	There is a group of people near the on a motorbike
+48	24	5	A bald man standing to the side of a on a motorbike	The man stands near a on one wheel.
+48	24	5	A bald man standing to the side of a on one wheel	The man stands near a on a motorbike.
+48	24	6	A kid fetches a on a motorbike by a tree in the yard.	a kid gets a on one wheel
+48	24	6	A kid fetches a on one wheel by a tree in the yard.	a kid gets a on a motorbike
+48	24	7	A green frog buys a on a motorbike from a stand.	There is a green frog buying a on one wheel
+48	24	7	A green frog buys a on one wheel from a stand.	There is a green frog buying a on a motorbike
+48	24	8	A on a motorbike	A on one wheel
+48	24	8	A on one wheel	A on a motorbike
+49	24	0	The on a motorbike is photographed with a camera	There is a skilled present
+49	24	0	The skilled is photographed with a camera	There is a on a motorbike present
+49	24	1	The on a motorbike is in the water	The skilled is wet
+49	24	1	The skilled is in the water	The on a motorbike is wet
+49	24	2	A on a motorbike is outside near a campfire at night	There is a skilled outside
+49	24	2	A skilled is outside near a campfire at night	There is a on a motorbike outside
+49	24	3	A young woman is looking at a on a motorbike with a binocular	A skilled is looked at by a woman
+49	24	3	A young woman is looking at a skilled with a binocular	A on a motorbike is looked at by a woman
+49	24	4	Several people are moving towards the on a motorbike	There is a group of people near the skilled
+49	24	4	Several people are moving towards the skilled	There is a group of people near the on a motorbike
+49	24	5	A bald man standing to the side of a on a motorbike	The man stands near a skilled.
+49	24	5	A bald man standing to the side of a skilled	The man stands near a on a motorbike.
+49	24	6	A kid fetches a on a motorbike by a tree in the yard.	a kid gets a skilled
+49	24	6	A kid fetches a skilled by a tree in the yard.	a kid gets a on a motorbike
+49	24	7	A green frog buys a on a motorbike from a stand.	There is a green frog buying a skilled
+49	24	7	A green frog buys a skilled from a stand.	There is a green frog buying a on a motorbike
+49	24	8	A on a motorbike	A skilled
+49	24	8	A skilled	A on a motorbike
+50	105	0	The gym is photographed with a camera	There is a backbends present
+50	105	0	The backbends is photographed with a camera	There is a gym present
+50	105	1	The gym is in the water	The backbends is wet
+50	105	1	The backbends is in the water	The gym is wet
+50	105	2	A gym is outside near a campfire at night	There is a backbends outside
+50	105	2	A backbends is outside near a campfire at night	There is a gym outside
+50	105	3	A young woman is looking at a gym with a binocular	A backbends is looked at by a woman
+50	105	3	A young woman is looking at a backbends with a binocular	A gym is looked at by a woman
+50	105	4	Several people are moving towards the gym	There is a group of people near the backbends
+50	105	4	Several people are moving towards the backbends	There is a group of people near the gym
+50	105	5	A bald man standing to the side of a gym	The man stands near a backbends.
+50	105	5	A bald man standing to the side of a backbends	The man stands near a gym.
+50	105	6	A kid fetches a gym by a tree in the yard.	a kid gets a backbends
+50	105	6	A kid fetches a backbends by a tree in the yard.	a kid gets a gym
+50	105	7	A green frog buys a gym from a stand.	There is a green frog buying a backbends
+50	105	7	A green frog buys a backbends from a stand.	There is a green frog buying a gym
+50	105	8	A gym	A backbends
+50	105	8	A backbends	A gym
+51	105	0	The gym is photographed with a camera	There is a girls present
+51	105	0	The girls is photographed with a camera	There is a gym present
+51	105	1	The gym is in the water	The girls is wet
+51	105	1	The girls is in the water	The gym is wet
+51	105	2	A gym is outside near a campfire at night	There is a girls outside
+51	105	2	A girls is outside near a campfire at night	There is a gym outside
+51	105	3	A young woman is looking at a gym with a binocular	A girls is looked at by a woman
+51	105	3	A young woman is looking at a girls with a binocular	A gym is looked at by a woman
+51	105	4	Several people are moving towards the gym	There is a group of people near the girls
+51	105	4	Several people are moving towards the girls	There is a group of people near the gym
+51	105	5	A bald man standing to the side of a gym	The man stands near a girls.
+51	105	5	A bald man standing to the side of a girls	The man stands near a gym.
+51	105	6	A kid fetches a gym by a tree in the yard.	a kid gets a girls
+51	105	6	A kid fetches a girls by a tree in the yard.	a kid gets a gym
+51	105	7	A green frog buys a gym from a stand.	There is a green frog buying a girls
+51	105	7	A green frog buys a girls from a stand.	There is a green frog buying a gym
+51	105	8	A gym	A girls
+51	105	8	A girls	A gym
+52	105	0	The gym is photographed with a camera	There is a outdoors present
+52	105	0	The outdoors is photographed with a camera	There is a gym present
+52	105	1	The gym is in the water	The outdoors is wet
+52	105	1	The outdoors is in the water	The gym is wet
+52	105	2	A gym is outside near a campfire at night	There is a outdoors outside
+52	105	2	A outdoors is outside near a campfire at night	There is a gym outside
+52	105	3	A young woman is looking at a gym with a binocular	A outdoors is looked at by a woman
+52	105	3	A young woman is looking at a outdoors with a binocular	A gym is looked at by a woman
+52	105	4	Several people are moving towards the gym	There is a group of people near the outdoors
+52	105	4	Several people are moving towards the outdoors	There is a group of people near the gym
+52	105	5	A bald man standing to the side of a gym	The man stands near a outdoors.
+52	105	5	A bald man standing to the side of a outdoors	The man stands near a gym.
+52	105	6	A kid fetches a gym by a tree in the yard.	a kid gets a outdoors
+52	105	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a gym
+52	105	7	A green frog buys a gym from a stand.	There is a green frog buying a outdoors
+52	105	7	A green frog buys a outdoors from a stand.	There is a green frog buying a gym
+52	105	8	A gym	A outdoors
+52	105	8	A outdoors	A gym
+53	105	0	The gym is photographed with a camera	There is a Four girls present
+53	105	0	The Four girls is photographed with a camera	There is a gym present
+53	105	1	The gym is in the water	The Four girls is wet
+53	105	1	The Four girls is in the water	The gym is wet
+53	105	2	A gym is outside near a campfire at night	There is a Four girls outside
+53	105	2	A Four girls is outside near a campfire at night	There is a gym outside
+53	105	3	A young woman is looking at a gym with a binocular	A Four girls is looked at by a woman
+53	105	3	A young woman is looking at a Four girls with a binocular	A gym is looked at by a woman
+53	105	4	Several people are moving towards the gym	There is a group of people near the Four girls
+53	105	4	Several people are moving towards the Four girls	There is a group of people near the gym
+53	105	5	A bald man standing to the side of a gym	The man stands near a Four girls.
+53	105	5	A bald man standing to the side of a Four girls	The man stands near a gym.
+53	105	6	A kid fetches a gym by a tree in the yard.	a kid gets a Four girls
+53	105	6	A kid fetches a Four girls by a tree in the yard.	a kid gets a gym
+53	105	7	A green frog buys a gym from a stand.	There is a green frog buying a Four girls
+53	105	7	A green frog buys a Four girls from a stand.	There is a green frog buying a gym
+53	105	8	A gym	A Four girls
+53	105	8	A Four girls	A gym
+54	105	0	The backbends is photographed with a camera	There is a girls present
+54	105	0	The girls is photographed with a camera	There is a backbends present
+54	105	1	The backbends is in the water	The girls is wet
+54	105	1	The girls is in the water	The backbends is wet
+54	105	2	A backbends is outside near a campfire at night	There is a girls outside
+54	105	2	A girls is outside near a campfire at night	There is a backbends outside
+54	105	3	A young woman is looking at a backbends with a binocular	A girls is looked at by a woman
+54	105	3	A young woman is looking at a girls with a binocular	A backbends is looked at by a woman
+54	105	4	Several people are moving towards the backbends	There is a group of people near the girls
+54	105	4	Several people are moving towards the girls	There is a group of people near the backbends
+54	105	5	A bald man standing to the side of a backbends	The man stands near a girls.
+54	105	5	A bald man standing to the side of a girls	The man stands near a backbends.
+54	105	6	A kid fetches a backbends by a tree in the yard.	a kid gets a girls
+54	105	6	A kid fetches a girls by a tree in the yard.	a kid gets a backbends
+54	105	7	A green frog buys a backbends from a stand.	There is a green frog buying a girls
+54	105	7	A green frog buys a girls from a stand.	There is a green frog buying a backbends
+54	105	8	A backbends	A girls
+54	105	8	A girls	A backbends
+55	105	0	The backbends is photographed with a camera	There is a outdoors present
+55	105	0	The outdoors is photographed with a camera	There is a backbends present
+55	105	1	The backbends is in the water	The outdoors is wet
+55	105	1	The outdoors is in the water	The backbends is wet
+55	105	2	A backbends is outside near a campfire at night	There is a outdoors outside
+55	105	2	A outdoors is outside near a campfire at night	There is a backbends outside
+55	105	3	A young woman is looking at a backbends with a binocular	A outdoors is looked at by a woman
+55	105	3	A young woman is looking at a outdoors with a binocular	A backbends is looked at by a woman
+55	105	4	Several people are moving towards the backbends	There is a group of people near the outdoors
+55	105	4	Several people are moving towards the outdoors	There is a group of people near the backbends
+55	105	5	A bald man standing to the side of a backbends	The man stands near a outdoors.
+55	105	5	A bald man standing to the side of a outdoors	The man stands near a backbends.
+55	105	6	A kid fetches a backbends by a tree in the yard.	a kid gets a outdoors
+55	105	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a backbends
+55	105	7	A green frog buys a backbends from a stand.	There is a green frog buying a outdoors
+55	105	7	A green frog buys a outdoors from a stand.	There is a green frog buying a backbends
+55	105	8	A backbends	A outdoors
+55	105	8	A outdoors	A backbends
+56	105	0	The backbends is photographed with a camera	There is a Four girls present
+56	105	0	The Four girls is photographed with a camera	There is a backbends present
+56	105	1	The backbends is in the water	The Four girls is wet
+56	105	1	The Four girls is in the water	The backbends is wet
+56	105	2	A backbends is outside near a campfire at night	There is a Four girls outside
+56	105	2	A Four girls is outside near a campfire at night	There is a backbends outside
+56	105	3	A young woman is looking at a backbends with a binocular	A Four girls is looked at by a woman
+56	105	3	A young woman is looking at a Four girls with a binocular	A backbends is looked at by a woman
+56	105	4	Several people are moving towards the backbends	There is a group of people near the Four girls
+56	105	4	Several people are moving towards the Four girls	There is a group of people near the backbends
+56	105	5	A bald man standing to the side of a backbends	The man stands near a Four girls.
+56	105	5	A bald man standing to the side of a Four girls	The man stands near a backbends.
+56	105	6	A kid fetches a backbends by a tree in the yard.	a kid gets a Four girls
+56	105	6	A kid fetches a Four girls by a tree in the yard.	a kid gets a backbends
+56	105	7	A green frog buys a backbends from a stand.	There is a green frog buying a Four girls
+56	105	7	A green frog buys a Four girls from a stand.	There is a green frog buying a backbends
+56	105	8	A backbends	A Four girls
+56	105	8	A Four girls	A backbends
+57	105	0	The children is photographed with a camera	There is a backbends present
+57	105	0	The backbends is photographed with a camera	There is a children present
+57	105	1	The children is in the water	The backbends is wet
+57	105	1	The backbends is in the water	The children is wet
+57	105	2	A children is outside near a campfire at night	There is a backbends outside
+57	105	2	A backbends is outside near a campfire at night	There is a children outside
+57	105	3	A young woman is looking at a children with a binocular	A backbends is looked at by a woman
+57	105	3	A young woman is looking at a backbends with a binocular	A children is looked at by a woman
+57	105	4	Several people are moving towards the children	There is a group of people near the backbends
+57	105	4	Several people are moving towards the backbends	There is a group of people near the children
+57	105	5	A bald man standing to the side of a children	The man stands near a backbends.
+57	105	5	A bald man standing to the side of a backbends	The man stands near a children.
+57	105	6	A kid fetches a children by a tree in the yard.	a kid gets a backbends
+57	105	6	A kid fetches a backbends by a tree in the yard.	a kid gets a children
+57	105	7	A green frog buys a children from a stand.	There is a green frog buying a backbends
+57	105	7	A green frog buys a backbends from a stand.	There is a green frog buying a children
+57	105	8	A children	A backbends
+57	105	8	A backbends	A children
+58	105	0	The children is photographed with a camera	There is a girls present
+58	105	0	The girls is photographed with a camera	There is a children present
+58	105	1	The children is in the water	The girls is wet
+58	105	1	The girls is in the water	The children is wet
+58	105	2	A children is outside near a campfire at night	There is a girls outside
+58	105	2	A girls is outside near a campfire at night	There is a children outside
+58	105	3	A young woman is looking at a children with a binocular	A girls is looked at by a woman
+58	105	3	A young woman is looking at a girls with a binocular	A children is looked at by a woman
+58	105	4	Several people are moving towards the children	There is a group of people near the girls
+58	105	4	Several people are moving towards the girls	There is a group of people near the children
+58	105	5	A bald man standing to the side of a children	The man stands near a girls.
+58	105	5	A bald man standing to the side of a girls	The man stands near a children.
+58	105	6	A kid fetches a children by a tree in the yard.	a kid gets a girls
+58	105	6	A kid fetches a girls by a tree in the yard.	a kid gets a children
+58	105	7	A green frog buys a children from a stand.	There is a green frog buying a girls
+58	105	7	A green frog buys a girls from a stand.	There is a green frog buying a children
+58	105	8	A children	A girls
+58	105	8	A girls	A children
+59	105	0	The children is photographed with a camera	There is a outdoors present
+59	105	0	The outdoors is photographed with a camera	There is a children present
+59	105	1	The children is in the water	The outdoors is wet
+59	105	1	The outdoors is in the water	The children is wet
+59	105	2	A children is outside near a campfire at night	There is a outdoors outside
+59	105	2	A outdoors is outside near a campfire at night	There is a children outside
+59	105	3	A young woman is looking at a children with a binocular	A outdoors is looked at by a woman
+59	105	3	A young woman is looking at a outdoors with a binocular	A children is looked at by a woman
+59	105	4	Several people are moving towards the children	There is a group of people near the outdoors
+59	105	4	Several people are moving towards the outdoors	There is a group of people near the children
+59	105	5	A bald man standing to the side of a children	The man stands near a outdoors.
+59	105	5	A bald man standing to the side of a outdoors	The man stands near a children.
+59	105	6	A kid fetches a children by a tree in the yard.	a kid gets a outdoors
+59	105	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a children
+59	105	7	A green frog buys a children from a stand.	There is a green frog buying a outdoors
+59	105	7	A green frog buys a outdoors from a stand.	There is a green frog buying a children
+59	105	8	A children	A outdoors
+59	105	8	A outdoors	A children
+60	105	0	The children is photographed with a camera	There is a Four girls present
+60	105	0	The Four girls is photographed with a camera	There is a children present
+60	105	1	The children is in the water	The Four girls is wet
+60	105	1	The Four girls is in the water	The children is wet
+60	105	2	A children is outside near a campfire at night	There is a Four girls outside
+60	105	2	A Four girls is outside near a campfire at night	There is a children outside
+60	105	3	A young woman is looking at a children with a binocular	A Four girls is looked at by a woman
+60	105	3	A young woman is looking at a Four girls with a binocular	A children is looked at by a woman
+60	105	4	Several people are moving towards the children	There is a group of people near the Four girls
+60	105	4	Several people are moving towards the Four girls	There is a group of people near the children
+60	105	5	A bald man standing to the side of a children	The man stands near a Four girls.
+60	105	5	A bald man standing to the side of a Four girls	The man stands near a children.
+60	105	6	A kid fetches a children by a tree in the yard.	a kid gets a Four girls
+60	105	6	A kid fetches a Four girls by a tree in the yard.	a kid gets a children
+60	105	7	A green frog buys a children from a stand.	There is a green frog buying a Four girls
+60	105	7	A green frog buys a Four girls from a stand.	There is a green frog buying a children
+60	105	8	A children	A Four girls
+60	105	8	A Four girls	A children
+61	105	0	The Four children is photographed with a camera	There is a backbends present
+61	105	0	The backbends is photographed with a camera	There is a Four children present
+61	105	1	The Four children is in the water	The backbends is wet
+61	105	1	The backbends is in the water	The Four children is wet
+61	105	2	A Four children is outside near a campfire at night	There is a backbends outside
+61	105	2	A backbends is outside near a campfire at night	There is a Four children outside
+61	105	3	A young woman is looking at a Four children with a binocular	A backbends is looked at by a woman
+61	105	3	A young woman is looking at a backbends with a binocular	A Four children is looked at by a woman
+61	105	4	Several people are moving towards the Four children	There is a group of people near the backbends
+61	105	4	Several people are moving towards the backbends	There is a group of people near the Four children
+61	105	5	A bald man standing to the side of a Four children	The man stands near a backbends.
+61	105	5	A bald man standing to the side of a backbends	The man stands near a Four children.
+61	105	6	A kid fetches a Four children by a tree in the yard.	a kid gets a backbends
+61	105	6	A kid fetches a backbends by a tree in the yard.	a kid gets a Four children
+61	105	7	A green frog buys a Four children from a stand.	There is a green frog buying a backbends
+61	105	7	A green frog buys a backbends from a stand.	There is a green frog buying a Four children
+61	105	8	A Four children	A backbends
+61	105	8	A backbends	A Four children
+62	105	0	The Four children is photographed with a camera	There is a girls present
+62	105	0	The girls is photographed with a camera	There is a Four children present
+62	105	1	The Four children is in the water	The girls is wet
+62	105	1	The girls is in the water	The Four children is wet
+62	105	2	A Four children is outside near a campfire at night	There is a girls outside
+62	105	2	A girls is outside near a campfire at night	There is a Four children outside
+62	105	3	A young woman is looking at a Four children with a binocular	A girls is looked at by a woman
+62	105	3	A young woman is looking at a girls with a binocular	A Four children is looked at by a woman
+62	105	4	Several people are moving towards the Four children	There is a group of people near the girls
+62	105	4	Several people are moving towards the girls	There is a group of people near the Four children
+62	105	5	A bald man standing to the side of a Four children	The man stands near a girls.
+62	105	5	A bald man standing to the side of a girls	The man stands near a Four children.
+62	105	6	A kid fetches a Four children by a tree in the yard.	a kid gets a girls
+62	105	6	A kid fetches a girls by a tree in the yard.	a kid gets a Four children
+62	105	7	A green frog buys a Four children from a stand.	There is a green frog buying a girls
+62	105	7	A green frog buys a girls from a stand.	There is a green frog buying a Four children
+62	105	8	A Four children	A girls
+62	105	8	A girls	A Four children
+63	105	0	The Four children is photographed with a camera	There is a outdoors present
+63	105	0	The outdoors is photographed with a camera	There is a Four children present
+63	105	1	The Four children is in the water	The outdoors is wet
+63	105	1	The outdoors is in the water	The Four children is wet
+63	105	2	A Four children is outside near a campfire at night	There is a outdoors outside
+63	105	2	A outdoors is outside near a campfire at night	There is a Four children outside
+63	105	3	A young woman is looking at a Four children with a binocular	A outdoors is looked at by a woman
+63	105	3	A young woman is looking at a outdoors with a binocular	A Four children is looked at by a woman
+63	105	4	Several people are moving towards the Four children	There is a group of people near the outdoors
+63	105	4	Several people are moving towards the outdoors	There is a group of people near the Four children
+63	105	5	A bald man standing to the side of a Four children	The man stands near a outdoors.
+63	105	5	A bald man standing to the side of a outdoors	The man stands near a Four children.
+63	105	6	A kid fetches a Four children by a tree in the yard.	a kid gets a outdoors
+63	105	6	A kid fetches a outdoors by a tree in the yard.	a kid gets a Four children
+63	105	7	A green frog buys a Four children from a stand.	There is a green frog buying a outdoors
+63	105	7	A green frog buys a outdoors from a stand.	There is a green frog buying a Four children
+63	105	8	A Four children	A outdoors
+63	105	8	A outdoors	A Four children
+64	105	0	The Four children is photographed with a camera	There is a Four girls present
+64	105	0	The Four girls is photographed with a camera	There is a Four children present
+64	105	1	The Four children is in the water	The Four girls is wet
+64	105	1	The Four girls is in the water	The Four children is wet
+64	105	2	A Four children is outside near a campfire at night	There is a Four girls outside
+64	105	2	A Four girls is outside near a campfire at night	There is a Four children outside
+64	105	3	A young woman is looking at a Four children with a binocular	A Four girls is looked at by a woman
+64	105	3	A young woman is looking at a Four girls with a binocular	A Four children is looked at by a woman
+64	105	4	Several people are moving towards the Four children	There is a group of people near the Four girls
+64	105	4	Several people are moving towards the Four girls	There is a group of people near the Four children
+64	105	5	A bald man standing to the side of a Four children	The man stands near a Four girls.
+64	105	5	A bald man standing to the side of a Four girls	The man stands near a Four children.
+64	105	6	A kid fetches a Four children by a tree in the yard.	a kid gets a Four girls
+64	105	6	A kid fetches a Four girls by a tree in the yard.	a kid gets a Four children
+64	105	7	A green frog buys a Four children from a stand.	There is a green frog buying a Four girls
+64	105	7	A green frog buys a Four girls from a stand.	There is a green frog buying a Four children
+64	105	8	A Four children	A Four girls
+64	105	8	A Four girls	A Four children
+65	105	0	The doing is photographed with a camera	There is a playing present
+65	105	0	The playing is photographed with a camera	There is a doing present
+65	105	1	The doing is in the water	The playing is wet
+65	105	1	The playing is in the water	The doing is wet
+65	105	2	A doing is outside near a campfire at night	There is a playing outside
+65	105	2	A playing is outside near a campfire at night	There is a doing outside
+65	105	3	A young woman is looking at a doing with a binocular	A playing is looked at by a woman
+65	105	3	A young woman is looking at a playing with a binocular	A doing is looked at by a woman
+65	105	4	Several people are moving towards the doing	There is a group of people near the playing
+65	105	4	Several people are moving towards the playing	There is a group of people near the doing
+65	105	5	A bald man standing to the side of a doing	The man stands near a playing.
+65	105	5	A bald man standing to the side of a playing	The man stands near a doing.
+65	105	6	A kid fetches a doing by a tree in the yard.	a kid gets a playing
+65	105	6	A kid fetches a playing by a tree in the yard.	a kid gets a doing
+65	105	7	A green frog buys a doing from a stand.	There is a green frog buying a playing
+65	105	7	A green frog buys a playing from a stand.	There is a green frog buying a doing
+65	105	8	A doing	A playing
+65	105	8	A playing	A doing
+66	116	0	The ball is photographed with a camera	There is a football present
+66	116	0	The football is photographed with a camera	There is a ball present
+66	116	1	The ball is in the water	The football is wet
+66	116	1	The football is in the water	The ball is wet
+66	116	2	A ball is outside near a campfire at night	There is a football outside
+66	116	2	A football is outside near a campfire at night	There is a ball outside
+66	116	3	A young woman is looking at a ball with a binocular	A football is looked at by a woman
+66	116	3	A young woman is looking at a football with a binocular	A ball is looked at by a woman
+66	116	4	Several people are moving towards the ball	There is a group of people near the football
+66	116	4	Several people are moving towards the football	There is a group of people near the ball
+66	116	5	A bald man standing to the side of a ball	The man stands near a football.
+66	116	5	A bald man standing to the side of a football	The man stands near a ball.
+66	116	6	A kid fetches a ball by a tree in the yard.	a kid gets a football
+66	116	6	A kid fetches a football by a tree in the yard.	a kid gets a ball
+66	116	7	A green frog buys a ball from a stand.	There is a green frog buying a football
+66	116	7	A green frog buys a football from a stand.	There is a green frog buying a ball
+66	116	8	A ball	A football
+66	116	8	A football	A ball
+67	116	0	The ball is photographed with a camera	There is a match present
+67	116	0	The match is photographed with a camera	There is a ball present
+67	116	1	The ball is in the water	The match is wet
+67	116	1	The match is in the water	The ball is wet
+67	116	2	A ball is outside near a campfire at night	There is a match outside
+67	116	2	A match is outside near a campfire at night	There is a ball outside
+67	116	3	A young woman is looking at a ball with a binocular	A match is looked at by a woman
+67	116	3	A young woman is looking at a match with a binocular	A ball is looked at by a woman
+67	116	4	Several people are moving towards the ball	There is a group of people near the match
+67	116	4	Several people are moving towards the match	There is a group of people near the ball
+67	116	5	A bald man standing to the side of a ball	The man stands near a match.
+67	116	5	A bald man standing to the side of a match	The man stands near a ball.
+67	116	6	A kid fetches a ball by a tree in the yard.	a kid gets a match
+67	116	6	A kid fetches a match by a tree in the yard.	a kid gets a ball
+67	116	7	A green frog buys a ball from a stand.	There is a green frog buying a match
+67	116	7	A green frog buys a match from a stand.	There is a green frog buying a ball
+67	116	8	A ball	A match
+67	116	8	A match	A ball
+68	116	0	The ball is photographed with a camera	There is a teams present
+68	116	0	The teams is photographed with a camera	There is a ball present
+68	116	1	The ball is in the water	The teams is wet
+68	116	1	The teams is in the water	The ball is wet
+68	116	2	A ball is outside near a campfire at night	There is a teams outside
+68	116	2	A teams is outside near a campfire at night	There is a ball outside
+68	116	3	A young woman is looking at a ball with a binocular	A teams is looked at by a woman
+68	116	3	A young woman is looking at a teams with a binocular	A ball is looked at by a woman
+68	116	4	Several people are moving towards the ball	There is a group of people near the teams
+68	116	4	Several people are moving towards the teams	There is a group of people near the ball
+68	116	5	A bald man standing to the side of a ball	The man stands near a teams.
+68	116	5	A bald man standing to the side of a teams	The man stands near a ball.
+68	116	6	A kid fetches a ball by a tree in the yard.	a kid gets a teams
+68	116	6	A kid fetches a teams by a tree in the yard.	a kid gets a ball
+68	116	7	A green frog buys a ball from a stand.	There is a green frog buying a teams
+68	116	7	A green frog buys a teams from a stand.	There is a green frog buying a ball
+68	116	8	A ball	A teams
+68	116	8	A teams	A ball
+69	116	0	The ball is photographed with a camera	There is a Two teams present
+69	116	0	The Two teams is photographed with a camera	There is a ball present
+69	116	1	The ball is in the water	The Two teams is wet
+69	116	1	The Two teams is in the water	The ball is wet
+69	116	2	A ball is outside near a campfire at night	There is a Two teams outside
+69	116	2	A Two teams is outside near a campfire at night	There is a ball outside
+69	116	3	A young woman is looking at a ball with a binocular	A Two teams is looked at by a woman
+69	116	3	A young woman is looking at a Two teams with a binocular	A ball is looked at by a woman
+69	116	4	Several people are moving towards the ball	There is a group of people near the Two teams
+69	116	4	Several people are moving towards the Two teams	There is a group of people near the ball
+69	116	5	A bald man standing to the side of a ball	The man stands near a Two teams.
+69	116	5	A bald man standing to the side of a Two teams	The man stands near a ball.
+69	116	6	A kid fetches a ball by a tree in the yard.	a kid gets a Two teams
+69	116	6	A kid fetches a Two teams by a tree in the yard.	a kid gets a ball
+69	116	7	A green frog buys a ball from a stand.	There is a green frog buying a Two teams
+69	116	7	A green frog buys a Two teams from a stand.	There is a green frog buying a ball
+69	116	8	A ball	A Two teams
+69	116	8	A Two teams	A ball
+70	116	0	The ball is photographed with a camera	There is a football match present
+70	116	0	The football match is photographed with a camera	There is a ball present
+70	116	1	The ball is in the water	The football match is wet
+70	116	1	The football match is in the water	The ball is wet
+70	116	2	A ball is outside near a campfire at night	There is a football match outside
+70	116	2	A football match is outside near a campfire at night	There is a ball outside
+70	116	3	A young woman is looking at a ball with a binocular	A football match is looked at by a woman
+70	116	3	A young woman is looking at a football match with a binocular	A ball is looked at by a woman
+70	116	4	Several people are moving towards the ball	There is a group of people near the football match
+70	116	4	Several people are moving towards the football match	There is a group of people near the ball
+70	116	5	A bald man standing to the side of a ball	The man stands near a football match.
+70	116	5	A bald man standing to the side of a football match	The man stands near a ball.
+70	116	6	A kid fetches a ball by a tree in the yard.	a kid gets a football match
+70	116	6	A kid fetches a football match by a tree in the yard.	a kid gets a ball
+70	116	7	A green frog buys a ball from a stand.	There is a green frog buying a football match
+70	116	7	A green frog buys a football match from a stand.	There is a green frog buying a ball
+70	116	8	A ball	A football match
+70	116	8	A football match	A ball
+71	116	0	The player is photographed with a camera	There is a football present
+71	116	0	The football is photographed with a camera	There is a player present
+71	116	1	The player is in the water	The football is wet
+71	116	1	The football is in the water	The player is wet
+71	116	2	A player is outside near a campfire at night	There is a football outside
+71	116	2	A football is outside near a campfire at night	There is a player outside
+71	116	3	A young woman is looking at a player with a binocular	A football is looked at by a woman
+71	116	3	A young woman is looking at a football with a binocular	A player is looked at by a woman
+71	116	4	Several people are moving towards the player	There is a group of people near the football
+71	116	4	Several people are moving towards the football	There is a group of people near the player
+71	116	5	A bald man standing to the side of a player	The man stands near a football.
+71	116	5	A bald man standing to the side of a football	The man stands near a player.
+71	116	6	A kid fetches a player by a tree in the yard.	a kid gets a football
+71	116	6	A kid fetches a football by a tree in the yard.	a kid gets a player
+71	116	7	A green frog buys a player from a stand.	There is a green frog buying a football
+71	116	7	A green frog buys a football from a stand.	There is a green frog buying a player
+71	116	8	A player	A football
+71	116	8	A football	A player
+72	116	0	The player is photographed with a camera	There is a match present
+72	116	0	The match is photographed with a camera	There is a player present
+72	116	1	The player is in the water	The match is wet
+72	116	1	The match is in the water	The player is wet
+72	116	2	A player is outside near a campfire at night	There is a match outside
+72	116	2	A match is outside near a campfire at night	There is a player outside
+72	116	3	A young woman is looking at a player with a binocular	A match is looked at by a woman
+72	116	3	A young woman is looking at a match with a binocular	A player is looked at by a woman
+72	116	4	Several people are moving towards the player	There is a group of people near the match
+72	116	4	Several people are moving towards the match	There is a group of people near the player
+72	116	5	A bald man standing to the side of a player	The man stands near a match.
+72	116	5	A bald man standing to the side of a match	The man stands near a player.
+72	116	6	A kid fetches a player by a tree in the yard.	a kid gets a match
+72	116	6	A kid fetches a match by a tree in the yard.	a kid gets a player
+72	116	7	A green frog buys a player from a stand.	There is a green frog buying a match
+72	116	7	A green frog buys a match from a stand.	There is a green frog buying a player
+72	116	8	A player	A match
+72	116	8	A match	A player
+73	116	0	The player is photographed with a camera	There is a teams present
+73	116	0	The teams is photographed with a camera	There is a player present
+73	116	1	The player is in the water	The teams is wet
+73	116	1	The teams is in the water	The player is wet
+73	116	2	A player is outside near a campfire at night	There is a teams outside
+73	116	2	A teams is outside near a campfire at night	There is a player outside
+73	116	3	A young woman is looking at a player with a binocular	A teams is looked at by a woman
+73	116	3	A young woman is looking at a teams with a binocular	A player is looked at by a woman
+73	116	4	Several people are moving towards the player	There is a group of people near the teams
+73	116	4	Several people are moving towards the teams	There is a group of people near the player
+73	116	5	A bald man standing to the side of a player	The man stands near a teams.
+73	116	5	A bald man standing to the side of a teams	The man stands near a player.
+73	116	6	A kid fetches a player by a tree in the yard.	a kid gets a teams
+73	116	6	A kid fetches a teams by a tree in the yard.	a kid gets a player
+73	116	7	A green frog buys a player from a stand.	There is a green frog buying a teams
+73	116	7	A green frog buys a teams from a stand.	There is a green frog buying a player
+73	116	8	A player	A teams
+73	116	8	A teams	A player
+74	116	0	The player is photographed with a camera	There is a Two teams present
+74	116	0	The Two teams is photographed with a camera	There is a player present
+74	116	1	The player is in the water	The Two teams is wet
+74	116	1	The Two teams is in the water	The player is wet
+74	116	2	A player is outside near a campfire at night	There is a Two teams outside
+74	116	2	A Two teams is outside near a campfire at night	There is a player outside
+74	116	3	A young woman is looking at a player with a binocular	A Two teams is looked at by a woman
+74	116	3	A young woman is looking at a Two teams with a binocular	A player is looked at by a woman
+74	116	4	Several people are moving towards the player	There is a group of people near the Two teams
+74	116	4	Several people are moving towards the Two teams	There is a group of people near the player
+74	116	5	A bald man standing to the side of a player	The man stands near a Two teams.
+74	116	5	A bald man standing to the side of a Two teams	The man stands near a player.
+74	116	6	A kid fetches a player by a tree in the yard.	a kid gets a Two teams
+74	116	6	A kid fetches a Two teams by a tree in the yard.	a kid gets a player
+74	116	7	A green frog buys a player from a stand.	There is a green frog buying a Two teams
+74	116	7	A green frog buys a Two teams from a stand.	There is a green frog buying a player
+74	116	8	A player	A Two teams
+74	116	8	A Two teams	A player
+75	116	0	The player is photographed with a camera	There is a football match present
+75	116	0	The football match is photographed with a camera	There is a player present
+75	116	1	The player is in the water	The football match is wet
+75	116	1	The football match is in the water	The player is wet
+75	116	2	A player is outside near a campfire at night	There is a football match outside
+75	116	2	A football match is outside near a campfire at night	There is a player outside
+75	116	3	A young woman is looking at a player with a binocular	A football match is looked at by a woman
+75	116	3	A young woman is looking at a football match with a binocular	A player is looked at by a woman
+75	116	4	Several people are moving towards the player	There is a group of people near the football match
+75	116	4	Several people are moving towards the football match	There is a group of people near the player
+75	116	5	A bald man standing to the side of a player	The man stands near a football match.
+75	116	5	A bald man standing to the side of a football match	The man stands near a player.
+75	116	6	A kid fetches a player by a tree in the yard.	a kid gets a football match
+75	116	6	A kid fetches a football match by a tree in the yard.	a kid gets a player
+75	116	7	A green frog buys a player from a stand.	There is a green frog buying a football match
+75	116	7	A green frog buys a football match from a stand.	There is a green frog buying a player
+75	116	8	A player	A football match
+75	116	8	A football match	A player
+76	116	0	The throwing is photographed with a camera	There is a competing present
+76	116	0	The competing is photographed with a camera	There is a throwing present
+76	116	1	The throwing is in the water	The competing is wet
+76	116	1	The competing is in the water	The throwing is wet
+76	116	2	A throwing is outside near a campfire at night	There is a competing outside
+76	116	2	A competing is outside near a campfire at night	There is a throwing outside
+76	116	3	A young woman is looking at a throwing with a binocular	A competing is looked at by a woman
+76	116	3	A young woman is looking at a competing with a binocular	A throwing is looked at by a woman
+76	116	4	Several people are moving towards the throwing	There is a group of people near the competing
+76	116	4	Several people are moving towards the competing	There is a group of people near the throwing
+76	116	5	A bald man standing to the side of a throwing	The man stands near a competing.
+76	116	5	A bald man standing to the side of a competing	The man stands near a throwing.
+76	116	6	A kid fetches a throwing by a tree in the yard.	a kid gets a competing
+76	116	6	A kid fetches a competing by a tree in the yard.	a kid gets a throwing
+76	116	7	A green frog buys a throwing from a stand.	There is a green frog buying a competing
+76	116	7	A green frog buys a competing from a stand.	There is a green frog buying a throwing
+76	116	8	A throwing	A competing
+76	116	8	A competing	A throwing
+77	119	0	The front is photographed with a camera	There is a hut present
+77	119	0	The hut is photographed with a camera	There is a front present
+77	119	1	The front is in the water	The hut is wet
+77	119	1	The hut is in the water	The front is wet
+77	119	2	A front is outside near a campfire at night	There is a hut outside
+77	119	2	A hut is outside near a campfire at night	There is a front outside
+77	119	3	A young woman is looking at a front with a binocular	A hut is looked at by a woman
+77	119	3	A young woman is looking at a hut with a binocular	A front is looked at by a woman
+77	119	4	Several people are moving towards the front	There is a group of people near the hut
+77	119	4	Several people are moving towards the hut	There is a group of people near the front
+77	119	5	A bald man standing to the side of a front	The man stands near a hut.
+77	119	5	A bald man standing to the side of a hut	The man stands near a front.
+77	119	6	A kid fetches a front by a tree in the yard.	a kid gets a hut
+77	119	6	A kid fetches a hut by a tree in the yard.	a kid gets a front
+77	119	7	A green frog buys a front from a stand.	There is a green frog buying a hut
+77	119	7	A green frog buys a hut from a stand.	There is a green frog buying a front
+77	119	8	A front	A hut
+77	119	8	A hut	A front
+78	119	0	The front is photographed with a camera	There is a children present
+78	119	0	The children is photographed with a camera	There is a front present
+78	119	1	The front is in the water	The children is wet
+78	119	1	The children is in the water	The front is wet
+78	119	2	A front is outside near a campfire at night	There is a children outside
+78	119	2	A children is outside near a campfire at night	There is a front outside
+78	119	3	A young woman is looking at a front with a binocular	A children is looked at by a woman
+78	119	3	A young woman is looking at a children with a binocular	A front is looked at by a woman
+78	119	4	Several people are moving towards the front	There is a group of people near the children
+78	119	4	Several people are moving towards the children	There is a group of people near the front
+78	119	5	A bald man standing to the side of a front	The man stands near a children.
+78	119	5	A bald man standing to the side of a children	The man stands near a front.
+78	119	6	A kid fetches a front by a tree in the yard.	a kid gets a children
+78	119	6	A kid fetches a children by a tree in the yard.	a kid gets a front
+78	119	7	A green frog buys a front from a stand.	There is a green frog buying a children
+78	119	7	A green frog buys a children from a stand.	There is a green frog buying a front
+78	119	8	A front	A children
+78	119	8	A children	A front
+79	119	0	The front is photographed with a camera	There is a Five children present
+79	119	0	The Five children is photographed with a camera	There is a front present
+79	119	1	The front is in the water	The Five children is wet
+79	119	1	The Five children is in the water	The front is wet
+79	119	2	A front is outside near a campfire at night	There is a Five children outside
+79	119	2	A Five children is outside near a campfire at night	There is a front outside
+79	119	3	A young woman is looking at a front with a binocular	A Five children is looked at by a woman
+79	119	3	A young woman is looking at a Five children with a binocular	A front is looked at by a woman
+79	119	4	Several people are moving towards the front	There is a group of people near the Five children
+79	119	4	Several people are moving towards the Five children	There is a group of people near the front
+79	119	5	A bald man standing to the side of a front	The man stands near a Five children.
+79	119	5	A bald man standing to the side of a Five children	The man stands near a front.
+79	119	6	A kid fetches a front by a tree in the yard.	a kid gets a Five children
+79	119	6	A kid fetches a Five children by a tree in the yard.	a kid gets a front
+79	119	7	A green frog buys a front from a stand.	There is a green frog buying a Five children
+79	119	7	A green frog buys a Five children from a stand.	There is a green frog buying a front
+79	119	8	A front	A Five children
+79	119	8	A Five children	A front
+80	119	0	The front is photographed with a camera	There is a wooden hut present
+80	119	0	The wooden hut is photographed with a camera	There is a front present
+80	119	1	The front is in the water	The wooden hut is wet
+80	119	1	The wooden hut is in the water	The front is wet
+80	119	2	A front is outside near a campfire at night	There is a wooden hut outside
+80	119	2	A wooden hut is outside near a campfire at night	There is a front outside
+80	119	3	A young woman is looking at a front with a binocular	A wooden hut is looked at by a woman
+80	119	3	A young woman is looking at a wooden hut with a binocular	A front is looked at by a woman
+80	119	4	Several people are moving towards the front	There is a group of people near the wooden hut
+80	119	4	Several people are moving towards the wooden hut	There is a group of people near the front
+80	119	5	A bald man standing to the side of a front	The man stands near a wooden hut.
+80	119	5	A bald man standing to the side of a wooden hut	The man stands near a front.
+80	119	6	A kid fetches a front by a tree in the yard.	a kid gets a wooden hut
+80	119	6	A kid fetches a wooden hut by a tree in the yard.	a kid gets a front
+80	119	7	A green frog buys a front from a stand.	There is a green frog buying a wooden hut
+80	119	7	A green frog buys a wooden hut from a stand.	There is a green frog buying a front
+80	119	8	A front	A wooden hut
+80	119	8	A wooden hut	A front
+81	119	0	The hut is photographed with a camera	There is a children present
+81	119	0	The children is photographed with a camera	There is a hut present
+81	119	1	The hut is in the water	The children is wet
+81	119	1	The children is in the water	The hut is wet
+81	119	2	A hut is outside near a campfire at night	There is a children outside
+81	119	2	A children is outside near a campfire at night	There is a hut outside
+81	119	3	A young woman is looking at a hut with a binocular	A children is looked at by a woman
+81	119	3	A young woman is looking at a children with a binocular	A hut is looked at by a woman
+81	119	4	Several people are moving towards the hut	There is a group of people near the children
+81	119	4	Several people are moving towards the children	There is a group of people near the hut
+81	119	5	A bald man standing to the side of a hut	The man stands near a children.
+81	119	5	A bald man standing to the side of a children	The man stands near a hut.
+81	119	6	A kid fetches a hut by a tree in the yard.	a kid gets a children
+81	119	6	A kid fetches a children by a tree in the yard.	a kid gets a hut
+81	119	7	A green frog buys a hut from a stand.	There is a green frog buying a children
+81	119	7	A green frog buys a children from a stand.	There is a green frog buying a hut
+81	119	8	A hut	A children
+81	119	8	A children	A hut
+82	119	0	The hut is photographed with a camera	There is a Five children present
+82	119	0	The Five children is photographed with a camera	There is a hut present
+82	119	1	The hut is in the water	The Five children is wet
+82	119	1	The Five children is in the water	The hut is wet
+82	119	2	A hut is outside near a campfire at night	There is a Five children outside
+82	119	2	A Five children is outside near a campfire at night	There is a hut outside
+82	119	3	A young woman is looking at a hut with a binocular	A Five children is looked at by a woman
+82	119	3	A young woman is looking at a Five children with a binocular	A hut is looked at by a woman
+82	119	4	Several people are moving towards the hut	There is a group of people near the Five children
+82	119	4	Several people are moving towards the Five children	There is a group of people near the hut
+82	119	5	A bald man standing to the side of a hut	The man stands near a Five children.
+82	119	5	A bald man standing to the side of a Five children	The man stands near a hut.
+82	119	6	A kid fetches a hut by a tree in the yard.	a kid gets a Five children
+82	119	6	A kid fetches a Five children by a tree in the yard.	a kid gets a hut
+82	119	7	A green frog buys a hut from a stand.	There is a green frog buying a Five children
+82	119	7	A green frog buys a Five children from a stand.	There is a green frog buying a hut
+82	119	8	A hut	A Five children
+82	119	8	A Five children	A hut
+83	119	0	The hut is photographed with a camera	There is a wooden hut present
+83	119	0	The wooden hut is photographed with a camera	There is a hut present
+83	119	1	The hut is in the water	The wooden hut is wet
+83	119	1	The wooden hut is in the water	The hut is wet
+83	119	2	A hut is outside near a campfire at night	There is a wooden hut outside
+83	119	2	A wooden hut is outside near a campfire at night	There is a hut outside
+83	119	3	A young woman is looking at a hut with a binocular	A wooden hut is looked at by a woman
+83	119	3	A young woman is looking at a wooden hut with a binocular	A hut is looked at by a woman
+83	119	4	Several people are moving towards the hut	There is a group of people near the wooden hut
+83	119	4	Several people are moving towards the wooden hut	There is a group of people near the hut
+83	119	5	A bald man standing to the side of a hut	The man stands near a wooden hut.
+83	119	5	A bald man standing to the side of a wooden hut	The man stands near a hut.
+83	119	6	A kid fetches a hut by a tree in the yard.	a kid gets a wooden hut
+83	119	6	A kid fetches a wooden hut by a tree in the yard.	a kid gets a hut
+83	119	7	A green frog buys a hut from a stand.	There is a green frog buying a wooden hut
+83	119	7	A green frog buys a wooden hut from a stand.	There is a green frog buying a hut
+83	119	8	A hut	A wooden hut
+83	119	8	A wooden hut	A hut
+84	119	0	The children is photographed with a camera	There is a hut present
+84	119	0	The hut is photographed with a camera	There is a children present
+84	119	1	The children is in the water	The hut is wet
+84	119	1	The hut is in the water	The children is wet
+84	119	2	A children is outside near a campfire at night	There is a hut outside
+84	119	2	A hut is outside near a campfire at night	There is a children outside
+84	119	3	A young woman is looking at a children with a binocular	A hut is looked at by a woman
+84	119	3	A young woman is looking at a hut with a binocular	A children is looked at by a woman
+84	119	4	Several people are moving towards the children	There is a group of people near the hut
+84	119	4	Several people are moving towards the hut	There is a group of people near the children
+84	119	5	A bald man standing to the side of a children	The man stands near a hut.
+84	119	5	A bald man standing to the side of a hut	The man stands near a children.
+84	119	6	A kid fetches a children by a tree in the yard.	a kid gets a hut
+84	119	6	A kid fetches a hut by a tree in the yard.	a kid gets a children
+84	119	7	A green frog buys a children from a stand.	There is a green frog buying a hut
+84	119	7	A green frog buys a hut from a stand.	There is a green frog buying a children
+84	119	8	A children	A hut
+84	119	8	A hut	A children
+85	119	0	The children is photographed with a camera	There is a Five children present
+85	119	0	The Five children is photographed with a camera	There is a children present
+85	119	1	The children is in the water	The Five children is wet
+85	119	1	The Five children is in the water	The children is wet
+85	119	2	A children is outside near a campfire at night	There is a Five children outside
+85	119	2	A Five children is outside near a campfire at night	There is a children outside
+85	119	3	A young woman is looking at a children with a binocular	A Five children is looked at by a woman
+85	119	3	A young woman is looking at a Five children with a binocular	A children is looked at by a woman
+85	119	4	Several people are moving towards the children	There is a group of people near the Five children
+85	119	4	Several people are moving towards the Five children	There is a group of people near the children
+85	119	5	A bald man standing to the side of a children	The man stands near a Five children.
+85	119	5	A bald man standing to the side of a Five children	The man stands near a children.
+85	119	6	A kid fetches a children by a tree in the yard.	a kid gets a Five children
+85	119	6	A kid fetches a Five children by a tree in the yard.	a kid gets a children
+85	119	7	A green frog buys a children from a stand.	There is a green frog buying a Five children
+85	119	7	A green frog buys a Five children from a stand.	There is a green frog buying a children
+85	119	8	A children	A Five children
+85	119	8	A Five children	A children
+86	119	0	The children is photographed with a camera	There is a wooden hut present
+86	119	0	The wooden hut is photographed with a camera	There is a children present
+86	119	1	The children is in the water	The wooden hut is wet
+86	119	1	The wooden hut is in the water	The children is wet
+86	119	2	A children is outside near a campfire at night	There is a wooden hut outside
+86	119	2	A wooden hut is outside near a campfire at night	There is a children outside
+86	119	3	A young woman is looking at a children with a binocular	A wooden hut is looked at by a woman
+86	119	3	A young woman is looking at a wooden hut with a binocular	A children is looked at by a woman
+86	119	4	Several people are moving towards the children	There is a group of people near the wooden hut
+86	119	4	Several people are moving towards the wooden hut	There is a group of people near the children
+86	119	5	A bald man standing to the side of a children	The man stands near a wooden hut.
+86	119	5	A bald man standing to the side of a wooden hut	The man stands near a children.
+86	119	6	A kid fetches a children by a tree in the yard.	a kid gets a wooden hut
+86	119	6	A kid fetches a wooden hut by a tree in the yard.	a kid gets a children
+86	119	7	A green frog buys a children from a stand.	There is a green frog buying a wooden hut
+86	119	7	A green frog buys a wooden hut from a stand.	There is a green frog buying a children
+86	119	8	A children	A wooden hut
+86	119	8	A wooden hut	A children
+87	119	0	The Five children is photographed with a camera	There is a hut present
+87	119	0	The hut is photographed with a camera	There is a Five children present
+87	119	1	The Five children is in the water	The hut is wet
+87	119	1	The hut is in the water	The Five children is wet
+87	119	2	A Five children is outside near a campfire at night	There is a hut outside
+87	119	2	A hut is outside near a campfire at night	There is a Five children outside
+87	119	3	A young woman is looking at a Five children with a binocular	A hut is looked at by a woman
+87	119	3	A young woman is looking at a hut with a binocular	A Five children is looked at by a woman
+87	119	4	Several people are moving towards the Five children	There is a group of people near the hut
+87	119	4	Several people are moving towards the hut	There is a group of people near the Five children
+87	119	5	A bald man standing to the side of a Five children	The man stands near a hut.
+87	119	5	A bald man standing to the side of a hut	The man stands near a Five children.
+87	119	6	A kid fetches a Five children by a tree in the yard.	a kid gets a hut
+87	119	6	A kid fetches a hut by a tree in the yard.	a kid gets a Five children
+87	119	7	A green frog buys a Five children from a stand.	There is a green frog buying a hut
+87	119	7	A green frog buys a hut from a stand.	There is a green frog buying a Five children
+87	119	8	A Five children	A hut
+87	119	8	A hut	A Five children
+88	119	0	The Five children is photographed with a camera	There is a children present
+88	119	0	The children is photographed with a camera	There is a Five children present
+88	119	1	The Five children is in the water	The children is wet
+88	119	1	The children is in the water	The Five children is wet
+88	119	2	A Five children is outside near a campfire at night	There is a children outside
+88	119	2	A children is outside near a campfire at night	There is a Five children outside
+88	119	3	A young woman is looking at a Five children with a binocular	A children is looked at by a woman
+88	119	3	A young woman is looking at a children with a binocular	A Five children is looked at by a woman
+88	119	4	Several people are moving towards the Five children	There is a group of people near the children
+88	119	4	Several people are moving towards the children	There is a group of people near the Five children
+88	119	5	A bald man standing to the side of a Five children	The man stands near a children.
+88	119	5	A bald man standing to the side of a children	The man stands near a Five children.
+88	119	6	A kid fetches a Five children by a tree in the yard.	a kid gets a children
+88	119	6	A kid fetches a children by a tree in the yard.	a kid gets a Five children
+88	119	7	A green frog buys a Five children from a stand.	There is a green frog buying a children
+88	119	7	A green frog buys a children from a stand.	There is a green frog buying a Five children
+88	119	8	A Five children	A children
+88	119	8	A children	A Five children
+89	119	0	The Five children is photographed with a camera	There is a wooden hut present
+89	119	0	The wooden hut is photographed with a camera	There is a Five children present
+89	119	1	The Five children is in the water	The wooden hut is wet
+89	119	1	The wooden hut is in the water	The Five children is wet
+89	119	2	A Five children is outside near a campfire at night	There is a wooden hut outside
+89	119	2	A wooden hut is outside near a campfire at night	There is a Five children outside
+89	119	3	A young woman is looking at a Five children with a binocular	A wooden hut is looked at by a woman
+89	119	3	A young woman is looking at a wooden hut with a binocular	A Five children is looked at by a woman
+89	119	4	Several people are moving towards the Five children	There is a group of people near the wooden hut
+89	119	4	Several people are moving towards the wooden hut	There is a group of people near the Five children
+89	119	5	A bald man standing to the side of a Five children	The man stands near a wooden hut.
+89	119	5	A bald man standing to the side of a wooden hut	The man stands near a Five children.
+89	119	6	A kid fetches a Five children by a tree in the yard.	a kid gets a wooden hut
+89	119	6	A kid fetches a wooden hut by a tree in the yard.	a kid gets a Five children
+89	119	7	A green frog buys a Five children from a stand.	There is a green frog buying a wooden hut
+89	119	7	A green frog buys a wooden hut from a stand.	There is a green frog buying a Five children
+89	119	8	A Five children	A wooden hut
+89	119	8	A wooden hut	A Five children
+90	119	0	The wooden hut is photographed with a camera	There is a hut present
+90	119	0	The hut is photographed with a camera	There is a wooden hut present
+90	119	1	The wooden hut is in the water	The hut is wet
+90	119	1	The hut is in the water	The wooden hut is wet
+90	119	2	A wooden hut is outside near a campfire at night	There is a hut outside
+90	119	2	A hut is outside near a campfire at night	There is a wooden hut outside
+90	119	3	A young woman is looking at a wooden hut with a binocular	A hut is looked at by a woman
+90	119	3	A young woman is looking at a hut with a binocular	A wooden hut is looked at by a woman
+90	119	4	Several people are moving towards the wooden hut	There is a group of people near the hut
+90	119	4	Several people are moving towards the hut	There is a group of people near the wooden hut
+90	119	5	A bald man standing to the side of a wooden hut	The man stands near a hut.
+90	119	5	A bald man standing to the side of a hut	The man stands near a wooden hut.
+90	119	6	A kid fetches a wooden hut by a tree in the yard.	a kid gets a hut
+90	119	6	A kid fetches a hut by a tree in the yard.	a kid gets a wooden hut
+90	119	7	A green frog buys a wooden hut from a stand.	There is a green frog buying a hut
+90	119	7	A green frog buys a hut from a stand.	There is a green frog buying a wooden hut
+90	119	8	A wooden hut	A hut
+90	119	8	A hut	A wooden hut
+91	119	0	The wooden hut is photographed with a camera	There is a children present
+91	119	0	The children is photographed with a camera	There is a wooden hut present
+91	119	1	The wooden hut is in the water	The children is wet
+91	119	1	The children is in the water	The wooden hut is wet
+91	119	2	A wooden hut is outside near a campfire at night	There is a children outside
+91	119	2	A children is outside near a campfire at night	There is a wooden hut outside
+91	119	3	A young woman is looking at a wooden hut with a binocular	A children is looked at by a woman
+91	119	3	A young woman is looking at a children with a binocular	A wooden hut is looked at by a woman
+91	119	4	Several people are moving towards the wooden hut	There is a group of people near the children
+91	119	4	Several people are moving towards the children	There is a group of people near the wooden hut
+91	119	5	A bald man standing to the side of a wooden hut	The man stands near a children.
+91	119	5	A bald man standing to the side of a children	The man stands near a wooden hut.
+91	119	6	A kid fetches a wooden hut by a tree in the yard.	a kid gets a children
+91	119	6	A kid fetches a children by a tree in the yard.	a kid gets a wooden hut
+91	119	7	A green frog buys a wooden hut from a stand.	There is a green frog buying a children
+91	119	7	A green frog buys a children from a stand.	There is a green frog buying a wooden hut
+91	119	8	A wooden hut	A children
+91	119	8	A children	A wooden hut
+92	119	0	The wooden hut is photographed with a camera	There is a Five children present
+92	119	0	The Five children is photographed with a camera	There is a wooden hut present
+92	119	1	The wooden hut is in the water	The Five children is wet
+92	119	1	The Five children is in the water	The wooden hut is wet
+92	119	2	A wooden hut is outside near a campfire at night	There is a Five children outside
+92	119	2	A Five children is outside near a campfire at night	There is a wooden hut outside
+92	119	3	A young woman is looking at a wooden hut with a binocular	A Five children is looked at by a woman
+92	119	3	A young woman is looking at a Five children with a binocular	A wooden hut is looked at by a woman
+92	119	4	Several people are moving towards the wooden hut	There is a group of people near the Five children
+92	119	4	Several people are moving towards the Five children	There is a group of people near the wooden hut
+92	119	5	A bald man standing to the side of a wooden hut	The man stands near a Five children.
+92	119	5	A bald man standing to the side of a Five children	The man stands near a wooden hut.
+92	119	6	A kid fetches a wooden hut by a tree in the yard.	a kid gets a Five children
+92	119	6	A kid fetches a Five children by a tree in the yard.	a kid gets a wooden hut
+92	119	7	A green frog buys a wooden hut from a stand.	There is a green frog buying a Five children
+92	119	7	A green frog buys a Five children from a stand.	There is a green frog buying a wooden hut
+92	119	8	A wooden hut	A Five children
+92	119	8	A Five children	A wooden hut
+93	119	0	The wooden is photographed with a camera	There is a in a wooden hut present
+93	119	0	The in a wooden hut is photographed with a camera	There is a wooden present
+93	119	1	The wooden is in the water	The in a wooden hut is wet
+93	119	1	The in a wooden hut is in the water	The wooden is wet
+93	119	2	A wooden is outside near a campfire at night	There is a in a wooden hut outside
+93	119	2	A in a wooden hut is outside near a campfire at night	There is a wooden outside
+93	119	3	A young woman is looking at a wooden with a binocular	A in a wooden hut is looked at by a woman
+93	119	3	A young woman is looking at a in a wooden hut with a binocular	A wooden is looked at by a woman
+93	119	4	Several people are moving towards the wooden	There is a group of people near the in a wooden hut
+93	119	4	Several people are moving towards the in a wooden hut	There is a group of people near the wooden
+93	119	5	A bald man standing to the side of a wooden	The man stands near a in a wooden hut.
+93	119	5	A bald man standing to the side of a in a wooden hut	The man stands near a wooden.
+93	119	6	A kid fetches a wooden by a tree in the yard.	a kid gets a in a wooden hut
+93	119	6	A kid fetches a in a wooden hut by a tree in the yard.	a kid gets a wooden
+93	119	7	A green frog buys a wooden from a stand.	There is a green frog buying a in a wooden hut
+93	119	7	A green frog buys a in a wooden hut from a stand.	There is a green frog buying a wooden
+93	119	8	A wooden	A in a wooden hut
+93	119	8	A in a wooden hut	A wooden
+94	185	0	The restaurant is photographed with a camera	There is a group present
+94	185	0	The group is photographed with a camera	There is a restaurant present
+94	185	1	The restaurant is in the water	The group is wet
+94	185	1	The group is in the water	The restaurant is wet
+94	185	2	A restaurant is outside near a campfire at night	There is a group outside
+94	185	2	A group is outside near a campfire at night	There is a restaurant outside
+94	185	3	A young woman is looking at a restaurant with a binocular	A group is looked at by a woman
+94	185	3	A young woman is looking at a group with a binocular	A restaurant is looked at by a woman
+94	185	4	Several people are moving towards the restaurant	There is a group of people near the group
+94	185	4	Several people are moving towards the group	There is a group of people near the restaurant
+94	185	5	A bald man standing to the side of a restaurant	The man stands near a group.
+94	185	5	A bald man standing to the side of a group	The man stands near a restaurant.
+94	185	6	A kid fetches a restaurant by a tree in the yard.	a kid gets a group
+94	185	6	A kid fetches a group by a tree in the yard.	a kid gets a restaurant
+94	185	7	A green frog buys a restaurant from a stand.	There is a green frog buying a group
+94	185	7	A green frog buys a group from a stand.	There is a green frog buying a restaurant
+94	185	8	A restaurant	A group
+94	185	8	A group	A restaurant
+95	185	0	The restaurant is photographed with a camera	There is a people present
+95	185	0	The people is photographed with a camera	There is a restaurant present
+95	185	1	The restaurant is in the water	The people is wet
+95	185	1	The people is in the water	The restaurant is wet
+95	185	2	A restaurant is outside near a campfire at night	There is a people outside
+95	185	2	A people is outside near a campfire at night	There is a restaurant outside
+95	185	3	A young woman is looking at a restaurant with a binocular	A people is looked at by a woman
+95	185	3	A young woman is looking at a people with a binocular	A restaurant is looked at by a woman
+95	185	4	Several people are moving towards the restaurant	There is a group of people near the people
+95	185	4	Several people are moving towards the people	There is a group of people near the restaurant
+95	185	5	A bald man standing to the side of a restaurant	The man stands near a people.
+95	185	5	A bald man standing to the side of a people	The man stands near a restaurant.
+95	185	6	A kid fetches a restaurant by a tree in the yard.	a kid gets a people
+95	185	6	A kid fetches a people by a tree in the yard.	a kid gets a restaurant
+95	185	7	A green frog buys a restaurant from a stand.	There is a green frog buying a people
+95	185	7	A green frog buys a people from a stand.	There is a green frog buying a restaurant
+95	185	8	A restaurant	A people
+95	185	8	A people	A restaurant
+96	185	0	The restaurant is photographed with a camera	There is a Asian people present
+96	185	0	The Asian people is photographed with a camera	There is a restaurant present
+96	185	1	The restaurant is in the water	The Asian people is wet
+96	185	1	The Asian people is in the water	The restaurant is wet
+96	185	2	A restaurant is outside near a campfire at night	There is a Asian people outside
+96	185	2	A Asian people is outside near a campfire at night	There is a restaurant outside
+96	185	3	A young woman is looking at a restaurant with a binocular	A Asian people is looked at by a woman
+96	185	3	A young woman is looking at a Asian people with a binocular	A restaurant is looked at by a woman
+96	185	4	Several people are moving towards the restaurant	There is a group of people near the Asian people
+96	185	4	Several people are moving towards the Asian people	There is a group of people near the restaurant
+96	185	5	A bald man standing to the side of a restaurant	The man stands near a Asian people.
+96	185	5	A bald man standing to the side of a Asian people	The man stands near a restaurant.
+96	185	6	A kid fetches a restaurant by a tree in the yard.	a kid gets a Asian people
+96	185	6	A kid fetches a Asian people by a tree in the yard.	a kid gets a restaurant
+96	185	7	A green frog buys a restaurant from a stand.	There is a green frog buying a Asian people
+96	185	7	A green frog buys a Asian people from a stand.	There is a green frog buying a restaurant
+96	185	8	A restaurant	A Asian people
+96	185	8	A Asian people	A restaurant
+97	185	0	The restaurant is photographed with a camera	There is a group of Asian people present
+97	185	0	The group of Asian people is photographed with a camera	There is a restaurant present
+97	185	1	The restaurant is in the water	The group of Asian people is wet
+97	185	1	The group of Asian people is in the water	The restaurant is wet
+97	185	2	A restaurant is outside near a campfire at night	There is a group of Asian people outside
+97	185	2	A group of Asian people is outside near a campfire at night	There is a restaurant outside
+97	185	3	A young woman is looking at a restaurant with a binocular	A group of Asian people is looked at by a woman
+97	185	3	A young woman is looking at a group of Asian people with a binocular	A restaurant is looked at by a woman
+97	185	4	Several people are moving towards the restaurant	There is a group of people near the group of Asian people
+97	185	4	Several people are moving towards the group of Asian people	There is a group of people near the restaurant
+97	185	5	A bald man standing to the side of a restaurant	The man stands near a group of Asian people.
+97	185	5	A bald man standing to the side of a group of Asian people	The man stands near a restaurant.
+97	185	6	A kid fetches a restaurant by a tree in the yard.	a kid gets a group of Asian people
+97	185	6	A kid fetches a group of Asian people by a tree in the yard.	a kid gets a restaurant
+97	185	7	A green frog buys a restaurant from a stand.	There is a green frog buying a group of Asian people
+97	185	7	A green frog buys a group of Asian people from a stand.	There is a green frog buying a restaurant
+97	185	8	A restaurant	A group of Asian people
+97	185	8	A group of Asian people	A restaurant
+98	185	0	The lights is photographed with a camera	There is a group present
+98	185	0	The group is photographed with a camera	There is a lights present
+98	185	1	The lights is in the water	The group is wet
+98	185	1	The group is in the water	The lights is wet
+98	185	2	A lights is outside near a campfire at night	There is a group outside
+98	185	2	A group is outside near a campfire at night	There is a lights outside
+98	185	3	A young woman is looking at a lights with a binocular	A group is looked at by a woman
+98	185	3	A young woman is looking at a group with a binocular	A lights is looked at by a woman
+98	185	4	Several people are moving towards the lights	There is a group of people near the group
+98	185	4	Several people are moving towards the group	There is a group of people near the lights
+98	185	5	A bald man standing to the side of a lights	The man stands near a group.
+98	185	5	A bald man standing to the side of a group	The man stands near a lights.
+98	185	6	A kid fetches a lights by a tree in the yard.	a kid gets a group
+98	185	6	A kid fetches a group by a tree in the yard.	a kid gets a lights
+98	185	7	A green frog buys a lights from a stand.	There is a green frog buying a group
+98	185	7	A green frog buys a group from a stand.	There is a green frog buying a lights
+98	185	8	A lights	A group
+98	185	8	A group	A lights
+99	185	0	The lights is photographed with a camera	There is a restaurant present
+99	185	0	The restaurant is photographed with a camera	There is a lights present
+99	185	1	The lights is in the water	The restaurant is wet
+99	185	1	The restaurant is in the water	The lights is wet
+99	185	2	A lights is outside near a campfire at night	There is a restaurant outside
+99	185	2	A restaurant is outside near a campfire at night	There is a lights outside
+99	185	3	A young woman is looking at a lights with a binocular	A restaurant is looked at by a woman
+99	185	3	A young woman is looking at a restaurant with a binocular	A lights is looked at by a woman
+99	185	4	Several people are moving towards the lights	There is a group of people near the restaurant
+99	185	4	Several people are moving towards the restaurant	There is a group of people near the lights
+99	185	5	A bald man standing to the side of a lights	The man stands near a restaurant.
+99	185	5	A bald man standing to the side of a restaurant	The man stands near a lights.
+99	185	6	A kid fetches a lights by a tree in the yard.	a kid gets a restaurant
+99	185	6	A kid fetches a restaurant by a tree in the yard.	a kid gets a lights
+99	185	7	A green frog buys a lights from a stand.	There is a green frog buying a restaurant
+99	185	7	A green frog buys a restaurant from a stand.	There is a green frog buying a lights
+99	185	8	A lights	A restaurant
+99	185	8	A restaurant	A lights
+100	185	0	The lights is photographed with a camera	There is a people present
+100	185	0	The people is photographed with a camera	There is a lights present
+100	185	1	The lights is in the water	The people is wet
+100	185	1	The people is in the water	The lights is wet
+100	185	2	A lights is outside near a campfire at night	There is a people outside
+100	185	2	A people is outside near a campfire at night	There is a lights outside
+100	185	3	A young woman is looking at a lights with a binocular	A people is looked at by a woman
+100	185	3	A young woman is looking at a people with a binocular	A lights is looked at by a woman
+100	185	4	Several people are moving towards the lights	There is a group of people near the people
+100	185	4	Several people are moving towards the people	There is a group of people near the lights
+100	185	5	A bald man standing to the side of a lights	The man stands near a people.
+100	185	5	A bald man standing to the side of a people	The man stands near a lights.
+100	185	6	A kid fetches a lights by a tree in the yard.	a kid gets a people
+100	185	6	A kid fetches a people by a tree in the yard.	a kid gets a lights
+100	185	7	A green frog buys a lights from a stand.	There is a green frog buying a people
+100	185	7	A green frog buys a people from a stand.	There is a green frog buying a lights
+100	185	8	A lights	A people
+100	185	8	A people	A lights

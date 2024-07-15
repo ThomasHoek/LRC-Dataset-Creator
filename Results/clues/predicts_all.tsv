@@ -1,0 +1,300 @@
+ID	scrapeID	w1	w2	label	meta	pred
+1	2	adult	child	disjoint	org	disjoint
+2	2	adults worldwide	child	disjoint	add	disjoint
+3	3	adult	mother	reverseentailment	org	disjoint
+4	4	aircraft	base	disjoint	org	disjoint
+5	4	aircraft	power bases	disjoint	add	disjoint
+6	5	aircraft	plane	reverseentailment	org	reverseentailment
+7	5	aircraft	spy plane	reverseentailment	add	reverseentailment
+8	6	air	airplane	disjoint	org	independent
+9	6	airplane home	air	disjoint	add	disjoint
+10	8	animal	cat	reverseentailment	org	reverseentailment
+11	9	animal	snake	reverseentailment	org	reverseentailment
+12	9	animal health department	snakes	disjoint	add	independent
+13	10	automobile	car	synonym	org	synonym
+14	10	mutual automobile insurance	cars	disjoint	add	independent
+15	10	automobile insurance	flash cars	disjoint	add	disjoint
+16	11	baby	child	reverseentailment	org	forwardentailment
+17	12	baby	kid	disjoint	org	forwardentailment
+18	13	baby	mother	disjoint	org	disjoint
+19	14	background	light	disjoint	org	disjoint
+20	15	ball	basketball	reverseentailment	org	synonym
+21	16	ball	mitt	disjoint	org	disjoint
+22	17	bank	river	disjoint	org	independent
+23	18	baseball	football	disjoint	org	disjoint
+24	19	baseball	hit	disjoint	org	reverseentailment
+25	20	basketball	game	forwardentailment	org	forwardentailment
+26	20	basketball operations	games	disjoint	add	forwardentailment
+27	22	beach	sun	disjoint	org	disjoint
+28	22	sydney beach	sun	disjoint	add	disjoint
+29	22	beach	sun	disjoint	add	disjoint
+30	23	bed	couch	disjoint	org	disjoint
+31	24	beer	glass	independent	org	independent
+32	24	beer	glass door	disjoint	add	independent
+33	25	bicycle	bike	synonym	org	synonym
+34	25	bicycles	dirt bike riders	disjoint	add	synonym
+35	26	bicycle	motorcycle	disjoint	org	disjoint
+36	26	bicycle riding	motorcycle	disjoint	add	disjoint
+37	27	bicycle	ramp	independent	org	independent
+38	28	bicycle	bike	synonym	org	synonym
+39	29	bike	parking	independent	org	disjoint
+40	29	bikes	parking lot	disjoint	add	disjoint
+41	30	bike	track	independent	org	disjoint
+42	30	hand-bike athletes	recording tracks	disjoint	add	disjoint
+43	31	bird	fly	disjoint	org	reverseentailment
+44	31	wild birds	flying debris	disjoint	add	disjoint
+45	33	black	woman	independent	org	forwardentailment
+46	35	blue	color	forwardentailment	org	forwardentailment
+47	36	blue	water	independent	org	independent
+48	36	blues	water reservoirs	disjoint	add	disjoint
+49	36	pan blues	water	disjoint	add	disjoint
+50	38	boat	sail	independent	org	independent
+51	38	zodiac boats	plans to sail to kenya	disjoint	add	disjoint
+52	38	inflatable zodiac boats	plans to sail to kenya	disjoint	add	disjoint
+53	39	boat	vehicle	forwardentailment	org	forwardentailment
+54	40	body	person	independent	org	independent
+55	41	book	video	disjoint	org	disjoint
+56	41	published book	video	disjoint	add	disjoint
+57	42	bottom	top	disjoint	org	disjoint
+58	43	boulder	rock	forwardentailment	org	forwardentailment
+59	44	bowl	container	forwardentailment	org	forwardentailment
+60	45	bowl	dish	forwardentailment	org	forwardentailment
+61	45	bowl advertisements	venus rosewater dish	disjoint	add	disjoint
+62	46	box	tape	disjoint	org	independent
+63	46	box	adhesive tape	disjoint	add	independent
+64	47	boy	child	forwardentailment	org	forwardentailment
+65	47	9-year-old boy	child	forwardentailment	add	forwardentailment
+66	47	9-year-old boy	child pornography	disjoint	add	independent
+67	48	boy	family	forwardentailment	org	independent
+68	48	boy	first family church	disjoint	add	disjoint
+69	49	boy	girl	disjoint	org	disjoint
+70	52	boys	people	forwardentailment	org	forwardentailment
+71	52	met the boys	with additional people	forwardentailment	add	disjoint
+72	52	boys	additional people	independent	add	forwardentailment
+73	53	break	trip	independent	org	disjoint
+74	53	tax breaks	previous trips	disjoint	add	disjoint
+75	53	more tax breaks	trips	disjoint	add	disjoint
+76	54	bride	marriage	independent	org	synonym
+77	54	child bride	same-sex marriage opponents	disjoint	add	disjoint
+78	54	bride	same-sex marriage	disjoint	add	synonym
+79	58	bus	street	independent	org	independent
+80	58	bus operator	streets	disjoint	add	independent
+81	58	bus operator	back streets	disjoint	add	independent
+82	60	camera	picture	disjoint	org	independent
+83	61	cap	suit	independent	org	disjoint
+84	61	cap	dark suit	disjoint	add	disjoint
+85	62	automobile	car	synonym	org	synonym
+86	62	car crash	automobile	disjoint	add	independent
+87	63	car	driver	independent	org	independent
+88	63	kers-equipped bmw sauber car	driver	disjoint	add	disjoint
+89	64	car	garage	disjoint	org	independent
+90	64	car series	garage	disjoint	add	disjoint
+91	64	stock car series	garage 	disjoint	add	disjoint
+92	65	car	jeep	reverseentailment	org	reverseentailment
+93	66	car	owner	disjoint	org	independent
+94	67	car	sedan	reverseentailment	org	reverseentailment
+95	67	car	australian sedan	reverseentailment	add	reverseentailment
+96	68	car	trunk	reverseentailment	org	independent
+97	68	cars	remaining trunks	independent	add	disjoint
+98	69	car	window	independent	org	independent
+99	69	cars	glass windows	independent	add	independent
+100	71	catch	fish	independent	org	independent
+101	72	chicken	meat	forwardentailment	org	independent
+102	72	smuggled chickens	processed meats	independent	add	disjoint
+103	72	smuggled chickens	meats	independent	add	forwardentailment
+104	73	baby	child	reverseentailment	org	forwardentailment
+105	74	child	daughter	reverseentailment	org	synonym
+106	75	child	family	forwardentailment	org	independent
+107	75	six children	family	independent	add	independent
+108	76	child	father	disjoint	org	disjoint
+109	77	child	school	disjoint	org	independent
+110	77	child	emberton school	disjoint	add	disjoint
+111	78	child	toddler	reverseentailment	org	reverseentailment
+112	79	city	police	independent	org	independent
+113	79	northwestern city	police	disjoint	add	independent
+114	80	class	classroom	disjoint	org	synonym
+115	81	classroom	structure	forwardentailment	org	forwardentailment
+116	82	clean	erase	reverseentailment	org	reverseentailment
+117	83	clean	water	independent	org	independent
+118	83	clean up	distribute water	disjoint	add	disjoint
+119	84	cliff	sea	disjoint	org	disjoint
+120	85	climb	play	independent	org	forwardentailment
+121	86	clothing	fashion	forwardentailment	org	reverseentailment
+122	87	clothing	shirt	reverseentailment	org	reverseentailment
+123	87	clothing	gray sweat shirts	reverseentailment	add	reverseentailment
+124	87	clothing	sweat shirts	reverseentailment	add	reverseentailment
+125	88	clothing	uniform	reverseentailment	org	reverseentailment
+126	89	clothing	vest	reverseentailment	org	reverseentailment
+127	90	coat	snow	disjoint	org	disjoint
+128	90	coat	first snow	disjoint	add	independent
+129	91	competition	track	independent	org	disjoint
+130	91	inter-modal competition	track	disjoint	add	disjoint
+131	93	conversation	talk	synonym	org	synonym
+132	94	counter	shop	disjoint	org	independent
+133	94	counter	many shops	independent	add	independent
+134	95	couple	married	reverseentailment	org	reverseentailment
+135	96	cross	walk	forwardentailment	org	disjoint
+136	97	crowd	person	disjoint	org	disjoint
+137	99	daughter	father	disjoint	org	disjoint
+138	100	daughter	girl	forwardentailment	org	synonym
+139	101	daughter	woman	forwardentailment	org	independent
+140	102	dirt	mud	reverseentailment	org	synonym
+141	103	dog	monkey	disjoint	org	disjoint
+142	105	doll	kid	disjoint	org	forwardentailment
+143	108	earth	rock	forwardentailment	org	disjoint
+144	108	earth	metal groups	independent	add	disjoint
+145	109	earth	surface	independent	org	independent
+146	110	eat	food	independent	org	synonym
+147	111	edge	mountain	forwardentailment	org	independent
+148	112	father	kid	disjoint	org	disjoint
+149	113	field	lot	disjoint	org	disjoint
+150	115	field	water	disjoint	org	disjoint
+151	116	field	yard	reverseentailment	org	forwardentailment
+152	117	fire	police	disjoint	org	disjoint
+153	117	fires	police	disjoint	add	disjoint
+154	118	fish	sea	independent	org	disjoint
+155	118	transporting fishing goods	starve while at sea	independent	add	disjoint
+156	119	fishing	rod	independent	org	independent
+157	119	capsized fishing boat	unused fuel rods	disjoint	add	disjoint
+158	123	food	hunger	independent	org	disjoint
+159	123	food exports	hunger	disjoint	add	disjoint
+160	123	food	hunger strike	disjoint	add	disjoint
+161	124	food	meat	reverseentailment	org	reverseentailment
+162	125	food	pan	disjoint	org	disjoint
+163	126	forest	woods	synonym	org	synonym
+164	127	friend	people	forwardentailment	org	independent
+165	127	friends	three million people	independent	add	independent
+166	129	front	panel	independent	org	independent
+167	130	front	street	independent	org	independent
+168	132	fun	swing	independent	org	independent
+169	133	garage	park	disjoint	org	disjoint
+170	133	garage	amusement park	disjoint	add	independent
+171	134	garage	parking	independent	org	forwardentailment
+172	134	garage	parking lot	independent	add	synonym
+173	135	gear	outfit	independent	org	synonym
+174	135	gear inspections	terrorist outfit	disjoint	add	disjoint
+175	137	girl	infant	forwardentailment	org	reverseentailment
+176	137	found the little girl	including 20 infants	disjoint	add	disjoint
+177	137	girl	20 infants	independent	add	disjoint
+178	138	girl	person	forwardentailment	org	forwardentailment
+179	138	year-old girl	person	forwardentailment	add	forwardentailment
+180	139	girl	woman	disjoint	org	forwardentailment
+181	139	girls	thirteen women	independent	add	independent
+182	140	golf	tennis	disjoint	org	disjoint
+183	140	golf course	singles wimbledon tennis title	disjoint	add	independent
+184	140	golf course	tennis title	disjoint	add	disjoint
+185	141	ground	space	forwardentailment	org	forwardentailment
+186	142	ground	stone	disjoint	org	independent
+187	143	guinea	pig	forwardentailment	org	disjoint
+188	143	new guinea paralympic committee	guinea pigs	disjoint	add	disjoint
+189	143	guinea paralympic committee	pigs	disjoint	add	disjoint
+190	144	gun	pistol	reverseentailment	org	disjoint
+191	144	gun	380 pistol	independent	add	disjoint
+192	144	gun	calibre pistol	reverseentailment	add	disjoint
+193	145	gun	weapon	forwardentailment	org	forwardentailment
+194	145	gun battles	weapons	disjoint	add	forwardentailment
+195	146	guy	woman	disjoint	org	disjoint
+196	146	guy	historically women	disjoint	add	disjoint
+197	146	right guy	historically women	disjoint	add	disjoint
+198	148	hill	mountain	disjoint	org	synonym
+199	149	hit	play	forwardentailment	org	forwardentailment
+200	152	horse	track	independent	org	independent
+201	153	horse	vehicle	forwardentailment	org	forwardentailment
+202	153	on their high horse	in vehicles	disjoint	add	independent
+203	155	ice	surface	independent	org	forwardentailment
+204	156	interior	middle	reverseentailment	org	disjoint
+205	157	jet	plane	forwardentailment	org	forwardentailment
+206	157	fighter jets	plane	forwardentailment	add	forwardentailment
+207	157	f-16 fighter jets	plane	forwardentailment	add	forwardentailment
+208	158	daughter	kid	disjoint	org	forwardentailment
+209	159	kid	toddler	reverseentailment	org	reverseentailment
+210	159	kids	four-year-old istanbul toddler	reverseentailment	add	reverseentailment
+211	159	school kids	toddler	disjoint	add	reverseentailment
+212	160	kid	woman	disjoint	org	independent
+213	161	girl	lady	disjoint	org	reverseentailment
+214	161	old lady	girls	disjoint	add	independent
+215	162	lady	woman	synonym	org	forwardentailment
+216	163	dark	light	disjoint	org	disjoint
+217	164	market	oil	reverseentailment	org	disjoint
+218	164	search market	crude oil	disjoint	add	disjoint
+219	164	internet search market	two oil spills	disjoint	add	disjoint
+220	165	marriage	marry	independent	org	synonym
+221	167	mother	woman	forwardentailment	org	independent
+222	167	mother	australian woman	independent	add	forwardentailment
+223	168	motorbike	scooter	forwardentailment	org	disjoint
+224	169	motorcycle	road	independent	org	independent
+225	170	motorcycle	vehicle	forwardentailment	org	forwardentailment
+226	170	motorcycle racing event	vehicle	disjoint	add	forwardentailment
+227	171	mountain	sky	disjoint	org	independent
+228	172	mountain	top	independent	org	independent
+229	173	music	play	independent	org	independent
+230	173	jazz music	attacking play	disjoint	add	disjoint
+231	173	folk and jazz music	play	disjoint	add	forwardentailment
+232	179	obstacle	railing	reverseentailment	org	reverseentailment
+233	180	ocean	pool	disjoint	org	forwardentailment
+234	180	pacific ocean	pool	disjoint	add	forwardentailment
+235	181	ocean	shore	disjoint	org	disjoint
+236	181	indian ocean	shore	disjoint	add	independent
+237	182	ocean	water	forwardentailment	org	forwardentailment
+238	182	ocean	australian waters	independent	add	forwardentailment
+239	182	atlantic ocean	waters	forwardentailment	add	forwardentailment
+240	183	officer	policeman	reverseentailment	org	synonym
+241	183	officers	two policemen	reverseentailment	add	reverseentailment
+242	184	official	person	forwardentailment	org	forwardentailment
+243	184	school officials	person	forwardentailment	add	forwardentailment
+244	185	oil	water	disjoint	org	disjoint
+245	185	oil-rich middle east	water	disjoint	add	disjoint
+246	186	people	police	reverseentailment	org	reverseentailment
+247	186	5.000 people	military personnel	independent	add	reverseentailment
+248	186	people	military personnel	reverseentailment	add	reverseentailment
+249	187	people	team	reverseentailment	org	independent
+250	187	people	munitions clearing teams	reverseentailment	add	reverseentailment
+251	187	people	clearing teams	reverseentailment	add	reverseentailment
+252	188	perform	play	independent	org	reverseentailment
+253	189	owner	person	forwardentailment	org	forwardentailment
+254	190	person	woman	reverseentailment	org	forwardentailment
+255	191	photo	photograph	synonym	org	synonym
+256	192	photo	picture	synonym	org	forwardentailment
+257	193	camera	photograph	disjoint	org	independent
+258	194	photo	photograph	synonym	org	synonym
+259	196	piece	sheet	independent	org	independent
+260	196	pieces	balance sheet	disjoint	add	independent
+261	197	piece	strip	synonym	org	synonym
+262	197	pieces	strip club	disjoint	add	disjoint
+263	197	silver pieces	strip club	disjoint	add	disjoint
+264	198	pink	red	disjoint	org	independent
+265	199	aircraft	plane	reverseentailment	org	reverseentailment
+266	200	plant	tree	reverseentailment	org	reverseentailment
+267	200	plants	tree rings	independent	add	reverseentailment
+268	200	nuclear plants	tree	disjoint	add	disjoint
+269	201	plastic	toy	independent	org	independent
+270	201	plastic bag	other toys	disjoint	add	forwardentailment
+271	204	play	watch	disjoint	org	disjoint
+272	205	player	top	disjoint	org	disjoint
+273	206	podium	speech	independent	org	independent
+274	208	pond	river	disjoint	org	disjoint
+275	208	pond	river blockage	disjoint	add	disjoint
+276	209	pose	stand	forwardentailment	org	forwardentailment
+277	210	race	swimmer	independent	org	disjoint
+278	211	raft	shore	independent	org	independent
+279	211	current raft	shore	disjoint	add	independent
+280	213	ride	surf	independent	org	disjoint
+281	214	river	tree	disjoint	org	disjoint
+282	215	path	road	reverseentailment	org	disjoint
+283	217	building	school	reverseentailment	org	reverseentailment
+284	217	school	single-seater plane	disjoint	add	disjoint
+285	218	ground	seat	independent	org	disjoint
+286	219	seat	vehicle	independent	org	independent
+287	219	parliamentary seat	vehicle	disjoint	add	forwardentailment
+288	220	beach	shore	synonym	org	independent
+289	221	sit	stand	disjoint	org	disjoint
+290	222	slide	snow	disjoint	org	independent
+291	223	stick	tree	independent	org	independent
+292	224	stone	wall	independent	org	independent
+293	224	stone wall	wall	forwardentailment	add	synonym
+294	225	strip	wood	disjoint	org	independent
+295	227	summer	weather	forwardentailment	org	independent
+296	228	surface	water	independent	org	independent
+297	229	swim	water	independent	org	independent
+298	230	swimming	water	independent	org	independent
+299	231	phone	talk	independent	org	independent

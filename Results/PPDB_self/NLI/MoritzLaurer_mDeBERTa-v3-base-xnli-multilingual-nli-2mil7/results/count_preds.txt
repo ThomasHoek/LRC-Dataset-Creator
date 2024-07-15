@@ -1,0 +1,62 @@
+alternation
+(('contradiction', 'contradiction'), 111)
+(('entailment', 'entailment'), 41)
+(('neutral', 'neutral'), 27)
+(('neutral', 'entailment'), 23)
+(('entailment', 'neutral'), 22)
+(('entailment', 'contradiction'), 17)
+(('contradiction', 'neutral'), 16)
+(('neutral', 'contradiction'), 14)
+(('contradiction', 'entailment'), 8)
+-------------------------
+reverseentailment
+(('neutral', 'entailment'), 195)
+(('entailment', 'entailment'), 127)
+(('contradiction', 'entailment'), 27)
+(('contradiction', 'contradiction'), 15)
+(('neutral', 'neutral'), 8)
+(('neutral', 'contradiction'), 5)
+(('entailment', 'neutral'), 5)
+(('entailment', 'contradiction'), 5)
+-------------------------
+disjoint
+(('contradiction', 'contradiction'), 249)
+(('neutral', 'neutral'), 143)
+(('entailment', 'neutral'), 132)
+(('entailment', 'entailment'), 117)
+(('neutral', 'entailment'), 93)
+(('neutral', 'contradiction'), 60)
+(('entailment', 'contradiction'), 53)
+(('contradiction', 'neutral'), 36)
+(('contradiction', 'entailment'), 35)
+-------------------------
+synonym
+(('entailment', 'entailment'), 98)
+(('contradiction', 'entailment'), 5)
+(('neutral', 'neutral'), 2)
+(('entailment', 'neutral'), 1)
+(('neutral', 'entailment'), 1)
+(('contradiction', 'contradiction'), 1)
+-------------------------
+forwardentailment
+(('entailment', 'neutral'), 182)
+(('entailment', 'entailment'), 109)
+(('entailment', 'contradiction'), 32)
+(('contradiction', 'contradiction'), 20)
+(('neutral', 'neutral'), 13)
+(('contradiction', 'entailment'), 12)
+(('neutral', 'entailment'), 9)
+(('contradiction', 'neutral'), 5)
+(('neutral', 'contradiction'), 5)
+-------------------------
+independent
+(('entailment', 'entailment'), 181)
+(('neutral', 'neutral'), 98)
+(('neutral', 'entailment'), 80)
+(('contradiction', 'contradiction'), 77)
+(('entailment', 'neutral'), 72)
+(('entailment', 'contradiction'), 36)
+(('contradiction', 'entailment'), 29)
+(('neutral', 'contradiction'), 26)
+(('contradiction', 'neutral'), 13)
+-------------------------

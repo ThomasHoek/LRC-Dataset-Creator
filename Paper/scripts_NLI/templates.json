@@ -1,0 +1,38 @@
+[
+    {
+        "prem": "The NP is photographed with a camera",
+        "hyp": "There is a NP present"
+    },
+    {
+        "prem": "The NP is in the water",
+        "hyp": "The NP is wet"
+    },
+    {
+        "prem": "A NP is outside near a campfire at night",
+        "hyp": "There is a NP outside"
+    },
+    {
+        "prem": "A young woman is looking at a NP with a binocular",
+        "hyp": "A NP is looked at by a woman"
+    },
+    {
+        "prem": "Several people are moving towards the NP",
+        "hyp": "There is a group of people near the NP"
+    },
+    {
+        "prem": "A bald man standing to the side of a NP",
+        "hyp": "The man stands near a NP."
+    },
+    {
+        "prem": "A kid fetches a NP by a tree in the yard.",
+        "hyp": "a kid gets a NP"
+    },
+    {
+        "prem": "A green frog buys a NP from a stand.",
+        "hyp": "There is a green frog buying a NP"
+    },
+    {
+        "prem": "A NP",
+        "hyp": "A NP"
+    }
+]

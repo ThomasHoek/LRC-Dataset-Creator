@@ -1,0 +1,101 @@
+Counter	Word1	Word2	Prediction
+1	boy	man	alternation
+2	outdoors	man	forwardentailment
+3	boy playing outdoors	man	alternation
+4	man smiling	man	reverseentailment
+5	boy	boys	synonym
+6	man	boys	alternation
+7	outdoors	boys	forwardentailment
+8	boy playing outdoors	boys	reverseentailment
+9	man smiling	boys	alternation
+10	boy	outdoors	reverseentailment
+11	man	outdoors	reverseentailment
+12	boy playing outdoors	outdoors	reverseentailment
+13	man smiling	outdoors	independent
+14	boy	young boys	synonym
+15	man	young boys	alternation
+16	outdoors	young boys	forwardentailment
+17	boy playing outdoors	young boys	reverseentailment
+18	man smiling	young boys	alternation
+19	smiling	playing	disjoint
+20	playing	smiling	disjoint
+21	bicycle	jacket	alternation
+22	person	jacket	forwardentailment
+23	wheel	jacket	alternation
+24	one wheel	jacket	alternation
+25	skilled person	jacket	disjoint
+26	bicycle	motorbike	alternation
+27	person	motorbike	alternation
+28	wheel	motorbike	forwardentailment
+29	one wheel	motorbike	disjoint
+30	skilled person	motorbike	independent
+31	bicycle	person	alternation
+32	wheel	person	independent
+33	one wheel	person	alternation
+34	skilled person	person	reverseentailment
+35	bicycle	tricks	independent
+36	person	tricks	synonym
+37	wheel	tricks	synonym
+38	one wheel	tricks	reverseentailment
+39	skilled person	tricks	disjoint
+40	bicycle	black jacket	alternation
+41	person	black jacket	forwardentailment
+42	wheel	black jacket	alternation
+43	one wheel	black jacket	alternation
+44	skilled person	black jacket	disjoint
+45	riding	doing	synonym
+46	on one wheel	black	independent
+47	skilled	black	synonym
+48	on one wheel	on a motorbike	synonym
+49	skilled	on a motorbike	independent
+50	backbends	gym	disjoint
+51	girls	gym	alternation
+52	outdoors	gym	independent
+53	Four girls	gym	alternation
+54	girls	backbends	alternation
+55	outdoors	backbends	forwardentailment
+56	Four girls	backbends	alternation
+57	backbends	children	alternation
+58	girls	children	reverseentailment
+59	outdoors	children	forwardentailment
+60	Four girls	children	reverseentailment
+61	backbends	Four children	alternation
+62	girls	Four children	independent
+63	outdoors	Four children	independent
+64	Four girls	Four children	reverseentailment
+65	playing	doing	synonym
+66	football	ball	reverseentailment
+67	match	ball	synonym
+68	teams	ball	synonym
+69	Two teams	ball	reverseentailment
+70	football match	ball	reverseentailment
+71	football	player	disjoint
+72	match	player	reverseentailment
+73	teams	player	synonym
+74	Two teams	player	synonym
+75	football match	player	reverseentailment
+76	competing	throwing	independent
+77	hut	front	reverseentailment
+78	children	front	reverseentailment
+79	Five children	front	reverseentailment
+80	wooden hut	front	reverseentailment
+81	children	hut	alternation
+82	Five children	hut	alternation
+83	wooden hut	hut	reverseentailment
+84	hut	children	alternation
+85	Five children	children	reverseentailment
+86	wooden hut	children	alternation
+87	hut	Five children	alternation
+88	children	Five children	forwardentailment
+89	wooden hut	Five children	alternation
+90	hut	wooden hut	forwardentailment
+91	children	wooden hut	alternation
+92	Five children	wooden hut	alternation
+93	in a wooden hut	wooden	reverseentailment
+94	group	restaurant	independent
+95	people	restaurant	alternation
+96	Asian people	restaurant	independent
+97	group of Asian people	restaurant	independent
+98	group	lights	disjoint
+99	restaurant	lights	alternation
+100	people	lights	alternation

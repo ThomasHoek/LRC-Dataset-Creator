@@ -1,0 +1,12 @@
+                   precision    recall  f1-score   support
+
+      alternation       0.23      0.61      0.34        31
+         disjoint       0.45      0.36      0.40       102
+forwardentailment       0.57      0.65      0.61        43
+      independent       0.20      0.06      0.09        68
+reverseentailment       0.73      0.70      0.71        43
+          synonym       0.42      0.92      0.58        12
+
+         accuracy                           0.43       299
+        macro avg       0.44      0.55      0.46       299
+     weighted avg       0.43      0.43      0.41       299

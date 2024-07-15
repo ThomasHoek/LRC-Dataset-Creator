@@ -1,0 +1,300 @@
+ID	scrapeID	w1	w2	label	meta
+1	2	adult	child	alternation	org
+2	2	adults worldwide	child	alternation	add
+3	3	adult	mother	reverseentailment	org
+4	4	aircraft	base	disjoint	org
+5	4	aircraft	power bases	disjoint	add
+6	5	aircraft	plane	reverseentailment	org
+7	5	aircraft	spy plane	reverseentailment	add
+8	6	air	airplane	disjoint	org
+9	6	airplane home	air	disjoint	add
+10	8	animal	cat	reverseentailment	org
+11	9	animal	snake	reverseentailment	org
+12	9	animal health department	snakes	disjoint	add
+13	10	automobile	car	synonym	org
+14	10	mutual automobile insurance	cars	disjoint	add
+15	10	automobile insurance	flash cars	disjoint	add
+16	11	baby	child	reverseentailment	org
+17	12	baby	kid	alternation	org
+18	13	baby	mother	alternation	org
+19	14	background	light	disjoint	org
+20	15	ball	basketball	reverseentailment	org
+21	16	ball	mitt	disjoint	org
+22	17	bank	river	disjoint	org
+23	18	baseball	football	alternation	org
+24	19	baseball	hit	disjoint	org
+25	20	basketball	game	forwardentailment	org
+26	20	basketball operations	games	disjoint	add
+27	22	beach	sun	disjoint	org
+28	22	sydney beach	sun	disjoint	add
+29	22	beach	sun	disjoint	add
+30	23	bed	couch	alternation	org
+31	24	beer	glass	independent	org
+32	24	beer	glass door	disjoint	add
+33	25	bicycle	bike	synonym	org
+34	25	bicycles	dirt bike riders	disjoint	add
+35	26	bicycle	motorcycle	disjoint	org
+36	26	bicycle riding	motorcycle	disjoint	add
+37	27	bicycle	ramp	independent	org
+38	28	bicycle	bike	synonym	org
+39	29	bike	parking	independent	org
+40	29	bikes	parking lot	disjoint	add
+41	30	bike	track	independent	org
+42	30	hand-bike athletes	recording tracks	disjoint	add
+43	31	bird	fly	disjoint	org
+44	31	wild birds	flying debris	disjoint	add
+45	33	black	woman	independent	org
+46	35	blue	color	forwardentailment	org
+47	36	blue	water	independent	org
+48	36	blues	water reservoirs	disjoint	add
+49	36	pan blues	water	disjoint	add
+50	38	boat	sail	independent	org
+51	38	zodiac boats	plans to sail to kenya	disjoint	add
+52	38	inflatable zodiac boats	plans to sail to kenya	disjoint	add
+53	39	boat	vehicle	forwardentailment	org
+54	40	body	person	independent	org
+55	41	book	video	alternation	org
+56	41	published book	video	disjoint	add
+57	42	bottom	top	alternation	org
+58	43	boulder	rock	forwardentailment	org
+59	44	bowl	container	forwardentailment	org
+60	45	bowl	dish	forwardentailment	org
+61	45	bowl advertisements	venus rosewater dish	disjoint	add
+62	46	box	tape	disjoint	org
+63	46	box	adhesive tape	disjoint	add
+64	47	boy	child	forwardentailment	org
+65	47	9-year-old boy	child	forwardentailment	add
+66	47	9-year-old boy	child pornography	disjoint	add
+67	48	boy	family	forwardentailment	org
+68	48	boy	first family church	disjoint	add
+69	49	boy	girl	alternation	org
+70	52	boys	people	forwardentailment	org
+71	52	met the boys	with additional people	forwardentailment	add
+72	52	boys	additional people	independent	add
+73	53	break	trip	independent	org
+74	53	tax breaks	previous trips	disjoint	add
+75	53	more tax breaks	trips	disjoint	add
+76	54	bride	marriage	independent	org
+77	54	child bride	same-sex marriage opponents	disjoint	add
+78	54	bride	same-sex marriage	disjoint	add
+79	58	bus	street	independent	org
+80	58	bus operator	streets	disjoint	add
+81	58	bus operator	back streets	disjoint	add
+82	60	camera	picture	disjoint	org
+83	61	cap	suit	independent	org
+84	61	cap	dark suit	disjoint	add
+85	62	automobile	car	synonym	org
+86	62	car crash	automobile	disjoint	add
+87	63	car	driver	independent	org
+88	63	kers-equipped bmw sauber car	driver	disjoint	add
+89	64	car	garage	disjoint	org
+90	64	car series	garage	disjoint	add
+91	64	stock car series	garage 	disjoint	add
+92	65	car	jeep	reverseentailment	org
+93	66	car	owner	disjoint	org
+94	67	car	sedan	reverseentailment	org
+95	67	car	australian sedan	reverseentailment	add
+96	68	car	trunk	reverseentailment	org
+97	68	cars	remaining trunks	independent	add
+98	69	car	window	independent	org
+99	69	cars	glass windows	independent	add
+100	71	catch	fish	independent	org
+101	72	chicken	meat	forwardentailment	org
+102	72	smuggled chickens	processed meats	independent	add
+103	72	smuggled chickens	meats	independent	add
+104	73	baby	child	reverseentailment	org
+105	74	child	daughter	reverseentailment	org
+106	75	child	family	forwardentailment	org
+107	75	six children	family	independent	add
+108	76	child	father	alternation	org
+109	77	child	school	disjoint	org
+110	77	child	emberton school	disjoint	add
+111	78	child	toddler	reverseentailment	org
+112	79	city	police	independent	org
+113	79	northwestern city	police	disjoint	add
+114	80	class	classroom	alternation	org
+115	81	classroom	structure	forwardentailment	org
+116	82	clean	erase	reverseentailment	org
+117	83	clean	water	independent	org
+118	83	clean up	distribute water	disjoint	add
+119	84	cliff	sea	alternation	org
+120	85	climb	play	independent	org
+121	86	clothing	fashion	forwardentailment	org
+122	87	clothing	shirt	reverseentailment	org
+123	87	clothing	gray sweat shirts	reverseentailment	add
+124	87	clothing	sweat shirts	reverseentailment	add
+125	88	clothing	uniform	reverseentailment	org
+126	89	clothing	vest	reverseentailment	org
+127	90	coat	snow	disjoint	org
+128	90	coat	first snow	disjoint	add
+129	91	competition	track	independent	org
+130	91	inter-modal competition	track	disjoint	add
+131	93	conversation	talk	synonym	org
+132	94	counter	shop	alternation	org
+133	94	counter	many shops	independent	add
+134	95	couple	married	reverseentailment	org
+135	96	cross	walk	forwardentailment	org
+136	97	crowd	person	alternation	org
+137	99	daughter	father	alternation	org
+138	100	daughter	girl	forwardentailment	org
+139	101	daughter	woman	forwardentailment	org
+140	102	dirt	mud	reverseentailment	org
+141	103	dog	monkey	alternation	org
+142	105	doll	kid	disjoint	org
+143	108	earth	rock	forwardentailment	org
+144	108	earth	metal groups	independent	add
+145	109	earth	surface	independent	org
+146	110	eat	food	independent	org
+147	111	edge	mountain	forwardentailment	org
+148	112	father	kid	alternation	org
+149	113	field	lot	alternation	org
+150	115	field	water	alternation	org
+151	116	field	yard	reverseentailment	org
+152	117	fire	police	disjoint	org
+153	117	fires	police	disjoint	add
+154	118	fish	sea	independent	org
+155	118	transporting fishing goods	starve while at sea	independent	add
+156	119	fishing	rod	independent	org
+157	119	capsized fishing boat	unused fuel rods	disjoint	add
+158	123	food	hunger	independent	org
+159	123	food exports	hunger	disjoint	add
+160	123	food	hunger strike	disjoint	add
+161	124	food	meat	reverseentailment	org
+162	125	food	pan	disjoint	org
+163	126	forest	woods	synonym	org
+164	127	friend	people	forwardentailment	org
+165	127	friends	three million people	independent	add
+166	129	front	panel	independent	org
+167	130	front	street	independent	org
+168	132	fun	swing	independent	org
+169	133	garage	park	disjoint	org
+170	133	garage	amusement park	disjoint	add
+171	134	garage	parking	independent	org
+172	134	garage	parking lot	independent	add
+173	135	gear	outfit	independent	org
+174	135	gear inspections	terrorist outfit	disjoint	add
+175	137	girl	infant	forwardentailment	org
+176	137	found the little girl	including 20 infants	disjoint	add
+177	137	girl	20 infants	independent	add
+178	138	girl	person	forwardentailment	org
+179	138	year-old girl	person	forwardentailment	add
+180	139	girl	woman	disjoint	org
+181	139	girls	thirteen women	independent	add
+182	140	golf	tennis	alternation	org
+183	140	golf course	singles wimbledon tennis title	disjoint	add
+184	140	golf course	tennis title	disjoint	add
+185	141	ground	space	forwardentailment	org
+186	142	ground	stone	alternation	org
+187	143	guinea	pig	forwardentailment	org
+188	143	new guinea paralympic committee	guinea pigs	disjoint	add
+189	143	guinea paralympic committee	pigs	disjoint	add
+190	144	gun	pistol	reverseentailment	org
+191	144	gun	380 pistol	independent	add
+192	144	gun	calibre pistol	reverseentailment	add
+193	145	gun	weapon	forwardentailment	org
+194	145	gun battles	weapons	disjoint	add
+195	146	guy	woman	alternation	org
+196	146	guy	historically women	disjoint	add
+197	146	right guy	historically women	disjoint	add
+198	148	hill	mountain	disjoint	org
+199	149	hit	play	forwardentailment	org
+200	152	horse	track	independent	org
+201	153	horse	vehicle	forwardentailment	org
+202	153	on their high horse	in vehicles	disjoint	add
+203	155	ice	surface	independent	org
+204	156	interior	middle	reverseentailment	org
+205	157	jet	plane	forwardentailment	org
+206	157	fighter jets	plane	forwardentailment	add
+207	157	f-16 fighter jets	plane	forwardentailment	add
+208	158	daughter	kid	alternation	org
+209	159	kid	toddler	reverseentailment	org
+210	159	kids	four-year-old istanbul toddler	reverseentailment	add
+211	159	school kids	toddler	disjoint	add
+212	160	kid	woman	alternation	org
+213	161	girl	lady	alternation	org
+214	161	old lady	girls	disjoint	add
+215	162	lady	woman	synonym	org
+216	163	dark	light	alternation	org
+217	164	market	oil	reverseentailment	org
+218	164	search market	crude oil	disjoint	add
+219	164	internet search market	two oil spills	disjoint	add
+220	165	marriage	marry	independent	org
+221	167	mother	woman	forwardentailment	org
+222	167	mother	australian woman	independent	add
+223	168	motorbike	scooter	forwardentailment	org
+224	169	motorcycle	road	independent	org
+225	170	motorcycle	vehicle	forwardentailment	org
+226	170	motorcycle racing event	vehicle	disjoint	add
+227	171	mountain	sky	disjoint	org
+228	172	mountain	top	independent	org
+229	173	music	play	independent	org
+230	173	jazz music	attacking play	disjoint	add
+231	173	folk and jazz music	play	disjoint	add
+232	179	obstacle	railing	reverseentailment	org
+233	180	ocean	pool	alternation	org
+234	180	pacific ocean	pool	disjoint	add
+235	181	ocean	shore	disjoint	org
+236	181	indian ocean	shore	disjoint	add
+237	182	ocean	water	forwardentailment	org
+238	182	ocean	australian waters	independent	add
+239	182	atlantic ocean	waters	forwardentailment	add
+240	183	officer	policeman	reverseentailment	org
+241	183	officers	two policemen	reverseentailment	add
+242	184	official	person	forwardentailment	org
+243	184	school officials	person	forwardentailment	add
+244	185	oil	water	alternation	org
+245	185	oil-rich middle east	water	disjoint	add
+246	186	people	police	reverseentailment	org
+247	186	5.000 people	military personnel	independent	add
+248	186	people	military personnel	reverseentailment	add
+249	187	people	team	reverseentailment	org
+250	187	people	munitions clearing teams	reverseentailment	add
+251	187	people	clearing teams	reverseentailment	add
+252	188	perform	play	independent	org
+253	189	owner	person	forwardentailment	org
+254	190	person	woman	reverseentailment	org
+255	191	photo	photograph	synonym	org
+256	192	photo	picture	synonym	org
+257	193	camera	photograph	disjoint	org
+258	194	photo	photograph	synonym	org
+259	196	piece	sheet	independent	org
+260	196	pieces	balance sheet	disjoint	add
+261	197	piece	strip	synonym	org
+262	197	pieces	strip club	disjoint	add
+263	197	silver pieces	strip club	disjoint	add
+264	198	pink	red	alternation	org
+265	199	aircraft	plane	reverseentailment	org
+266	200	plant	tree	reverseentailment	org
+267	200	plants	tree rings	independent	add
+268	200	nuclear plants	tree	disjoint	add
+269	201	plastic	toy	independent	org
+270	201	plastic bag	other toys	disjoint	add
+271	204	play	watch	disjoint	org
+272	205	player	top	disjoint	org
+273	206	podium	speech	independent	org
+274	208	pond	river	disjoint	org
+275	208	pond	river blockage	disjoint	add
+276	209	pose	stand	forwardentailment	org
+277	210	race	swimmer	independent	org
+278	211	raft	shore	independent	org
+279	211	current raft	shore	disjoint	add
+280	213	ride	surf	independent	org
+281	214	river	tree	alternation	org
+282	215	path	road	reverseentailment	org
+283	217	building	school	reverseentailment	org
+284	217	school	single-seater plane	disjoint	add
+285	218	ground	seat	independent	org
+286	219	seat	vehicle	independent	org
+287	219	parliamentary seat	vehicle	disjoint	add
+288	220	beach	shore	synonym	org
+289	221	sit	stand	alternation	org
+290	222	slide	snow	disjoint	org
+291	223	stick	tree	independent	org
+292	224	stone	wall	independent	org
+293	224	stone wall	wall	forwardentailment	add
+294	225	strip	wood	disjoint	org
+295	227	summer	weather	forwardentailment	org
+296	228	surface	water	independent	org
+297	229	swim	water	independent	org
+298	230	swimming	water	independent	org
+299	231	phone	talk	independent	org

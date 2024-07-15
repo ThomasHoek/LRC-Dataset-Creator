@@ -1,0 +1,300 @@
+Counter	Word1	Word2	Real	Prediction
+1	A child	A adult	alternation	alternation
+2	A child	A adults worldwide	alternation	alternation
+3	A mother	A adult	reverseentailment	reverseentailment
+4	A base	A aircraft	disjoint	synonym
+5	A power bases	A aircraft	disjoint	alternation
+6	A plane	A aircraft	reverseentailment	synonym
+7	A spy plane	A aircraft	reverseentailment	reverseentailment
+8	A airplane	A air	disjoint	reverseentailment
+9	A air	A airplane home	disjoint	forwardentailment
+10	A cat	A animal	reverseentailment	reverseentailment
+11	A snake	A animal	reverseentailment	reverseentailment
+12	A snakes	A animal health department	disjoint	disjoint
+13	A car	A automobile	synonym	synonym
+14	A cars	A mutual automobile insurance	disjoint	forwardentailment
+15	A flash cars	A automobile insurance	disjoint	disjoint
+16	A child	A baby	reverseentailment	synonym
+17	A kid	A baby	alternation	synonym
+18	A mother	A baby	alternation	disjoint
+19	A light	A background	disjoint	synonym
+20	A basketball	A ball	reverseentailment	reverseentailment
+21	A mitt	A ball	disjoint	synonym
+22	A river	A bank	disjoint	reverseentailment
+23	A football	A baseball	alternation	alternation
+24	A hit	A baseball	disjoint	disjoint
+25	A game	A basketball	forwardentailment	forwardentailment
+26	A games	A basketball operations	disjoint	forwardentailment
+27	A sun	A beach	disjoint	disjoint
+28	A sun	A sydney beach	disjoint	disjoint
+29	A sun	A beach	disjoint	disjoint
+30	A couch	A bed	alternation	alternation
+31	A glass	A beer	independent	forwardentailment
+32	A glass door	A beer	disjoint	alternation
+33	A bike	A bicycle	synonym	synonym
+34	A dirt bike riders	A bicycles	disjoint	reverseentailment
+35	A motorcycle	A bicycle	disjoint	alternation
+36	A motorcycle	A bicycle riding	disjoint	alternation
+37	A ramp	A bicycle	independent	alternation
+38	A bike	A bicycle	synonym	synonym
+39	A parking	A bike	independent	alternation
+40	A parking lot	A bikes	disjoint	disjoint
+41	A track	A bike	independent	disjoint
+42	A recording tracks	A hand-bike athletes	disjoint	alternation
+43	A fly	A bird	disjoint	independent
+44	A flying debris	A wild birds	disjoint	forwardentailment
+45	A woman	A black	independent	disjoint
+46	A color	A blue	forwardentailment	forwardentailment
+47	A water	A blue	independent	forwardentailment
+48	A water reservoirs	A blues	disjoint	independent
+49	A water	A pan blues	disjoint	forwardentailment
+50	A sail	A boat	independent	reverseentailment
+51	A plans to sail to kenya	A zodiac boats	disjoint	disjoint
+52	A plans to sail to kenya	A inflatable zodiac boats	disjoint	disjoint
+53	A vehicle	A boat	forwardentailment	forwardentailment
+54	A person	A body	independent	synonym
+55	A video	A book	alternation	alternation
+56	A video	A published book	disjoint	alternation
+57	A top	A bottom	alternation	alternation
+58	A rock	A boulder	forwardentailment	synonym
+59	A container	A bowl	forwardentailment	forwardentailment
+60	A dish	A bowl	forwardentailment	synonym
+61	A venus rosewater dish	A bowl advertisements	disjoint	reverseentailment
+62	A tape	A box	disjoint	synonym
+63	A adhesive tape	A box	disjoint	reverseentailment
+64	A child	A boy	forwardentailment	forwardentailment
+65	A child	A 9-year-old boy	forwardentailment	forwardentailment
+66	A child pornography	A 9-year-old boy	disjoint	disjoint
+67	A family	A boy	forwardentailment	disjoint
+68	A first family church	A boy	disjoint	independent
+69	A girl	A boy	alternation	alternation
+70	A people	A boys	forwardentailment	forwardentailment
+71	A with additional people	A met the boys	forwardentailment	disjoint
+72	A additional people	A boys	independent	forwardentailment
+73	A trip	A break	independent	synonym
+74	A previous trips	A tax breaks	disjoint	disjoint
+75	A trips	A more tax breaks	disjoint	forwardentailment
+76	A marriage	A bride	independent	synonym
+77	A same-sex marriage opponents	A child bride	disjoint	alternation
+78	A same-sex marriage	A bride	disjoint	reverseentailment
+79	A street	A bus	independent	forwardentailment
+80	A streets	A bus operator	disjoint	forwardentailment
+81	A back streets	A bus operator	disjoint	disjoint
+82	A picture	A camera	disjoint	synonym
+83	A suit	A cap	independent	alternation
+84	A dark suit	A cap	disjoint	alternation
+85	A car	A automobile	synonym	synonym
+86	A automobile	A car crash	disjoint	forwardentailment
+87	A driver	A car	independent	reverseentailment
+88	A driver	A kers-equipped bmw sauber car	disjoint	disjoint
+89	A garage	A car	disjoint	disjoint
+90	A garage	A car series	disjoint	disjoint
+91	A garage 	A stock car series	disjoint	disjoint
+92	A jeep	A car	reverseentailment	reverseentailment
+93	A owner	A car	disjoint	disjoint
+94	A sedan	A car	reverseentailment	reverseentailment
+95	A australian sedan	A car	reverseentailment	reverseentailment
+96	A trunk	A car	reverseentailment	reverseentailment
+97	A remaining trunks	A cars	independent	independent
+98	A window	A car	independent	alternation
+99	A glass windows	A cars	independent	independent
+100	A fish	A catch	independent	synonym
+101	A meat	A chicken	forwardentailment	forwardentailment
+102	A processed meats	A smuggled chickens	independent	alternation
+103	A meats	A smuggled chickens	independent	forwardentailment
+104	A child	A baby	reverseentailment	synonym
+105	A daughter	A child	reverseentailment	reverseentailment
+106	A family	A child	forwardentailment	disjoint
+107	A family	A six children	independent	forwardentailment
+108	A father	A child	alternation	alternation
+109	A school	A child	disjoint	independent
+110	A emberton school	A child	disjoint	independent
+111	A toddler	A child	reverseentailment	reverseentailment
+112	A police	A city	independent	alternation
+113	A police	A northwestern city	disjoint	disjoint
+114	A classroom	A class	alternation	synonym
+115	A structure	A classroom	forwardentailment	forwardentailment
+116	A erase	A clean	reverseentailment	synonym
+117	A water	A clean	independent	synonym
+118	A distribute water	A clean up	disjoint	disjoint
+119	A sea	A cliff	alternation	synonym
+120	A play	A climb	independent	alternation
+121	A fashion	A clothing	forwardentailment	synonym
+122	A shirt	A clothing	reverseentailment	synonym
+123	A gray sweat shirts	A clothing	reverseentailment	reverseentailment
+124	A sweat shirts	A clothing	reverseentailment	reverseentailment
+125	A uniform	A clothing	reverseentailment	reverseentailment
+126	A vest	A clothing	reverseentailment	reverseentailment
+127	A snow	A coat	disjoint	synonym
+128	A first snow	A coat	disjoint	reverseentailment
+129	A track	A competition	independent	disjoint
+130	A track	A inter-modal competition	disjoint	forwardentailment
+131	A talk	A conversation	synonym	synonym
+132	A shop	A counter	alternation	synonym
+133	A many shops	A counter	independent	reverseentailment
+134	A married	A couple	reverseentailment	synonym
+135	A walk	A cross	forwardentailment	forwardentailment
+136	A person	A crowd	alternation	independent
+137	A father	A daughter	alternation	alternation
+138	A girl	A daughter	forwardentailment	forwardentailment
+139	A woman	A daughter	forwardentailment	forwardentailment
+140	A mud	A dirt	reverseentailment	synonym
+141	A monkey	A dog	alternation	alternation
+142	A kid	A doll	disjoint	disjoint
+143	A rock	A earth	forwardentailment	synonym
+144	A metal groups	A earth	independent	alternation
+145	A surface	A earth	independent	synonym
+146	A food	A eat	independent	synonym
+147	A mountain	A edge	forwardentailment	reverseentailment
+148	A kid	A father	alternation	alternation
+149	A lot	A field	alternation	synonym
+150	A water	A field	alternation	independent
+151	A yard	A field	reverseentailment	synonym
+152	A police	A fire	disjoint	alternation
+153	A police	A fires	disjoint	alternation
+154	A sea	A fish	independent	forwardentailment
+155	A starve while at sea	A transporting fishing goods	independent	disjoint
+156	A rod	A fishing	independent	forwardentailment
+157	A unused fuel rods	A capsized fishing boat	disjoint	disjoint
+158	A hunger	A food	independent	synonym
+159	A hunger	A food exports	disjoint	forwardentailment
+160	A hunger strike	A food	disjoint	reverseentailment
+161	A meat	A food	reverseentailment	reverseentailment
+162	A pan	A food	disjoint	reverseentailment
+163	A woods	A forest	synonym	synonym
+164	A people	A friend	forwardentailment	forwardentailment
+165	A three million people	A friends	independent	disjoint
+166	A panel	A front	independent	synonym
+167	A street	A front	independent	synonym
+168	A swing	A fun	independent	reverseentailment
+169	A park	A garage	disjoint	alternation
+170	A amusement park	A garage	disjoint	alternation
+171	A parking	A garage	independent	synonym
+172	A parking lot	A garage	independent	synonym
+173	A outfit	A gear	independent	synonym
+174	A terrorist outfit	A gear inspections	disjoint	disjoint
+175	A infant	A girl	forwardentailment	disjoint
+176	A including 20 infants	A found the little girl	disjoint	independent
+177	A 20 infants	A girl	independent	alternation
+178	A person	A girl	forwardentailment	forwardentailment
+179	A person	A year-old girl	forwardentailment	forwardentailment
+180	A woman	A girl	disjoint	synonym
+181	A thirteen women	A girls	independent	reverseentailment
+182	A tennis	A golf	alternation	alternation
+183	A singles wimbledon tennis title	A golf course	disjoint	alternation
+184	A tennis title	A golf course	disjoint	alternation
+185	A space	A ground	forwardentailment	synonym
+186	A stone	A ground	alternation	reverseentailment
+187	A pig	A guinea	forwardentailment	independent
+188	A guinea pigs	A new guinea paralympic committee	disjoint	forwardentailment
+189	A pigs	A guinea paralympic committee	disjoint	independent
+190	A pistol	A gun	reverseentailment	reverseentailment
+191	A 380 pistol	A gun	independent	reverseentailment
+192	A calibre pistol	A gun	reverseentailment	reverseentailment
+193	A weapon	A gun	forwardentailment	forwardentailment
+194	A weapons	A gun battles	disjoint	forwardentailment
+195	A woman	A guy	alternation	alternation
+196	A historically women	A guy	disjoint	alternation
+197	A historically women	A right guy	disjoint	alternation
+198	A mountain	A hill	disjoint	synonym
+199	A play	A hit	forwardentailment	synonym
+200	A track	A horse	independent	disjoint
+201	A vehicle	A horse	forwardentailment	independent
+202	A in vehicles	A on their high horse	disjoint	alternation
+203	A surface	A ice	independent	forwardentailment
+204	A middle	A interior	reverseentailment	synonym
+205	A plane	A jet	forwardentailment	synonym
+206	A plane	A fighter jets	forwardentailment	forwardentailment
+207	A plane	A f-16 fighter jets	forwardentailment	forwardentailment
+208	A kid	A daughter	alternation	forwardentailment
+209	A toddler	A kid	reverseentailment	reverseentailment
+210	A four-year-old istanbul toddler	A kids	reverseentailment	reverseentailment
+211	A toddler	A school kids	disjoint	disjoint
+212	A woman	A kid	alternation	alternation
+213	A lady	A girl	alternation	synonym
+214	A girls	A old lady	disjoint	alternation
+215	A woman	A lady	synonym	synonym
+216	A light	A dark	alternation	alternation
+217	A oil	A market	reverseentailment	disjoint
+218	A crude oil	A search market	disjoint	disjoint
+219	A two oil spills	A internet search market	disjoint	alternation
+220	A marry	A marriage	independent	synonym
+221	A woman	A mother	forwardentailment	forwardentailment
+222	A australian woman	A mother	independent	disjoint
+223	A scooter	A motorbike	forwardentailment	synonym
+224	A road	A motorcycle	independent	forwardentailment
+225	A vehicle	A motorcycle	forwardentailment	forwardentailment
+226	A vehicle	A motorcycle racing event	disjoint	forwardentailment
+227	A sky	A mountain	disjoint	forwardentailment
+228	A top	A mountain	independent	forwardentailment
+229	A play	A music	independent	reverseentailment
+230	A attacking play	A jazz music	disjoint	alternation
+231	A play	A folk and jazz music	disjoint	alternation
+232	A railing	A obstacle	reverseentailment	reverseentailment
+233	A pool	A ocean	alternation	alternation
+234	A pool	A pacific ocean	disjoint	alternation
+235	A shore	A ocean	disjoint	forwardentailment
+236	A shore	A indian ocean	disjoint	forwardentailment
+237	A water	A ocean	forwardentailment	forwardentailment
+238	A australian waters	A ocean	independent	disjoint
+239	A waters	A atlantic ocean	forwardentailment	forwardentailment
+240	A policeman	A officer	reverseentailment	synonym
+241	A two policemen	A officers	reverseentailment	reverseentailment
+242	A person	A official	forwardentailment	forwardentailment
+243	A person	A school officials	forwardentailment	forwardentailment
+244	A water	A oil	alternation	alternation
+245	A water	A oil-rich middle east	disjoint	forwardentailment
+246	A police	A people	reverseentailment	reverseentailment
+247	A military personnel	A 5.000 people	independent	disjoint
+248	A military personnel	A people	reverseentailment	reverseentailment
+249	A team	A people	reverseentailment	reverseentailment
+250	A munitions clearing teams	A people	reverseentailment	reverseentailment
+251	A clearing teams	A people	reverseentailment	reverseentailment
+252	A play	A perform	independent	reverseentailment
+253	A person	A owner	forwardentailment	forwardentailment
+254	A woman	A person	reverseentailment	reverseentailment
+255	A photograph	A photo	synonym	synonym
+256	A picture	A photo	synonym	synonym
+257	A photograph	A camera	disjoint	synonym
+258	A photograph	A photo	synonym	synonym
+259	A sheet	A piece	independent	reverseentailment
+260	A balance sheet	A pieces	disjoint	reverseentailment
+261	A strip	A piece	synonym	synonym
+262	A strip club	A pieces	disjoint	reverseentailment
+263	A strip club	A silver pieces	disjoint	independent
+264	A red	A pink	alternation	alternation
+265	A plane	A aircraft	reverseentailment	synonym
+266	A tree	A plant	reverseentailment	reverseentailment
+267	A tree rings	A plants	independent	reverseentailment
+268	A tree	A nuclear plants	disjoint	alternation
+269	A toy	A plastic	independent	synonym
+270	A other toys	A plastic bag	disjoint	disjoint
+271	A watch	A play	disjoint	alternation
+272	A top	A player	disjoint	synonym
+273	A speech	A podium	independent	disjoint
+274	A river	A pond	disjoint	alternation
+275	A river blockage	A pond	disjoint	alternation
+276	A stand	A pose	forwardentailment	synonym
+277	A swimmer	A race	independent	disjoint
+278	A shore	A raft	independent	forwardentailment
+279	A shore	A current raft	disjoint	forwardentailment
+280	A surf	A ride	independent	independent
+281	A tree	A river	alternation	alternation
+282	A road	A path	reverseentailment	synonym
+283	A school	A building	reverseentailment	reverseentailment
+284	A single-seater plane	A school	disjoint	alternation
+285	A seat	A ground	independent	independent
+286	A vehicle	A seat	independent	synonym
+287	A vehicle	A parliamentary seat	disjoint	independent
+288	A shore	A beach	synonym	synonym
+289	A stand	A sit	alternation	synonym
+290	A snow	A slide	disjoint	alternation
+291	A tree	A stick	independent	alternation
+292	A wall	A stone	independent	synonym
+293	A wall	A stone wall	forwardentailment	forwardentailment
+294	A wood	A strip	disjoint	synonym
+295	A weather	A summer	forwardentailment	forwardentailment
+296	A water	A surface	independent	synonym
+297	A water	A swim	independent	forwardentailment
+298	A water	A swimming	independent	forwardentailment
+299	A talk	A phone	independent	synonym

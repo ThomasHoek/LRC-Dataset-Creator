@@ -50,5 +50,5 @@ if __name__ == "__main__":
         for template_line in to_template(SNLI_templates, csvline["CombID"], csvline["SenID"], csvline["W1"], csvline["W2"]):
             insertfile.write(template_line)
 
-        if int(csvline["CombID"]) > 99:
-            break
+        # if int(csvline["CombID"]) > 99:
+        #     break
