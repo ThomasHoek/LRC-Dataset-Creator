@@ -35,11 +35,10 @@ if __name__ == "__main__":
         json_data.close()
     SNLI_templates = [(line["prem"], line["hyp"]) for line in SNLI_templates_json]
 
-    
     datafile = open("datasets/ppdb_phrase/ppdb_scrape_disjoint.tsv", "r+")
 
-    os.makedirs("Results/NLI_manual", exist_ok=True)
-    insertfile = open("Results/NLI_manual/templates_insert_ppdb_scrape.tsv", "w+")
+    os.makedirs("Results/paper/NLI_manual", exist_ok=True)
+    insertfile = open("Results/paper/NLI_manual/templates_insert_ppdb_scrape.tsv", "w+")
     insertfile.write(f"CombID\tSenID\ttemplatenum\tprem\thyp\tlabel\tmeta\n")
 
     # ID	scrapeID	w1	w2	label	meta
@@ -53,8 +52,8 @@ if __name__ == "__main__":
     for data_part in ["train", "test"]:
         datafile = open(f"datasets/merged_LRC_words/{data_part}.tsv", "r+")
 
-        os.makedirs("Results/NLI_manual", exist_ok=True)
-        insertfile = open(f"Results/NLI_manual/templates_insert_{data_part}.tsv", "w+")
+        os.makedirs("Results/paper/NLI_manual", exist_ok=True)
+        insertfile = open(f"Results/paper/NLI_manual/templates_insert_{data_part}.tsv", "w+")
         insertfile.write("ID\ttemplatenum\tprem\thyp\tlabel\n")
 
         # ID	scrapeID	w1	w2	label	meta

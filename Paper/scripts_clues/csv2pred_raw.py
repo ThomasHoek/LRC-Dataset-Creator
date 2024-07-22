@@ -60,37 +60,37 @@ pred_rel_test = [id2label[k] for k in pred]
 
 orgdata["pred"] = pd.Series(pred_rel_test)
 
-os.makedirs("Results/clues/all", exist_ok=True)
-os.makedirs("Results/clues/add", exist_ok=True)
-os.makedirs("Results/clues/org", exist_ok=True)
+os.makedirs("Results/paper/clues/all", exist_ok=True)
+os.makedirs("Results/paper/clues/add", exist_ok=True)
+os.makedirs("Results/paper/clues/org", exist_ok=True)
 
-orgdata.to_csv(f"Results/clues/predicts_all.tsv", sep="\t", index=False)
+orgdata.to_csv(f"Results/paper/clues/predicts_all.tsv", sep="\t", index=False)
 
 # -------------------------------
 cr = classification_report(orgdata["label"], orgdata["pred"])
-cr_file = open(f"Results/clues/all/classification_all.txt", "w+")
+cr_file = open(f"Results/paper/clues/all/classification_all.txt", "w+")
 cr_file.write(cr)
 cr_file.close()
 
 disp = ConfusionMatrixDisplay.from_predictions(orgdata["label"], orgdata["pred"])
-disp.plot(xticks_rotation=45).figure_.savefig(f"Results/clues/all/ConfusionMatrix_all.jpg")
+disp.plot(xticks_rotation=45).figure_.savefig(f"Results/paper/clues/all/ConfusionMatrix_all.jpg")
 
 # -------------------------------
 org_df = orgdata[orgdata["meta"] == "org"]
 cr = classification_report(org_df["label"], org_df["pred"])
-cr_file = open(f"Results/clues/org/classification_org.txt", "w+")
+cr_file = open(f"Results/paper/clues/org/classification_org.txt", "w+")
 cr_file.write(cr)
 cr_file.close()
 
 disp = ConfusionMatrixDisplay.from_predictions(org_df["label"], org_df["pred"])
-disp.plot(xticks_rotation=45).figure_.savefig(f"Results/clues/org/ConfusionMatrix_org.jpg")
+disp.plot(xticks_rotation=45).figure_.savefig(f"Results/paper/clues/org/ConfusionMatrix_org.jpg")
 
 # -------------------------------
 add_df = orgdata[orgdata["meta"] == "add"]
 cr = classification_report(add_df["label"], add_df["pred"])
-cr_file = open(f"Results/clues/add/classification_add.txt", "w+")
+cr_file = open(f"Results/paper/clues/add/classification_add.txt", "w+")
 cr_file.write(cr)
 cr_file.close()
 
 disp = ConfusionMatrixDisplay.from_predictions(add_df["label"], add_df["pred"])
-disp.plot(xticks_rotation=45).figure_.savefig(f"Results/clues/add/ConfusionMatrix_add.jpg")
+disp.plot(xticks_rotation=45).figure_.savefig(f"Results/paper/clues/add/ConfusionMatrix_add.jpg")

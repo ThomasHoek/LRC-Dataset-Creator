@@ -35,7 +35,7 @@ part = "ppdb_scrape"
 
 # to pipeline
 list_dict = []
-dataset = f"Results/NLI_manual/templates_insert_{part}.tsv"
+dataset = f"Results/paper/NLI_manual/templates_insert_{part}.tsv"
 dataset_NLI = open(dataset, "r")
 csvreader = csv.DictReader(dataset_NLI, delimiter="\t")
 for row in iter(csvreader):
@@ -70,7 +70,7 @@ for model_name in modelnames:
             else:
                 preds += model(i_ids, a_mask)["logits"].tolist()
 
-    result = pd.read_csv(f"Results/NLI_manual/templates_insert_{part}.tsv", delimiter="\t")
+    result = pd.read_csv(f"Results/paper/NLI_manual/templates_insert_{part}.tsv", delimiter="\t")
     result["preds"] = preds
     if "scrape" in part:
         res_group = result.groupby("CombID").agg({'preds': 'sum', 'meta': lambda x: list(x)[0], 'label': lambda x: list(x)[0]})

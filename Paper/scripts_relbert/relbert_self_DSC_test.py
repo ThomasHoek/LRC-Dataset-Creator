@@ -66,37 +66,37 @@ for model_name in ["relbert-roberta-base", "relbert-roberta-large"]:
     orgdata["pred"] = pd.Series(pred_rel_test)
     orgdata.drop(columns=["head", "tail"], inplace=True)
 
-    os.makedirs(f"Results/relbert/{model_name}/all", exist_ok=True)
-    os.makedirs(f"Results/relbert/{model_name}/add", exist_ok=True)
-    os.makedirs(f"Results/relbert/{model_name}/org", exist_ok=True)
+    os.makedirs(f"Results/paper/relbert/{model_name}/all", exist_ok=True)
+    os.makedirs(f"Results/paper/relbert/{model_name}/add", exist_ok=True)
+    os.makedirs(f"Results/paper/relbert/{model_name}/org", exist_ok=True)
 
-    orgdata.to_csv(f"Results/relbert/{model_name}/predicts_all.tsv", sep="\t", index=False)
+    orgdata.to_csv(f"Results/paper/relbert/{model_name}/predicts_all.tsv", sep="\t", index=False)
 
     # -------------------------------
     cr = classification_report(orgdata["label"], orgdata["pred"])
-    cr_file = open(f"Results/relbert/{model_name}/all/classification_all.txt", "w+")
+    cr_file = open(f"Results/paper/relbert/{model_name}/all/classification_all.txt", "w+")
     cr_file.write(cr)
     cr_file.close()
 
     disp = ConfusionMatrixDisplay.from_predictions(orgdata["label"], orgdata["pred"])
-    disp.plot(xticks_rotation=45).figure_.savefig(f"Results/relbert/{model_name}/all/ConfusionMatrix_all.jpg")
+    disp.plot(xticks_rotation=45).figure_.savefig(f"Results/paper/relbert/{model_name}/all/ConfusionMatrix_all.jpg")
 
     # -------------------------------
     org_df = orgdata[orgdata["meta"] == "org"]
     cr = classification_report(org_df["label"], org_df["pred"])
-    cr_file = open(f"Results/relbert/{model_name}/org/classification_org.txt", "w+")
+    cr_file = open(f"Results/paper/relbert/{model_name}/org/classification_org.txt", "w+")
     cr_file.write(cr)
     cr_file.close()
 
     disp = ConfusionMatrixDisplay.from_predictions(org_df["label"], org_df["pred"])
-    disp.plot(xticks_rotation=45).figure_.savefig(f"Results/relbert/{model_name}/org/ConfusionMatrix_org.jpg")
+    disp.plot(xticks_rotation=45).figure_.savefig(f"Results/paper/relbert/{model_name}/org/ConfusionMatrix_org.jpg")
 
     # -------------------------------
     add_df = orgdata[orgdata["meta"] == "add"]
     cr = classification_report(add_df["label"], add_df["pred"])
-    cr_file = open(f"Results/relbert/{model_name}/add/classification_add.txt", "w+")
+    cr_file = open(f"Results/paper/relbert/{model_name}/add/classification_add.txt", "w+")
     cr_file.write(cr)
     cr_file.close()
 
     disp = ConfusionMatrixDisplay.from_predictions(add_df["label"], add_df["pred"])
-    disp.plot(xticks_rotation=45).figure_.savefig(f"Results/relbert/{model_name}/add/ConfusionMatrix_add.jpg")
+    disp.plot(xticks_rotation=45).figure_.savefig(f"Results/paper/relbert/{model_name}/add/ConfusionMatrix_add.jpg")

@@ -19,7 +19,7 @@ tree_para = {
 
 for train, test in zip(models, models_test):
     model_path = train.rsplit("/", 1)[0]
-    result_path = model_path.replace("models", "Results")
+    result_path = model_path.replace("models", "Results/paper")
     print(model_path)
     NLI_train = pd.read_csv(train, delimiter="\t")
 
