@@ -160,10 +160,13 @@ def phrase_to_combos(
 ) -> tuple[list[tuple[int, int, str, str, str, str, str]], int]:
 
     combos: list[tuple[int, int, str, str, str, str, str]] = []
+    # global duplicate set
+    if duplicate_check:
+        global duplicate_set
 
+    # local duplicate set
     word_set_l: set[str] = set()
     if not (len(listleft) and len(listright)):
-        # print(num, "empty")
         return []
 
     for l_word_type, l_org, l_phrase in listleft:
@@ -177,6 +180,13 @@ def phrase_to_combos(
                     continue
                 elif l_phrase in verb_reject_lst or r_phrase in verb_reject_lst:
                     continue
+
+                if duplicate_check:
+                    # remove if encountered earlier
+                    if (l_phrase, r_phrase) in duplicate_set:
+                        continue
+                    else:
+                        duplicate_set.add((l_phrase, r_phrase))
 
                 combos.append((global_comb_counter, num, r_word_type, l_org, r_org, l_phrase, r_phrase))
                 global_comb_counter += 1
@@ -192,10 +202,13 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
     parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
+    parser.add_argument("-d", required=False, default=False, help="disable duplicates")
     parser.add_argument("-v", required=False, default=False, help="verbose")
     args = parser.parse_args()
 
     dataset = args.dataset
+    duplicate_check = args.d
+
     print_info = args.v
     if dataset == "SICK":
         # TODO, update path
@@ -206,13 +219,16 @@ if __name__ == "__main__":
     print(ccgfiles)
     assert ccgfiles
     ccgfiles.sort()
-    
+
     # TODO, update path
     os.makedirs(f"Results/{dataset}", exist_ok=True)
 
     for file in ccgfiles:
         if "fracas" in file:
             continue
+
+        if duplicate_check:
+            duplicate_set: set[tuple[str, str]] = set()
 
         file_name = file.rsplit(r"/", 1)[-1].replace(".pl", "")
         print(file_name)
@@ -273,10 +289,16 @@ if __name__ == "__main__":
                 # to individual phrases
                 left_phrases = tree_to_phrase(left)
                 right_phrases = tree_to_phrase(right)
-
+                    
                 # merge phrases
                 if len(left_phrases) and len(right_phrases):  # skip if empty
                     combs, global_comb_counter = phrase_to_combos(i, left_phrases, right_phrases, global_comb_counter)
+
+                if i == 1190:
+                    # print(left_phrases)
+                    # print(right_phrases)
+                    for example_line in combs:
+                        print(example_line[-2],"\t" ,example_line[-1])
 
             except TypeError:
                 if print_info:

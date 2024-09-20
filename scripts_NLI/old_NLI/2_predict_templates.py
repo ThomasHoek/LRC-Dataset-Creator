@@ -10,10 +10,10 @@ import csv
 np.int = np.int32
 batchsize = 32
 modelnames = [
-    "MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7",
-    "Joelzhang/deberta-v3-large-snli_mnli_fever_anli_R1_R2_R3-nli",
-    "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
-    "ynie/bart-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    # "MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7",
+    # "Joelzhang/deberta-v3-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    # "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    # "ynie/bart-large-snli_mnli_fever_anli_R1_R2_R3-nli",
     "sileod/deberta-v3-base-tasksource-nli",
 ]
 
