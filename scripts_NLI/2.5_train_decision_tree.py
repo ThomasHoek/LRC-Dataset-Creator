@@ -33,14 +33,14 @@ print(f"Best Score: {clf.best_score_}")
 print(f"Best params: {clf.best_params_}")
 
 fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(4, 4), dpi=750)
-tree.plot_tree(clf.best_estimator_, filled=True,rounded=True, ax=axes)
+tree.plot_tree(clf.best_estimator_, filled=True, rounded=True, ax=axes, class_names=['disjoint', 'forwardentailment', 'independent', 'reverseentailment', 'synonym'])
 
 os.makedirs(model_save_path, exist_ok=True)
 plt.savefig(f"{model_save_path}/tree.png")
 
-with open(f"{model_save_path}/model.pkl",'wb') as f:
+with open(f"{model_save_path}/model.pkl", 'wb') as f:
     pickle.dump(clf,f)
-    
+
 # =====================
 NLI_test = pd.read_csv(test_data, delimiter="\t")
 test_x = list(NLI_test["preds"])

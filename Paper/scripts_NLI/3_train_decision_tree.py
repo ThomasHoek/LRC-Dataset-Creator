@@ -7,6 +7,7 @@ from ast import literal_eval
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report, ConfusionMatrixDisplay
+import pickle
 
 models = glob.glob("models/NLI/*/predictions_train.tsv", recursive=True)
 models_test = glob.glob("models/NLI/*/predictions_ppdb_scrape.tsv", recursive=True)
@@ -38,6 +39,10 @@ for train, test in zip(models, models_test):
 
     os.makedirs(result_path, exist_ok=True)
     plt.savefig(f"{result_path}/tree.png")
+    
+
+    with open(f"{result_path}/tree_model.pkl",'wb') as f:
+        pickle.dump(clf,f)
 
     # =====================
     NLI_test = pd.read_csv(test, delimiter="\t")
