@@ -1,6 +1,7 @@
 import pandas as pd
 import glob
 import torch
+from torch import nn
 from transformers import (AutoModelForSequenceClassification, AutoTokenizer, Trainer, TrainingArguments)
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
 import matplotlib.pyplot as plt
@@ -56,18 +57,23 @@ def get_results(dataframe_path: str, part: str):
     encoded_verb_test.set_format("torch")
 
     predicciones = pretrain.predict(encoded_verb_test)
+
     pred = np.argmax(predicciones.predictions, axis=1)
     id2label: dict[int, str] = load_model.config.id2label
     pred_rel_test = [id2label[k] for k in pred]
-
     dataframe_inp["pred"] = pd.Series(pred_rel_test)
 
-    os.makedirs(f"Results/{dataset}/clues/", exist_ok=True)
+    softmax = torch.nn.Softmax(dim=-1)
+    probabilities = softmax(torch.from_numpy(predicciones.predictions))
+    probabilities_max = torch.max(probabilities, axis=1)
+    dataframe_inp["prob"] = pd.Series(probabilities_max.values.numpy())
+
+    os.makedirs(f"lex_preds/{dataset}/clues/", exist_ok=True)
     # os.makedirs(f"Results/{dataset}/clues/{part}/all", exist_ok=True)
     # os.makedirs(f"Results/{dataset}/clues/{part}/add", exist_ok=True)
     # os.makedirs(f"Results/{dataset}/clues/{part}/org", exist_ok=True)
 
-    dataframe_inp.to_csv(f"Results/{dataset}/clues/predicts_{part}.tsv", sep="\t", index=False)
+    dataframe_inp.to_csv(f"lex_preds/{dataset}/clues/predicts_{part}.tsv", sep="\t", index=False)
 
 
 load_tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
@@ -76,13 +82,13 @@ trainargs = TrainingArguments(output_dir='tmp_trainer', per_device_eval_batch_si
 pretrain = Trainer(tokenizer=load_tokenizer, model=load_model, args=trainargs)
 
 if part == "all":
-    files_found = glob.glob(f"Results/{dataset}/*.tsv")
+    files_found = glob.glob(f"lex_pairs/{dataset}/*.tsv")
     for i in files_found:
         part_strip = i.split("/")[-1].replace("_ccg.tsv", "").replace(f"{dataset}_", "")
         get_results(i, part_strip)
 
 else:    
-    files_found = glob.glob(f"Results/{dataset}/{dataset}_{part}_ccg.tsv")
+    files_found = glob.glob(f"lex_pairs/{dataset}/{dataset}_{part}_ccg.tsv")
     assert len(files_found) == 1
     get_results(files_found[0], part)
 
