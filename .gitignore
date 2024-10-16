@@ -4,11 +4,4 @@ __pycache__
 my_checkpoints/*
 
 scripts_hidden
-# remove next time
-*_old
-*copy/*
-*_copy
-# *Results*
 models/
-Lasha*
-test
