@@ -15,12 +15,12 @@ def get_results(file_path, part):
     os.makedirs(f"{dir_path}/../lex_preds/{dataset}/NLI/templates/", exist_ok=True)
     insertfile = open(f"{dir_path}/../lex_preds/{dataset}/NLI/templates/{part}.tsv", "w+")
 
-    insertfile.write(f"CombID\tSenID\ttemplatenum\thead\ttail\tprem\thyp\n")
+    insertfile.write(f"CombID\tProbID\ttemplatenum\thead\ttail\tprem\thyp\n")
 
     total_counter = 0
     for csvline in csv.DictReader(datafile, delimiter="\t"):
         counter = 0
-        for template_line in to_template(SNLI_templates, csvline["CombID"], csvline["SenID"], csvline["W1"], csvline["W2"]):
+        for template_line in to_template(SNLI_templates, csvline["CombID"], csvline["ProbID"], csvline["W1"], csvline["W2"]):
             insertfile.write(template_line)
             counter += 1
             total_counter += 1

@@ -20,7 +20,7 @@ class phrase_info:
 @dataclass(order=True)
 class phrase_pair:
     CombID: int
-    SenID: int
+    ProbID: int
     merge_tag: str
     W1_tag: str
     W2_tag: str
@@ -186,7 +186,7 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
 
 
 def phrase_to_combos(
-    num: int,
+    problem_num: int,
     listleft: list[phrase_info],
     listright: list[phrase_info],
     global_comb_counter: int
@@ -223,7 +223,7 @@ def phrase_to_combos(
                     else:
                         duplicate_set.add((left_phrase.sentence, right_phrase.sentence))
 
-                combo = phrase_pair(global_comb_counter, num, left_phrase.m_category,
+                combo = phrase_pair(global_comb_counter, problem_num, left_phrase.m_category,
                                     left_phrase.s_category, right_phrase.s_category,
                                     left_phrase.sentence, right_phrase.sentence)
                 if lemma_check:
@@ -324,9 +324,9 @@ if __name__ == "__main__":
         tsvfile = open(f"lex_pairs/{dataset}/{file_name}.tsv", "w+", newline="")
         writer = csv.writer(tsvfile, delimiter="\t", lineterminator="\n")
         if lemma_check:
-            writer.writerow(["CombID", "SenID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2", "L1", "L2"])
+            writer.writerow(["CombID", "ProbID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2", "L1", "L2"])
         else:
-            writer.writerow(["CombID", "SenID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2"])
+            writer.writerow(["CombID", "ProbID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2"])
 
         global_comb_counter = 1
         for i in problem_tuple_dict.keys():
@@ -354,7 +354,7 @@ if __name__ == "__main__":
                 continue
 
             for cw in combs:
-                comb_str = [cw.CombID, cw.SenID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.W1, cw.W2]
+                comb_str = [cw.CombID, cw.ProbID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.W1, cw.W2]
 
                 if lemma_check:
                     comb_str += [cw.lemma_left, cw.lemma_right]
