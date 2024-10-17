@@ -1,4 +1,4 @@
-CombID	SenID	merge_tag	W1_tag	W2_tag	W1	W2	L1	L2
+CombID	ProbID	merge_tag	W1_tag	W2_tag	W1	W2	L1	L2
 1	4	NP	NNS	NN	boys	boy	boy	boy
 2	4	NP	NNS	NNS	boys	outdoors	boy	outdoors
 3	4	NP	NNS	NN	boys	man	boy	man

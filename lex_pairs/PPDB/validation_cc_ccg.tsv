@@ -1,4 +1,4 @@
-CombID	SenID	merge_tag	W1_tag	W2_tag	W1	W2	L1	L2
+CombID	ProbID	merge_tag	W1_tag	W2_tag	W1	W2	L1	L2
 1	1	VP	VBD	VBN	recounted	known	recount	know
 2	1	VP	VBD	VBG	recounted	riding	recount	ride
 3	1	VP	VBG	VBN	finding	known	find	know
