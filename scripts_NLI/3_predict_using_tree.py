@@ -5,6 +5,8 @@ import glob
 from ast import literal_eval
 import os
 
+from regex import F
+
 model_dir = "models/NLI/tasksource_full/model.pkl"
 
 with open(model_dir, 'rb') as f:
@@ -84,9 +86,13 @@ def to_file(pred_file):
     final.dropna(inplace=True)
     final.to_csv(f'lex_KB/{dataset}/NLI/final/{part}.pl', sep='\n', index=False, header=False)
 
-    final_lower = NLI_word_info.apply(lambda x: get_prolog_sen(x, lemma=True, index=True), axis=1)
+    final_lower = NLI_word_info.apply(lambda x: get_prolog_sen(x, lemma=True, index=False), axis=1)
     final_lower.dropna(inplace=True)
     final_lower.to_csv(f'lex_KB/{dataset}/NLI/final/{part}_lemma.pl', sep='\n', index=False, header=False)
+
+    final_lower = NLI_word_info.apply(lambda x: get_prolog_sen(x, lemma=True, index=True), axis=1)
+    final_lower.dropna(inplace=True)
+    final_lower.to_csv(f'lex_KB/{dataset}/NLI/final/{part}_lemma_idx.pl', sep='\n', index=False, header=False)
     # break
 
 
