@@ -1,22 +1,24 @@
+from __future__ import annotations  # typing fix??
 import argparse
-from genericpath import exists
+import glob
+import re
 import pandas as pd
 import os
 
-from regex import F
 
 cur_dir: str = os.path.dirname(os.path.realpath(__file__))
 parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
 parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
 parser.add_argument("--model", required=True, metavar="FILES", help="Part of dataset to test on")
 parser.add_argument("--part", required=True, metavar="FILES", help="Part of dataset to test on")
+parser.add_argument("--d", required=False, default=True, metavar="FILES", help="Use Meta data for duplicates, only matters for lemma index file")
 args = parser.parse_args()
 dataset = args.dataset
 model = args.model
 part = args.part
 
 
-def get_prolog_sen(df, lower=False, lemma=False, index=False):
+def get_prolog_sen(df: pd.Series[str], lower: bool = False, lemma: bool = False, index: bool = False):
     """
     get_prolog_sen transforms dataframe to prolog
 
@@ -43,7 +45,7 @@ def get_prolog_sen(df, lower=False, lemma=False, index=False):
     if lower:
         w1 = w1.lower()
         w2 = w2.lower()
-        
+
     match df["pred"]:
         case "disjoint":
             final_str = f"ind_rel(disj('{w1}','{w2}'))."
@@ -63,18 +65,79 @@ def get_prolog_sen(df, lower=False, lemma=False, index=False):
         final_str = final_str.replace("')).", f"','{df['ProbID']}')).")
     return final_str
 
-NLI_word_info = pd.read_csv(f"lex_preds/{dataset}/{model}/predicts_{part}.tsv", delimiter="\t")
 
-os.makedirs(f"lex_KB/{dataset}/{model}/final/", exist_ok=True)
-final = NLI_word_info.apply(get_prolog_sen, axis=1)
-final.dropna(inplace=True)
-final.to_csv(f'lex_KB/{dataset}/{model}/final/{part}.pl', sep='\n', index=False, header=False)
+def add_duplicates(meta_file: str, main_df: pd.DataFrame, existing_series: pd.Series[str]):
+    import json
+    with open(meta_file) as f:
+        duplicates = json.load(f)
 
-final_lower = NLI_word_info.apply(lambda x: get_prolog_sen(x, lemma=True, index=False), axis=1)
-final_lower.dropna(inplace=True)
-final_lower.to_csv(f'lex_KB/{dataset}/{model}/final/{part}_lemma.pl', sep='\n', index=False, header=False)
+    for dup in duplicates:
+        duplicate_list = duplicates[dup]
+        problem: pd.DataFrame = main_df[main_df["ProbID"] == duplicate_list[0]]
+
+        w1_org, w2_org = dup.split("_*_")
+        w1_org = w1_org.replace("+=+", " ")
+        w2_org = w2_org.replace("+=+", " ")
+
+        problem = problem[problem["W1"] == w1_org]
+        problem = problem[problem["W2"] == w2_org]
+
+        # should be Series now, but still in DF format.
+        assert len(problem) == 1
+
+        # get lemma
+        w1: str = problem["L1"].item()
+        w2: str = problem["L2"].item()
+
+        match problem["pred"].item():
+            case "disjoint":
+                final_str = f"ind_rel(disj('{w1}','{w2}'))."
+            case "forwardentailment":
+                final_str = f"ind_rel(isa_wn('{w1}','{w2}'))."
+            case "reverseentailment":
+                final_str = f"ind_rel(isa_wn('{w2}','{w1}'))."
+            case "synonym":
+                final_str = f"ind_rel(sim_wn('{w1}','{w2}'))."
+            case "independent":
+                continue
+            case _:
+                # print if things go wrong???
+                # should NEVER happen
+                print(problem["pred"].item())
+                continue
+
+        final_duplicate_lst: list[str] = []
+        for dup_number in duplicate_list[1:]:
+            final_duplicate_lst.append(final_str.replace("')).", f"','{dup_number}'))."))
+        existing_series = pd.concat([existing_series, pd.Series(final_duplicate_lst)])
+    return existing_series
 
 
-final_lower = NLI_word_info.apply(lambda x: get_prolog_sen(x, lemma=True, index=True), axis=1)
-final_lower.dropna(inplace=True)
-final_lower.to_csv(f'lex_KB/{dataset}/{model}/final/{part}_lemma_idx.pl', sep='\n', index=False, header=False)
+def make_files(word_info_df: pd.DataFrame, str_part: str):
+    os.makedirs(f"lex_KB/{dataset}/{model}/final/", exist_ok=True)
+    final = word_info_df.apply(get_prolog_sen, axis=1)
+    final.dropna(inplace=True)
+    final.drop_duplicates(inplace=True)
+    final.to_csv(f'lex_KB/{dataset}/{model}/final/{str_part}.pl', sep='\n', index=False, header=False)
+
+    final_lemma = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=False), axis=1)
+    final_lemma.dropna(inplace=True)
+    final_lemma.to_csv(f'lex_KB/{dataset}/{model}/final/{str_part}_lemma.pl', sep='\n', index=False, header=False)
+
+    final_lemma_idx = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=True), axis=1)
+    final_lemma_idx = add_duplicates(f"lex_pairs/{dataset}/meta/{dataset}_{str_part}_ccg.json", word_info_df, final_lemma_idx)
+    final_lemma_idx.dropna(inplace=True)
+    final_lemma_idx.to_csv(f'lex_KB/{dataset}/{model}/final/{str_part}_lemma_idx.pl', sep='\n', index=False, header=False)
+
+
+if part == "all":
+    all_list = glob.glob(f"lex_preds/{dataset}/{model}/predicts_*.tsv")
+    for file_part in all_list:
+        print(file_part)
+        str_part = re.findall("predicts_([A-z]*).tsv", file_part)[0]
+        NLI_word_info = pd.read_csv(file_part, delimiter="\t")
+        make_files(NLI_word_info, str_part)    
+
+else:
+    NLI_word_info = pd.read_csv(f"lex_preds/{dataset}/{model}/predicts_{part}.tsv", delimiter="\t")
+    make_files(NLI_word_info, part)

@@ -1,7 +1,6 @@
-from copy import deepcopy
 import re
+import ujson
 from dataclasses import dataclass
-from numpy import add
 import ccg_parse
 from ccg_class import tree, leaf
 from typing import Callable, Optional
@@ -171,18 +170,22 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
         #     continue
 
         if x.syn_type in ccg_allowed.keys():
-            add_tuple = phrase_info(ccg_allowed[x.syn_type], x.syn_type, x.get_sent().strip())
+            add_tuple = phrase_info(ccg_allowed[x.syn_type], x.syn_type, x.get_sent("").strip())
             if lemma_check:
-                add_tuple.lemma = x.get_sent(lemma=True).strip()
+                add_tuple.lemma = x.get_sent("", lemma=True).strip()
 
             collected.append(add_tuple)
         elif x in extra_subtree:
-            add_tuple = phrase_info(extra_subtree[x], x.syn_type, x.get_sent().strip())
+            add_tuple = phrase_info(extra_subtree[x], x.syn_type, x.get_sent("").strip())
 
             if lemma_check:
-                add_tuple.lemma = x.get_sent(lemma=True).strip()
+                add_tuple.lemma = x.get_sent("", lemma=True).strip()
             collected.append(add_tuple)
-    return collected
+
+    # https://stackoverflow.com/a/24582741
+    collected_no_duplicate = [ii for n, ii in enumerate(collected) if ii not in collected[:n]]
+
+    return collected_no_duplicate
 
 
 def phrase_to_combos(
@@ -195,7 +198,7 @@ def phrase_to_combos(
     combos: list[phrase_pair] = []
     # global duplicate set
     if duplicate_check:
-        global duplicate_set
+        global duplicate_dict
 
     # local duplicate set
     word_set_l: set[str] = set()
@@ -207,21 +210,25 @@ def phrase_to_combos(
         word_set_r: set[str] = set()
         for right_phrase in listright:
             if left_phrase.m_category == right_phrase.m_category or type_mix(left_phrase.m_category, right_phrase.m_category):
+
                 # skip if itself
                 if left_phrase.sentence == right_phrase.sentence:
                     continue
-                # TODO: test for bug with removal subphrases?
-                elif left_phrase.sentence in word_set_l or right_phrase.sentence in word_set_r:
-                    continue
+                # duplicate function + cleaning should do this?
+                # elif left_phrase.sentence in word_set_l or right_phrase.sentence in word_set_r:
+                #     continue
+                # banned verbs
                 elif left_phrase.sentence in verb_reject_lst or right_phrase.sentence in verb_reject_lst:
                     continue
 
                 if duplicate_check:
-                    # remove if encountered earlier
-                    if (left_phrase.sentence, right_phrase.sentence) in duplicate_set:
+                    if (left_phrase.sentence, right_phrase.sentence) in duplicate_dict:
+                        duplicate_dict[(left_phrase.sentence, right_phrase.sentence)].append(problem_num)
                         continue
                     else:
-                        duplicate_set.add((left_phrase.sentence, right_phrase.sentence))
+                        duplicate_dict[(left_phrase.sentence, right_phrase.sentence)] = [problem_num]
+
+
 
                 combo = phrase_pair(global_comb_counter, problem_num, left_phrase.m_category,
                                     left_phrase.s_category, right_phrase.s_category,
@@ -245,7 +252,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
     parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
-    parser.add_argument("-d", required=False, default=False, help="disable duplicates")
+    parser.add_argument("-d", required=False, default=True, help="disable duplicates and write to meta file")
     parser.add_argument("-l", required=False, default=True, help="add Lemma data")
     parser.add_argument("-v", required=False, default=False, help="verbose")
     args = parser.parse_args()
@@ -272,8 +279,10 @@ if __name__ == "__main__":
         if "fracas" in file:
             continue
 
-        if duplicate_check:
-            duplicate_set: set[tuple[str, str]] = set()
+        if duplicate_check and duplicate_check != "False":
+            duplicate_dict: dict[tuple[str, str], list[int]] = dict()
+        else:
+            duplicate_check = False
 
         file_name = file.rsplit(r"/", 1)[-1].replace(".pl", "")
         print(file_name)
@@ -289,7 +298,7 @@ if __name__ == "__main__":
 
         sen_data: list[str] = sen_open.readlines()
         sen_open.close()
-        
+
         # skip until first CCG line
         counter = 0
         for counter, line in enumerate(ccg_data):
@@ -320,7 +329,7 @@ if __name__ == "__main__":
             else:
                 if print_info:
                     print(f"CCG Num: {ccg_id}  not found in dict")
-
+      
         tsvfile = open(f"lex_pairs/{dataset}/{file_name}.tsv", "w+", newline="")
         writer = csv.writer(tsvfile, delimiter="\t", lineterminator="\n")
         if lemma_check:
@@ -360,6 +369,16 @@ if __name__ == "__main__":
                     comb_str += [cw.lemma_left, cw.lemma_right]
 
                 writer.writerow(comb_str)
+
+        if duplicate_check:
+            # remove singles
+            clean_duplicate_dict = {f'{k[0].replace(" ", "+=+")}_*_{k[1].replace(" ", "+=+")}': v
+                                    for k, v in duplicate_dict.items() if len(v) > 1}
+
+            # write all
+            os.makedirs(f"lex_pairs/{dataset}/meta", exist_ok=True)
+            with open(f"lex_pairs/{dataset}/meta/{file_name}.json", "w+", newline="") as jsonfile:
+                ujson.dump(clean_duplicate_dict, jsonfile)
 
         print(f"total combinations: {global_comb_counter}")
         tsvfile.close()

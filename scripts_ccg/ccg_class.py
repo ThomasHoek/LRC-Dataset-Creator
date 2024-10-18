@@ -57,9 +57,9 @@ class leaf:
         Function to parse a subtree to a sentence.
         """
         if lemma:
-            return sent + " " + self.lemma
+            return self.lemma
         else:
-            return sent + " " + self.word
+            return self.word
 
     def pprint(self, *args: Any) -> str:
         """
@@ -127,6 +127,9 @@ class tree:
         # information if LX -> used for child tree searches.
         if raw_str.count(",") == 2:
             self.lx = raw_str.split(",")[-2].strip()
+
+        self.sent: str | None = None
+        self.lemma_sent: str | None = None
 
     def add_tree(self, raw_str: str) -> tree:
         """
@@ -237,16 +240,35 @@ class tree:
         Seperate function to get sentence from subtree.
         Lemma is used to indicate if lemmatised sentence should be returned.
         """
+        if self.lemma_sent is not None and lemma:
+            return self.lemma_sent
+
+        if self.sent is not None and lemma is False:
+            return self.sent
+
         for child in [self.left, self.right]:
+            res = None
             if isinstance(child, tree):
-                sent = child.get_sent(sent, lemma=lemma)
+                res = child.get_sent("", lemma=lemma)
 
             elif isinstance(child, leaf):
-                sent = child.get_sent(sent, lemma=lemma)
+                res = child.get_sent("", lemma=lemma)
 
             else:
                 # cases such as LX
                 pass
+
+            # fix trailing space
+            if res is not None:
+                if sent == "":
+                    sent = res
+                else:
+                    sent += " " + res
+
+        if lemma:
+            self.lemma_sent = sent
+        else:
+            self.sent = sent
         return sent
 
     def get_leaves(self, leaf_list: list[leaf] = []) -> list[leaf]:
@@ -273,7 +295,7 @@ class tree:
 
     def length_check(self, val: int) -> bool:
         """Checks if the length of the subtree sentence split on spaces is above val argument."""
-        sent = self.get_sent()
+        sent = self.get_sent("")
         word_count = sent.count(" ")
         return word_count > val
 
