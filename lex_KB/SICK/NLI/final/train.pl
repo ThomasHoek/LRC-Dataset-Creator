@@ -149,7 +149,6 @@ ind_rel(disj('costumes','forest')).
 ind_rel(disj('forest','people')).
 ind_rel(disj('People wearing costumes','direction')).
 ind_rel(disj('People wearing costumes','forest')).
-ind_rel(disj('in a forest','same')).
 ind_rel(isa_wn('same direction','direction')).
 ind_rel(disj('People','directions')).
 ind_rel(disj('People','different directions')).
@@ -159,13 +158,11 @@ ind_rel(disj('forest','People')).
 ind_rel(disj('forest','People wearing costumes')).
 ind_rel(disj('forest','different directions')).
 ind_rel(disj('same','different')).
-ind_rel(disj('same','in different directions')).
 ind_rel(disj('direction','People')).
 ind_rel(sim_wn('direction','directions')).
 ind_rel(isa_wn('different directions','direction')).
 ind_rel(disj('People wearing costumes','directions')).
 ind_rel(disj('People wearing costumes','different directions')).
-ind_rel(disj('in the same direction','different')).
 ind_rel(disj('in the same direction','in different directions')).
 ind_rel(isa_wn('same direction','directions')).
 ind_rel(disj('same direction','different directions')).
@@ -196,7 +193,6 @@ ind_rel(isa_wn('lone biker','biker')).
 ind_rel(disj('biker jumping in the air','lone biker')).
 ind_rel(disj('empty','full')).
 ind_rel(isa_wn('full pool','pool')).
-ind_rel(disj('into an empty pool','full')).
 ind_rel(disj('into an empty pool','into a full pool')).
 ind_rel(isa_wn('empty pool','pool')).
 ind_rel(disj('empty pool','full pool')).
@@ -204,7 +200,6 @@ ind_rel(disj('man','empty pool')).
 ind_rel(sim_wn('into an empty pool','in the empty pool')).
 ind_rel(disj('empty pool','jumper')).
 ind_rel(disj('lone','full')).
-ind_rel(disj('lone','into a full pool')).
 ind_rel(disj('biker','pool')).
 ind_rel(disj('biker','full pool')).
 ind_rel(disj('lone biker','pool')).
@@ -297,8 +292,6 @@ ind_rel(disj('field','person')).
 ind_rel(sim_wn('ridden','riding')).
 ind_rel(sim_wn('friends','group of friends')).
 ind_rel(isa_wn('group of friends','friends')).
-ind_rel(disj('in a raft','current')).
-ind_rel(disj('being','wearing')).
 ind_rel(isa_wn('ridden','wearing')).
 ind_rel(isa_wn('friends','people')).
 ind_rel(isa_wn('friends','group of people')).
@@ -341,7 +334,6 @@ ind_rel(disj('child','baseball')).
 ind_rel(disj('missing','watching')).
 ind_rel(disj('missing','hitting')).
 ind_rel(disj('purple','red')).
-ind_rel(disj('purple','at red tables')).
 ind_rel(isa_wn('crowd','people')).
 ind_rel(isa_wn('various','Various')).
 ind_rel(sim_wn('lit','lights')).
@@ -524,7 +516,6 @@ ind_rel(disj('guitar','blonde and flyaway hair')).
 ind_rel(disj('guitar','person')).
 ind_rel(disj('stage','person')).
 ind_rel(disj('guitar on stage','person')).
-ind_rel(disj('on stage','flyaway')).
 ind_rel(disj('sitting','lying')).
 ind_rel(disj('sitting','raising')).
 ind_rel(disj('raised','lying')).
@@ -555,19 +546,15 @@ ind_rel(disj('body','nude crowd in body paint')).
 ind_rel(disj('nude lady','nude crowd in body paint')).
 ind_rel(disj('nude lady','crowd in body paint')).
 ind_rel(disj('nude lady','front of a lady')).
-ind_rel(disj('in body paint','nude')).
 ind_rel(isa_wn('nude crowd in body paint','body paint')).
 ind_rel(isa_wn('crowd in body paint','body paint')).
 ind_rel(disj('woman','girl')).
 ind_rel(disj('paint','topless girl')).
-ind_rel(disj('in paint','topless')).
 ind_rel(isa_wn('nude','topless')).
-ind_rel(disj('nude','in paint')).
 ind_rel(isa_wn('girl','lady')).
 ind_rel(disj('front','topless girl')).
 ind_rel(isa_wn('nude lady','girl')).
 ind_rel(isa_wn('topless girl','nude lady')).
-ind_rel(disj('in body paint','topless')).
 ind_rel(isa_wn('in body paint','in paint')).
 ind_rel(disj('body paint','topless girl')).
 ind_rel(disj('paint','young , topless woman')).
@@ -783,7 +770,6 @@ ind_rel(disj('tall','low')).
 ind_rel(isa_wn('low and green grass','grass')).
 ind_rel(disj('brown and white dog','black and tan dog')).
 ind_rel(disj('brown and white dog','low and green grass')).
-ind_rel(disj('through the tall grass','low')).
 ind_rel(isa_wn('tall grass','grass')).
 ind_rel(disj('tall grass','low and green grass')).
 ind_rel(disj('white','brown')).
@@ -915,7 +901,6 @@ ind_rel(isa_wn('green bicycle','bicycle')).
 ind_rel(isa_wn('trick on a green bicycle','green bicycle')).
 ind_rel(disj('black','green')).
 ind_rel(isa_wn('green bicycle','bike')).
-ind_rel(disj('in black','green')).
 ind_rel(isa_wn('green bike','bicycle')).
 ind_rel(isa_wn('trick on a green bicycle','green bike')).
 ind_rel(isa_wn('green bike','green bicycle')).
@@ -999,7 +984,6 @@ ind_rel(isa_wn('wearing','worn')).
 ind_rel(isa_wn('black','dyed')).
 ind_rel(disj('shirt','table')).
 ind_rel(isa_wn('black shirt','shirt')).
-ind_rel(isa_wn('sitting','being')).
 ind_rel(disj('table','shirt')).
 ind_rel(isa_wn('dyed black shirt','shirt')).
 ind_rel(disj('dyed black shirt','table')).
@@ -1078,7 +1062,6 @@ ind_rel(disj('pink scarf','pink bellbottoms')).
 ind_rel(isa_wn('biker','person')).
 ind_rel(disj('person','gear')).
 ind_rel(isa_wn('black helmet','helmet')).
-ind_rel(disj('being','pushing')).
 ind_rel(sim_wn('worn','wearing')).
 ind_rel(sim_wn('man','One man')).
 ind_rel(disj('pushing','wearing')).
@@ -1166,10 +1149,7 @@ ind_rel(disj('ball','front of a large door')).
 ind_rel(disj('ball','large door')).
 ind_rel(disj('dress','cloak')).
 ind_rel(isa_wn('dress','apparel')).
-ind_rel(disj('being','taking')).
-ind_rel(disj('being','revealing')).
 ind_rel(isa_wn('revealing','worn')).
-ind_rel(disj('taking','being')).
 ind_rel(disj('taking','worn')).
 ind_rel(disj('cloak','dress')).
 ind_rel(disj('revealing','worn')).
@@ -1180,7 +1160,6 @@ ind_rel(disj('hair','necklace')).
 ind_rel(disj('hair','sweatshirt')).
 ind_rel(disj('hair','earrings')).
 ind_rel(isa_wn('light brown hair','hair')).
-ind_rel(disj('red','with light brown hair')).
 ind_rel(disj('necklace','hair')).
 ind_rel(disj('necklace','sweatshirt')).
 ind_rel(disj('necklace','earrings')).
@@ -1204,7 +1183,6 @@ ind_rel(disj('sweatshirt','beads')).
 ind_rel(disj('earrings','beads')).
 ind_rel(disj('earrings','beads that are red')).
 ind_rel(isa_wn('teenage','young age')).
-ind_rel(disj('with light brown hair','red')).
 ind_rel(disj('light brown hair','beads that are red')).
 ind_rel(disj('beads','sweatshirt')).
 ind_rel(disj('beads','earrings')).
@@ -1222,8 +1200,6 @@ ind_rel(disj('attached','rescues')).
 ind_rel(disj('rope','wall')).
 ind_rel(disj('rope','cat from over the wall')).
 ind_rel(disj('wall artificially built for climbing','cat')).
-ind_rel(disj('for climbing','fearful')).
-ind_rel(disj('fearful','for climbing')).
 ind_rel(disj('wall','rope')).
 ind_rel(isa_wn('climbing wall','wall')).
 ind_rel(sim_wn('dad','father')).
@@ -1296,7 +1272,6 @@ ind_rel(disj('person','rope')).
 ind_rel(disj('front','person')).
 ind_rel(disj('rock','person')).
 ind_rel(disj('rope','person')).
-ind_rel(isa_wn('climbing','being')).
 ind_rel(sim_wn('climbed','climbing')).
 ind_rel(disj('person','cliff')).
 ind_rel(disj('climbing','standing')).
@@ -1368,7 +1343,6 @@ ind_rel(isa_wn('bicycle trick','trick')).
 ind_rel(isa_wn('tricking','doing')).
 ind_rel(disj('other','dog')).
 ind_rel(disj('street','other')).
-ind_rel(disj('white','at the black street')).
 ind_rel(isa_wn('black street','street')).
 ind_rel(disj('white one','black street')).
 ind_rel(disj('at each other','at the black street')).
@@ -1380,7 +1354,6 @@ ind_rel(isa_wn('Two dogs of different breeds','dogs of different breeds')).
 ind_rel(disj('dogs of different breeds','street')).
 ind_rel(disj('other across a street','street')).
 ind_rel(isa_wn('staring','looking')).
-ind_rel(disj('at each other','different')).
 ind_rel(disj('dog','tree')).
 ind_rel(disj('dog','pine')).
 ind_rel(disj('dog','bucket')).
@@ -1400,9 +1373,7 @@ ind_rel(disj('mouth','basket')).
 ind_rel(disj('mouth','back yard')).
 ind_rel(sim_wn('in a backyard','in a back yard')).
 ind_rel(disj('in a backyard','in its mouth')).
-ind_rel(disj('in its mouth','back')).
 ind_rel(disj('in its mouth','in a back yard')).
-ind_rel(disj('back','in its mouth')).
 ind_rel(disj('in a back yard','in its mouth')).
 ind_rel(isa_wn('back yard','yard')).
 ind_rel(disj('tree','basket')).
@@ -1510,7 +1481,6 @@ ind_rel(disj('studying','operating')).
 ind_rel(disj('studying','makes')).
 ind_rel(disj('subject','camera that makes videos')).
 ind_rel(disj('operating','studied')).
-ind_rel(disj('makes','being')).
 ind_rel(disj('makes','studied')).
 ind_rel(disj('study','camera that makes videos')).
 ind_rel(disj('study subject','hat')).
@@ -1529,12 +1499,9 @@ ind_rel(disj('marry','leaving')).
 ind_rel(disj('groom','aisle')).
 ind_rel(disj('leaving','walking')).
 ind_rel(disj('marriage','aisle')).
-ind_rel(disj('after the marriage','married')).
-ind_rel(disj('after the wedding','married')).
 ind_rel(sim_wn('watched','attended')).
 ind_rel(isa_wn('classroom of students','classroom')).
 ind_rel(isa_wn('by a classroom of students','of students')).
-ind_rel(disj('by a classroom of students','empty')).
 ind_rel(disj('hill','knees')).
 ind_rel(disj('hat','snow')).
 ind_rel(disj('hat','knees')).
@@ -1548,7 +1515,6 @@ ind_rel(disj('on his knees','in snow')).
 ind_rel(disj('hill','slide')).
 ind_rel(disj('snow','slide')).
 ind_rel(disj('snow','red and black slide')).
-ind_rel(isa_wn('wearing','has')).
 ind_rel(disj('red','black')).
 ind_rel(disj('jacket','slide')).
 ind_rel(disj('jacket','hat')).
@@ -1614,7 +1580,6 @@ ind_rel(isa_wn('coats','clothes')).
 ind_rel(disj('clothes','two dogs')).
 ind_rel(isa_wn('golden coats','clothes')).
 ind_rel(disj('camouflage','golden coats')).
-ind_rel(disj('in the snow','golden')).
 ind_rel(disj('clothes that provide camouflage','dogs')).
 ind_rel(disj('clothes that provide camouflage','two dogs')).
 ind_rel(isa_wn('men','people')).
@@ -1645,7 +1610,6 @@ ind_rel(disj('front','open')).
 ind_rel(disj('window','t-shirt')).
 ind_rel(disj('window','mouth')).
 ind_rel(disj('window','mouth open')).
-ind_rel(isa_wn('made','has')).
 ind_rel(disj('bricks','t-shirt')).
 ind_rel(disj('bricks','mouth')).
 ind_rel(disj('bricks','open')).
@@ -1658,7 +1622,6 @@ ind_rel(disj('brick','t-shirt')).
 ind_rel(disj('brick','mouth')).
 ind_rel(disj('brick','open')).
 ind_rel(disj('brick','mouth open')).
-ind_rel(isa_wn('does','has')).
 ind_rel(disj('front of a brick window','open')).
 ind_rel(disj('brick window','t-shirt')).
 ind_rel(disj('brick window','mouth')).
@@ -1837,7 +1800,6 @@ ind_rel(disj('people','ice skating rink placed outdoors')).
 ind_rel(disj('ice skating rink placed outdoors','people')).
 ind_rel(isa_wn('ice skating rink placed outdoors','rink placed outdoors')).
 ind_rel(disj('rink placed outdoors','people')).
-ind_rel(disj('empty','of people')).
 ind_rel(disj('ice','ice skater')).
 ind_rel(disj('rink','ice skater')).
 ind_rel(disj('outdoors','rink full of people')).
@@ -1857,13 +1819,11 @@ ind_rel(disj('blue','white')).
 ind_rel(disj('white','blue')).
 ind_rel(disj('uniform','cheers')).
 ind_rel(isa_wn('blue and white uniform','uniform')).
-ind_rel(disj('being','raising')).
 ind_rel(disj('cheering','lowering')).
 ind_rel(isa_wn('cheering','raising')).
 ind_rel(disj('People','sand')).
 ind_rel(disj('People','ocean')).
 ind_rel(disj('People','sun')).
-ind_rel(disj('full','of sand')).
 ind_rel(disj('sand','People')).
 ind_rel(disj('sand','sun')).
 ind_rel(disj('ocean','People')).
@@ -1939,7 +1899,6 @@ ind_rel(disj('dyeing','blowing')).
 ind_rel(disj('shirt','bubble')).
 ind_rel(disj('shirt','bubble that is huge')).
 ind_rel(disj('walking','playing')).
-ind_rel(disj('of mud','green')).
 ind_rel(disj('boots','scarf')).
 ind_rel(disj('boots','young child wearing a scarf')).
 ind_rel(isa_wn('green boots','boots')).
@@ -1964,7 +1923,6 @@ ind_rel(isa_wn('Two young kids','Two young children')).
 ind_rel(isa_wn('toddlers','children')).
 ind_rel(isa_wn('Two toddlers','children')).
 ind_rel(isa_wn('Two toddlers','Two young children')).
-ind_rel(disj('being','eating')).
 ind_rel(sim_wn('eaten','eating')).
 ind_rel(isa_wn('toddlers','kids')).
 ind_rel(isa_wn('Two toddlers','kids')).
@@ -1995,7 +1953,6 @@ ind_rel(isa_wn('painted','dyed')).
 ind_rel(disj('purple','black')).
 ind_rel(disj('purple','shirt black')).
 ind_rel(disj('black','purple')).
-ind_rel(isa_wn('doing','has')).
 ind_rel(disj('shirt dyed purple','black')).
 ind_rel(disj('shirt dyed purple','dog')).
 ind_rel(disj('shirt dyed purple','shirt black')).
@@ -2007,17 +1964,12 @@ ind_rel(disj('black shirt','man in a purple shirt')).
 ind_rel(disj('black shirt','purple shirt')).
 ind_rel(isa_wn('black shirt','shirt black')).
 ind_rel(disj('funny face','black')).
-ind_rel(disj('pose','being')).
-ind_rel(disj('being','doing')).
-ind_rel(disj('being','pose')).
 ind_rel(disj('watched','doing')).
 ind_rel(disj('looking','pose')).
 ind_rel(sim_wn('looking','watched')).
 ind_rel(disj('doing','pose')).
-ind_rel(disj('doing','being')).
 ind_rel(disj('doing','watched')).
 ind_rel(disj('pose','walking')).
-ind_rel(isa_wn('walking','being')).
 ind_rel(disj('watched','walking')).
 ind_rel(sim_wn('by another man','from a man')).
 ind_rel(disj('horse','pants')).
@@ -2062,7 +2014,6 @@ ind_rel(isa_wn('amphitheater talking to a boy','outdoors')).
 ind_rel(disj('boy','adult')).
 ind_rel(disj('bottom','adult')).
 ind_rel(disj('bottom','amphitheater')).
-ind_rel(disj('red','behind a long blue wall')).
 ind_rel(disj('shirt','wall')).
 ind_rel(disj('shirt','eyebrow')).
 ind_rel(isa_wn('red shirt','shirt')).
@@ -2089,14 +2040,12 @@ ind_rel(disj('front','space')).
 ind_rel(disj('building','boy')).
 ind_rel(disj('space','people')).
 ind_rel(disj('reserved','standing')).
-ind_rel(isa_wn('for handicapped people','handicapped')).
 ind_rel(isa_wn('boy','people')).
 ind_rel(disj('people','space')).
 ind_rel(isa_wn('handicapped people','people')).
 ind_rel(disj('blue building in the space','boy')).
 ind_rel(disj('blue building in the space','people')).
 ind_rel(disj('blue building in the space','handicapped people')).
-ind_rel(isa_wn('handicapped','for handicapped people')).
 ind_rel(disj('handicapped people','building')).
 ind_rel(disj('handicapped people','space')).
 ind_rel(isa_wn('wall','space')).
@@ -2193,7 +2142,6 @@ ind_rel(isa_wn('on the green grass','on the grass')).
 ind_rel(disj('green grass','toy')).
 ind_rel(disj('green','red')).
 ind_rel(disj('grass','air')).
-ind_rel(disj('of the green grass','red')).
 ind_rel(disj('green grass','red ball in the air')).
 ind_rel(disj('green grass','ball in the air')).
 ind_rel(disj('red','green')).
@@ -2241,10 +2189,8 @@ ind_rel(disj('dog of large size','tennis ball')).
 ind_rel(disj('on the grass','in its mouth')).
 ind_rel(disj('tennis ball','dog')).
 ind_rel(disj('tennis ball','grass')).
-ind_rel(disj('in its mouth','large')).
 ind_rel(disj('in its mouth','on the grass')).
 ind_rel(disj('dog','large tennis ball')).
-ind_rel(disj('running','being')).
 ind_rel(sim_wn('running','run')).
 ind_rel(disj('grass','large tennis ball')).
 ind_rel(isa_wn('large tennis ball','ball')).
@@ -2274,7 +2220,6 @@ ind_rel(disj('running dog','tennis')).
 ind_rel(disj('ball','dog of large size')).
 ind_rel(disj('grass','dog of large size')).
 ind_rel(sim_wn('across the grass','on the grass')).
-ind_rel(disj('being','carrying')).
 ind_rel(disj('teach','carrying')).
 ind_rel(disj('run','carrying')).
 ind_rel(sim_wn('run','running')).
@@ -2333,7 +2278,6 @@ ind_rel(isa_wn('turtle in the sea','sea turtle')).
 ind_rel(isa_wn('red fish','fish')).
 ind_rel(disj('hunting','following')).
 ind_rel(disj('following','hunting')).
-ind_rel(disj('dipping','being')).
 ind_rel(disj('shrimp','car')).
 ind_rel(disj('shrimp','man')).
 ind_rel(disj('batter','car')).
@@ -2369,11 +2313,9 @@ ind_rel(isa_wn('woods','area')).
 ind_rel(disj('woods','desert area')).
 ind_rel(disj('through the woods','through a desert area')).
 ind_rel(disj('making','speaking')).
-ind_rel(sim_wn('telephonic','on a telephone')).
 ind_rel(isa_wn('telephone','device')).
 ind_rel(isa_wn('on a telephone','on a telephonic device')).
 ind_rel(isa_wn('telephone','telephonic device')).
-ind_rel(isa_wn('on the phone','telephonic')).
 ind_rel(isa_wn('phone','device')).
 ind_rel(isa_wn('on the phone','on a telephonic device')).
 ind_rel(isa_wn('phone','telephonic device')).
@@ -2542,7 +2484,6 @@ ind_rel(disj('man','container')).
 ind_rel(isa_wn('into a small container','into a container')).
 ind_rel(isa_wn('small container','container')).
 ind_rel(isa_wn('shrimps','prawn')).
-ind_rel(disj('being','cutting')).
 ind_rel(sim_wn('cut','cutting')).
 ind_rel(sim_wn('chopping','cut')).
 ind_rel(disj('butter','prawn')).
@@ -2715,7 +2656,6 @@ ind_rel(isa_wn('guitar owner','person')).
 ind_rel(disj('guitar owner','trumpet')).
 ind_rel(sim_wn('digging','burrowing')).
 ind_rel(disj('earth','hole')).
-ind_rel(disj('being','pouring')).
 ind_rel(sim_wn('poured','pouring')).
 ind_rel(isa_wn('pot','pan')).
 ind_rel(disj('man','pot')).
@@ -2752,7 +2692,6 @@ ind_rel(disj('mouse','One man')).
 ind_rel(disj('man','mouse')).
 ind_rel(disj('man','snake')).
 ind_rel(disj('man','mouse to the snake')).
-ind_rel(isa_wn('fed','being')).
 ind_rel(isa_wn('snakes','snake')).
 ind_rel(disj('snakes','mouse')).
 ind_rel(disj('snakes','man')).
@@ -2772,7 +2711,6 @@ ind_rel(disj('ingredients','person')).
 ind_rel(disj('bowl','person')).
 ind_rel(disj('person','ingredients')).
 ind_rel(disj('person','bowl')).
-ind_rel(isa_wn('bowling','being')).
 ind_rel(disj('mixer','person')).
 ind_rel(disj('at the mixer','in a bowl')).
 ind_rel(disj('bowl','eggs')).
@@ -2783,7 +2721,6 @@ ind_rel(isa_wn('eggs to a break','eggs')).
 ind_rel(disj('bowl','two eggs to a break')).
 ind_rel(disj('ingredients','break')).
 ind_rel(disj('ingredients','dancer')).
-ind_rel(disj('being','bowling')).
 ind_rel(isa_wn('woman','person')).
 ind_rel(disj('person','eggs')).
 ind_rel(isa_wn('dancer','person')).
@@ -2801,7 +2738,6 @@ ind_rel(sim_wn('vehicle','car')).
 ind_rel(isa_wn('on the car','onto a vehicle')).
 ind_rel(isa_wn('onto the car','on the car')).
 ind_rel(disj('throwing','peeling')).
-ind_rel(disj('being','peeled')).
 ind_rel(isa_wn('peeling','peeled')).
 ind_rel(sim_wn('peeled','peeling')).
 ind_rel(disj('by the man','by nobody')).
@@ -2821,18 +2757,15 @@ ind_rel(disj('tomatoes','oil')).
 ind_rel(isa_wn('few tomatoes','tomatoes')).
 ind_rel(isa_wn('tomato oil','oil')).
 ind_rel(disj('on the tomatoes','on the man')).
-ind_rel(isa_wn('drunk','being')).
 ind_rel(isa_wn('fresh milk','milk')).
 ind_rel(disj('drinking','cat')).
 ind_rel(isa_wn('kitten','cat')).
 ind_rel(sim_wn('drinking','drunk')).
 ind_rel(disj('fresh milk','cat')).
 ind_rel(disj('frog','man')).
-ind_rel(disj('being','holding')).
 ind_rel(sim_wn('held','holding')).
 ind_rel(disj('man','frog')).
 ind_rel(disj('holding','dropping')).
-ind_rel(disj('emptying','being')).
 ind_rel(disj('emptying','held')).
 ind_rel(disj('plastic','frog')).
 ind_rel(disj('container made of plastic','frog')).
@@ -2842,7 +2775,6 @@ ind_rel(isa_wn('by the man','by a man')).
 ind_rel(isa_wn('cut','sliced')).
 ind_rel(disj('horse','person')).
 ind_rel(disj('man','elephant')).
-ind_rel(disj('riding','being')).
 ind_rel(sim_wn('riding','ridden')).
 ind_rel(disj('horse','elephant')).
 ind_rel(sim_wn('playing','played')).
@@ -2852,7 +2784,6 @@ ind_rel(isa_wn('One man','man')).
 ind_rel(disj('turning','pushing')).
 ind_rel(disj('microwave','buttons')).
 ind_rel(isa_wn('on the microwave','of a microwave')).
-ind_rel(disj('being','making')).
 ind_rel(isa_wn('practicing','playing')).
 ind_rel(sim_wn('boy','One boy')).
 ind_rel(isa_wn('boy','person')).
@@ -2868,7 +2799,6 @@ ind_rel(disj('field','cheetah')).
 ind_rel(disj('lion','pen')).
 ind_rel(disj('pen','lion')).
 ind_rel(isa_wn('in a pen','in the pen')).
-ind_rel(disj('whole','in a pen')).
 ind_rel(disj('whole pen','lion')).
 ind_rel(isa_wn('whole pen','pen')).
 ind_rel(sim_wn('pacing','walking')).
@@ -2926,7 +2856,6 @@ ind_rel(disj('orange pepper','bell')).
 ind_rel(disj('pepper which is orange','bell')).
 ind_rel(isa_wn('tofu','Tofu')).
 ind_rel(disj('tofu','woman')).
-ind_rel(disj('being','sliced')).
 ind_rel(disj('woman','Tofu')).
 ind_rel(isa_wn('by a woman','by one woman')).
 ind_rel(disj('one woman','Tofu')).
@@ -2965,12 +2894,10 @@ ind_rel(disj('One man','pony')).
 ind_rel(disj('One man','tail')).
 ind_rel(disj('One man','pony tail')).
 ind_rel(disj('on the chair','into a pony tail')).
-ind_rel(disj('garlic','on bread')).
 ind_rel(isa_wn('slice of garlic bread','bread')).
 ind_rel(isa_wn('garlic bread','bread')).
 ind_rel(disj('man','butter spread upon it')).
 ind_rel(isa_wn('man','man OR')).
-ind_rel(disj('spreading','having')).
 ind_rel(isa_wn('butter','spread')).
 ind_rel(disj('butter','OR')).
 ind_rel(disj('butter','man OR')).
@@ -2979,7 +2906,6 @@ ind_rel(sim_wn('bread','piece of bread')).
 ind_rel(disj('bread','man OR')).
 ind_rel(isa_wn('piece of bread','bread')).
 ind_rel(disj('removing','spreading')).
-ind_rel(disj('smearing','being')).
 ind_rel(sim_wn('smearing','spread')).
 ind_rel(isa_wn('slice','piece')).
 ind_rel(disj('slice','spread')).
@@ -2995,7 +2921,6 @@ ind_rel(disj('microphone','parrot speaking')).
 ind_rel(disj('parrot','microphone')).
 ind_rel(disj('parrot','front of the microphone')).
 ind_rel(isa_wn('food on the trays','food')).
-ind_rel(isa_wn('eaten','being')).
 ind_rel(disj('kittens','food')).
 ind_rel(disj('kittens','trays')).
 ind_rel(disj('kittens','food on the trays')).
@@ -3022,7 +2947,6 @@ ind_rel(disj('ping pong','water')).
 ind_rel(disj('ping pong','few animals')).
 ind_rel(isa_wn('cleaned','polished')).
 ind_rel(sim_wn('windows','window')).
-ind_rel(disj('pouring','being')).
 ind_rel(disj('oil','water')).
 ind_rel(disj('woman','chimp')).
 ind_rel(disj('pouring','kicking')).
@@ -3032,14 +2956,12 @@ ind_rel(disj('skillet','target')).
 ind_rel(disj('baby','woman')).
 ind_rel(disj('baby','trash')).
 ind_rel(disj('baby','trash can')).
-ind_rel(disj('being','putting')).
 ind_rel(sim_wn('put','putting')).
 ind_rel(disj('trash','baby')).
 ind_rel(disj('trash','trash can')).
 ind_rel(disj('woman','trash can')).
 ind_rel(disj('trash can','woman')).
 ind_rel(disj('trash can','baby')).
-ind_rel(disj('put','being')).
 ind_rel(isa_wn('baby','person')).
 ind_rel(disj('baby','meat')).
 ind_rel(disj('baby','skillet')).
@@ -3057,7 +2979,6 @@ ind_rel(disj('meat','trash')).
 ind_rel(disj('meat','trash can')).
 ind_rel(disj('skillet','trash can')).
 ind_rel(disj('in the skillet','into a trash can')).
-ind_rel(disj('putting','being')).
 ind_rel(sim_wn('putting','put')).
 ind_rel(disj('into a skillet','into a trash can')).
 ind_rel(disj('kitten','child')).
@@ -3075,10 +2996,8 @@ ind_rel(disj('singing','hiring')).
 ind_rel(disj('singing','fire')).
 ind_rel(disj('truck','hill')).
 ind_rel(disj('truck','cat')).
-ind_rel(disj('going','being')).
 ind_rel(disj('water','truck')).
 ind_rel(disj('water','hill')).
-ind_rel(disj('being','going')).
 ind_rel(disj('cat','truck')).
 ind_rel(disj('girl','guitar')).
 ind_rel(disj('guitar','intense man')).
@@ -3089,7 +3008,6 @@ ind_rel(sim_wn('riding','driving')).
 ind_rel(disj('parking','riding')).
 ind_rel(disj('riding','running')).
 ind_rel(disj('horse','motorbike')).
-ind_rel(disj('being','parking')).
 ind_rel(disj('motorbike','horse')).
 ind_rel(disj('rider','horse')).
 ind_rel(disj('running','ridden')).
@@ -3113,10 +3031,8 @@ ind_rel(disj('tricking','throwing')).
 ind_rel(disj('old man','tree')).
 ind_rel(disj('lady','guitar')).
 ind_rel(isa_wn('by a girl','by a lady')).
-ind_rel(disj('being','requires')).
 ind_rel(sim_wn('lady','ladies')).
 ind_rel(isa_wn('lady','person')).
-ind_rel(isa_wn('like','being')).
 ind_rel(isa_wn('ladies','person')).
 ind_rel(disj('cat','device')).
 ind_rel(disj('cat','playing device')).
@@ -3127,7 +3043,6 @@ ind_rel(disj('mud','cat playing with a device')).
 ind_rel(disj('cat','boy')).
 ind_rel(disj('cat','Mud')).
 ind_rel(disj('cat','playing boy')).
-ind_rel(disj('eating','being')).
 ind_rel(disj('eating','cut')).
 ind_rel(isa_wn('raw meat','meat')).
 ind_rel(disj('lady','meat')).
@@ -3215,7 +3130,6 @@ ind_rel(disj('woman','Eggs')).
 ind_rel(disj('beating','whisked')).
 ind_rel(isa_wn('eggs','Eggs')).
 ind_rel(disj('bowl','Eggs')).
-ind_rel(disj('using','being')).
 ind_rel(disj('whisk','Eggs')).
 ind_rel(disj('whisk','person')).
 ind_rel(disj('wire','Eggs')).
@@ -3228,7 +3142,6 @@ ind_rel(disj('using','leaving')).
 ind_rel(disj('wire','bowl near the eggs')).
 ind_rel(disj('beating','whisking')).
 ind_rel(disj('using','whisking')).
-ind_rel(disj('being','granting')).
 ind_rel(isa_wn('granted','granting')).
 ind_rel(disj('car','person')).
 ind_rel(isa_wn('white car','car')).
@@ -3239,10 +3152,8 @@ ind_rel(disj('interview','car')).
 ind_rel(disj('car','interview')).
 ind_rel(disj('driven','granted')).
 ind_rel(disj('white car','interview')).
-ind_rel(disj('denying','being')).
 ind_rel(disj('denying','driven')).
 ind_rel(disj('granting','driven')).
-ind_rel(disj('climbed','being')).
 ind_rel(disj('roped','climbed')).
 ind_rel(disj('carrot','machine')).
 ind_rel(disj('rope','carrot')).
@@ -3397,7 +3308,6 @@ ind_rel(disj('swimming pool','crocodile')).
 ind_rel(disj('playing kids','crocodile')).
 ind_rel(disj('playing kids','pool')).
 ind_rel(isa_wn('off of a horse','of a horse')).
-ind_rel(disj('being','falling')).
 ind_rel(isa_wn('desk','table')).
 ind_rel(isa_wn('fingers on a desk','fingers on a table')).
 ind_rel(disj('dog','toddler')).
@@ -3785,7 +3695,6 @@ ind_rel(isa_wn('garlic into pieces','pieces')).
 ind_rel(disj('garlic into pieces','capsicum into pieces')).
 ind_rel(disj('noodles','person')).
 ind_rel(disj('drying','boiling')).
-ind_rel(disj('karate','for boxing')).
 ind_rel(isa_wn('karate practitioner','practitioner')).
 ind_rel(disj('kicking','boxing')).
 ind_rel(disj('wearing','kicking')).
@@ -3864,7 +3773,6 @@ ind_rel(isa_wn('player of soccer','players')).
 ind_rel(isa_wn('player of soccer','Soccer players')).
 ind_rel(sim_wn('players','player')).
 ind_rel(isa_wn('Soccer players','soccer player')).
-ind_rel(sim_wn('eating','having')).
 ind_rel(disj('eating','talking')).
 ind_rel(disj('person','oil')).
 ind_rel(disj('person','pot')).
@@ -3968,7 +3876,6 @@ ind_rel(isa_wn('mechanical bull','bull which is mechanical')).
 ind_rel(disj('man','mechanical bull')).
 ind_rel(disj('man riding a mechanical bull','bull')).
 ind_rel(disj('lifting','lowering')).
-ind_rel(disj('lifting','being')).
 ind_rel(isa_wn('lifting','lifted')).
 ind_rel(isa_wn('barbells','Weights')).
 ind_rel(disj('tree','person')).
@@ -4252,13 +4159,11 @@ ind_rel(disj('fishing line','fish')).
 ind_rel(sim_wn('fishing line','fishing rod')).
 ind_rel(disj('resting','running')).
 ind_rel(isa_wn('squirrel','animal')).
-ind_rel(disj('boiling','being')).
 ind_rel(isa_wn('boiling','boiled')).
 ind_rel(disj('putting','boiling')).
 ind_rel(disj('pot','eggs')).
 ind_rel(disj('taking','boiling')).
 ind_rel(disj('Eggs','pot')).
-ind_rel(disj('being','placing')).
 ind_rel(disj('woman','pot')).
 ind_rel(disj('placing','drying')).
 ind_rel(disj('soccer','person')).
@@ -4301,7 +4206,6 @@ ind_rel(isa_wn('pork chop','pork')).
 ind_rel(disj('chop','pork')).
 ind_rel(isa_wn('pork chop','chop')).
 ind_rel(isa_wn('woman coating a pork chop','pork chop')).
-ind_rel(disj('grating','being')).
 ind_rel(isa_wn('grating','grated')).
 ind_rel(isa_wn('carrots','Carrots')).
 ind_rel(disj('grating','coating')).
@@ -4310,14 +4214,11 @@ ind_rel(disj('carrots','chop')).
 ind_rel(disj('carrots','pork chop')).
 ind_rel(sim_wn('strolling','walking')).
 ind_rel(disj('standing','walking')).
-ind_rel(isa_wn('south','through the air')).
 ind_rel(isa_wn('plane','airplane')).
 ind_rel(isa_wn('sky','air')).
 ind_rel(isa_wn('south African plane','airplane')).
 ind_rel(isa_wn('in a blue sky','through the air')).
-ind_rel(disj('south','on the ground')).
 ind_rel(disj('plane','ground')).
-ind_rel(isa_wn('flying','being')).
 ind_rel(disj('flying','stationed')).
 ind_rel(disj('sky','ground')).
 ind_rel(disj('south African plane','ground')).
@@ -4520,8 +4421,6 @@ ind_rel(disj('bike','monkey riding a bike')).
 ind_rel(disj('monkey','man')).
 ind_rel(disj('monkey','bicycle')).
 ind_rel(disj('woman','pan')).
-ind_rel(disj('being','dropped')).
-ind_rel(disj('dropped','being')).
 ind_rel(isa_wn('dropping','putting')).
 ind_rel(disj('putting','dropped')).
 ind_rel(isa_wn('into a pan','in a pan')).
@@ -4529,7 +4428,6 @@ ind_rel(sim_wn('into a pan','in a pan')).
 ind_rel(disj('frog','person')).
 ind_rel(disj('woman','frog')).
 ind_rel(disj('frog','woman')).
-ind_rel(disj('holding','being')).
 ind_rel(sim_wn('holding','handled')).
 ind_rel(isa_wn('holding','handling')).
 ind_rel(sim_wn('holding','handling')).
@@ -4548,7 +4446,6 @@ ind_rel(disj('suitcases','trunk of a car')).
 ind_rel(disj('trunk','suitcases')).
 ind_rel(isa_wn('trunk of a car','trunk')).
 ind_rel(disj('trunk of a car','suitcases')).
-ind_rel(disj('packing','being')).
 ind_rel(isa_wn('packing','packed')).
 ind_rel(isa_wn('packing','putting')).
 ind_rel(sim_wn('putting','placing')).
@@ -4666,7 +4563,6 @@ ind_rel(isa_wn('rising swamp','water')).
 ind_rel(disj('going','rising')).
 ind_rel(disj('man','ceiling')).
 ind_rel(isa_wn('ceiling of a room','ceiling')).
-ind_rel(disj('upside-down','on the floor')).
 ind_rel(disj('ceiling','floor')).
 ind_rel(disj('on the ceiling','on the floor')).
 ind_rel(isa_wn('man','male')).
@@ -4752,7 +4648,6 @@ ind_rel(disj('boards with his hand','man')).
 ind_rel(isa_wn('Tiles','boards')).
 ind_rel(disj('Tiles','wooden boards with his hand')).
 ind_rel(disj('Tiles','boards with his hand')).
-ind_rel(disj('being','breaking')).
 ind_rel(sim_wn('broken','breaking')).
 ind_rel(sim_wn('hands','hand')).
 ind_rel(isa_wn('wooden boards with his hand','hands')).
@@ -4779,7 +4674,6 @@ ind_rel(isa_wn('knives','blades')).
 ind_rel(disj('blades','tree')).
 ind_rel(disj('target','knives')).
 ind_rel(disj('target','tree')).
-ind_rel(isa_wn('from a tree','outside')).
 ind_rel(disj('throwing','removing')).
 ind_rel(disj('man','house')).
 ind_rel(disj('knives','target')).
@@ -4790,7 +4684,6 @@ ind_rel(disj('throwing','tree')).
 ind_rel(disj('target for blade throwing','knives')).
 ind_rel(disj('blade throwing','tree')).
 ind_rel(disj('One man','horse')).
-ind_rel(disj('being','drawing')).
 ind_rel(sim_wn('drawn','drawing')).
 ind_rel(disj('taking','drawing')).
 ind_rel(isa_wn('drawing','picture')).
@@ -4832,7 +4725,6 @@ ind_rel(disj('flute','piano')).
 ind_rel(disj('wooden flute','piano')).
 ind_rel(isa_wn('erasing','cleaning')).
 ind_rel(isa_wn('drawing on the board','drawing')).
-ind_rel(disj('other','work from the panel')).
 ind_rel(sim_wn('board','panel')).
 ind_rel(disj('board','other man')).
 ind_rel(isa_wn('work from the panel','work from the board')).
@@ -4880,7 +4772,6 @@ ind_rel(isa_wn('performer','people')).
 ind_rel(isa_wn('clown','People')).
 ind_rel(isa_wn('singing','sung')).
 ind_rel(disj('people','song')).
-ind_rel(isa_wn('dancing','being')).
 ind_rel(disj('dancing','sung')).
 ind_rel(disj('girl','horse')).
 ind_rel(sim_wn('spraying','watering')).
@@ -4924,7 +4815,6 @@ ind_rel(disj('person','paper')).
 ind_rel(sim_wn('tearing','cutting')).
 ind_rel(sim_wn('cutting','tearing')).
 ind_rel(disj('untying','tying')).
-ind_rel(disj('being','tying')).
 ind_rel(sim_wn('tied','tying')).
 ind_rel(disj('guy','horse')).
 ind_rel(disj('horse','desert')).
@@ -4977,7 +4867,6 @@ ind_rel(isa_wn('chopped vegetables into a pot','vegetables')).
 ind_rel(isa_wn('chopped vegetables into a pot','pot')).
 ind_rel(isa_wn('chopped vegetables into a pot','Chopped vegetables')).
 ind_rel(isa_wn('vegetables into a pot','vegetables')).
-ind_rel(isa_wn('talking','having')).
 ind_rel(disj('lipstick','guitar')).
 ind_rel(disj('woman putting on lipstick','man')).
 ind_rel(disj('woman putting on lipstick','guitar')).
@@ -4988,7 +4877,6 @@ ind_rel(disj('guitar','lipstick')).
 ind_rel(isa_wn('phoning','talking')).
 ind_rel(disj('phoning','singing')).
 ind_rel(disj('rhino','grass')).
-ind_rel(isa_wn('grazing','being')).
 ind_rel(isa_wn('grazing','fed')).
 ind_rel(disj('grass','rhino')).
 ind_rel(disj('field','rhino')).
@@ -5001,7 +4889,6 @@ ind_rel(disj('woman','couple running towards the ocean')).
 ind_rel(disj('hands','ocean')).
 ind_rel(sim_wn('punching','kicking')).
 ind_rel(isa_wn('content of a bowl','content')).
-ind_rel(disj('being','mixing')).
 ind_rel(sim_wn('mixed','mixing')).
 ind_rel(isa_wn('pouring','poured')).
 ind_rel(isa_wn('oil','Oil')).
@@ -5024,7 +4911,6 @@ ind_rel(disj('doctors','patient')).
 ind_rel(disj('man massaging a woman','woman')).
 ind_rel(disj('wall','piece')).
 ind_rel(disj('massaging','screwing')).
-ind_rel(disj('being','screwing')).
 ind_rel(disj('massaged','screwing')).
 ind_rel(disj('screwing','massaging')).
 ind_rel(disj('piece','man massaging a woman')).
@@ -5216,7 +5102,6 @@ ind_rel(isa_wn('little boy','young boy')).
 ind_rel(disj('boy','little girl')).
 ind_rel(disj('elephant','woman')).
 ind_rel(disj('elephant','soda')).
-ind_rel(disj('being','opening')).
 ind_rel(disj('kid','guitar')).
 ind_rel(sim_wn('teasing','teased')).
 ind_rel(disj('dog','zoo')).
@@ -5343,10 +5228,8 @@ ind_rel(disj('hedgehog','onion')).
 ind_rel(disj('onion','hedgehog')).
 ind_rel(disj('chopped','holding')).
 ind_rel(isa_wn('fried','frying')).
-ind_rel(disj('frying','being')).
 ind_rel(disj('frying','ridden')).
 ind_rel(disj('riding','frying')).
-ind_rel(disj('being','reading')).
 ind_rel(sim_wn('read','reading')).
 ind_rel(disj('man','email')).
 ind_rel(disj('person','banana')).
@@ -5385,7 +5268,6 @@ ind_rel(disj('dog','drawer')).
 ind_rel(disj('climbing','opening')).
 ind_rel(disj('jumping','climbing')).
 ind_rel(disj('man cutting an onion','woman')).
-ind_rel(disj('painting','being')).
 ind_rel(isa_wn('painting','painted')).
 ind_rel(disj('painting','cleaning')).
 ind_rel(disj('cleaning','putting')).
@@ -5433,7 +5315,6 @@ ind_rel(disj('bullets','meat')).
 ind_rel(disj('bullets','piece of meat')).
 ind_rel(disj('rifle with bullets','meat')).
 ind_rel(disj('rifle with bullets','piece of meat')).
-ind_rel(disj('being','preparing')).
 ind_rel(sim_wn('prepared','preparing')).
 ind_rel(disj('chef','food')).
 ind_rel(disj('chef','meal')).
@@ -5466,7 +5347,6 @@ ind_rel(disj('piano','person slicing a potato')).
 ind_rel(disj('person playing a piano','potato')).
 ind_rel(isa_wn('shredded cheese on a pizza','cheese')).
 ind_rel(isa_wn('cheese on a pizza','cheese')).
-ind_rel(sim_wn('having','doing')).
 ind_rel(disj('water','card')).
 ind_rel(disj('water','card trick')).
 ind_rel(disj('fun with water','card')).
@@ -5615,7 +5495,6 @@ ind_rel(disj('water in a bowl','meat')).
 ind_rel(disj('sausages','bowl')).
 ind_rel(disj('sausages','water in a bowl')).
 ind_rel(disj('Seasoning','sausages')).
-ind_rel(disj('being','seasoning')).
 ind_rel(isa_wn('large flute','flute')).
 ind_rel(disj('large','small')).
 ind_rel(isa_wn('small flute','flute')).
@@ -5641,7 +5520,6 @@ ind_rel(disj('food','container')).
 ind_rel(isa_wn('box','container')).
 ind_rel(disj('from a box','into the container')).
 ind_rel(disj('woman','Skewers')).
-ind_rel(disj('placing','being')).
 ind_rel(sim_wn('placing','placed')).
 ind_rel(isa_wn('skewers','Skewers')).
 ind_rel(disj('skewers','rack')).
@@ -5685,9 +5563,7 @@ ind_rel(isa_wn('frying fish','Fish')).
 ind_rel(isa_wn('frying fish','fish')).
 ind_rel(isa_wn('frying fish','cooking fish')).
 ind_rel(isa_wn('Grass','grass')).
-ind_rel(disj('being','mowing')).
 ind_rel(sim_wn('mowed','mowing')).
-ind_rel(disj('mowing','being')).
 ind_rel(isa_wn('mowing','mowed')).
 ind_rel(isa_wn('lawn','Grass')).
 ind_rel(isa_wn('lawn','grass')).
@@ -5808,7 +5684,6 @@ ind_rel(isa_wn('cutting','severing')).
 ind_rel(disj('toe','blade')).
 ind_rel(disj('leather','blade')).
 ind_rel(isa_wn('boot with a sword','blade')).
-ind_rel(disj('cleaning','being')).
 ind_rel(isa_wn('cleaning','cleaned')).
 ind_rel(isa_wn('bowl of soup','bowl')).
 ind_rel(sim_wn('soup','bowl of soup')).
@@ -5861,7 +5736,6 @@ ind_rel(disj('famous singer','ceiling')).
 ind_rel(isa_wn('Hay','hay')).
 ind_rel(isa_wn('hay','grass')).
 ind_rel(isa_wn('eating hay','eating grass')).
-ind_rel(isa_wn('eating','having')).
 ind_rel(disj('puking','eating')).
 ind_rel(disj('eating','dancing')).
 ind_rel(disj('eating','sleeping')).
@@ -5941,7 +5815,6 @@ ind_rel(disj('open-air vehicle','street')).
 ind_rel(isa_wn('jeep','open-air vehicle')).
 ind_rel(sim_wn('street','road')).
 ind_rel(disj('street','open-air vehicle')).
-ind_rel(disj('in a jeep','open-air')).
 ind_rel(sim_wn('down the street','down the road')).
 ind_rel(isa_wn('in a jeep','in a car')).
 ind_rel(isa_wn('Ingredients','ingredients')).
@@ -5976,7 +5849,6 @@ ind_rel(disj('person','clouds')).
 ind_rel(disj('person','back pack')).
 ind_rel(disj('person','pile of rocks')).
 ind_rel(disj('back','topless')).
-ind_rel(sim_wn('back','in the background')).
 ind_rel(disj('pack','person')).
 ind_rel(disj('pack','front')).
 ind_rel(disj('pack','rocks')).
@@ -6011,7 +5883,6 @@ ind_rel(disj('back pack','pile of rocks')).
 ind_rel(disj('pile of rocks','person')).
 ind_rel(disj('pile of rocks','clouds')).
 ind_rel(disj('pile of rocks','back pack')).
-ind_rel(sim_wn('in the background','back')).
 ind_rel(disj('topless','clear')).
 ind_rel(disj('person','sky')).
 ind_rel(disj('person','clear sky')).
@@ -6057,19 +5928,16 @@ ind_rel(disj('gray','black')).
 ind_rel(disj('clouds','black topless person')).
 ind_rel(isa_wn('front of clouds','clouds')).
 ind_rel(disj('background','front of clouds')).
-ind_rel(disj('on a rocky mountain','topless')).
 ind_rel(disj('rocky mountain','black topless person')).
 ind_rel(disj('rocky mountain','front of clouds')).
 ind_rel(disj('gray clouds','black topless person')).
 ind_rel(disj('catching','chasing')).
 ind_rel(disj('chasing','catching')).
-ind_rel(disj('has','holding')).
 ind_rel(disj('yellow','blond')).
 ind_rel(isa_wn('yellow bottle','bottle')).
 ind_rel(disj('blond','yellow')).
 ind_rel(disj('hair','shirt')).
 ind_rel(disj('hair','face')).
-ind_rel(isa_wn('holding','has')).
 ind_rel(disj('yellow','blue')).
 ind_rel(disj('bottle','shirt')).
 ind_rel(disj('bottle','face')).
@@ -6120,7 +5988,6 @@ ind_rel(isa_wn('white bird','bird')).
 ind_rel(disj('taking','landing')).
 ind_rel(disj('from the water','in the water')).
 ind_rel(disj('land','water')).
-ind_rel(disj('being','landing')).
 ind_rel(disj('land near a white bird','water')).
 ind_rel(isa_wn('crane','bird')).
 ind_rel(isa_wn('large white crane','bird')).
@@ -6136,9 +6003,7 @@ ind_rel(isa_wn('brown dog','dog')).
 ind_rel(disj('golden','brown')).
 ind_rel(disj('dog with golden fur','brown dog')).
 ind_rel(disj('golden fur','brown dog')).
-ind_rel(disj('carrying','being')).
 ind_rel(disj('people','sign')).
-ind_rel(isa_wn('following','being')).
 ind_rel(isa_wn('following','followed')).
 ind_rel(isa_wn('big city','city')).
 ind_rel(disj('holding','begging')).
@@ -6187,7 +6052,6 @@ ind_rel(disj('plant with splashes','young child')).
 ind_rel(disj('child','plant')).
 ind_rel(disj('child','plant with splashes')).
 ind_rel(isa_wn('wading','watering')).
-ind_rel(disj('being','watering')).
 ind_rel(disj('person','plant')).
 ind_rel(isa_wn('young child','person')).
 ind_rel(disj('person','plant with splashes')).
@@ -6434,12 +6298,10 @@ ind_rel(disj('pink','yellow')).
 ind_rel(isa_wn('pink surfboard','surfboard')).
 ind_rel(isa_wn('yellow dyed shirt','shirt')).
 ind_rel(isa_wn('yellow dyed shirt','yellow shirt')).
-ind_rel(disj('on a pink surfboard','yellow')).
 ind_rel(disj('pink surfboard','woman in a yellow shirt')).
 ind_rel(disj('yellow shirt','pink surfboard')).
 ind_rel(disj('surfer','wave')).
 ind_rel(disj('surfer','rider')).
-ind_rel(isa_wn('surfing','being')).
 ind_rel(disj('people','cement')).
 ind_rel(disj('people','low cement ledge')).
 ind_rel(disj('cement','people')).
@@ -6479,7 +6341,6 @@ ind_rel(sim_wn('girls','girl')).
 ind_rel(disj('Two girls','girl')).
 ind_rel(sim_wn('group of Asian girls','Asian girls')).
 ind_rel(sim_wn('Asian girls','group of Asian girls')).
-ind_rel(disj('by themselves','other')).
 ind_rel(sim_wn('girl','girls')).
 ind_rel(isa_wn('Asian','other')).
 ind_rel(isa_wn('lone bicyclist','bicyclist')).
@@ -6488,7 +6349,6 @@ ind_rel(disj('group','bike')).
 ind_rel(disj('group','lone bicyclist')).
 ind_rel(isa_wn('bicyclist','people')).
 ind_rel(isa_wn('lone bicyclist','people')).
-ind_rel(disj('in a group of people','lone')).
 ind_rel(disj('group of people','lone bicyclist')).
 ind_rel(sim_wn('cyclist','bicyclist')).
 ind_rel(isa_wn('cyclist','people')).
@@ -6628,7 +6488,6 @@ ind_rel(isa_wn('young boys at a park','children')).
 ind_rel(disj('boys at a park','lady')).
 ind_rel(isa_wn('boys at a park','children')).
 ind_rel(disj('yellow','white')).
-ind_rel(disj('yellow','on white snow')).
 ind_rel(disj('dog','snow')).
 ind_rel(isa_wn('yellow dog','dog')).
 ind_rel(disj('stopping','running')).
@@ -6637,23 +6496,17 @@ ind_rel(disj('snow','day')).
 ind_rel(disj('snow','sunny day')).
 ind_rel(disj('day','white snow')).
 ind_rel(disj('yellow dog','white snow')).
-ind_rel(disj('on white snow','yellow')).
 ind_rel(disj('on white snow','on a sunny day')).
 ind_rel(disj('white snow','day')).
 ind_rel(disj('white snow','sunny day')).
 ind_rel(disj('on a sunny day','on white snow')).
 ind_rel(disj('sunny day','snow')).
 ind_rel(disj('sunny day','white snow')).
-ind_rel(disj('tan','through the snow')).
 ind_rel(isa_wn('tan dog','dog')).
 ind_rel(disj('tan dog','snow')).
-ind_rel(disj('through the snow','tan')).
 ind_rel(disj('snow','tan dog')).
-ind_rel(disj('in the snow','tan')).
 ind_rel(sim_wn('in the snow','through the snow')).
 ind_rel(disj('yellow','tan')).
-ind_rel(disj('sunny','through the snow')).
-ind_rel(disj('on white snow','tan')).
 ind_rel(disj('on a sunny day','through the snow')).
 ind_rel(disj('yellow dog','tan dog')).
 ind_rel(disj('white snow','tan dog')).
@@ -6927,7 +6780,6 @@ ind_rel(disj('purple case','purple colored suit')).
 ind_rel(disj('man','guitar case')).
 ind_rel(disj('guitar','guitar case')).
 ind_rel(isa_wn('guitar case','case')).
-ind_rel(disj('open','in the guitar case')).
 ind_rel(disj('donations','guitar')).
 ind_rel(disj('for donations','in the guitar case')).
 ind_rel(disj('suit','guitar case')).
@@ -7035,7 +6887,6 @@ ind_rel(disj('person','white ice')).
 ind_rel(isa_wn('white ice','ice')).
 ind_rel(disj('white ice','person')).
 ind_rel(disj('snowboarding','standing')).
-ind_rel(disj('behind her','other')).
 ind_rel(disj('boy','woman snowboarding down an incline')).
 ind_rel(disj('boy','other woman standing behind her')).
 ind_rel(disj('sliding','snowboarding')).
@@ -7081,7 +6932,6 @@ ind_rel(isa_wn('little black dog','black dog')).
 ind_rel(disj('black dog','little brown dog')).
 ind_rel(disj('little black dog','brown dog')).
 ind_rel(disj('little brown dog','black dog')).
-ind_rel(disj('surrounding','being')).
 ind_rel(isa_wn('surrounding','surrounded')).
 ind_rel(isa_wn('closing','surrounding')).
 ind_rel(disj('closing','surrounded')).
@@ -7243,7 +7093,6 @@ ind_rel(sim_wn('flowers','flower')).
 ind_rel(isa_wn('yellow flower','flowers')).
 ind_rel(isa_wn('yellow flowers','flower')).
 ind_rel(isa_wn('yellow flowers','yellow flower')).
-ind_rel(disj('landing','being')).
 ind_rel(isa_wn('flower','flowers')).
 ind_rel(isa_wn('yellow flower','yellow flowers')).
 ind_rel(disj('snow','landscape')).
@@ -7438,7 +7287,6 @@ ind_rel(disj('students in uniforms','structure')).
 ind_rel(disj('front of the class','bamboo structure')).
 ind_rel(isa_wn('boy','boys')).
 ind_rel(disj('jumping','staring')).
-ind_rel(disj('other','at him')).
 ind_rel(sim_wn('boys','boy')).
 ind_rel(disj('watching','jumping')).
 ind_rel(sim_wn('watching','staring')).
@@ -7733,7 +7581,6 @@ ind_rel(disj('brown dog','golden dog')).
 ind_rel(disj('golden','green')).
 ind_rel(disj('golden dog','brown dog')).
 ind_rel(isa_wn('tall green grass','tall grass')).
-ind_rel(disj('through tall green grass','golden')).
 ind_rel(sim_wn('on the beach','along a beach')).
 ind_rel(disj('resting','jumping')).
 ind_rel(isa_wn('Two white dogs','Two dogs')).
@@ -7826,7 +7673,6 @@ ind_rel(disj('same','other')).
 ind_rel(disj('fashion','mouth')).
 ind_rel(disj('fashion','people')).
 ind_rel(disj('white and blue hat','mouth')).
-ind_rel(disj('in the same fashion','other')).
 ind_rel(disj('in the same fashion','near other people dressed differently')).
 ind_rel(disj('same fashion','other people dressed differently')).
 ind_rel(disj('same fashion','people dressed differently')).
@@ -7901,7 +7747,6 @@ ind_rel(isa_wn('crowd in warm clothing','people')).
 ind_rel(disj('crowd in warm clothing','two young boys')).
 ind_rel(disj('hair','swing')).
 ind_rel(isa_wn('blond hair','hair')).
-ind_rel(sim_wn('with blond hair','blond')).
 ind_rel(isa_wn('blond','blonde')).
 ind_rel(disj('kid','swing')).
 ind_rel(isa_wn('blonde boy in green','blond kid in green')).
@@ -7990,7 +7835,6 @@ ind_rel(disj('other','Rugby')).
 ind_rel(disj('soccer','people')).
 ind_rel(disj('soccer','rugby')).
 ind_rel(disj('soccer','people playing rugby')).
-ind_rel(disj('being','tackling')).
 ind_rel(isa_wn('tackling','tackled')).
 ind_rel(isa_wn('opponent','people')).
 ind_rel(isa_wn('opponent','other')).
@@ -8127,9 +7971,7 @@ ind_rel(disj('inline skates','ramp')).
 ind_rel(disj('black','deep')).
 ind_rel(disj('shallow','black')).
 ind_rel(disj('shallow','deep')).
-ind_rel(disj('shallow','in deep water')).
 ind_rel(isa_wn('deep water','water')).
-ind_rel(disj('in shallow water','deep')).
 ind_rel(disj('in shallow water','in deep water')).
 ind_rel(disj('shallow water','deep water')).
 ind_rel(disj('black','shallow')).
@@ -8234,7 +8076,6 @@ ind_rel(disj('on a rock','in the field')).
 ind_rel(disj('in a field','on a rock')).
 ind_rel(sim_wn('in a field','in the field')).
 ind_rel(isa_wn('small boys dressed in tuxedos','tuxedos')).
-ind_rel(isa_wn('on a red carpeted floor','carpeted')).
 ind_rel(disj('floor','small boys dressed in tuxedos')).
 ind_rel(isa_wn('red carpeted floor','floor')).
 ind_rel(disj('small boys dressed in tuxedos','red carpeted floor')).
@@ -8273,7 +8114,6 @@ ind_rel(disj('blanket dyed in blue','muzzle')).
 ind_rel(disj('blanket dyed in blue','jacket')).
 ind_rel(disj('blanket dyed in blue','yard')).
 ind_rel(disj('blanket dyed in blue','blue jacket')).
-ind_rel(isa_wn('in blue','blue')).
 ind_rel(disj('dog','blanket')).
 ind_rel(disj('muzzle','blanket')).
 ind_rel(disj('muzzle','grass')).
@@ -8351,10 +8191,8 @@ ind_rel(disj('mid air','ground')).
 ind_rel(disj('tennis','mid air')).
 ind_rel(disj('mouth','air')).
 ind_rel(disj('mouth','mid air')).
-ind_rel(disj('in the air','mid')).
 ind_rel(sim_wn('in the air','in mid air')).
 ind_rel(disj('tennis ball','mid air')).
-ind_rel(disj('in its mouth','mid')).
 ind_rel(disj('in its mouth','in mid air')).
 ind_rel(disj('mouth','ball in mid air')).
 ind_rel(disj('brown and white dog','ball in mid air')).
@@ -8400,7 +8238,6 @@ ind_rel(disj('next','near')).
 ind_rel(disj('green','yellow')).
 ind_rel(disj('shirt dyed in black','phone')).
 ind_rel(disj('shirt dyed in black','cell phone')).
-ind_rel(disj('in black','yellow')).
 ind_rel(disj('fluorescent green bag','phone')).
 ind_rel(isa_wn('fluorescent green bag','bag')).
 ind_rel(disj('fluorescent green bag','ledge')).
@@ -8426,7 +8263,6 @@ ind_rel(disj('resting','flapping')).
 ind_rel(disj('wings in the water','wings on the water')).
 ind_rel(isa_wn('duck','bird')).
 ind_rel(isa_wn('duck with a green head','bird')).
-ind_rel(disj('wings on the water','green')).
 ind_rel(isa_wn('wings in the water','wings on the water')).
 ind_rel(disj('furry','grassy')).
 ind_rel(disj('brown','grassy')).
@@ -8463,7 +8299,6 @@ ind_rel(disj('young child','dead leaves')).
 ind_rel(disj('straw','cigarette')).
 ind_rel(disj('hat','cigarette')).
 ind_rel(isa_wn('straw hat','hat')).
-ind_rel(disj('smoking','being')).
 ind_rel(isa_wn('smoking','smoked')).
 ind_rel(disj('cigarette','straw')).
 ind_rel(disj('cigarette','hat')).
@@ -8601,7 +8436,6 @@ ind_rel(disj('in a yellow kayak','off of a yellow kayak')).
 ind_rel(disj('child','kayak')).
 ind_rel(disj('child','man')).
 ind_rel(disj('child','yellow kayak')).
-ind_rel(isa_wn('kayaking','being')).
 ind_rel(isa_wn('American footballer','footballer')).
 ind_rel(isa_wn('footballer','player')).
 ind_rel(isa_wn('football player','footballer')).
@@ -8641,8 +8475,6 @@ ind_rel(disj('train','hairy man')).
 ind_rel(disj('train','bearded man')).
 ind_rel(disj('show','park')).
 ind_rel(disj('show','swing set at the park')).
-ind_rel(disj('being','showing')).
-ind_rel(disj('being','set')).
 ind_rel(disj('show for the small child','park')).
 ind_rel(disj('show for the small child','swing set at the park')).
 ind_rel(disj('small child','swing')).
@@ -8673,12 +8505,10 @@ ind_rel(disj('bright','darkened')).
 ind_rel(isa_wn('darkened room','room')).
 ind_rel(disj('man and two women','women')).
 ind_rel(disj('man and two women','candles')).
-ind_rel(disj('in a bright room','darkened')).
 ind_rel(isa_wn('bright room','room')).
 ind_rel(disj('bright room','women in a darkened room')).
 ind_rel(disj('bright room','darkened room')).
 ind_rel(isa_wn('at a table','by a table')).
-ind_rel(disj('bright','in a dim room')).
 ind_rel(disj('table','people')).
 ind_rel(disj('candles','people')).
 ind_rel(isa_wn('man and two women','people')).
@@ -8719,7 +8549,6 @@ ind_rel(isa_wn('red glass','glass')).
 ind_rel(disj('t-shirt','white jacket')).
 ind_rel(disj('red jacket','white jacket')).
 ind_rel(disj('red jacket','man wearing a t-shirt')).
-ind_rel(disj('in a white t-shirt','red')).
 ind_rel(disj('white t-shirt','jacket')).
 ind_rel(disj('white t-shirt','white jacket')).
 ind_rel(disj('white t-shirt','red glass')).
@@ -8727,7 +8556,6 @@ ind_rel(disj('glass','person')).
 ind_rel(disj('t-shirt','person')).
 ind_rel(disj('white t-shirt','red jacket')).
 ind_rel(isa_wn('putting','wearing')).
-ind_rel(disj('in a white t-shirt','shirtless')).
 ind_rel(disj('person','glass')).
 ind_rel(disj('frisbee','water')).
 ind_rel(disj('water','frisbee')).
@@ -8956,7 +8784,6 @@ ind_rel(disj('two stone columns','woman in a purple top')).
 ind_rel(disj('purple','blue')).
 ind_rel(disj('blue','purple')).
 ind_rel(disj('bike','naked girl')).
-ind_rel(disj('in purple and blue','naked')).
 ind_rel(disj('girl','bicycle between two stone columns')).
 ind_rel(disj('girl','two stone columns')).
 ind_rel(disj('blue','top which is purple')).
@@ -9199,7 +9026,6 @@ ind_rel(disj('mouth of a dog','squirt gun')).
 ind_rel(disj('boy','umbrella')).
 ind_rel(disj('boy','father')).
 ind_rel(disj('umbrella','coat')).
-ind_rel(disj('held','being')).
 ind_rel(isa_wn('wearing','held')).
 ind_rel(disj('father','boy')).
 ind_rel(disj('father','umbrella')).
@@ -9211,7 +9037,6 @@ ind_rel(sim_wn('coat dyed in blue','blue coat')).
 ind_rel(isa_wn('falling','experiencing')).
 ind_rel(disj('umbrella','world')).
 ind_rel(disj('umbrella','new world')).
-ind_rel(disj('being','experiencing')).
 ind_rel(disj('held','experiencing')).
 ind_rel(disj('father','child')).
 ind_rel(isa_wn('wearing','experiencing')).
@@ -9220,7 +9045,6 @@ ind_rel(disj('coat','new world')).
 ind_rel(disj('boy under an umbrella','world')).
 ind_rel(disj('child','umbrella')).
 ind_rel(disj('child','father')).
-ind_rel(disj('experiencing','being')).
 ind_rel(disj('experiencing','held')).
 ind_rel(disj('world','umbrella')).
 ind_rel(disj('world','boy under an umbrella')).
@@ -9300,12 +9124,10 @@ ind_rel(disj('snowboard','person')).
 ind_rel(disj('snowboard','pants')).
 ind_rel(disj('grey pants','snowboard')).
 ind_rel(sim_wn('snowboarder','snowboard')).
-ind_rel(sim_wn('through the air','airborne')).
 ind_rel(isa_wn('snowboarding man','person')).
 ind_rel(disj('snowboard','air')).
 ind_rel(disj('grey pants on a snowboard','air')).
 ind_rel(disj('pants on a snowboard','air')).
-ind_rel(sim_wn('airborne','through the air')).
 ind_rel(isa_wn('tennis player','player')).
 ind_rel(disj('headband','tennis')).
 ind_rel(disj('headband','ball')).
@@ -9566,7 +9388,6 @@ ind_rel(isa_wn('fur scarf','clothing')).
 ind_rel(disj('fur scarf','people')).
 ind_rel(isa_wn('Asian woman','people')).
 ind_rel(disj('t-shirt','sea')).
-ind_rel(disj('shallow','through the sea')).
 ind_rel(isa_wn('sea','water')).
 ind_rel(disj('boy in a white t-shirt','sea')).
 ind_rel(disj('white t-shirt','sea')).
@@ -9639,7 +9460,6 @@ ind_rel(disj('from three white dogs','at the black llama')).
 ind_rel(disj('three white dogs','llama')).
 ind_rel(isa_wn('three white dogs','white dogs')).
 ind_rel(disj('three white dogs','black llama')).
-ind_rel(disj('black','near three white dogs')).
 ind_rel(disj('at the black llama','near three white dogs')).
 ind_rel(disj('snow','Two poodles')).
 ind_rel(isa_wn('Two poodles','poodles')).
@@ -9722,8 +9542,6 @@ ind_rel(sim_wn('grass','lawn')).
 ind_rel(sim_wn('on the grass','on the lawn')).
 ind_rel(disj('dog','brown and white cat')).
 ind_rel(disj('grass','cat')).
-ind_rel(disj('on the green grass','brown')).
-ind_rel(disj('brown','in the green field')).
 ind_rel(isa_wn('tan skinned kid','tan skinned child')).
 ind_rel(isa_wn('little boy with a bib','boy with a bib')).
 ind_rel(isa_wn('blue shirt','shirt')).
@@ -9823,9 +9641,7 @@ ind_rel(isa_wn('goggles on her head','gear')).
 ind_rel(sim_wn('on a snowy road','on a snowy path')).
 ind_rel(sim_wn('snowy road','snowy path')).
 ind_rel(disj('muddy','snowy')).
-ind_rel(disj('muddy','on a snowy path')).
 ind_rel(isa_wn('snowy path','path')).
-ind_rel(disj('on a muddy path','snowy')).
 ind_rel(disj('on a muddy path','on a snowy path')).
 ind_rel(isa_wn('muddy path','path')).
 ind_rel(disj('muddy path','snowy path')).
@@ -9838,7 +9654,6 @@ ind_rel(isa_wn('trail','path')).
 ind_rel(isa_wn('on a snowy path','through a snowy trail')).
 ind_rel(sim_wn('snowy trail','snowy path')).
 ind_rel(isa_wn('muddy','brown')).
-ind_rel(disj('muddy','through a snowy trail')).
 ind_rel(sim_wn('path','trail')).
 ind_rel(disj('on a muddy path','through a snowy trail')).
 ind_rel(disj('muddy path','snowy trail')).
@@ -9863,7 +9678,6 @@ ind_rel(isa_wn('sparring','doing')).
 ind_rel(disj('martial','protective')).
 ind_rel(disj('arts','children')).
 ind_rel(disj('arts','gear')).
-ind_rel(disj('on a blue mat','red')).
 ind_rel(isa_wn('on a blue mat','on a mat')).
 ind_rel(disj('blue mat','red protective gear')).
 ind_rel(disj('dog','broken ball')).
@@ -10087,7 +9901,6 @@ ind_rel(disj('Two people','roof')).
 ind_rel(disj('Two people','vehicle')).
 ind_rel(disj('Two people','roof of a yellow vehicle')).
 ind_rel(isa_wn('two people','Two people')).
-ind_rel(isa_wn('on the top of it','outside')).
 ind_rel(isa_wn('roof','top of it')).
 ind_rel(disj('top of it','vehicle')).
 ind_rel(disj('top of it','people')).
@@ -10158,13 +9971,11 @@ ind_rel(disj('desert area','wooded area')).
 ind_rel(disj('adults','children')).
 ind_rel(disj('children','adults')).
 ind_rel(isa_wn('adults and children','children')).
-ind_rel(disj('grouped','being')).
 ind_rel(sim_wn('grouped','gathered')).
 ind_rel(isa_wn('seating','arrangement')).
 ind_rel(isa_wn('outdoor seating arrangement','seating')).
 ind_rel(isa_wn('outdoor seating arrangement','arrangement')).
 ind_rel(sim_wn('Adults','adults')).
-ind_rel(isa_wn('standing','being')).
 ind_rel(isa_wn('standing','grouped')).
 ind_rel(disj('steps','seating')).
 ind_rel(isa_wn('steps','arrangement')).
@@ -10217,7 +10028,6 @@ ind_rel(disj('cheeks','beads')).
 ind_rel(disj('patches on the cheeks','shirt')).
 ind_rel(disj('patches on the cheeks','beads')).
 ind_rel(disj('patches on the cheeks','pink beads')).
-ind_rel(isa_wn('has','wears')).
 ind_rel(disj('shirt','cheeks')).
 ind_rel(disj('shirt','patches on the cheeks')).
 ind_rel(disj('beads','patches')).
@@ -10343,7 +10153,6 @@ ind_rel(disj('soccer','drinking')).
 ind_rel(disj('sea','dog')).
 ind_rel(sim_wn('on the sea shore','on the beach')).
 ind_rel(sim_wn('sea shore','beach')).
-ind_rel(disj('dry','on the beach')).
 ind_rel(disj('faced','wearing')).
 ind_rel(isa_wn('sunglasses','glasses')).
 ind_rel(disj('chubby','Sunglasses')).
@@ -10431,7 +10240,6 @@ ind_rel(disj('skateboard','park porch')).
 ind_rel(disj('trick','porch')).
 ind_rel(isa_wn('skateboard trick','trick')).
 ind_rel(disj('trick','park porch')).
-ind_rel(isa_wn('on a park porch','outdoor')).
 ind_rel(disj('park','porch')).
 ind_rel(disj('porch','skateboard')).
 ind_rel(disj('porch','park')).
@@ -10483,7 +10291,6 @@ ind_rel(isa_wn('red sport motorcycle','red motorcycle')).
 ind_rel(isa_wn('racer','person')).
 ind_rel(disj('People','tables')).
 ind_rel(disj('People','room')).
-ind_rel(disj('square','at tables')).
 ind_rel(disj('tables','People')).
 ind_rel(disj('room','People')).
 ind_rel(isa_wn('red room','room')).
@@ -10495,7 +10302,6 @@ ind_rel(isa_wn('small tables','tables')).
 ind_rel(disj('light','people')).
 ind_rel(disj('light','Several people')).
 ind_rel(disj('light','darkened room')).
-ind_rel(disj('in a light room','darkened')).
 ind_rel(disj('in a light room','in a darkened room')).
 ind_rel(disj('light room','people')).
 ind_rel(isa_wn('light room','room')).
@@ -10513,7 +10319,6 @@ ind_rel(isa_wn('at small tables','at tables')).
 ind_rel(disj('small tables','People')).
 ind_rel(disj('darkened room','People')).
 ind_rel(isa_wn('square','Several')).
-ind_rel(disj('at small tables','square')).
 ind_rel(disj('at small tables','at square tables')).
 ind_rel(disj('small tables','square tables')).
 ind_rel(disj('side','front')).
@@ -10547,7 +10352,6 @@ ind_rel(disj('light','rocks')).
 ind_rel(disj('light','Two dogs')).
 ind_rel(disj('light','snowy grass and rocks')).
 ind_rel(disj('dark','snowy')).
-ind_rel(disj('dark','through snowy grass and rocks')).
 ind_rel(isa_wn('leaping','moving')).
 ind_rel(disj('terrain','Two dogs')).
 ind_rel(disj('Two large dogs','rocks')).
@@ -10573,7 +10377,6 @@ ind_rel(disj('snowy grass and rocks','dark one')).
 ind_rel(disj('leaping','running')).
 ind_rel(disj('green slide','blue')).
 ind_rel(isa_wn('green slide','slide')).
-ind_rel(isa_wn('enjoying','having')).
 ind_rel(isa_wn('young girl in blue','girl in blue')).
 ind_rel(isa_wn('fun on a slide','slide')).
 ind_rel(disj('slide','swing')).
@@ -10581,8 +10384,6 @@ ind_rel(disj('green slide','swing')).
 ind_rel(isa_wn('shop','building')).
 ind_rel(disj('shop','city')).
 ind_rel(isa_wn('shop in a big city','building in a big city')).
-ind_rel(disj('next','into the distance')).
-ind_rel(disj('next','between buildings')).
 ind_rel(sim_wn('building','buildings')).
 ind_rel(disj('city','distance')).
 ind_rel(disj('building in a big city','distance')).
@@ -10645,7 +10446,6 @@ ind_rel(isa_wn('pool for children','kids')).
 ind_rel(isa_wn('other children','kids')).
 ind_rel(isa_wn('other kids','children')).
 ind_rel(isa_wn('other kids','other children')).
-ind_rel(disj('in the background','other')).
 ind_rel(disj('slip','pool')).
 ind_rel(disj('slide','pool')).
 ind_rel(disj('slide','pool for children')).
@@ -10719,10 +10519,8 @@ ind_rel(disj('multicolor toy','people')).
 ind_rel(disj('shoulders of a man','girl')).
 ind_rel(disj('shoulders of a man','pinwheel')).
 ind_rel(disj('shoulders of a man','young oriental girl')).
-ind_rel(disj('with grey hair','young')).
 ind_rel(disj('grey hair','girl')).
 ind_rel(disj('grey hair','young oriental girl')).
-ind_rel(disj('young','with grey hair')).
 ind_rel(disj('occidental','grey')).
 ind_rel(disj('young occidental girl','man')).
 ind_rel(disj('young occidental girl','shoulders of a man')).
@@ -10812,7 +10610,6 @@ ind_rel(disj('football','gym')).
 ind_rel(isa_wn('into the lake','into the water')).
 ind_rel(disj('people','park bench')).
 ind_rel(disj('bench','Two people')).
-ind_rel(disj('sunny','on a rainy day')).
 ind_rel(isa_wn('rainy day','day')).
 ind_rel(disj('Two people','bench')).
 ind_rel(disj('Two people','park bench')).
@@ -10901,7 +10698,6 @@ ind_rel(disj('scarves on the beach','gold')).
 ind_rel(disj('scarves on the beach','rainbow')).
 ind_rel(disj('scarves on the beach','afghan')).
 ind_rel(disj('scarves on the beach','rainbow afghan')).
-ind_rel(disj('light','in the water')).
 ind_rel(disj('water','bank')).
 ind_rel(isa_wn('tan dog','light brown dog')).
 ind_rel(disj('tan','light')).
@@ -10925,7 +10721,6 @@ ind_rel(disj('spotting','lying')).
 ind_rel(isa_wn('spotting','looking')).
 ind_rel(disj('black','silky')).
 ind_rel(disj('dry','silky')).
-ind_rel(disj('dry','in the grass')).
 ind_rel(disj('black dog','grey silky dog')).
 ind_rel(isa_wn('dry grass','grass')).
 ind_rel(disj('dry grass','grey silky dog')).
@@ -11245,8 +11040,6 @@ ind_rel(disj('grass','beak')).
 ind_rel(disj('grass','bird with a yellow beak')).
 ind_rel(disj('grass','yellow beak')).
 ind_rel(disj('yellow beak','grass')).
-ind_rel(disj('in the green grass','black')).
-ind_rel(disj('in the green grass','yellow')).
 ind_rel(disj('green grass','beak')).
 ind_rel(disj('green grass','bird with a yellow beak')).
 ind_rel(disj('orange','yellow')).
@@ -11488,7 +11281,6 @@ ind_rel(isa_wn('red sled','sled')).
 ind_rel(disj('held','walking')).
 ind_rel(disj('girl','sled')).
 ind_rel(disj('girl','boy holding a red sled')).
-ind_rel(disj('green','in the snow')).
 ind_rel(disj('coat','sled')).
 ind_rel(isa_wn('green coat','coat')).
 ind_rel(disj('walking','sled')).
@@ -11499,7 +11291,6 @@ ind_rel(disj('green coat','snow')).
 ind_rel(disj('boy walking','girl')).
 ind_rel(disj('boy walking','sled')).
 ind_rel(disj('boy walking','red sled')).
-ind_rel(disj('in the snow','green')).
 ind_rel(disj('holding','lying')).
 ind_rel(disj('walking','lying')).
 ind_rel(disj('boy holding a red sled','girl')).
@@ -11614,7 +11405,6 @@ ind_rel(disj('rock','sea')).
 ind_rel(disj('cliff','sea')).
 ind_rel(disj('water','cliff')).
 ind_rel(disj('water','cliff edge')).
-ind_rel(disj('other','into the sea')).
 ind_rel(disj('One boy in orange shorts','cliff')).
 ind_rel(disj('One boy in orange shorts','sea')).
 ind_rel(isa_wn('One boy in orange shorts','Two males')).
@@ -11771,14 +11561,12 @@ ind_rel(isa_wn('snowy forest','forest')).
 ind_rel(disj('snowy forest','cyclist')).
 ind_rel(disj('day','night')).
 ind_rel(disj('day','snowy forest')).
-ind_rel(disj('at day','snowy')).
 ind_rel(disj('at day','in a snowy forest')).
 ind_rel(disj('at day','at night')).
 ind_rel(sim_wn('rider','cyclist')).
 ind_rel(disj('snow','cyclist')).
 ind_rel(disj('in the snow','at day')).
 ind_rel(disj('rain','snowy forest')).
-ind_rel(disj('in the rain','snowy')).
 ind_rel(disj('in the rain','in a snowy forest')).
 ind_rel(disj('in the rain','at night')).
 ind_rel(sim_wn('cyclist','rider')).
@@ -11799,13 +11587,10 @@ ind_rel(isa_wn('young girl in a bikini','girl with a bikini')).
 ind_rel(disj('girl in a bikini','dunes')).
 ind_rel(isa_wn('girl in a bikini','girl with a bikini')).
 ind_rel(disj('dry','wet')).
-ind_rel(disj('dry','in the wet sand')).
-ind_rel(disj('in the dry sand','wet')).
 ind_rel(disj('in the dry sand','in the wet sand')).
 ind_rel(disj('dry sand','hat')).
 ind_rel(isa_wn('dry sand','sand')).
 ind_rel(disj('dry sand','wet sand')).
-ind_rel(disj('on the beach','dry')).
 ind_rel(disj('hat','box')).
 ind_rel(sim_wn('cardboard','cardboard box')).
 ind_rel(disj('box','hat')).
@@ -11940,8 +11725,6 @@ ind_rel(isa_wn('muddy water','water')).
 ind_rel(isa_wn('in muddy water','in dirty water')).
 ind_rel(sim_wn('dirty water','muddy water')).
 ind_rel(disj('clean','muddy')).
-ind_rel(disj('clean','in muddy water')).
-ind_rel(disj('in clean water','muddy')).
 ind_rel(disj('in clean water','in muddy water')).
 ind_rel(isa_wn('clean water','water')).
 ind_rel(disj('clean water','muddy water')).
@@ -12133,7 +11916,6 @@ ind_rel(isa_wn('snowy hill','hill')).
 ind_rel(isa_wn('snow covered hill','snowy hill')).
 ind_rel(disj('snowboarder jumping off the snow','snow covered hill')).
 ind_rel(isa_wn('carrying','wearing')).
-ind_rel(disj('white','in black')).
 ind_rel(disj('black dress','white cross')).
 ind_rel(disj('dress','men')).
 ind_rel(disj('dress','bench')).
@@ -12762,8 +12544,6 @@ ind_rel(disj('American state','khaki')).
 ind_rel(disj('American state','red jacket and khaki pants')).
 ind_rel(disj('American state','jacket and khaki pants')).
 ind_rel(disj('European','American')).
-ind_rel(disj('European','through an American state')).
-ind_rel(disj('through an European state','American')).
 ind_rel(disj('through an European state','through an American state')).
 ind_rel(isa_wn('European state','state')).
 ind_rel(disj('European state','American state')).
@@ -12880,16 +12660,13 @@ ind_rel(isa_wn('dogs on a lawn','dogs')).
 ind_rel(disj('dogs on a lawn','ball')).
 ind_rel(disj('plastic toy','Two dogs')).
 ind_rel(isa_wn('green and red costumes','costumes')).
-ind_rel(isa_wn('on the sidewalk','outside')).
 ind_rel(disj('seashore','sidewalk')).
-ind_rel(isa_wn('on the seashore','outside')).
 ind_rel(disj('on the seashore','on the sidewalk')).
 ind_rel(isa_wn('Men','People')).
 ind_rel(isa_wn('Men in costumes','People')).
 ind_rel(isa_wn('Men in costumes','People in costumes')).
 ind_rel(disj('dog','wind')).
 ind_rel(disj('wind','dog')).
-ind_rel(disj('being','blowing')).
 ind_rel(isa_wn('stirred','blowing')).
 ind_rel(disj('air','sand')).
 ind_rel(isa_wn('wind','air')).
@@ -13050,7 +12827,6 @@ ind_rel(disj('dog','jacket on the street')).
 ind_rel(disj('brown and white spotted dog','jacket on the street')).
 ind_rel(disj('spotted dog','jacket on the street')).
 ind_rel(isa_wn('jacket on the street','jacket')).
-ind_rel(disj('lying','having')).
 ind_rel(disj('street','rest')).
 ind_rel(disj('street','rest in the park')).
 ind_rel(disj('jacket on the street','park')).
@@ -13211,7 +12987,6 @@ ind_rel(disj('group of children','maracas')).
 ind_rel(disj('maracas','tambourines')).
 ind_rel(isa_wn('through the white snow','through the snow')).
 ind_rel(disj('black dog','snow')).
-ind_rel(disj('brown','through the white snow')).
 ind_rel(disj('brown dog','white snow')).
 ind_rel(sim_wn('in the snow','through the white snow')).
 ind_rel(disj('elderly','young')).
@@ -13235,12 +13010,8 @@ ind_rel(isa_wn('elderly woman','old person')).
 ind_rel(disj('woman','elderly man')).
 ind_rel(disj('elderly woman','elderly man')).
 ind_rel(disj('clear','dirty')).
-ind_rel(disj('clear','out of very dirty water')).
-ind_rel(disj('clear','of very dirty water')).
-ind_rel(disj('out of very clear water','dirty')).
 ind_rel(disj('out of very clear water','out of very dirty water')).
 ind_rel(disj('out of very clear water','of very dirty water')).
-ind_rel(disj('of very clear water','dirty')).
 ind_rel(disj('of very clear water','out of very dirty water')).
 ind_rel(disj('of very clear water','of very dirty water')).
 ind_rel(disj('very clear water','very dirty water')).
@@ -13252,8 +13023,6 @@ ind_rel(isa_wn('big black and white dog','black and white dog')).
 ind_rel(disj('fetching','biting')).
 ind_rel(disj('clear','black')).
 ind_rel(disj('clear','white')).
-ind_rel(disj('out of very clear water','black')).
-ind_rel(disj('of very clear water','black')).
 ind_rel(disj('very clear water','small black and white dog')).
 ind_rel(disj('very clear water','black and white dog')).
 ind_rel(disj('fetching','carrying')).
@@ -13386,7 +13155,6 @@ ind_rel(isa_wn('along a paved road','along a road')).
 ind_rel(isa_wn('paved road','road')).
 ind_rel(isa_wn('escorting','leading')).
 ind_rel(disj('pulling','leading')).
-ind_rel(isa_wn('escorting','being')).
 ind_rel(sim_wn('pulling','pulled')).
 ind_rel(disj('horse','shirtless woman')).
 ind_rel(disj('shirtless man','shirtless woman')).
@@ -13715,7 +13483,6 @@ ind_rel(disj('go-kart','dog')).
 ind_rel(disj('go-kart','leaves')).
 ind_rel(disj('go-kart','white dog')).
 ind_rel(disj('go-kart','fallen leaves')).
-ind_rel(disj('on a go-kart','fallen')).
 ind_rel(disj('on a go-kart','on fallen leaves')).
 ind_rel(disj('man','volleyball')).
 ind_rel(disj('mowing','playing')).
@@ -13728,7 +13495,6 @@ ind_rel(disj('car','official carrying a football')).
 ind_rel(disj('white car','football')).
 ind_rel(disj('white car','playing football')).
 ind_rel(disj('white car','official carrying a football')).
-ind_rel(disj('frying','on the sand')).
 ind_rel(disj('fish','women')).
 ind_rel(disj('fish','bikinis')).
 ind_rel(disj('fish','sand')).
@@ -13771,7 +13537,6 @@ ind_rel(disj('pencil','eating hay')).
 ind_rel(disj('man with tattoos','cow')).
 ind_rel(disj('man with tattoos','hay')).
 ind_rel(disj('man with tattoos','eating hay')).
-ind_rel(disj('for a pencil','eating')).
 ind_rel(disj('sky','meat')).
 ind_rel(disj('Three men','woman')).
 ind_rel(disj('mountains and sky','meat')).
@@ -13810,7 +13575,6 @@ ind_rel(disj('dirt bike','stone')).
 ind_rel(disj('dirt bike','steps')).
 ind_rel(disj('dirt bike','Five adults')).
 ind_rel(disj('piano','slide')).
-ind_rel(disj('being','throwing')).
 ind_rel(disj('man','blond child')).
 ind_rel(disj('cat','view of a city')).
 ind_rel(disj('watermelon','view of a city')).
@@ -13985,7 +13749,6 @@ ind_rel(disj('water spout outdoors','birdcage')).
 ind_rel(disj('rest of his family','birdcage')).
 ind_rel(disj('using','walking')).
 ind_rel(disj('break','walking')).
-ind_rel(disj('concrete','through the woods')).
 ind_rel(disj('block','woods')).
 ind_rel(disj('person','woods')).
 ind_rel(disj('on another person','through the woods')).
@@ -14014,7 +13777,6 @@ ind_rel(disj('darkened room','track laid in the wild')).
 ind_rel(disj('at a table','in the wild')).
 ind_rel(disj('with candles','in the wild')).
 ind_rel(disj('boy','motorcycle')).
-ind_rel(disj('being','rides')).
 ind_rel(disj('knocked','wearing')).
 ind_rel(disj('water','motocross')).
 ind_rel(disj('water','motorcycle')).
@@ -14053,7 +13815,6 @@ ind_rel(disj('patient','Two teams')).
 ind_rel(disj('gnawing','looking')).
 ind_rel(isa_wn('gnawing','preparing')).
 ind_rel(disj('gnawing','jump')).
-ind_rel(disj('metallic','on its hind legs')).
 ind_rel(disj('post','dog')).
 ind_rel(disj('post','hind')).
 ind_rel(disj('post','legs')).
@@ -14274,10 +14035,8 @@ ind_rel(disj('girl on a beach','cooking fish')).
 ind_rel(disj('rope','eating potato slices')).
 ind_rel(disj('bridge','eating potato slices')).
 ind_rel(disj('stream','eating potato slices')).
-ind_rel(disj('across a rope bridge','eating')).
 ind_rel(disj('rope bridge','eating potato slices')).
 ind_rel(disj('rocky stream','eating potato slices')).
-ind_rel(disj('homeless','by car')).
 ind_rel(disj('holding','travelling')).
 ind_rel(disj('begging','travelling')).
 ind_rel(disj('money','car')).

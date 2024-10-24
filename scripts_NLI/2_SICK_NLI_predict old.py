@@ -10,15 +10,19 @@ import csv
 import re
 import tqdm
 import torch
+from torch.nn import Softmax
 import os
 import numpy as np
 import pandas as pd
+import torch.distributed as dist
 from datasets import Dataset
 from transformers import (AutoModelForSequenceClassification, AutoTokenizer)
 from torch.utils.data import DataLoader
 
 np.int = np.int64
 batchsize = 64
+local_rank = int(os.environ["LOCAL_RANK"])
+dist.init_process_group(backend="nccl")
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(device)
 
@@ -37,7 +41,7 @@ model_name = "sileod/deberta-v3-base-tasksource-nli"
 model_str = model_name.replace(r"/", "_")
 
 
-def get_preds(csvreader, dataset_path, str_part):
+def get_preds(csvreader, dataset_path, str_part):    
     # to pipeline
     list_dict = []
     for row in iter(csvreader):
@@ -53,6 +57,7 @@ def get_preds(csvreader, dataset_path, str_part):
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(model_name)
+    model= torch.nn.DistributedDataParallel(model)
     model.to(device)
     model.eval()
 
@@ -60,7 +65,7 @@ def get_preds(csvreader, dataset_path, str_part):
     dataset_token = dataset_dict.map(preprocess_function, batched=True, fn_kwargs={"tokenizer": tokenizer},)
     dataset_token = dataset_token.remove_columns(["prem", "hyp"])
     dataset_token = dataset_token.with_format("torch")
-    dataloader = DataLoader(dataset_token, batch_size=batchsize)
+    dataloader = DataLoader(dataset_token, batch_size=batchsize, pin_memory=True)
 
 
     model_dict = {
@@ -80,12 +85,12 @@ def get_preds(csvreader, dataset_path, str_part):
     with torch.no_grad():
         for counter, i in enumerate(tqdm.tqdm(dataloader)):
             # print(counter*batchsize)
-            i_ids = i["input_ids"].to(device)
-            a_mask = i["attention_mask"].to(device)
+            i_ids = i["input_ids"].cuda(non_blocking=True)
+            a_mask = i["attention_mask"].cuda(non_blocking=True)
 
             if preds_bool:
                 if "token_type_ids" in i:
-                    t_ids = i["token_type_ids"].to(device)
+                    t_ids = i["token_type_ids"].cuda(non_blocking=True)
                     out = model(i_ids, a_mask, t_ids)
                 else:
                     out = model(i_ids, a_mask)
@@ -93,7 +98,7 @@ def get_preds(csvreader, dataset_path, str_part):
                 preds += [model_dict[x.item()] for x in out.logits.argmax(1)]
             else:
                 if "token_type_ids" in i:
-                    t_ids = i["token_type_ids"].to(device)
+                    t_ids = i["token_type_ids"].cuda(non_blocking=True)
                     out = model(i_ids, a_mask, t_ids)["logits"]
                 else:
                     out = model(i_ids, a_mask)["logits"]

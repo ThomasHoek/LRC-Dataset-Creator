@@ -33,8 +33,8 @@ class phrase_pair:
 
 # FIXME : lowercase check
 #  update to compatible list
-word_list = {
-    r"JJ": "phrasal",
+word_list: dict[str, str] = {
+    r"JJ": "phrasal_JJ",
 
     # 2.	NN	Noun, singular or mass
     r"NN": "NP",
@@ -63,10 +63,10 @@ word_list = {
 # acceptable parents for N's
 # TODO: allow NP, but not as LAST parent. Do double parent check if NP -> if typeraised back to N or used conj 
 np_parent_lst = [r"n", r"n/n", "n/pp", r"n\n", "n\n", "n/n"]
-verb_reject_lst = ["is", "was", "be", "have", "been", "were", "are"]
+verb_reject_lst = ["is", "was", "be", "have", "has", "been", "were", "are"]
 
 #  Subtree lists
-tree_tags = {r"IN": "phrasal"}
+tree_tags = {r"IN": "phrasal_IN"}
 ccg_allowed = {r"n": "NP"}
 
 # Original snipet from country info.
@@ -220,6 +220,10 @@ def phrase_to_combos(
                 # banned verbs
                 elif left_phrase.sentence in verb_reject_lst or right_phrase.sentence in verb_reject_lst:
                     continue
+
+                if lemma_check:
+                    if left_phrase.lemma in verb_reject_lst or right_phrase.lemma in verb_reject_lst:
+                        continue
 
                 if duplicate_check:
                     if (left_phrase.sentence, right_phrase.sentence) in duplicate_dict:

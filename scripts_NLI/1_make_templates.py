@@ -87,6 +87,7 @@ if __name__ == "__main__":
     print(f"{dir_path}/../lex_pairs/{dataset}/")
     if part == "all":
         files_found = glob.glob(f"{dir_path}/../lex_pairs/{dataset}/*.tsv")
+        print(files_found)
         for i in files_found:
             part_strip = i.split("/")[-1].replace("_ccg.tsv", "").replace(f"{dataset}_", "")
             get_results(i, part_strip)
@@ -94,7 +95,7 @@ if __name__ == "__main__":
     else:    
         files_found = glob.glob(f"{dir_path}/../lex_pairs/{dataset}/{dataset}_{part}_ccg.tsv")
         get_results(files_found[0], part)
-    
+
         # if len(files_found) == 0:
         #     files_found = glob.glob(f"Results/{dataset}/{part}.tsv")
         #     assert len(files_found) == 1

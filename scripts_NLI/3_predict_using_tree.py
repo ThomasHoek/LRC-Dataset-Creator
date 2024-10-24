@@ -22,7 +22,24 @@ dataset = args.dataset
 part = args.part
 
 
-def get_prolog_sen(df, lower=False, lemma=False, index=False):
+def get_relation(pred: str, w1: str, w2: str):
+    match pred:
+        case "disjoint":
+            return f"ind_rel(disj('{w1}','{w2}'))."
+        case "forwardentailment":
+            return f"ind_rel(isa_wn('{w1}','{w2}'))."
+        case "reverseentailment":
+            return f"ind_rel(isa_wn('{w2}','{w1}'))."
+        case "synonym":
+            return f"ind_rel(sim_wn('{w1}','{w2}'))."
+        case "independent":
+            return 
+        case _:
+            print(pred)
+            return
+
+
+def get_prolog_sen(df: pd.Series[str], lower: bool = False, lemma: bool = False, index: bool = False):
     """
     get_prolog_sen transforms dataframe to prolog
 
@@ -49,24 +66,11 @@ def get_prolog_sen(df, lower=False, lemma=False, index=False):
     if lower:
         w1 = w1.lower()
         w2 = w2.lower()
-        
-    match df["pred"]:
-        case "disjoint":
-            final_str = f"ind_rel(disj('{w1}','{w2}'))."
-        case "forwardentailment":
-            final_str = f"ind_rel(isa_wn('{w1}','{w2}'))."
-        case "reverseentailment":
-            final_str = f"ind_rel(isa_wn('{w2}','{w1}'))."
-        case "synonym":
-            final_str = f"ind_rel(sim_wn('{w1}','{w2}'))."
-        case "independent":
-            return 
-        case _:
-            print(df["pred"])
-            return
 
-    if index:
-        final_str = final_str.replace("')).", f"','{df['ProbID']}')).")
+    final_str = get_relation(df["pred"], w1, w2)
+
+    if index and final_str:
+        final_str = final_str.replace("')).", f"'),{df['ProbID']}).")
     return final_str
 
 
@@ -75,45 +79,33 @@ def add_duplicates(meta_file: str, main_df: pd.DataFrame, existing_series: pd.Se
     with open(meta_file) as f:
         duplicates = json.load(f)
 
+    final_duplicate_lst: list[str] = []
     for dup in duplicates:
         duplicate_list = duplicates[dup]
-        problem: pd.DataFrame = main_df[main_df["ProbID"] == duplicate_list[0]]
 
         w1_org, w2_org = dup.split("_*_")
         w1_org = w1_org.replace("+=+", " ")
         w2_org = w2_org.replace("+=+", " ")
 
-        problem = problem[problem["W1"] == w1_org]
-        problem = problem[problem["W2"] == w2_org]
+        problem: pd.DataFrame = main_df[main_df.ProbID == duplicate_list[0]]
+        problem = problem[(problem.W1 == w1_org) & (problem.W2 == w2_org)]
 
         # should be Series now, but still in DF format.
         assert len(problem) == 1
 
+        # convert to series hack
+        problem = problem.iloc[0]
+
         # get lemma
-        w1: str = problem["L1"].item()
-        w2: str = problem["L2"].item()
+        w1: str = problem["L1"]
+        w2: str = problem["L2"]
 
-        match problem["pred"].item():
-            case "disjoint":
-                final_str = f"ind_rel(disj('{w1}','{w2}'))."
-            case "forwardentailment":
-                final_str = f"ind_rel(isa_wn('{w1}','{w2}'))."
-            case "reverseentailment":
-                final_str = f"ind_rel(isa_wn('{w2}','{w1}'))."
-            case "synonym":
-                final_str = f"ind_rel(sim_wn('{w1}','{w2}'))."
-            case "independent":
-                continue
-            case _:
-                # print if things go wrong???
-                # should NEVER happen
-                print(problem["pred"].item())
-                continue
+        final_str = get_relation(problem["pred"], w1, w2)
 
-        final_duplicate_lst: list[str] = []
-        for dup_number in duplicate_list[1:]:
-            final_duplicate_lst.append(final_str.replace("')).", f"','{dup_number}'))."))
-        existing_series = pd.concat([existing_series, pd.Series(final_duplicate_lst)])
+        if final_str:
+            for dup_number in duplicate_list[1:]:
+                final_duplicate_lst.append(final_str.replace("')).", f"'),{dup_number})."))
+    existing_series = pd.concat([existing_series, pd.Series(final_duplicate_lst)], axis=0, sort=False)
     return existing_series
 
 
@@ -126,17 +118,20 @@ def make_files(word_info_df: pd.DataFrame, prediction_pd: pd.Series[str], str_pa
     os.makedirs(f"lex_KB/{dataset}/NLI/predictions", exist_ok=True)
     os.makedirs(f"lex_KB/{dataset}/NLI/final", exist_ok=True)
 
-    word_info_df[["W1", "W2", "pred"]].to_csv(f"lex_KB/{dataset}/NLI/predictions/{part}.tsv", sep="\t")
-
+    word_info_df[["W1", "W2", "pred"]].to_csv(f"lex_KB/{dataset}/NLI/predictions/{str_part}.tsv", sep="\t")
     final = word_info_df.apply(get_prolog_sen, axis=1)
+
+    print("normal")
     final.dropna(inplace=True)
     final.drop_duplicates(inplace=True)
     final.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}.pl', sep='\n', index=False, header=False)
 
+    print("lemma")
     final_lemma = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=False), axis=1)
     final_lemma.dropna(inplace=True)
     final_lemma.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_lemma.pl', sep='\n', index=False, header=False)
 
+    print("lemma_idx")
     final_lemma_idx = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=True), axis=1)
     final_lemma_idx = add_duplicates(f"lex_pairs/{dataset}/meta/{dataset}_{str_part}_ccg.json", word_info_df, final_lemma_idx)
     final_lemma_idx.dropna(inplace=True)
