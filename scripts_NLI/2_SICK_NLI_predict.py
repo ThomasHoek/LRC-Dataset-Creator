@@ -27,11 +27,13 @@ parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset t
 parser.add_argument("--part", required=True, metavar="FILES", help="Part of dataset to test on")
 parser.add_argument("--output", required=True, metavar="FILES", help="Dataset to test on")
 parser.add_argument("--preds", required=False, default=0, metavar="FILES", help="Only give predictions")
+parser.add_argument("--baseline", required=False, default=False, metavar="FILES", help="Only give predictions")
 args = parser.parse_args()
 dataset = args.dataset
 output = args.output
 preds_bool = args.preds
 part = args.part
+baseline = args.baseline
 
 model_name = "sileod/deberta-v3-base-tasksource-nli"
 model_str = model_name.replace(r"/", "_")
@@ -116,12 +118,23 @@ def get_preds(csvreader, dataset_path, str_part):
         result["preds"] = preds
         result["probs"] = probs
 
-        res_group = result.groupby("CombID").agg({
-            'head': lambda x: list(x)[0], 'tail': lambda x: list(x)[0],
-            'preds': 'sum', 'probs': 'sum'
-            })
+        if baseline:
+            res_group = result.groupby("CombID").agg({
+                'head': lambda x: list(x)[0],
+                'tail': lambda x: list(x)[0],
+                'label': lambda x: list(x)[0],
+                'preds': 'sum', 'probs': 'sum'
+                })
+            var_lst = ["head", "tail", "label", "preds", "probs"]
+        else:
+            res_group = result.groupby("CombID").agg({
+                'head': lambda x: list(x)[0],
+                'tail': lambda x: list(x)[0],
+                'preds': 'sum', 'probs': 'sum'
+                })
 
-        res_group[["head", "tail", "preds", "probs"]].to_csv(f"{output}/inter/predictions_{str_part}.tsv", sep="\t")
+            var_lst = ["head", "tail", "preds", "probs"]
+        res_group[var_lst].to_csv(f"{output}/inter/predictions_{str_part}.tsv", sep="\t")
 
         # try:
         # except KeyError:

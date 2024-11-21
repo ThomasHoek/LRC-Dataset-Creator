@@ -1,3 +1,4 @@
+from math import comb
 import re
 import ujson
 from dataclasses import dataclass
@@ -45,6 +46,9 @@ word_list: dict[str, str] = {
     # 15.	NNPS	Proper noun, plural
     r"NNPS": "NP",
 
+    # conjunctions
+    r"NN_CONJ": "NP",
+
     # # ------- Change to VP | TODO: test effect of VP
     # 27.	VB	Verb, base form
     r"VB": "VP",
@@ -58,12 +62,16 @@ word_list: dict[str, str] = {
     r"VBP": "VP",
     # 32.	VBZ	Verb, 3rd person singular present
     r"VBZ": "VP",
+
+    # r"RB": "VP"
 }
 
 # acceptable parents for N's
 # TODO: allow NP, but not as LAST parent. Do double parent check if NP -> if typeraised back to N or used conj 
 np_parent_lst = [r"n", r"n/n", "n/pp", r"n\n", "n\n", "n/n"]
 verb_reject_lst = ["is", "was", "be", "have", "has", "been", "were", "are"]
+
+VB_list = [r"VB", r"VBD",r"VBG",r"VBN", r"VBP", r"VBZ"]
 
 #  Subtree lists
 tree_tags = {r"IN": "phrasal_IN"}
@@ -82,7 +90,7 @@ def to_tree(ccg_inp: list[str]) -> dict[int, tree]:
 def type_mix(type_1: str, type_2: str, allow_mix: bool = False) -> bool:
     if allow_mix:
         # Rules for extra allowed mixes | Used for PPDB
-        combs = [("VP", "NP"), ("JJ", "NP"), ("JJ", "VP"), ("phrasal", "VP"), ("phrasal", "NP"), ("phrasal", "JJ")]
+        combs = [("VP", "NP")]
         return (type_1, type_2) in combs or (type_2, type_1) in combs
     return False
 
@@ -112,13 +120,11 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
     reject_loc: Callable[[leaf], bool] = lambda x_lamb: x_lamb.BIO_ner == "I-LOC"
     BIO_NER_reject = ["I-PER", "I-ORG", "I-LOC"]
 
-    # if ANY not in np list, but allow if CONJ
-    #  TODO: bettter CONJ check ->
-    # child_check: Callable[[tree], bool] = lambda x_lamb: x_lamb.syn_type not in np_parent_lst and x_lamb.combinator != "conj"
     child_check: Callable[[tree], bool] = lambda x_lamb: x_lamb.syn_type not in np_parent_lst
 
     # FIXME: config file
     max_size = 4
+    CONJ_setting = True
 
     extra_subtree: dict[tree, str] = {}
     # ========= LEAVES =========
@@ -129,14 +135,18 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
                 word_phrase.lemma = word.lemma.strip()
             collected.append(word_phrase)
 
+        parent_tree = word.parent
         # weird fix for IN parts
         if word.POS in tree_tags:
-            parent_tree = word.parent
             while parent_tree.parent_check() and parent_tree.parent.syn_type in np_parent_lst:
                 parent_tree = parent_tree.get_parent_tree()
             extra_subtree[parent_tree] = tree_tags[word.POS]
 
-    # ========= TREES =========
+        # EXPERIMENTAL conjunctions
+        if CONJ_setting and parent_tree.syn_type == r"np\np" and parent_tree.combinator == "conj":
+            if not parent_tree.length_check(max_size):
+                extra_subtree[parent_tree.get_parent_tree()] = "NN_CONJ"
+
     for x in tree_inp.gen_subtrees():
         if x.length_check(max_size):
             continue
@@ -176,7 +186,11 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
 
             collected.append(add_tuple)
         elif x in extra_subtree:
-            add_tuple = phrase_info(extra_subtree[x], x.syn_type, x.get_sent("").strip())
+            tree_key = extra_subtree[x]
+            if tree_key == "NN_CONJ":
+                add_tuple = phrase_info("NP", "CONJ", x.get_sent("").strip())
+            else:
+                add_tuple = phrase_info(extra_subtree[x], x.syn_type, x.get_sent("").strip())
 
             if lemma_check:
                 add_tuple.lemma = x.get_sent("", lemma=True).strip()
@@ -197,19 +211,20 @@ def phrase_to_combos(
 
     combos: list[phrase_pair] = []
     # global duplicate set
+    global allow_mixed
     if duplicate_check:
         global duplicate_dict
 
     # local duplicate set
     word_set_l: set[str] = set()
     if not (len(listleft) and len(listright)):
-        return []
+        return [], global_comb_counter
 
     # r_word_type, r_org, r_phrase
     for left_phrase in listleft:
         word_set_r: set[str] = set()
         for right_phrase in listright:
-            if left_phrase.m_category == right_phrase.m_category or type_mix(left_phrase.m_category, right_phrase.m_category):
+            if left_phrase.m_category == right_phrase.m_category or type_mix(left_phrase.m_category, right_phrase.m_category, allow_mixed):
 
                 # skip if itself
                 if left_phrase.sentence == right_phrase.sentence:
@@ -232,8 +247,6 @@ def phrase_to_combos(
                     else:
                         duplicate_dict[(left_phrase.sentence, right_phrase.sentence)] = [problem_num]
 
-
-
                 combo = phrase_pair(global_comb_counter, problem_num, left_phrase.m_category,
                                     left_phrase.s_category, right_phrase.s_category,
                                     left_phrase.sentence, right_phrase.sentence)
@@ -247,6 +260,17 @@ def phrase_to_combos(
         word_set_l.add(left_phrase.sentence)
         word_set_r = set()
 
+    # if problem_num == 3785:
+    #     for x in listleft:
+    #         print(x)
+    #     print('-------')
+    #     for x in listright:
+    #         print(x)
+    #     print('-------')
+
+    #     for x in combos:
+    #         print(x)
+    #     print('-------')
     return combos, global_comb_counter
 
 
@@ -257,16 +281,19 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
     parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
     parser.add_argument("-d", required=False, default=True, help="disable duplicates and write to meta file")
+    parser.add_argument("-c", required=False, default=False, help="allow type combinations")
     parser.add_argument("-l", required=False, default=True, help="add Lemma data")
     parser.add_argument("-v", required=False, default=False, help="verbose")
     args = parser.parse_args()
 
     dataset = args.dataset
     duplicate_check = args.d
+    allow_mixed = args.c
     lemma_check = args.l
 
     print_info = args.v
-    if dataset == "SICK":
+
+    if "SICK" in dataset or "SNLI_5_anno" in dataset:
         # TODO, update path
         ccgfiles = glob.glob(f"datasets/{dataset}/*_ccg.pl")
     else:
@@ -295,8 +322,10 @@ if __name__ == "__main__":
         ccg_data: list[str] = ccg_open.readlines()
         ccg_open.close()
 
-        if dataset == "SICK":
+        if "SICK" in dataset:
             sen_open = open(file.replace("_ccg.pl", "_sen.pl"), "r")
+        elif "SNLI_5_anno" in dataset:
+            sen_open = open(file.replace("_ccg.pl", "_sen_fix.pl"), "r")
         else:
             sen_open = open(file.replace("_cc_ccg.pl", "_sen.pl"), "r")
 
@@ -320,7 +349,8 @@ if __name__ == "__main__":
             elif line[0] == "%":
                 continue
 
-            ccg_id, problem_id = re.findall(r"(\d+)", line)[:2]
+            # FIXME: IMPORTANT difference between STR and INT
+            ccg_id, problem_id = re.findall(r"(\d+), (.*?),", line)[0]
 
             ccg_id = int(ccg_id)
             problem_id = int(problem_id)
@@ -333,7 +363,7 @@ if __name__ == "__main__":
             else:
                 if print_info:
                     print(f"CCG Num: {ccg_id}  not found in dict")
-      
+
         tsvfile = open(f"lex_pairs/{dataset}/{file_name}.tsv", "w+", newline="")
         writer = csv.writer(tsvfile, delimiter="\t", lineterminator="\n")
         if lemma_check:
@@ -344,6 +374,7 @@ if __name__ == "__main__":
         global_comb_counter = 1
         for i in problem_tuple_dict.keys():
             try:
+                combs = []
                 # Prem and Hypo trees
                 left, right = problem_tuple_dict[i]
 
@@ -355,24 +386,18 @@ if __name__ == "__main__":
                 if len(left_phrases) and len(right_phrases):  # skip if empty
                     combs, global_comb_counter = phrase_to_combos(i, left_phrases, right_phrases, global_comb_counter)
 
-                # if i == 1190:
-                #     # print(left_phrases)
-                #     # print(right_phrases)
-                #     for example_line in combs:
-                #         print(example_line[-2],"\t" ,example_line[-1])
-
             except TypeError:
                 if print_info:
                     print(f"CCG num {i} is broken. Is tuple: {type(problem_tuple_dict[i])}")
                 continue
 
-            for cw in combs:
-                comb_str = [cw.CombID, cw.ProbID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.W1, cw.W2]
+            if combs:
+                for cw in combs:
+                    comb_str = [cw.CombID, cw.ProbID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.W1, cw.W2]
+                    if lemma_check:
+                        comb_str += [cw.lemma_left, cw.lemma_right]
 
-                if lemma_check:
-                    comb_str += [cw.lemma_left, cw.lemma_right]
-
-                writer.writerow(comb_str)
+                    writer.writerow(comb_str)
 
         if duplicate_check:
             # remove singles

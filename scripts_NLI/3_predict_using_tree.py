@@ -2,6 +2,7 @@ from __future__ import annotations  # typing fix??
 import re
 import argparse
 import pickle
+from librosa import ex
 import pandas as pd
 import glob
 from ast import literal_eval
@@ -12,7 +13,7 @@ model_dir = "models/NLI/tasksource_full/model.pkl"
 
 with open(model_dir, 'rb') as f:
     clf = pickle.load(f)
-
+    clf= clf.best_estimator_
 
 parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
 parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
@@ -109,12 +110,12 @@ def add_duplicates(meta_file: str, main_df: pd.DataFrame, existing_series: pd.Se
     return existing_series
 
 
-def make_files(word_info_df: pd.DataFrame, prediction_pd: pd.Series[str], str_part: str):    
-    test_x = list(prediction_pd["preds"])
-    test_x_eval: list[float] = [literal_eval(x) for x in test_x]
-
-    word_info_df["pred"] = clf.best_estimator_.predict(test_x_eval)
-
+def make_files(word_info_df: pd.DataFrame, prediction_df: pd.DataFrame, str_part: str):    
+    test_x = list(prediction_df["preds"])
+    test_x_eval = [literal_eval(x) for x in test_x]
+    word_info_df["pred"] = clf.predict(test_x_eval)
+    word_info_df.to_csv(f'lex_preds/{dataset}/NLI/pred/{str_part}.tsv', sep='\t')
+    
     os.makedirs(f"lex_KB/{dataset}/NLI/predictions", exist_ok=True)
     os.makedirs(f"lex_KB/{dataset}/NLI/final", exist_ok=True)
 
@@ -133,7 +134,10 @@ def make_files(word_info_df: pd.DataFrame, prediction_pd: pd.Series[str], str_pa
 
     print("lemma_idx")
     final_lemma_idx = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=True), axis=1)
-    final_lemma_idx = add_duplicates(f"lex_pairs/{dataset}/meta/{dataset}_{str_part}_ccg.json", word_info_df, final_lemma_idx)
+    try:
+        final_lemma_idx = add_duplicates(f"lex_pairs/{dataset}/meta/{dataset}_{str_part}_ccg.json", word_info_df, final_lemma_idx)
+    except FileNotFoundError:
+        final_lemma_idx = add_duplicates(f"lex_pairs/{dataset}/meta/{part}_ccg.json", word_info_df, final_lemma_idx)
     final_lemma_idx.dropna(inplace=True)
     final_lemma_idx.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_lemma_idx.pl', sep='\n', index=False, header=False)
     # break
@@ -151,5 +155,8 @@ if part == "all":
 
 else:
     pred_df = pd.read_csv(f"lex_preds/{dataset}/NLI/pred/inter/predictions_{part}.tsv", delimiter="\t")
-    NLI_word_info = pd.read_csv(f"lex_pairs/{dataset}/{dataset}_{part}_ccg.tsv", delimiter="\t")
+    try:
+        NLI_word_info = pd.read_csv(f"lex_pairs/{dataset}/{dataset}_{part}_ccg.tsv", delimiter="\t")
+    except FileNotFoundError:
+        NLI_word_info = pd.read_csv(f"lex_pairs/{dataset}/{part}_ccg.tsv", delimiter="\t")
     make_files(NLI_word_info, pred_df, part)

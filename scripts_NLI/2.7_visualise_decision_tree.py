@@ -1,5 +1,6 @@
 import re
 import os
+import json
 import copy
 import random
 import pickle
@@ -14,23 +15,21 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report, ConfusionMatrixDisplay
 
 
-test_data = "models/NLI/tasksource_full/inter/predictions_templates_insert_test_full.tsv"
+# train_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_train.tsv"
+# val_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_validation.tsv"
+
+
+test_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_test.tsv"
 test_info = "datasets/merged_LRC_words/test.tsv"
 
 model_dir = "models/NLI/tasksource_full/model.pkl"
 
+with open('scripts_NLI/templates.json') as json_data:
+    SNLI_templates_json: list[dict[str, str]] = json.load(json_data)
+    json_data.close()
+SNLI_templates = [[line["prem"], line["hyp"]] for line in SNLI_templates_json]
 
-templates = [
-    ["The NP is photographed with a camera", "There is a NP present"],
-    ["The NP is in the water", "The NP is wet"],
-    ["A NP is outside near a campfire at night", "There is a NP outside"],
-    ["A young woman is looking at a NP with a binocular", "A NP is looked at by a woman"],
-    ["Several people are moving towards the NP", "There is a group of people near the NP"],
-    ["A bald man standing to the side of a NP", "The man stands near a NP."],
-    ["A kid fetches a NP by a tree in the yard.", "a kid gets a NP"],
-    ["A green frog buys a NP from a stand.", "There is a green frog buying a NP"],
-    ["A NP", "A NP"]
-    ]
+
 with open(model_dir, 'rb') as f:
     clf = pickle.load(f)
     clf= clf.best_estimator_
@@ -43,10 +42,10 @@ test_x = [literal_eval(x) for x in test_x_str]
 
 newline = "<BR/>"
 feature_names = []
-for template_i in range(0, 9):
+for template_i in range(0, len(SNLI_templates)):
     for direction in [0, 1]:
         for label_nli in ["Entail", "Contradict", "Neutral"]:
-            local_templates = copy.deepcopy(templates[template_i])
+            local_templates = copy.deepcopy(SNLI_templates[template_i])
             if direction:
                 dir = ("tail", "head")
             else:
@@ -88,9 +87,35 @@ with open("models/NLI/tasksource_full/tree_full2.txt", "w") as text_file:
     
 graph_full = pydotplus.graph_from_dot_data(dot_data_full)
 graph_full.write_pdf('models/NLI/tasksource_full/tree_full2.pdf')
-#
 
+
+# ====================================================
 # COUNT TEST
+dot_data_count = tree.export_graphviz(clf,
+                                class_names=target_names,
+                                max_depth=3,
+                                filled=True, rounded=True,
+                                special_characters=True).replace("\n", "")
+graph_count = pydotplus.graph_from_dot_data(dot_data_count)
+# print(graph_count)
+
+
+node_count = 0
+last_template_count = {}
+for node in graph_count.get_node_list():
+    if "label" not in node.get_attributes():
+        continue
+
+    feature_num = re.findall(r"<SUB>([0-9]*)</SUB>", node.get_attributes()['label'])
+    if feature_num:
+        node_count += 1
+        if int(feature_num[0]) // 6 not in last_template_count:
+            last_template_count[int(feature_num[0]) // 6] = 0
+
+        last_template_count[int(feature_num[0]) // 6] += 1
+last_template_count = dict(sorted(last_template_count.items()))
+print('3', last_template_count, node_count)
+
 
 dot_data_count = tree.export_graphviz(clf,
                                 class_names=target_names,
@@ -114,8 +139,9 @@ for node in graph_count.get_node_list():
 
         last_template_count[int(feature_num[0]) // 6] += 1
 last_template_count = dict(sorted(last_template_count.items()))
-print(last_template_count, node_count)
+print('max', last_template_count, node_count)
 
+# ====================================================
 
 # SLOW AND CONVOLUTED WAY TO SET FEATURE NAMES MYSELF
 depth_setting = 3
@@ -151,9 +177,26 @@ for node in graph.get_node_list():
 
 
 # ADD words in only FOR green
-# idx = random.randint(0, len(test_x) - 1)
-idx = 16119
-print(idx)
+# idx = 16119
+# print(idx)
+
+test_x = list(NLI_test["preds"])
+test_x = [literal_eval(x) for x in test_x]
+NLI_test["pred"] = clf.predict(test_x)
+print(classification_report(NLI_test["label"], NLI_test["pred"]))
+
+# ppdb_scrape_disjoint
+print("----------------------------------------")
+print("PHRASE")
+NLI_test_phrase = pd.read_csv("lex_preds/ppdb_phrase/NLI/pred/inter/predictions_ppdb_scrape_disjoint.tsv", delimiter="\t") 
+test_x = list(NLI_test_phrase["preds"])
+test_x = [literal_eval(x) for x in test_x]
+NLI_test_phrase["pred"] = clf.predict(test_x)
+print(classification_report(NLI_test_phrase["label"], NLI_test_phrase["pred"]))
+
+print("----------------------------------------")
+
+idx = random.randint(0, len(test_x) - 1)
 head_tail_info = (NLI_test_info.iloc[idx]["head"], NLI_test_info.iloc[idx]["tail"])
 print(head_tail_info)
 print(NLI_test["label"].iloc[idx])
