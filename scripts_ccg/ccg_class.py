@@ -52,14 +52,20 @@ class leaf:
         """
         raise RuntimeError("Entered leaf during child search. Child can't have child.")
 
-    def get_sent(self, sent: str = "", lemma: bool = False) -> str:
+    def get_sent(self, sent: str = "", lemma: bool = False, lower: bool = False) -> str:
         """
         Function to parse a subtree to a sentence.
         """
+        final: str = ""
+
         if lemma:
-            return self.lemma
+            final = self.lemma
         else:
-            return self.word
+            final = self.word
+
+        if lower:
+            final = final.lower()
+        return final
 
     def pprint(self, *args: Any) -> str:
         """
@@ -235,7 +241,7 @@ class tree:
         else:
             return self.parent.root()
 
-    def get_sent(self, sent: str = "", lemma: bool = False) -> str:
+    def get_sent(self, sent: str = "", lemma: bool = False, lower: bool = True) -> str:
         """
         Seperate function to get sentence from subtree.
         Lemma is used to indicate if lemmatised sentence should be returned.
@@ -249,10 +255,10 @@ class tree:
         for child in [self.left, self.right]:
             res = None
             if isinstance(child, tree):
-                res = child.get_sent("", lemma=lemma)
+                res = child.get_sent("", lemma=lemma, lower=lower)
 
             elif isinstance(child, leaf):
-                res = child.get_sent("", lemma=lemma)
+                res = child.get_sent("", lemma=lemma, lower=lower)
 
             else:
                 # cases such as LX
@@ -269,6 +275,7 @@ class tree:
             self.lemma_sent = sent
         else:
             self.sent = sent
+
         return sent
 
     def get_leaves(self, leaf_list: list[leaf] = []) -> list[leaf]:

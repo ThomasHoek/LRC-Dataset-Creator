@@ -2,7 +2,7 @@ from __future__ import annotations  # typing fix??
 import re
 import argparse
 import pickle
-from librosa import ex
+import numpy as np
 import pandas as pd
 import glob
 from ast import literal_eval
@@ -18,9 +18,11 @@ with open(model_dir, 'rb') as f:
 parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
 parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
 parser.add_argument("--part", required=True, metavar="FILES", help="Part of dataset to test on")
+parser.add_argument("--threshhold", required=False, default=0.5, metavar="FILES", help="threshhold for decisions")
 args = parser.parse_args()
 dataset = args.dataset
 part = args.part
+thresh_hold = float(args.threshhold) 
 
 
 def get_relation(pred: str, w1: str, w2: str):
@@ -34,7 +36,9 @@ def get_relation(pred: str, w1: str, w2: str):
         case "synonym":
             return f"ind_rel(sim_wn('{w1}','{w2}'))."
         case "independent":
-            return 
+            return
+        case "":
+            return
         case _:
             print(pred)
             return
@@ -75,7 +79,11 @@ def get_prolog_sen(df: pd.Series[str], lower: bool = False, lemma: bool = False,
     return final_str
 
 
-def add_duplicates(duplicates: dict[str, list[int]], main_df: pd.DataFrame, existing_series: pd.Series[str]):
+def add_duplicates(meta_file: str, main_df: pd.DataFrame, existing_series: pd.Series[str]):
+    import json
+    with open(meta_file) as f:
+        duplicates = json.load(f)
+
     final_duplicate_lst: list[str] = []
     for dup in duplicates:
         duplicate_list = duplicates[dup]
@@ -86,9 +94,9 @@ def add_duplicates(duplicates: dict[str, list[int]], main_df: pd.DataFrame, exis
 
         problem: pd.DataFrame = main_df[main_df.ProbID == duplicate_list[0]]
         problem = problem[(problem.W1 == w1_org) & (problem.W2 == w2_org)]
+
         # should be Series now, but still in DF format.
         if len(problem) != 1:
-            print(dup, duplicate_list)
             continue
 
         # convert to series hack
@@ -107,42 +115,51 @@ def add_duplicates(duplicates: dict[str, list[int]], main_df: pd.DataFrame, exis
     return existing_series
 
 
+def filter_on_probs(preds, pred_idx, class_dict: dict[int, str], threshhold: float):
+    new_series: list[str] = []
+
+    for prediction, prediction_idx in zip(preds, pred_idx):
+        if prediction[prediction_idx] > threshhold:
+            new_series.append(class_dict[prediction_idx])
+        else:
+            new_series.append("")
+    return pd.Series(new_series)
+
+ 
 def make_files(word_info_df: pd.DataFrame, prediction_df: pd.DataFrame, str_part: str):    
     test_x = list(prediction_df["preds"])
     test_x_eval = [literal_eval(x) for x in test_x]
-    word_info_df["pred"] = clf.predict(test_x_eval)
-    word_info_df.to_csv(f'lex_preds/{dataset}/NLI/pred/{str_part}.tsv', sep='\t')
-    
+    # word_info_df["pred"] = clf.predict_proba(test_x_eval)
+    class_dict: dict[int, str] = {i:c for i, c in enumerate(clf.classes_)}
+    prob_preds = clf.predict_proba(test_x_eval)
+    prob_preds_idx = np.argmax(prob_preds, axis=1)
+
+    word_info_df["pred"] = filter_on_probs(prob_preds, prob_preds_idx, class_dict, thresh_hold)
+
     os.makedirs(f"lex_KB/{dataset}/NLI/predictions", exist_ok=True)
     os.makedirs(f"lex_KB/{dataset}/NLI/final", exist_ok=True)
 
-    word_info_df[["W1", "W2", "pred"]].to_csv(f"lex_KB/{dataset}/NLI/predictions/{str_part}.tsv", sep="\t")
+    word_info_df[["W1", "W2", "pred"]].to_csv(f"lex_KB/{dataset}/NLI/predictions/{str_part}_proba_{thresh_hold}.tsv", sep="\t")
     final = word_info_df.apply(get_prolog_sen, axis=1)
 
     print("normal")
     final.dropna(inplace=True)
     final.drop_duplicates(inplace=True)
-    final.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}.pl', sep='\n', index=False, header=False)
+    final.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_proba_{thresh_hold}.pl', sep='\n', index=False, header=False)
 
     print("lemma")
     final_lemma = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=False), axis=1)
     final_lemma.dropna(inplace=True)
-    final_lemma.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_lemma.pl', sep='\n', index=False, header=False)
+    final_lemma.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_lemma_proba_{thresh_hold}.pl', sep='\n', index=False, header=False)
 
     print("lemma_idx")
     final_lemma_idx = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=True), axis=1)
-    import json
     try:
-        with open(f"lex_pairs/{dataset}/meta/{dataset}_{str_part}_ccg.json") as f:
-            duplicates = json.load(f)
+        final_lemma_idx = add_duplicates(f"lex_pairs/{dataset}/meta/{dataset}_{str_part}_ccg.json", word_info_df, final_lemma_idx)
     except FileNotFoundError:
-        with open(f"lex_pairs/{dataset}/meta/{str_part}_ccg.json") as f:
-            duplicates = json.load(f)
-        
-    assert duplicates
-    final_lemma_idx = add_duplicates(duplicates, word_info_df, final_lemma_idx)
+        final_lemma_idx = add_duplicates(f"lex_pairs/{dataset}/meta/{str_part}_ccg.json", word_info_df, final_lemma_idx)
     final_lemma_idx.dropna(inplace=True)
-    final_lemma_idx.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_lemma_idx.pl', sep='\n', index=False, header=False)
+    final_lemma_idx.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_lemma_idx_proba_{thresh_hold}.pl', sep='\n', index=False, header=False)
     # break
 
 

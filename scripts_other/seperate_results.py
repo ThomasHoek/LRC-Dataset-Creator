@@ -79,15 +79,21 @@ if __name__ == "__main__":
     all_info = "".join([x.replace("\n", "|") for x in file_info])
 
     # regex match and remove empty whitespace lines
-    regex_match = r"(ERROR|Error|Inconsistency in node types \(entail\/8\)\||\d+:)"
+    regex_match = r"(ERROR|Error|Inconsistency in node types \(entail\/8\)\||\d+: )"
     re_split = re.split(regex_match, all_info)
     re_split = [x for x in re_split if x.rstrip()]
-    meta_data = to_print(re_split.pop(0))
+
+    # meta_data = to_print(re_split.pop(0))
+    meta_counter = 0
+    for line in re_split:
+        if "Length of jobs" in line:
+            break
+        else:
+            meta_counter += 1
+    re_split  = re_split[meta_counter+1:]
 
     # seperate results from line
-    re_split[-1] = re_split[-1].split(
-        "------------------------------------------------------"
-    )[0]
+    re_split[-1] = re_split[-1].split("------------------------------------------------------")[0]
 
     # make folders and data
     Path(f"{args.target}").mkdir(parents=True, exist_ok=True)
@@ -124,7 +130,8 @@ if __name__ == "__main__":
         cur_line = re_split[index_pointer]
 
         # error, inconsistant etc messages
-        while not cur_line[:-1].isdigit():
+        while not cur_line[:-2].isdigit():
+            # print(cur_line[:-1])
             if "error" in cur_line.lower():
                 error_flag = True
 
@@ -137,7 +144,7 @@ if __name__ == "__main__":
 
         # check if number in aethel
         number_info = cur_line
-        num = int(cur_line[:-1])
+        num = int(cur_line[:-2])
 
         # get info and paste info file
         index_pointer += 1
@@ -174,7 +181,7 @@ if __name__ == "__main__":
                 file = n_n
 
             case _:
-                print(defected_flag, target, predict)
+                print(cur_line, defected_flag, target, predict)
                 raise NotImplementedError("Should not reach this")
 
         # write all info to file

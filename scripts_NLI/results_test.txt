@@ -1,0 +1,212 @@
+----- EXLUDED: -----
+['There are NP in the rain', 'The NP is wet']
+Best Score: 0.7696014244730514
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.81      0.59      0.68       133
+forwardentailment       0.70      0.60      0.65        43
+      independent       0.39      0.63      0.49        68
+reverseentailment       0.76      0.65      0.70        43
+          synonym       0.61      0.92      0.73        12
+
+         accuracy                           0.63       299
+        macro avg       0.65      0.68      0.65       299
+     weighted avg       0.68      0.63      0.64       299
+
+----META----
+3 {0: 1, 1: 5, 3: 3, 6: 1, 7: 3, 8: 2} 15
+all {0: 3, 1: 25, 2: 3, 3: 8, 4: 2, 5: 6, 6: 4, 7: 5, 8: 6} 62
+--------------------------------------------------
+----- EXLUDED: -----
+['The NP', 'The NP']
+Best Score: 0.7738174265448236
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.80      0.50      0.61       133
+forwardentailment       0.76      0.60      0.68        43
+      independent       0.38      0.71      0.49        68
+reverseentailment       0.86      0.72      0.78        43
+          synonym       0.48      0.83      0.61        12
+
+         accuracy                           0.61       299
+        macro avg       0.66      0.67      0.63       299
+     weighted avg       0.70      0.61      0.62       299
+
+----META----
+3 {0: 1, 1: 9, 3: 1, 6: 1, 7: 2, 8: 1} 15
+all {0: 8, 1: 29, 2: 5, 3: 2, 4: 4, 5: 1, 6: 2, 7: 5, 8: 7} 63
+--------------------------------------------------
+----- EXLUDED: -----
+['NP', 'NP']
+Best Score: 0.7699670898818208
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.78      0.57      0.66       133
+forwardentailment       0.72      0.49      0.58        43
+      independent       0.38      0.66      0.49        68
+reverseentailment       0.83      0.79      0.81        43
+          synonym       0.64      0.75      0.69        12
+
+         accuracy                           0.62       299
+        macro avg       0.67      0.65      0.65       299
+     weighted avg       0.68      0.62      0.63       299
+
+----META----
+3 {0: 2, 1: 5, 2: 2, 3: 1, 6: 1, 7: 1, 8: 3} 15
+all {0: 9, 1: 13, 2: 5, 3: 5, 4: 1, 5: 5, 6: 4, 7: 5, 8: 16} 63
+--------------------------------------------------
+----- EXLUDED: -----
+['There is the NP', 'There is the NP']
+Best Score: 0.7750435336898095
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.80      0.56      0.66       133
+forwardentailment       0.74      0.60      0.67        43
+      independent       0.38      0.65      0.48        68
+reverseentailment       0.73      0.63      0.68        43
+          synonym       0.55      0.92      0.69        12
+
+         accuracy                           0.61       299
+        macro avg       0.64      0.67      0.63       299
+     weighted avg       0.68      0.61      0.62       299
+
+----META----
+3 {0: 2, 1: 1, 2: 5, 3: 1, 6: 1, 7: 3, 8: 2} 15
+all {0: 8, 1: 3, 2: 25, 3: 5, 4: 2, 5: 2, 6: 2, 7: 8, 8: 7} 62
+--------------------------------------------------
+----- EXLUDED: -----
+['A NP is outside near a campfire at night', 'There is a NP outside']
+Best Score: 0.7766998871557892
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.80      0.56      0.66       133
+forwardentailment       0.72      0.60      0.66        43
+      independent       0.38      0.65      0.48        68
+reverseentailment       0.74      0.65      0.69        43
+          synonym       0.61      0.92      0.73        12
+
+         accuracy                           0.61       299
+        macro avg       0.65      0.68      0.64       299
+     weighted avg       0.68      0.61      0.63       299
+
+----META----
+3 {0: 2, 1: 1, 2: 5, 6: 1, 7: 3, 8: 3} 15
+all {0: 9, 1: 3, 2: 25, 3: 2, 4: 3, 5: 2, 6: 3, 7: 9, 8: 7} 63
+--------------------------------------------------
+----- EXLUDED: -----
+['NP is walking outside', 'NP is outside']
+Best Score: 0.7763556947267914
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.80      0.56      0.66       133
+forwardentailment       0.72      0.60      0.66        43
+      independent       0.38      0.65      0.48        68
+reverseentailment       0.74      0.65      0.69        43
+          synonym       0.61      0.92      0.73        12
+
+         accuracy                           0.61       299
+        macro avg       0.65      0.68      0.64       299
+     weighted avg       0.68      0.61      0.63       299
+
+----META----
+3 {0: 2, 1: 1, 2: 5, 4: 1, 6: 1, 7: 3, 8: 2} 15
+all {0: 8, 1: 3, 2: 26, 3: 2, 4: 5, 5: 2, 6: 2, 7: 7, 8: 7} 62
+--------------------------------------------------
+----- EXLUDED: -----
+['The NP is happy', 'The NP is happy']
+Best Score: 0.776463189203978
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.81      0.56      0.66       133
+forwardentailment       0.72      0.60      0.66        43
+      independent       0.39      0.65      0.48        68
+reverseentailment       0.74      0.65      0.69        43
+          synonym       0.61      0.92      0.73        12
+
+         accuracy                           0.62       299
+        macro avg       0.65      0.68      0.65       299
+     weighted avg       0.68      0.62      0.63       299
+
+----META----
+3 {0: 2, 1: 1, 2: 5, 4: 1, 6: 1, 7: 3, 8: 2} 15
+all {0: 10, 1: 3, 2: 25, 3: 2, 4: 6, 5: 1, 6: 1, 7: 8, 8: 6} 62
+--------------------------------------------------
+----- EXLUDED: -----
+['I am looking at NP', 'NP is looked at']
+Best Score: 0.778506764358852
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.79      0.65      0.71       133
+forwardentailment       0.72      0.60      0.66        43
+      independent       0.41      0.57      0.48        68
+reverseentailment       0.70      0.65      0.67        43
+          synonym       0.61      0.92      0.73        12
+
+         accuracy                           0.64       299
+        macro avg       0.65      0.68      0.65       299
+     weighted avg       0.67      0.64      0.65       299
+
+----META----
+3 {0: 2, 1: 1, 2: 6, 7: 3, 8: 3} 15
+all {0: 8, 1: 2, 2: 27, 3: 3, 4: 6, 5: 2, 6: 2, 7: 5, 8: 8} 63
+--------------------------------------------------
+----- EXLUDED: -----
+['We found NP', 'Someone found NP']
+Best Score: 0.7694077233865555
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.79      0.53      0.63       133
+forwardentailment       0.77      0.63      0.69        43
+      independent       0.35      0.60      0.44        68
+reverseentailment       0.77      0.63      0.69        43
+          synonym       0.50      0.92      0.65        12
+
+         accuracy                           0.59       299
+        macro avg       0.64      0.66      0.62       299
+     weighted avg       0.67      0.59      0.61       299
+
+----META----
+3 {0: 2, 1: 1, 2: 7, 4: 1, 7: 1, 8: 3} 15
+all {0: 7, 1: 5, 2: 26, 3: 4, 4: 4, 5: 1, 6: 2, 7: 2, 8: 11} 62
+--------------------------------------------------
+----- EXLUDED: -----
+['NP was found', 'NP was found by someone']
+Best Score: 0.7779689726549007
+Best params: {'criterion': 'gini', 'max_depth': 6}
+----Phrase dataset----
+                   precision    recall  f1-score   support
+
+         disjoint       0.80      0.56      0.66       133
+forwardentailment       0.72      0.60      0.66        43
+      independent       0.39      0.65      0.48        68
+reverseentailment       0.72      0.65      0.68        43
+          synonym       0.61      0.92      0.73        12
+
+         accuracy                           0.61       299
+        macro avg       0.65      0.68      0.64       299
+     weighted avg       0.68      0.61      0.62       299
+
+----META----
+3 {0: 3, 1: 1, 2: 6, 4: 1, 7: 1, 8: 3} 15
+all {0: 9, 1: 3, 2: 25, 3: 3, 4: 5, 5: 2, 6: 3, 7: 2, 8: 10} 62
+--------------------------------------------------
+{'We found NP_Someone found NP': 0.7694077233865555, 'There are NP in the rain_The NP is wet': 0.7696014244730514, 'NP_NP': 0.7699670898818208, 'The NP_The NP': 0.7738174265448236, 'There is the NP_There is the NP': 0.7750435336898095, 'NP is walking outside_NP is outside': 0.7763556947267914, 'The NP is happy_The NP is happy': 0.776463189203978, 'A NP is outside near a campfire at night_There is a NP outside': 0.7766998871557892, 'NP was found_NP was found by someone': 0.7779689726549007, 'I am looking at NP_NP is looked at': 0.778506764358852}
+{'We found NP_Someone found NP': 0.5886287625418061, 'The NP_The NP': 0.6053511705685619, 'There is the NP_There is the NP': 0.6086956521739131, 'A NP is outside near a campfire at night_There is a NP outside': 0.6120401337792643, 'NP is walking outside_NP is outside': 0.6120401337792643, 'NP was found_NP was found by someone': 0.6120401337792643, 'The NP is happy_The NP is happy': 0.6153846153846154, 'NP_NP': 0.6187290969899666, 'There are NP in the rain_The NP is wet': 0.6254180602006689, 'I am looking at NP_NP is looked at': 0.6354515050167224}

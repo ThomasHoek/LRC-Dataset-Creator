@@ -110,9 +110,15 @@ if __name__ == "__main__":
             get_results(files_found[0], part)
         except IndexError:
             if baseline and len(files_found) == 0:
-                files_found = glob.glob(f"datasets/{dataset}/{part}.tsv")
+                files_found = glob.glob(f"datasets_original/{dataset}/{part}.tsv")
                 print(files_found)
                 assert len(files_found) == 1
                 get_results_baseline(files_found[0], part)
+            elif len(files_found) == 0:
+                files_found = glob.glob(f"lex_pairs/{dataset}/{part}_ccg.tsv")
+                print(files_found)
+                assert len(files_found) == 1
+                get_results(files_found[0], part)
+                
             else:
                 raise IndexError

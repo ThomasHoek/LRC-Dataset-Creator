@@ -9,18 +9,19 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report, ConfusionMatrixDisplay
 
 # full
+train_dataset = "merged_LRC_words"
+model_save_path = "models/NLI/tasksource_full/"
 
-train_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_train.tsv"
-val_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_validation.tsv"
+train_data = f"lex_preds/{train_dataset}/NLI/pred/inter/predictions_train.tsv"
+val_data = f"lex_preds/{train_dataset}/NLI/pred/inter/predictions_validation.tsv"
 # test_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_test.tsv"
 
 tree_para = {
-    'criterion': ['gini'],
+    'criterion': ['gini', 'entropy'],
     'max_depth': [3, 4, 5, 6],
     # 'class_weight': [None, 'balanced']
     }
-model_save_path = "models/NLI/tasksource_full/"
-test_result_save_path = "models/NLI/tasksource_full/testset"
+test_result_save_path = f"{model_save_path}/testset"
 
 # CombID	head	tail	preds	probs
 NLI_train = pd.read_csv(train_data, delimiter="\t")
@@ -42,7 +43,7 @@ os.makedirs(model_save_path, exist_ok=True)
 plt.savefig(f"{model_save_path}/tree.png")
 
 with open(f"{model_save_path}/model.pkl", 'wb') as f:
-    pickle.dump(obj=clf,f)
+    pickle.dump(obj=clf,file=f)
 
 # =====================
 NLI_test = pd.read_csv(val_data, delimiter="\t")

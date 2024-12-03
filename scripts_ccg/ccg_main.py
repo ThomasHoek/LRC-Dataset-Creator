@@ -1,4 +1,3 @@
-from math import comb
 import re
 import ujson
 from dataclasses import dataclass
@@ -71,7 +70,7 @@ word_list: dict[str, str] = {
 np_parent_lst = [r"n", r"n/n", "n/pp", r"n\n", "n\n", "n/n"]
 verb_reject_lst = ["is", "was", "be", "have", "has", "been", "were", "are"]
 
-VB_list = [r"VB", r"VBD",r"VBG",r"VBN", r"VBP", r"VBZ"]
+VB_list = [r"VB", r"VBD", r"VBG", r"VBN", r"VBP", r"VBZ"]
 
 #  Subtree lists
 tree_tags = {r"IN": "phrasal_IN"}
@@ -123,8 +122,10 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
     child_check: Callable[[tree], bool] = lambda x_lamb: x_lamb.syn_type not in np_parent_lst
 
     # FIXME: config file
+    phrase_size = 3
     max_size = 4
-    CONJ_setting = True
+    CONJ_setting = False
+    IN_setting = False
 
     extra_subtree: dict[tree, str] = {}
     # ========= LEAVES =========
@@ -137,7 +138,7 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
 
         parent_tree = word.parent
         # weird fix for IN parts
-        if word.POS in tree_tags:
+        if IN_setting and word.POS in tree_tags:
             while parent_tree.parent_check() and parent_tree.parent.syn_type in np_parent_lst:
                 parent_tree = parent_tree.get_parent_tree()
             extra_subtree[parent_tree] = tree_tags[word.POS]
@@ -147,8 +148,9 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
             if not parent_tree.length_check(max_size):
                 extra_subtree[parent_tree.get_parent_tree()] = "NN_CONJ"
 
+    # =========== TREES ============
     for x in tree_inp.gen_subtrees():
-        if x.length_check(max_size):
+        if x.length_check(phrase_size):
             continue
 
         # TODO: properly implement a parent check with theory. For now keep all.
@@ -157,7 +159,7 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
         if x.parent_check() and x not in extra_subtree:
             if x.parent.syn_type in ccg_allowed and x not in extra_subtree:
                 if not x.parent.tree_recursive(child_check):
-                    if not x.parent.length_check(max_size):
+                    if not x.parent.length_check(phrase_size):
                         continue
 
         # NER CHECK
@@ -293,11 +295,12 @@ if __name__ == "__main__":
 
     print_info = args.v
 
-    if "SICK" in dataset or "SNLI_5_anno" in dataset:
+    print(dataset)
+    if "SICK" in dataset or "SNLI" in dataset:
         # TODO, update path
-        ccgfiles = glob.glob(f"datasets/{dataset}/*_ccg.pl")
+        ccgfiles = glob.glob(f"datasets_ccg/{dataset}/*_ccg.pl")
     else:
-        ccgfiles = glob.glob(f"datasets/{dataset}/*_cc_ccg.pl")
+        ccgfiles = glob.glob(f"datasets_ccg/{dataset}/*_cc_ccg.pl")
 
     print(ccgfiles)
     assert ccgfiles
@@ -324,7 +327,7 @@ if __name__ == "__main__":
 
         if "SICK" in dataset:
             sen_open = open(file.replace("_ccg.pl", "_sen.pl"), "r")
-        elif "SNLI_5_anno" in dataset:
+        elif "SNLI" in dataset:
             sen_open = open(file.replace("_ccg.pl", "_sen_fix.pl"), "r")
         else:
             sen_open = open(file.replace("_cc_ccg.pl", "_sen.pl"), "r")
@@ -350,10 +353,14 @@ if __name__ == "__main__":
                 continue
 
             # FIXME: IMPORTANT difference between STR and INT
-            ccg_id, problem_id = re.findall(r"(\d+), (.*?),", line)[0]
+            try:
+                ccg_id, problem_id = re.findall(r"(\d+), (.*?),", line)[0]
 
-            ccg_id = int(ccg_id)
-            problem_id = int(problem_id)
+                ccg_id = int(ccg_id)
+                problem_id = int(problem_id)
+            except ValueError as e:
+                print(line)
+                raise ValueError(e)
 
             if ccg_id in all_trees:
                 if problem_id in problem_tuple_dict:

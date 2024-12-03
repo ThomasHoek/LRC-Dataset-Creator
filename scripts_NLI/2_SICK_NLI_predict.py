@@ -148,7 +148,7 @@ dir_path = str(os.path.dirname(os.path.realpath(__file__)))
 if part == "all":
     files_found = glob.glob(f"{dir_path}/../lex_preds/{dataset}/NLI/templates/*.tsv")
     for i in files_found:
-        str_part = re.findall("templates/([A-z]*).tsv", i)[0]
+        str_part = re.findall("templates/([A-z1-9]*).tsv", i)[0]
         print(str_part)
         dataset_NLI = open(i, "r")
         csvreader = csv.DictReader(dataset_NLI, delimiter="\t")

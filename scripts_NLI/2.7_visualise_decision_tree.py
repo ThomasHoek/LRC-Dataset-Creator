@@ -15,14 +15,12 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report, ConfusionMatrixDisplay
 
 
-# train_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_train.tsv"
-# val_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_validation.tsv"
+dataset = "merged_LRC_words"
+data_name = "tasksource_full"
+test_data = f"lex_preds/{dataset}/NLI/pred/inter/predictions_test.tsv"
+test_info = f"datasets_original/{dataset}/test.tsv"
 
-
-test_data = "lex_preds/merged_LRC_words/NLI/pred/inter/predictions_test.tsv"
-test_info = "datasets/merged_LRC_words/test.tsv"
-
-model_dir = "models/NLI/tasksource_full/model.pkl"
+model_dir = f"models/NLI/{data_name}/model.pkl"
 
 with open('scripts_NLI/templates.json') as json_data:
     SNLI_templates_json: list[dict[str, str]] = json.load(json_data)
@@ -67,7 +65,7 @@ dot_data_small = tree.export_graphviz(clf,
                                 filled=True, rounded=True,
                                 special_characters=True).replace("\n", "")
 graph_small = pydotplus.graph_from_dot_data(dot_data_small)
-graph_small.write_pdf('models/NLI/tasksource_full/tree_part.pdf')
+graph_small.write_pdf(f'models/NLI/{data_name}/tree_part.pdf')
 
 dot_data_full: str = tree.export_graphviz(clf,
                                 # out_file='models/NLI/tasksource_full/tree_full.png',
@@ -82,11 +80,11 @@ di_phrase = 'digraph Tree {node [shape=box, style="filled, rounded", color="blac
 di_phrase_replace = 'digraph Tree {graph [nodesep=0.1]; node [width=0.1, margin=0.1, shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;'
 dot_data_full = dot_data_full.replace(f'{di_phrase}',
                                       f'{di_phrase_replace} ranksep = 2 ; ')
-with open("models/NLI/tasksource_full/tree_full2.txt", "w") as text_file:
+with open(f"models/NLI/{data_name}/tree_full2.txt", "w") as text_file:
     text_file.write(dot_data_full)
     
 graph_full = pydotplus.graph_from_dot_data(dot_data_full)
-graph_full.write_pdf('models/NLI/tasksource_full/tree_full2.pdf')
+graph_full.write_pdf(f'models/NLI/{data_name}/tree_full2.pdf')
 
 
 # ====================================================
@@ -235,5 +233,4 @@ for decision_path in decision_paths:
 
         node.set('label', '<br/>'.join(labels))
 
-filename = 'models/NLI/tasksource_full/tree_single.pdf'
-graph.write_pdf(filename)
+graph.write_pdf(f'models/NLI/{data_name}/tree_single.pdf')
