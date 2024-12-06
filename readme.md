@@ -96,6 +96,8 @@ lex_preds
 results
 └── [dataset]                      
     │
+    ├── abduction                           # Results for training Langpro with abduction
+    │
     ├── base                                # Standard LangPro Training
     │
     ├── LRC                                 # Results LangPro which includes induced lexical relation
