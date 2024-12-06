@@ -3,7 +3,7 @@ import ujson
 from dataclasses import dataclass
 import ccg_parse
 from ccg_class import tree, leaf
-from typing import Callable, Optional
+from typing import Any, Callable, Optional
 import csv
 import os
 
@@ -28,11 +28,8 @@ class phrase_pair:
     lemma_left: Optional[str] = None
     lemma_right: Optional[str] = None
 
-# import iso3166
-# FIXME: dont filter country NERS?
 
-# FIXME : lowercase check
-#  update to compatible list
+#  list used to find POS TAGS
 word_list: dict[str, str] = {
     r"JJ": "phrasal_JJ",
 
@@ -66,7 +63,7 @@ word_list: dict[str, str] = {
 }
 
 # acceptable parents for N's
-# TODO: allow NP, but not as LAST parent. Do double parent check if NP -> if typeraised back to N or used conj 
+# TODO: allow NP, but not as LAST parent. Do double parent check if NP -> if typeraised back to N or used conj
 np_parent_lst = [r"n", r"n/n", "n/pp", r"n\n", "n\n", "n/n"]
 verb_reject_lst = ["is", "was", "be", "have", "has", "been", "were", "are"]
 
@@ -76,9 +73,6 @@ VB_list = [r"VB", r"VBD", r"VBG", r"VBN", r"VBP", r"VBZ"]
 tree_tags = {r"IN": "phrasal_IN"}
 ccg_allowed = {r"n": "NP"}
 
-# Original snipet from country info.
-# country_long_lst: list[str] = list(iso3166.countries_by_name) + list(iso3166.countries_by_alpha2) + list(iso3166.countries_by_alpha3)
-
 
 def to_tree(ccg_inp: list[str]) -> dict[int, tree]:
     """Parses list of CCG strings into a dict of trees. Dict key is CCG num."""
@@ -87,9 +81,22 @@ def to_tree(ccg_inp: list[str]) -> dict[int, tree]:
 
 
 def type_mix(type_1: str, type_2: str, allow_mix: bool = False) -> bool:
+    """
+    type_mix Basic function to determine if two types are allowed to be mixed
+
+    Args:
+        type_1 (str): merge tag
+        type_2 (str): tag
+        allow_mix (bool, optional): General outer parameter to allow type mixing. Defaults to False.
+
+    Returns:
+        bool: if the type is allowed to be mixed
+    """
+    # TODO: add to config
+    combs = [("VP", "NP")]
+
     if allow_mix:
         # Rules for extra allowed mixes | Used for PPDB
-        combs = [("VP", "NP")]
         return (type_1, type_2) in combs or (type_2, type_1) in combs
     return False
 
@@ -104,9 +111,7 @@ def tree_to_phrase(tree_inp: tree, lemma_check: bool) -> list[phrase_info]:
         lemma_check (bool): Adds lemmas to the output
 
     Returns:
-        list[tuple[str, str, str]: list of (merge category, specific category, sentence)
-        or
-        list[tuple[str, str, str, str]: list of (merge category, specific category, sentence, lemma)
+        list[phrase_info]: all phrases found within a tree
     """
     global dataset
     collected: list[phrase_info] = []  # | tuple[str, str, bool, str]] = []
@@ -210,6 +215,20 @@ def phrase_to_combos(
     listright: list[phrase_info],
     global_comb_counter: int
 ) -> tuple[list[phrase_pair], int]:
+    """
+    phrase_to_combos combines phrases
+
+    Using the created phrases from phrase info datatype, combines them into the new datatype phrase pair
+
+    Args:
+        problem_num (int): ID of the problem
+        listleft (list[phrase_info]): list of phrases from premise
+        listright (list[phrase_info]): List of phrases from hypothesis
+        global_comb_counter (int): Global counter to keep track of total combinations
+
+    Returns:
+        tuple[list[phrase_pair], int]: List of combined phrases stored in phrase pairs
+    """
 
     combos: list[phrase_pair] = []
     # global duplicate set
@@ -231,9 +250,7 @@ def phrase_to_combos(
                 # skip if itself
                 if left_phrase.sentence == right_phrase.sentence:
                     continue
-                # duplicate function + cleaning should do this?
-                # elif left_phrase.sentence in word_set_l or right_phrase.sentence in word_set_r:
-                #     continue
+
                 # banned verbs
                 elif left_phrase.sentence in verb_reject_lst or right_phrase.sentence in verb_reject_lst:
                     continue
@@ -262,17 +279,6 @@ def phrase_to_combos(
         word_set_l.add(left_phrase.sentence)
         word_set_r = set()
 
-    # if problem_num == 3785:
-    #     for x in listleft:
-    #         print(x)
-    #     print('-------')
-    #     for x in listright:
-    #         print(x)
-    #     print('-------')
-
-    #     for x in combos:
-    #         print(x)
-    #     print('-------')
     return combos, global_comb_counter
 
 
@@ -280,7 +286,7 @@ if __name__ == "__main__":
     import glob
     import argparse
 
-    parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
+    parser = argparse.ArgumentParser(description="CCG file used to split trees into relevant lexical pairs")
     parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
     parser.add_argument("-d", required=False, default=True, help="disable duplicates and write to meta file")
     parser.add_argument("-c", required=False, default=False, help="allow type combinations")
@@ -309,6 +315,7 @@ if __name__ == "__main__":
     # TODO, update path
     os.makedirs(f"lex_pairs/{dataset}", exist_ok=True)
 
+    # ------------ Cycle files ------------
     for file in ccgfiles:
         if "fracas" in file:
             continue
@@ -321,6 +328,7 @@ if __name__ == "__main__":
         file_name = file.rsplit(r"/", 1)[-1].replace(".pl", "")
         print(file_name)
 
+        # ------------ read files ------------
         ccg_open = open(file, "r")
         ccg_data: list[str] = ccg_open.readlines()
         ccg_open.close()
@@ -335,14 +343,16 @@ if __name__ == "__main__":
         sen_data: list[str] = sen_open.readlines()
         sen_open.close()
 
+        # ------------ remove meta data ------------
         # skip until first CCG line
         counter = 0
         for counter, line in enumerate(ccg_data):
             if line[:3] == "ccg":
                 break
-
+        
         ccg_data = ccg_data[counter:]
 
+        # ------------ convert to dictionary containing info ------------
         all_trees: dict[int, tree] = to_tree(ccg_data)
         problem_tuple_dict: dict[int, tuple[tree, tree]] = {}
         for line in sen_data:
@@ -371,6 +381,7 @@ if __name__ == "__main__":
                 if print_info:
                     print(f"CCG Num: {ccg_id}  not found in dict")
 
+        # ------------ output files ------------
         tsvfile = open(f"lex_pairs/{dataset}/{file_name}.tsv", "w+", newline="")
         writer = csv.writer(tsvfile, delimiter="\t", lineterminator="\n")
         if lemma_check:
@@ -378,34 +389,43 @@ if __name__ == "__main__":
         else:
             writer.writerow(["CombID", "ProbID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2"])
 
+        # ------------ Main functionality ------------
         global_comb_counter = 1
+
+        # empty before list to prevent errors when input goes wrong after first file
+        combs: list[phrase_pair] = []
+
         for i in problem_tuple_dict.keys():
             try:
                 combs = []
-                # Prem and Hypo trees
+
+                # Get Prem and Hypo trees
                 left, right = problem_tuple_dict[i]
 
-                # to individual phrases
+                # Get phrases
                 left_phrases: list[phrase_info] = tree_to_phrase(left, lemma_check)
                 right_phrases: list[phrase_info] = tree_to_phrase(right, lemma_check)
 
-                # merge phrases
+                # Merge phrases
                 if len(left_phrases) and len(right_phrases):  # skip if empty
                     combs, global_comb_counter = phrase_to_combos(i, left_phrases, right_phrases, global_comb_counter)
 
             except TypeError:
+                # Happens a CCG tree only contains one pair, AKA broken problem
                 if print_info:
                     print(f"CCG num {i} is broken. Is tuple: {type(problem_tuple_dict[i])}")
                 continue
 
+            # write combs to file
             if combs:
                 for cw in combs:
-                    comb_str = [cw.CombID, cw.ProbID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.W1, cw.W2]
+                    comb_str: list[Any] = [cw.CombID, cw.ProbID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.W1, cw.W2]
                     if lemma_check:
                         comb_str += [cw.lemma_left, cw.lemma_right]
 
                     writer.writerow(comb_str)
 
+        # ------------ write meta data ------------
         if duplicate_check:
             # remove singles
             clean_duplicate_dict = {f'{k[0].replace(" ", "+=+")}_*_{k[1].replace(" ", "+=+")}': v
@@ -414,6 +434,7 @@ if __name__ == "__main__":
             # write all
             os.makedirs(f"lex_pairs/{dataset}/meta", exist_ok=True)
             with open(f"lex_pairs/{dataset}/meta/{file_name}.json", "w+", newline="") as jsonfile:
+                # ujson faster than regular json lib
                 ujson.dump(clean_duplicate_dict, jsonfile)
 
         print(f"total combinations: {global_comb_counter}")

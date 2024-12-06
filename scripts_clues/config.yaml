@@ -1,0 +1,21 @@
+---
+datadir: datasets_original/
+modeldir: models/clues/
+total_repetitions: 1
+batch_size: 32
+warm_up: 0.1
+total_epochs: 10
+overwrite: 0
+
+bless:
+    train_template: "' <W1> ' <SEP> ' <W2> '"
+    test_template: "' <W1> ' <SEP> ' <W2> '"
+    dataset: merged_LRC_words/
+    train_file: train.tsv
+    val_file: validation.tsv
+    test_file: test.tsv
+    models:
+        - roberta:
+              path: roberta-base
+    params: None
+    dict: {}

@@ -3,7 +3,7 @@ import argparse
 import pandas as pd
 import math
 
-parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
+parser = argparse.ArgumentParser(description="Quickfix file for when error occurred.")
 parser.add_argument("--part", required=True, metavar="FILES", help="Dataset to test on")
 parser.add_argument("--output", required=True, metavar="FILES", help="Dataset to test on")
 args = parser.parse_args()

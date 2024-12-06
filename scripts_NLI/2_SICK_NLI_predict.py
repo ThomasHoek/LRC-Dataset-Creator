@@ -22,7 +22,7 @@ batchsize = 64
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(device)
 
-parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
+parser = argparse.ArgumentParser(description="Uses torch to predict the models")
 parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
 parser.add_argument("--part", required=True, metavar="FILES", help="Part of dataset to test on")
 parser.add_argument("--output", required=True, metavar="FILES", help="Dataset to test on")
@@ -35,6 +35,7 @@ preds_bool = args.preds
 part = args.part
 baseline = args.baseline
 
+# TODO: to config file
 model_name = "sileod/deberta-v3-base-tasksource-nli"
 model_str = model_name.replace(r"/", "_")
 

@@ -1,0 +1,22 @@
+[
+    {
+        "prem": "A NP is outside near a campfire at night",
+        "hyp": "There is a NP outside"
+    },
+    {
+        "prem": "A bald man standing to the side of a NP",
+        "hyp": "The man stands near a NP."
+    },
+    {
+        "prem": "A kid fetches a NP by a tree in the yard.",
+        "hyp": "a kid gets a NP"
+    },
+    {
+        "prem": "A green frog buys a NP from a stand.",
+        "hyp": "There is a green frog buying a NP"
+    },
+    {
+        "prem": "A NP",
+        "hyp": "A NP"
+    }
+]

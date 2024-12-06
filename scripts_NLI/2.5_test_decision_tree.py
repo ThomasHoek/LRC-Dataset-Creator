@@ -1,7 +1,6 @@
 import re
 import json
 import pydotplus
-from typing import Iterable
 import pandas as pd
 import matplotlib.pyplot as plt
 from ast import literal_eval

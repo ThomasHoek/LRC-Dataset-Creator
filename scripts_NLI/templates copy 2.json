@@ -1,0 +1,18 @@
+[
+    {
+        "prem": "A bald man standing to the side of a NP",
+        "hyp": "The man stands near a NP."
+    },
+    {
+        "prem": "A NP is outside near a campfire at night",
+        "hyp": "There is a NP outside"
+    },
+    {
+        "prem": "A NP",
+        "hyp": "A NP"
+    },
+    {
+        "prem": "NP",
+        "hyp": "NP"
+    }
+]

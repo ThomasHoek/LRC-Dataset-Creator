@@ -4,7 +4,6 @@ from collections.abc import Iterator
 import re
 
 
-#  reworked to proper terms and better  documentation
 class leaf:
     def __init__(self, raw_str: str, depth: int, tree_ID: int, parent: tree) -> None:
         """

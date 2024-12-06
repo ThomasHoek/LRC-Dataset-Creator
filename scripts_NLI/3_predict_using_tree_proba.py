@@ -15,7 +15,7 @@ with open(model_dir, 'rb') as f:
     clf = pickle.load(f)
     clf= clf.best_estimator_
 
-parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
+parser = argparse.ArgumentParser(description="File used to create a prolog file from lex_preds using a confidence threshhold.")
 parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
 parser.add_argument("--part", required=True, metavar="FILES", help="Part of dataset to test on")
 parser.add_argument("--threshhold", required=False, default=0.5, metavar="FILES", help="threshhold for decisions")
@@ -142,17 +142,17 @@ def make_files(word_info_df: pd.DataFrame, prediction_df: pd.DataFrame, str_part
     word_info_df[["W1", "W2", "pred"]].to_csv(f"lex_KB/{dataset}/NLI/predictions/{str_part}_proba_{thresh_hold}.tsv", sep="\t")
     final = word_info_df.apply(get_prolog_sen, axis=1)
 
-    print("normal")
+    print(f"normal {thresh_hold}")
     final.dropna(inplace=True)
     final.drop_duplicates(inplace=True)
     final.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_proba_{thresh_hold}.pl', sep='\n', index=False, header=False)
 
-    print("lemma")
+    print(f"lemma {thresh_hold}")
     final_lemma = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=False), axis=1)
     final_lemma.dropna(inplace=True)
     final_lemma.to_csv(f'lex_KB/{dataset}/NLI/final/{str_part}_lemma_proba_{thresh_hold}.pl', sep='\n', index=False, header=False)
 
-    print("lemma_idx")
+    print(f"lemma_idx {thresh_hold}")
     final_lemma_idx = word_info_df.apply(lambda x: get_prolog_sen(x, lemma=True, index=True), axis=1)
     try:
         final_lemma_idx = add_duplicates(f"lex_pairs/{dataset}/meta/{dataset}_{str_part}_ccg.json", word_info_df, final_lemma_idx)

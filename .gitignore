@@ -6,3 +6,5 @@ my_checkpoints/*
 scripts_hidden
 models/
 debug
+lex_pairs/*
+lex_preds/*

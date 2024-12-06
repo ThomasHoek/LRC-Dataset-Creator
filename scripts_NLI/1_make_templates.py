@@ -9,7 +9,7 @@ def to_template(SNLI_templates: list[tuple[str, str]], ID: str, scrapeID: str, w
         yield f"{ID}\t{scrapeID}\t{templatenum}\t{w1}\t{w2}\t{prem_2}\t{hyp_1}\n"
 
 
-def get_results(file_path, part):
+def get_results(file_path: str, part: str):
     datafile = open(file_path, "r+")
 
     os.makedirs(f"{dir_path}/../lex_preds/{dataset}/NLI/templates/", exist_ok=True)
@@ -48,14 +48,13 @@ def get_results_baseline(file_path: str, part: str):
 
     insertfile.write(f"CombID\ttemplatenum\thead\ttail\tprem\thyp\tlabel\n")
 
-    # LIMIT TO ~500 problems to test | snellius solution.
     counter = 0
     if part == "ppdb_scrape_disjoint":
         for csvline in csv.DictReader(datafile, delimiter="\t"):
             for template_line in to_template_baseline(SNLI_templates, counter, csvline["w1"], csvline["w2"], csvline['label']):
                 insertfile.write(template_line)
             counter += 1
-    else:    
+    else:
         for csvline in [x.rstrip() for x in datafile.readlines()]:
             # laugh	rack	disjoint	cog | RANDOM
             w1, w2,label, _  = csvline.split("\t")
@@ -74,17 +73,18 @@ if __name__ == "__main__":
     import os
     import numpy as np
 
-    parser = argparse.ArgumentParser(description="Part used to create the context from. Train, Test or Trial.")
+    parser = argparse.ArgumentParser(description="File used to create templates from lexical pairs.")
     parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
     parser.add_argument("--part", required=True, metavar="FILES", help="Part of dataset to test on")
     parser.add_argument("--limit", required=False, metavar="FILES", help="Set an int limit")
-    parser.add_argument("--baseline", required=False, default=False, metavar="FILES", help="Set an int limit")
+    parser.add_argument("--baseline", required=False, default=False, metavar="FILES", help="boolean flag if the dataset has a different format, eg baselines")
     args = parser.parse_args()
     dataset = args.dataset
     part = args.part
     limit: float | None = args.limit
     baseline: bool = args.baseline
 
+    # global var
     if limit is None:
         limit = np.inf
     else:

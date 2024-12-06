@@ -18,7 +18,7 @@
 :- use_module('../llf/ner', [ne_ccg/2]).
 :- use_module('../llf/ttterm_preds', [
 	extract_lex_NNPs_ttTerms/3, ttTerms_same_type/2,
-	normalize_lexicon/2, token_norm_ttTerm/3
+	normalize_lexicon/2, token_norm_ttTerm/3, change_np_to_s/4
 	]).
 % :- use_module('../knowledge/ind_kb', [add_ind_kb/2, induced_rel/1]).
 
@@ -630,8 +630,8 @@ problem_to_ttTerms(Align, Prob_Id, Prems, Hypos, Align_Prems, Align_Hypos, KB) :
 	( debMode('prlex') -> report([Lexicon]); true),
 	%( debMode('subWN') -> subWN_from_wn(Lexicon); kb_from_wn(Lexicon, KB) ),
 	( debMode('no_wn') -> KB0 = []; kb_from_wn(Lexicon, KB0) ), % extract relevant semantic relations from WN
-	( debMode('ind_kb') -> add_ind_kb(Lexicon, Prob_Id, KB0, KB); KB = KB0 ),
-	( debMode('pr_kb') -> report(['KB: ', KB]); true ),
+	( debMode('ind_kb') -> add_ind_kb(Lexicon, KB0, KB) ; debMode('ind_kb_index') -> add_ind_kb_index(Lexicon, Prob_Id, KB0, KB) ; KB = KB0 ),
+	( debMode('pr_kb') -> report([Prob_Id, ' KB: ', KB]); true ),
 	( debMode('no_gq_llfs') ->
 		(Prems, Hypos) = (PremCCGTerms, HypoCCGTerms)
 	; findall(Y, 	(member(X, PremCCGTerms), once_gen_quant_tt(X, Y)), 	Prems),
@@ -678,8 +678,12 @@ problem_to_corrected_terms(PID, PremCorrTrees, HypoCorrTrees) :-
 		sen_id(SID, PID, 'h', _, _),
 		sen_id_to_base_ttterm(SID, Tree)
 	), HypoTrees),
-	maplist(correct_ttterm, PremTrees, PremCorrTrees),
-	maplist(correct_ttterm, HypoTrees, HypoCorrTrees).
+	% match sentence categories if possible with inserting there_is
+	change_np_to_s(PremTrees, HypoTrees, PremTrees_S, HypoTrees_S),
+	% (PremTrees_S, HypoTrees_S) = (PremTrees, HypoTrees),
+	% further correct terms
+	maplist(correct_ttterm, PremTrees_S, PremCorrTrees),
+	maplist(correct_ttterm, HypoTrees_S, HypoCorrTrees).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 :- multifile sen_id_to_base_ttterm/2.
@@ -689,9 +693,19 @@ sen_id_to_base_ttterm(SID, TTterm) :-
 	ccg(SID, Tree), !,
 	ccgIDTree_to_ccgIDTerm(ccg(_,Tree), ccg(_,TTterm)).
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Add new induced relations to KB while filtering with relevant lexicon 
-add_ind_kb(LexPos, Prob_Id, KB0, KB) :-
+add_ind_kb(LexPos, KB0, KB) :-
+	maplist([(L,_), L]>>true, LexPos, Lex0), 
+	list_to_ord_set(Lex0, Lex),
+    findall(Rel, ( ind_rel(Rel), 
+				 rel_to_lex(Rel, Rel_Lex),
+				 ord_subset(Rel_Lex, Lex)
+			), New_Rels),
+	ord_union(KB0, New_Rels, KB). 
+
+add_ind_kb_index(LexPos, Prob_Id, KB0, KB) :-
 	maplist([(L,_), L]>>true, LexPos, Lex0), 
 	list_to_ord_set(Lex0, Lex),
     findall(Rel, ( ind_rel(Rel, Prob_Id), 

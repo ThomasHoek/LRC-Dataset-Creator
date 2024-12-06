@@ -1,1 +1,0 @@
-# CCG to LRC pipeline

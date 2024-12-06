@@ -1,0 +1,14 @@
+[
+    {
+        "prem": "I saw NP",
+        "hyp": "NP exists"
+    },
+    {
+        "prem": "A NP",
+        "hyp": "A NP"
+    },
+    {
+        "prem": "NP",
+        "hyp": "NP"
+    }
+]

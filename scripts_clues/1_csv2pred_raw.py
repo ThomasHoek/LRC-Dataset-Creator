@@ -3,7 +3,6 @@ import glob
 import torch
 from torch import nn
 from transformers import (AutoModelForSequenceClassification, AutoTokenizer, Trainer, TrainingArguments)
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
 import matplotlib.pyplot as plt
 from datasets import Dataset
 import os
@@ -19,7 +18,9 @@ args = parser.parse_args()
 dataset = args.dataset
 part = args.part
 
+# make parser arg for model path? Use config file?
 model_path = f"models/clues/roberta-bless/"
+
 
 def preprocess_function(rows, tokenizer):
     """tokenize the column 'verb' of the rows"""
@@ -27,6 +28,7 @@ def preprocess_function(rows, tokenizer):
     return inputs
 
 
+# To template
 def verb_row(row, template, tokenizer):
     w1 = str(row["head"])
     w2 = str(row["tail"])
@@ -69,10 +71,6 @@ def get_results(dataframe_path: str, part: str):
     dataframe_inp["prob"] = pd.Series(probabilities_max.values.numpy())
 
     os.makedirs(f"lex_preds/{dataset}/clues/", exist_ok=True)
-    # os.makedirs(f"Results/{dataset}/clues/{part}/all", exist_ok=True)
-    # os.makedirs(f"Results/{dataset}/clues/{part}/add", exist_ok=True)
-    # os.makedirs(f"Results/{dataset}/clues/{part}/org", exist_ok=True)
-
     dataframe_inp.to_csv(f"lex_preds/{dataset}/clues/predicts_{part}.tsv", sep="\t", index=False)
 
 

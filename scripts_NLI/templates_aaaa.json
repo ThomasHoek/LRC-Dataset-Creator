@@ -1,0 +1,12 @@
+[
+    {"prem": "There are NP in the rain", "hyp": "The NP is wet"},
+    {"prem": "The NP", "hyp": "The NP"},
+    {"prem": "NP", "hyp": "NP"},
+    {"prem": "There is the NP", "hyp": "There is the NP"},
+    {"prem": "A NP is outside near a campfire at night", "hyp": "There is a NP outside"},
+    {"prem": "NP is walking outside", "hyp": "NP is outside"},
+    {"prem": "The NP is happy", "hyp": "The NP is happy"},
+    {"prem": "I am looking at NP", "hyp": "NP is looked at"},
+    {"prem": "We found NP", "hyp": "Someone found NP"},
+    {"prem": "NP was found","hyp": "NP was found by someone"}
+]
