@@ -97,6 +97,11 @@ def add_duplicates(meta_file: str, main_df: pd.DataFrame, existing_series: pd.Se
 
         # should be Series now, but still in DF format.
         if len(problem) != 1:
+            if w1_org == "None" or w2_org == "None":
+                print("BUG: None found, skipping relation")
+            else:
+                print("BUG: problem not len 1")
+                print(dup, w1_org, w2_org)
             continue
 
         # convert to series hack

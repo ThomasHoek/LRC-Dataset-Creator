@@ -1,24 +1,15 @@
-def to_template(SNLI_templates_json: dict[str, list[tuple[str, str]]], ID: str, scrapeID: str, cat_type: str, w1: str, w2: str):
-    SNLI_templates: list[tuple[str, str]]
-    match cat_type:
-        case "NN" | "NOUN":
-            SNLI_templates = SNLI_templates_json["NN"]
-        case "VB" | "VERB":
-            SNLI_templates = SNLI_templates_json["VB"]
-        case _:
-            SNLI_templates = SNLI_templates_json["NN"]
-
+def to_template(SNLI_templates: list[tuple[str, str]], ID: str, scrapeID: str, w1: str, w2: str):
     for templatenum, (prem, hyp) in enumerate(SNLI_templates):
-        prem_1 = prem.replace("X", w1)
-        prem_2 = prem.replace("X", w2)
+        prem_1 = prem.replace("NP", w1)
+        prem_2 = prem.replace("NP", w2)
 
-        hyp_1 = hyp.replace("X", w1)
-        hyp_2 = hyp.replace("X", w2)
+        hyp_1 = hyp.replace("NP", w1)
+        hyp_2 = hyp.replace("NP", w2)
         yield f"{ID}\t{scrapeID}\t{templatenum}\t{w1}\t{w2}\t{prem_1}\t{hyp_2}\n"
         yield f"{ID}\t{scrapeID}\t{templatenum}\t{w1}\t{w2}\t{prem_2}\t{hyp_1}\n"
 
 
-def get_results(file_path: str, part: str, lemma: bool = False):
+def get_results(file_path: str, part: str):
     datafile = open(file_path, "r+")
 
     os.makedirs(f"{dir_path}/../lex_preds/{dataset}/NLI/templates/", exist_ok=True)
@@ -29,10 +20,7 @@ def get_results(file_path: str, part: str, lemma: bool = False):
     total_counter = 0
     for csvline in csv.DictReader(datafile, delimiter="\t"):
         counter = 0
-
-        word_heads = csvline["L1"] if lemma else csvline["W1"]
-        word_tails =  csvline["L2"] if lemma else csvline["W2"] 
-        for template_line in to_template(SNLI_templates_json, csvline["CombID"], csvline["ProbID"], csvline["merge_tag"], word_heads, word_tails):
+        for template_line in to_template(SNLI_templates, csvline["CombID"], csvline["ProbID"], csvline["W1"], csvline["W2"]):
             insertfile.write(template_line)
             counter += 1
             total_counter += 1
@@ -41,22 +29,13 @@ def get_results(file_path: str, part: str, lemma: bool = False):
             break
 
 
-def to_template_baseline(SNLI_templates_json: dict[str, list[tuple[str, str]]], ID: str,  cat_type: str, w1: str, w2: str, label: str):
-    SNLI_templates: list[tuple[str, str]]
-    match cat_type:
-        case "NN" | "NOUN":
-            SNLI_templates = SNLI_templates_json["NN"]
-        case "VB" | "VERB":
-            SNLI_templates = SNLI_templates_json["VB"]
-        case _:
-            SNLI_templates = SNLI_templates_json["NN"]
-
+def to_template_baseline(SNLI_templates: list[tuple[str, str]], ID: str, w1: str, w2: str, label: str):
     for templatenum, (prem, hyp) in enumerate(SNLI_templates):
-        prem_1 = prem.replace("X", w1)
-        prem_2 = prem.replace("X", w2)
+        prem_1 = prem.replace("NP", w1)
+        prem_2 = prem.replace("NP", w2)
 
-        hyp_1 = hyp.replace("X", w1)
-        hyp_2 = hyp.replace("X", w2)
+        hyp_1 = hyp.replace("NP", w1)
+        hyp_2 = hyp.replace("NP", w2)
         yield f"{ID}\t{templatenum}\t{w1}\t{w2}\t{prem_1}\t{hyp_2}\t{label}\n"
         yield f"{ID}\t{templatenum}\t{w1}\t{w2}\t{prem_2}\t{hyp_1}\t{label}\n"
 
@@ -72,14 +51,14 @@ def get_results_baseline(file_path: str, part: str):
     counter = 0
     if part == "ppdb_scrape_disjoint":
         for csvline in csv.DictReader(datafile, delimiter="\t"):
-            for template_line in to_template_baseline(SNLI_templates_json, counter, False, csvline["w1"], csvline["w2"], csvline['label']):
+            for template_line in to_template_baseline(SNLI_templates, counter, csvline["w1"], csvline["w2"], csvline['label']):
                 insertfile.write(template_line)
             counter += 1
     else:
         for csvline in [x.rstrip() for x in datafile.readlines()]:
             # laugh	rack	disjoint	cog | RANDOM
-            w1, w2,label, _, cat_type  = csvline.split("\t")
-            for template_line in to_template_baseline(SNLI_templates_json, counter, cat_type, w1, w2, label):
+            w1, w2,label, _  = csvline.split("\t")
+            for template_line in to_template_baseline(SNLI_templates, counter, w1, w2, label):
                 insertfile.write(template_line)
             counter += 1
             # if counter > 5000:
@@ -98,13 +77,11 @@ if __name__ == "__main__":
     parser.add_argument("--dataset", required=True, metavar="FILES", help="Dataset to test on")
     parser.add_argument("--part", required=True, metavar="FILES", help="Part of dataset to test on")
     parser.add_argument("--limit", required=False, metavar="FILES", help="Set an int limit")
-    parser.add_argument("--lemma", required=False, default=False, metavar="FILES", help="Uses lemma's instead of words")
     parser.add_argument("--baseline", required=False, default=False, metavar="FILES", help="boolean flag if the dataset has a different format, eg baselines")
     args = parser.parse_args()
     dataset = args.dataset
     part = args.part
     limit: float | None = args.limit
-    lemma: bool = args.lemma
     baseline: bool = args.baseline
 
     # global var
@@ -117,6 +94,7 @@ if __name__ == "__main__":
     with open(f'{dir_path}/templates.json') as json_data:
         SNLI_templates_json: list[dict[str, str]] = json.load(json_data)
         json_data.close()
+    SNLI_templates = [(line["prem"], line["hyp"]) for line in SNLI_templates_json]
 
     print(f"{dir_path}/../lex_pairs/{dataset}/")
     if part == "all":
@@ -124,12 +102,12 @@ if __name__ == "__main__":
         print(files_found)
         for i in files_found:
             part_strip = i.split("/")[-1].replace("_ccg.tsv", "").replace(f"{dataset}_", "")
-            get_results(i, part_strip, lemma)
+            get_results(i, part_strip)
 
     else:
         try:
             files_found = glob.glob(f"{dir_path}/../lex_pairs/{dataset}/{dataset}_{part}_ccg.tsv")
-            get_results(files_found[0], part, lemma)
+            get_results(files_found[0], part)
         except IndexError:
             if baseline and len(files_found) == 0:
                 files_found = glob.glob(f"datasets_original/{dataset}/{part}.tsv")
@@ -140,7 +118,7 @@ if __name__ == "__main__":
                 files_found = glob.glob(f"lex_pairs/{dataset}/{part}_ccg.tsv")
                 print(files_found)
                 assert len(files_found) == 1
-                get_results(files_found[0], part, lemma)
-
+                get_results(files_found[0], part)
+                
             else:
                 raise IndexError

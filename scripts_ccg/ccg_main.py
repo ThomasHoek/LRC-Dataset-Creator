@@ -34,30 +34,30 @@ word_list: dict[str, str] = {
     r"JJ": "phrasal_JJ",
 
     # 2.	NN	Noun, singular or mass
-    r"NN": "NP",
+    r"NN": "NN",
     # 13.	NNS	Noun, plural
-    r"NNS": "NP",
+    r"NNS": "NN",
     # 14.	NNP	Proper noun, singular
-    r"NNP": "NP",
+    r"NNP": "NN",
     # 15.	NNPS	Proper noun, plural
-    r"NNPS": "NP",
+    r"NNPS": "NN",
 
     # conjunctions
-    r"NN_CONJ": "NP",
+    r"NN_CONJ": "NN",
 
     # # ------- Change to VP | TODO: test effect of VP
     # 27.	VB	Verb, base form
-    r"VB": "VP",
+    r"VB": "VB",
     # 28.	VBD	Verb, past tense
-    r"VBD": "VP",
+    r"VBD": "VB",
     # 29.	VBG	Verb, gerund or present participle
-    r"VBG": "VP",
+    r"VBG": "VB",
     # 30.	VBN	Verb, past participle
-    r"VBN": "VP",
+    r"VBN": "VB",
     # 31.	VBP	Verb, non-3rd person singular present
-    r"VBP": "VP",
+    r"VBP": "VB",
     # 32.	VBZ	Verb, 3rd person singular present
-    r"VBZ": "VP",
+    r"VBZ": "VB",
 
     # r"RB": "VP"
 }
@@ -71,7 +71,7 @@ VB_list = [r"VB", r"VBD", r"VBG", r"VBN", r"VBP", r"VBZ"]
 
 #  Subtree lists
 tree_tags = {r"IN": "phrasal_IN"}
-ccg_allowed = {r"n": "NP"}
+ccg_allowed = {r"n": "NN"}
 
 
 def to_tree(ccg_inp: list[str]) -> dict[int, tree]:
@@ -213,7 +213,8 @@ def phrase_to_combos(
     problem_num: int,
     listleft: list[phrase_info],
     listright: list[phrase_info],
-    global_comb_counter: int
+    global_comb_counter: int,
+    lemma_dup_check: bool = False
 ) -> tuple[list[phrase_pair], int]:
     """
     phrase_to_combos combines phrases
@@ -225,6 +226,7 @@ def phrase_to_combos(
         listleft (list[phrase_info]): list of phrases from premise
         listright (list[phrase_info]): List of phrases from hypothesis
         global_comb_counter (int): Global counter to keep track of total combinations
+        lemma_dup_check (bool): Checker to force distinct lemma's. Defaults to False
 
     Returns:
         tuple[list[phrase_pair], int]: List of combined phrases stored in phrase pairs
@@ -259,12 +261,21 @@ def phrase_to_combos(
                     if left_phrase.lemma in verb_reject_lst or right_phrase.lemma in verb_reject_lst:
                         continue
 
+                    if lemma_dup_check and left_phrase.lemma == right_phrase.lemma:
+                        continue
+
                 if duplicate_check:
                     if (left_phrase.sentence, right_phrase.sentence) in duplicate_dict:
                         duplicate_dict[(left_phrase.sentence, right_phrase.sentence)].append(problem_num)
                         continue
+                    elif lemma_dup_check and (left_phrase.lemma, right_phrase.lemma) in duplicate_dict:
+                        duplicate_dict[(left_phrase.lemma, right_phrase.lemma)].append(problem_num)
+                        continue
                     else:
-                        duplicate_dict[(left_phrase.sentence, right_phrase.sentence)] = [problem_num]
+                        if lemma_dup_check:
+                            duplicate_dict[(left_phrase.lemma, right_phrase.lemma)] = [problem_num]
+                        else:
+                            duplicate_dict[(left_phrase.sentence, right_phrase.sentence)] = [problem_num]
 
                 combo = phrase_pair(global_comb_counter, problem_num, left_phrase.m_category,
                                     left_phrase.s_category, right_phrase.s_category,
@@ -291,6 +302,7 @@ if __name__ == "__main__":
     parser.add_argument("-d", required=False, default=True, help="disable duplicates and write to meta file")
     parser.add_argument("-c", required=False, default=False, help="allow type combinations")
     parser.add_argument("-l", required=False, default=True, help="add Lemma data")
+    parser.add_argument("-l2", required=False, default=False, help="Forced Lemma pairs to be unique")
     parser.add_argument("-v", required=False, default=False, help="verbose")
     args = parser.parse_args()
 
@@ -298,6 +310,14 @@ if __name__ == "__main__":
     duplicate_check = args.d
     allow_mixed = args.c
     lemma_check = args.l
+    lemma_duplicate = args.l2
+    print("Lemma dup check", lemma_duplicate)
+
+    if lemma_duplicate:
+        dataset_out = dataset + "_lemma"
+    else:
+        dataset_out = dataset
+        
 
     print_info = args.v
 
@@ -313,7 +333,7 @@ if __name__ == "__main__":
     ccgfiles.sort()
 
     # TODO, update path
-    os.makedirs(f"lex_pairs/{dataset}", exist_ok=True)
+    os.makedirs(f"lex_pairs/{dataset_out}", exist_ok=True)
 
     # ------------ Cycle files ------------
     for file in ccgfiles:
@@ -382,7 +402,7 @@ if __name__ == "__main__":
                     print(f"CCG Num: {ccg_id}  not found in dict")
 
         # ------------ output files ------------
-        tsvfile = open(f"lex_pairs/{dataset}/{file_name}.tsv", "w+", newline="")
+        tsvfile = open(f"lex_pairs/{dataset_out}/{file_name}.tsv", "w+", newline="")
         writer = csv.writer(tsvfile, delimiter="\t", lineterminator="\n")
         if lemma_check:
             writer.writerow(["CombID", "ProbID", "merge_tag", "W1_tag", "W2_tag", "W1", "W2", "L1", "L2"])
@@ -408,7 +428,9 @@ if __name__ == "__main__":
 
                 # Merge phrases
                 if len(left_phrases) and len(right_phrases):  # skip if empty
-                    combs, global_comb_counter = phrase_to_combos(i, left_phrases, right_phrases, global_comb_counter)
+                    combs, global_comb_counter = phrase_to_combos(i,
+                                                                  left_phrases, right_phrases,
+                                                                  global_comb_counter, lemma_duplicate)
 
             except TypeError:
                 # Happens a CCG tree only contains one pair, AKA broken problem
@@ -419,7 +441,10 @@ if __name__ == "__main__":
             # write combs to file
             if combs:
                 for cw in combs:
-                    comb_str: list[Any] = [cw.CombID, cw.ProbID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.W1, cw.W2]
+                    if lemma_check and lemma_duplicate:
+                        comb_str: list[Any] = [cw.CombID, cw.ProbID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.lemma_left, cw.lemma_right]
+                    else:
+                        comb_str: list[Any] = [cw.CombID, cw.ProbID, cw.merge_tag, cw.W1_tag, cw.W2_tag, cw.W1, cw.W2]
                     if lemma_check:
                         comb_str += [cw.lemma_left, cw.lemma_right]
 
@@ -428,12 +453,13 @@ if __name__ == "__main__":
         # ------------ write meta data ------------
         if duplicate_check:
             # remove singles
+            print("meta pairs", len(duplicate_dict))
             clean_duplicate_dict = {f'{k[0].replace(" ", "+=+")}_*_{k[1].replace(" ", "+=+")}': v
                                     for k, v in duplicate_dict.items() if len(v) > 1}
 
             # write all
-            os.makedirs(f"lex_pairs/{dataset}/meta", exist_ok=True)
-            with open(f"lex_pairs/{dataset}/meta/{file_name}.json", "w+", newline="") as jsonfile:
+            os.makedirs(f"lex_pairs/{dataset_out}/meta", exist_ok=True)
+            with open(f"lex_pairs/{dataset_out}/meta/{file_name}.json", "w+", newline="") as jsonfile:
                 # ujson faster than regular json lib
                 ujson.dump(clean_duplicate_dict, jsonfile)
 

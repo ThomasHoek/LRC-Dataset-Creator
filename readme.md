@@ -157,8 +157,9 @@ scripts_other
 
 ## TODO's
 
-1. Rewrite scripts_ccg/ccg_parse.py using push-down -> update ccg_class regex
-2. Add relevant flowcharts for methods from paper into readme.
-3. Add requirements.txt
-4. Make produce more robust and add produce readme file.
-5. ccg_main config file
+1. make the word "None" workable, causes errors in Pandas for NaN.
+2. Rewrite scripts_ccg/ccg_parse.py using push-down -> update ccg_class regex
+3. Add relevant flowcharts for methods from paper into readme.
+4. Add requirements.txt
+5. Make produce more robust and add produce readme file.
+6. ccg_main config file

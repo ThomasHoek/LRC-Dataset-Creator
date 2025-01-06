@@ -22,10 +22,10 @@ test_info = f"datasets_original/{dataset}/test.tsv"
 
 model_dir = f"models/NLI/{data_name}/model.pkl"
 
-with open('scripts_NLI/templates.json') as json_data:
-    SNLI_templates_json: list[dict[str, str]] = json.load(json_data)
-    json_data.close()
-SNLI_templates = [[line["prem"], line["hyp"]] for line in SNLI_templates_json]
+# with open('scripts_NLI/templates.json') as json_data:
+#     SNLI_templates_json: list[dict[str, str]] = json.load(json_data)
+#     json_data.close()
+# SNLI_templates = [[] for line in enumerate(SNLI_templates_json)]
 
 
 with open(model_dir, 'rb') as f:
@@ -39,19 +39,19 @@ test_x_str = list(NLI_test["preds"])
 test_x = [literal_eval(x) for x in test_x_str]
 
 newline = "<BR/>"
-feature_names = []
-for template_i in range(0, len(SNLI_templates)):
-    for direction in [0, 1]:
-        for label_nli in ["Entail", "Contradict", "Neutral"]:
-            local_templates = copy.deepcopy(SNLI_templates[template_i])
-            if direction:
-                dir = ("tail", "head")
-            else:
-                dir = ("head", "tail")
+# feature_names = []
+# for template_i in range(0, len(SNLI_templates)):
+#     for direction in [0, 1]:
+#         for label_nli in ["Entail", "Contradict", "Neutral"]:
+#             local_templates = copy.deepcopy(SNLI_templates[template_i])
+#             if direction:
+#                 dir = ("tail", "head")
+#             else:
+#                 dir = ("head", "tail")
 
-            local_templates[0] = local_templates[0].replace("NP", f"&lt;{dir[0]}&gt;")
-            local_templates[1] = local_templates[1].replace("NP", f"&lt;{dir[1]}&gt;")
-            feature_names.append(f"{f'{newline}'.join(local_templates)}{newline}{label_nli}")
+#             local_templates[0] = local_templates[0].replace("NP", f"&lt;{dir[0]}&gt;")
+#             local_templates[1] = local_templates[1].replace("NP", f"&lt;{dir[1]}&gt;")
+#             feature_names.append(f"{f'{newline}'.join(local_templates)}{newline}{label_nli}")
 
             # feature_names.append(f"Template {template_i} Direction {direction} {label_nli}")
 
@@ -60,7 +60,7 @@ target_names = ['disjoint', 'forwardentailment', 'independent', 'reverseentailme
 dot_data_small = tree.export_graphviz(clf,
                                 # out_file='models/NLI/tasksource_full/tree_full.png',
                                 max_depth=3,
-                                feature_names=feature_names,
+                                # feature_names=feature_names,
                                 class_names=target_names,
                                 filled=True, rounded=True,
                                 special_characters=True).replace("\n", "")
@@ -70,7 +70,7 @@ graph_small.write_pdf(f'models/NLI/{data_name}/tree_part.pdf')
 dot_data_full: str = tree.export_graphviz(clf,
                                 # out_file='models/NLI/tasksource_full/tree_full.png',
                                 # max_depth=4,
-                                feature_names=feature_names,
+                                # feature_names=feature_names,
                                 class_names=target_names,
                                 filled=True, rounded=True,
                                 special_characters=True).replace("\n", "")
@@ -146,7 +146,7 @@ depth_setting = 3
 dot_data: str = tree.export_graphviz(clf,
                                 # out_file='models/NLI/tasksource_full/tree_full.png',
                                 max_depth=depth_setting,
-                                feature_names=feature_names,
+                                # feature_names=feature_names,
                                 class_names=target_names,
                                 filled=True, rounded=True,
                                 special_characters=True).replace("\n", "")

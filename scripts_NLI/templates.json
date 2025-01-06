@@ -1,22 +1,19 @@
-[
-    {
-        "prem": "There are NP in the rain",
-        "hyp": "The NP is wet"
-    },
-    {
-        "prem": "The NP",
-        "hyp": "The NP"
-    },
-    {
-        "prem": "NP",
-        "hyp": "NP"
-    },
-    {
-        "prem": "There is the NP",
-        "hyp": "There is the NP"
-    },
-    {
-        "prem": "We found NP",
-        "hyp": "Someone found NP"
-    }
-]
+
+{
+    "NN": 
+        [
+            ["X", "X"],
+            ["The X", "The X"],
+            ["There is the X", "There is the X"],
+            ["The X is outside", "The X is outside"],
+            ["There is the X visible outside", "The X is visible outdoors"]
+        ],
+    "VB":
+        [
+            ["X", "X"],
+            ["To X", "To X"],
+            ["It is recommended to X", "It is recommended to X"],
+            ["To X is good", "To X is good"],
+            ["It is recommended to X outside", "To X outdoors is recommended"]
+        ]
+}

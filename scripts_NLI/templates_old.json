@@ -1,0 +1,22 @@
+[
+    {
+        "prem": "There are NP in the rain",
+        "hyp": "The NP is wet"
+    },
+    {
+        "prem": "The NP",
+        "hyp": "The NP"
+    },
+    {
+        "prem": "NP",
+        "hyp": "NP"
+    },
+    {
+        "prem": "There is the NP",
+        "hyp": "There is the NP"
+    },
+    {
+        "prem": "We found NP",
+        "hyp": "Someone found NP"
+    }
+]
