@@ -16,6 +16,7 @@ def to_tree(ccg_inp: list[str]) -> dict[int, tree]:
     ccg_data: list[list[tuple[int, str]]] = ccg_parse.parse_data(ccg_inp)
     return ccg_parse.parse_class(ccg_data)
 
+
 def get_problem_dict(ccg_data, sen_data):
     # skip until first CCG line
     counter = 0
@@ -59,7 +60,7 @@ bad_sents = ['a subway station where numerous people are standing and one woman 
              'two hikers crossing a snowy field , with mountainous terrain behind them .']
 
 
-for dataset_name in ["train", "dev"]:
+for dataset_name in ["train", "dev", "test"]:
     str_replace = dataset_name.replace("train", "train_5")
     str_replace = str_replace + "_NN"
     sen_file = f"datasets_ccg/SNLI_NN/snli_{str_replace}_sen.pl"

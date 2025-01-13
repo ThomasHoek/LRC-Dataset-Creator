@@ -293,6 +293,15 @@ def phrase_to_combos(
     return combos, global_comb_counter
 
 
+def try_int(x: str) -> bool:
+    try:
+        int(x)
+        return True
+    except ValueError:
+        return False
+        
+
+
 if __name__ == "__main__":
     import glob
     import argparse
@@ -382,15 +391,19 @@ if __name__ == "__main__":
             elif line[0] == "%":
                 continue
 
-            # FIXME: IMPORTANT difference between STR and INT
             try:
                 ccg_id, problem_id = re.findall(r"(\d+), (.*?),", line)[0]
 
                 ccg_id = int(ccg_id)
                 problem_id = int(problem_id)
             except ValueError as e:
-                print(line)
-                raise ValueError(e)
+                # assuming string
+                if try_int(problem_id[1:-1]):
+                    ccg_id = int(ccg_id)
+                    problem_id = int(problem_id[1:-1])
+                else:
+                    print(line)
+                    raise ValueError(e)
 
             if ccg_id in all_trees:
                 if problem_id in problem_tuple_dict:

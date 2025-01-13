@@ -141,36 +141,46 @@ def nli_prolog(nli_dict, out, cen_labs=True):
                 "p_id": 2 * i - 1,
                 "h_id": 2 * i,
                 "g": d["g"] if cen_labs else cen2ynu[d["g"]],
-                "pid": d["pid"].replace("'", r"\'"),
+                "pid": d["pid"].replace("'", r"\'") if isinstance(d["pid"], str) else d["pid"],
             }
-            f.write(
-                "% problem id = {pid}\n"
-                "sen_id({p_id}, '{pid}', 'p', '{g}', '{p}').\n"
-                "sen_id({h_id}, '{pid}', 'h', '{g}', '{h}').\n".format(**kw)
-            )
+
+            if isinstance(d["pid"], str):
+                f.write(
+                    "% problem id = {pid}\n"
+                    "sen_id({p_id}, '{pid}', 'p', '{g}', '{p}').\n"
+                    "sen_id({h_id}, '{pid}', 'h', '{g}', '{h}').\n".format(**kw)
+                )
+
+            else:
+                f.write(
+                    "% problem id = {pid}\n"
+                    "sen_id({p_id}, {pid}, 'p', '{g}', '{p}').\n"
+                    "sen_id({h_id}, {pid}, 'h', '{g}', '{h}').\n".format(**kw)
+                )
             count += 2
     return count
 
 
 ################################################################################
 ################################################################################
-def snlijson2nli(file_stream, out, fmt, tok="native", v=0):
+def snlijson2nli(file_stream, out, fmt, tok='native', v=0):
     # FIXME: adapt to the global changes
-    """ """
+    '''    '''
     nli_dict = defaultdict(dict)
     i = 1
-    possible_labels = ["entailment", "contradiction", "neutral"]
+    possible_labels = ['entailment', 'contradiction', 'neutral']
     for json_prob in file_stream:
         p = json.loads(json_prob)
-        if p["gold_label"] in possible_labels:
-            nli_dict[i] = {
-                "pid": p["pairID"],
-                "p": p["sentence1"],
-                "h": p["sentence2"],
-                "g": p["gold_label"],
-                "p_btree": p["sentence1_binary_parse"],
-                "h_btree": p["sentence2_binary_parse"],
-            }
+        if p['gold_label'] in possible_labels:
+            # replace pairID with number
+            # nli_dict[i] = {'pid':p['pairID'],
+            nli_dict[i] = {'pid':i,
+                           'p':p['sentence1'],
+                           'h':p['sentence2'],
+                           'g':p['gold_label'],
+                           'p_btree': p['sentence1_binary_parse'],
+                           'h_btree': p['sentence2_binary_parse']
+                          }
             i += 1
     report("{} problems read".format(len(nli_dict)), 0, v)
     write_nli_dict(nli_dict, out, fmt, tok=tok, v=v)
